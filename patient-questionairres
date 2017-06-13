@@ -1,0 +1,165 @@
+<html>
+<head>
+
+<style id="webmakerstyle">
+.background{
+	background: #6fa8dc;
+	display: flex;
+}
+.header{
+	width: 100%;
+	background: white;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 50px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.30), 0 7px 6px rgba(0,0,0,0.22);
+	padding: 10px
+}
+.logo{
+	height: 40px
+}
+.side{
+	max-width: 30%;
+	padding: 0;
+	margin-top: 50;
+}
+.middle{
+	margin-top: 50;
+}
+
+.card{
+	background: white;
+	width:80%;
+	height: 50%;
+	align-self: center;
+	margin: 0 auto;
+	margin-top:40;
+	padding: 40px;
+	box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+	border-radius: 5px;
+}
+
+a:link, a:visited {
+    background-color: #e66831;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+		border-radius: 25px;
+		font-family: 'Ubuntu', sans-serif;
+}
+
+
+a:hover, a:active {
+    background-color: darkorange;
+}
+#book{
+	width: 50%;
+	margin:50px;
+}
+#laptop{
+	width: 80%;
+	margin: 50px;
+}
+#laptop2{
+	width: 0%;
+	margin: 50px;
+}
+#right{
+	width: 100%;
+}
+.content{
+	padding: 10;
+	text-align: justify;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+    .side {
+        display: none;
+    }
+}	
+/*sexy input*/
+input[type="text"] {
+  display: block;
+  margin: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 18px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+.style-1 input[type="text"] {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.style-1 input[type="text"]:focus,
+.style-1 input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+}
+</style>
+</head>
+<body>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+	<div class="header">
+		<img src="https://docs.google.com/drawings/d/1XjKwY10X7uUZIOXexiuPLLuQo744fQVMJH3fzPwDBCY/pub?w=773&h=100" class="logo">
+	</div>
+	<body class="background">
+<div class="side">
+	<img src="https://docs.google.com/drawings/d/18eg_Q_2kR6ZdBVLidbMICxM-sXJa4VPcpzn45y7vXf4/pub?w=271&h=273" id="book">
+	<img src="https://docs.google.com/drawings/d/1w0z6FbL08ESANU8vYrflnqvUl0t3ulb5ouSOOy3ZxaU/pub?w=478&h=421" id="laptop">
+		</div>
+	<div class="middle">
+		<div class="card">
+			<div class="content">
+				<h2>
+					Patient Questionnaires</h2>
+				We ask patients with respiratory diseases
+questions to assess how well their disease
+is managed. We give this information back
+to your GP to help them give you the best 
+care.<br><br>
+
+After answering these questions you be
+given expert advice based on your 
+responses about how best to manage
+your disease.
+		</div>	
+		<section>
+  		<div class="input-list style-1 clearfix">
+    		<i>
+      		<input type="text" placeholder="Full Name">
+    		</i>
+  		</div>
+		</section>
+	<a href="default.asp" target="_blank"><b>I have asthma</b></a>
+	<a href="default.asp" target="_blank"><b>I have COPD</b></a>
+</div>
+	</div>
+<div class="side">
+		<img src="https://docs.google.com/drawings/d/1w0z6FbL08ESANU8vYrflnqvUl0t3ulb5ouSOOy3ZxaU/pub?w=478&h=421" id="laptop2">
+				<img src="https://docs.google.com/drawings/d/17EeWWExyZWrH3nGKdeSea98uded_MEktInmUPrSP5mQ/pub?w=580&h=727"id="laptop">
+		</div>
+
+
+
+		
+		
+	</body>
+</html>
+
+<script src="chrome-extension://lkfkkhfhhdkiemehlpkgjeojomhpccnh/lib/screenlog.js"></script><script src="filesystem:chrome-extension://lkfkkhfhhdkiemehlpkgjeojomhpccnh/temporary/script.js">
+</script>
+</body>
+</html>
