@@ -1,0 +1,231 @@
+<html>
+<head>
+
+<style id="webmakerstyle">
+body{
+	background: lightgrey;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.header{
+	background: white;
+	padding: 0;
+	margin: 0;
+}
+
+.logo{
+	height:80px;
+	display: block;
+	margin: auto;
+	padding:10px;
+}
+
+.navbar{
+	display:flex;
+	flex-wrap: wrap;
+	background: #0b5394;
+	color: white;
+	justify-content: center;
+}
+.nav{
+	padding:10;
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 600;
+}
+.nav:hover{
+	font-weight: 900;
+	background: #073763;
+}
+
+.card{
+	background: white;
+	width: 600;
+	display: block;
+	margin: 20 auto;
+	padding: 20;
+}
+.block{
+	background: white;
+	margin: 10px;
+	padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.photo{
+	background: grey;
+	height: 180px;
+	margin: 10px;
+	width: 180px;
+}
+.bio{
+	background: white;
+	height: 140px;
+	margin: 10px;
+	width: 280px;
+	padding: 20px;
+}
+.a1{
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 900;
+	color: #f87b2a;
+	font-size: 25px;
+	padding:30px;
+}
+.a2{
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 300;
+	color: grey;
+	font-size: 25px;
+}
+.a3{
+	font-family: 'Josefin Sans', sans-serif;
+	font-weight: 300;
+	color: grey;
+	font-size: 20px;
+}
+
+.footer{
+	background:grey;
+	height:100px;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+.grow img {
+  height: 180px;
+  width: 180px;
+ 
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+.grow img:hover {
+  width: 280px;
+  height: 280px;
+}
+.photo {
+  height: 180px;
+  width: 180px;
+  overflow: hidden;
+}
+</style>
+</head>
+<body>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	</head>
+	<body>
+		<div class="header">
+			<img class="logo" src="https://docs.google.com/drawings/d/1210uHJlfQLL6WZuQaOHHNG67-rVcutTTonI-Fcskmcw/pub?w=840&h=200" alt="astor marine logo" />
+		</div>
+		<div class="navbar">
+			<div class="nav">About us</div>
+			<div class="nav">Surveys</div>
+			<div class="nav">Our Services</div>
+			<div class="nav">Links</div>
+			<div class="nav">Contact us</div>
+		</div>
+		
+		<div class="card">
+			<div class="block">
+				<div class="photo grow">
+					<img src="http://lorempixel.com/180/180/people" alt="portrait">
+				</div>
+				<div class="bio">
+					<a class="a2">Alastair McLoughlin</a><br>
+					
+				</div>
+			</div>
+			<hr>
+			<a class="a1">Service 1</a>
+			<div class="block">
+				<div class="bio">
+					<a class="a3">We can do this...</a><br>
+				</div>
+				<div class="photo grow">
+					<img src="http://lorempixel.com/180/180/sports/" alt="portrait">
+				</div>
+			</div>
+			<hr>
+			<a class="a1">Service 2</a>
+			<div class="block">
+				<div class="bio">
+					<a class="a3">We can do this...</a><br>
+				</div>
+				<div class="photo grow">
+					<img src="http://lorempixel.com/180/180/sports/" alt="portrait">
+				</div>
+			</div>
+			<hr>
+			<a class="a1">Service 3</a>
+			<div class="block">
+				<div class="bio">
+					<a class="a3">We can do this...</a><br>
+				</div>
+				<div class="photo grow">
+					<img src="http://lorempixel.com/180/180/sports/" alt="portrait">
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			
+		</div>
+	</body>
+</html>
+
+<script src="chrome-extension://lkfkkhfhhdkiemehlpkgjeojomhpccnh/lib/screenlog.js"></script><script src="filesystem:chrome-extension://lkfkkhfhhdkiemehlpkgjeojomhpccnh/temporary/script.js">
+</script>
+</body>
+</html>
