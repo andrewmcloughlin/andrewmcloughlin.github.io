@@ -5,5 +5,6 @@ layout: item.njk
 tags: ["portfolio", "UI", "Software"]
 pinned: true
 stack: ["Kubernetes", "Docker", "Python", "Django", "HTMX", "PostgreSQL", "Bootstrap", "RDKit"]
+image: /images/atlas.png
 ---
 As the Product Owner and Lead Developer on this project, I was responsible for the entire lifecycle of the application, from conception to deployment and maintenance.

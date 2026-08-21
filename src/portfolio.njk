@@ -11,6 +11,9 @@ permalink: /work/index.html
       {% if item.data.pinned %}
         <div class="col-md-6">
           <div class="card h-100 shadow-sm border-0">
+            {% if item.data.image %}
+              <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="card-img-top" style="height: 200px; object-fit: cover;">
+            {% endif %}
             <div class="card-body">
           <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
               <span class="badge bg-secondary text-light">
@@ -46,8 +49,11 @@ permalink: /work/index.html
 
   <div class="row g-4">
     {% for item in collections.portfolio | reverse %}
-      <div class="col-md-4 portfolio-item" data-tags="{{ item.data.tags | join(' ') }}">
+      <div class="col-md-6 portfolio-item" data-tags="{{ item.data.tags | join(' ') }}">
         <div class="card h-100 shadow-sm border-0">
+          {% if item.data.image %}
+            <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="card-img-top" style="height: 160px; object-fit: cover;">
+          {% endif %}
           <div class="card-body">
         <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
             <span class="badge bg-secondary text-light">

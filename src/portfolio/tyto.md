@@ -5,5 +5,6 @@ layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false
 stack: ["Kubernetes", "Docker", "Python", "Django", "HTMX", "PostgreSQL", "Bootstrap"]
+image: /images/tyto.png
 ---
 The LIMS is an evolving monolithic django app with a very complex data model and a large user base of internal users. Our team inherited a large amount of tech debt and managed to modularise and modernise the codebase significantly, while quickly adapting it to support the company's evolving needs.

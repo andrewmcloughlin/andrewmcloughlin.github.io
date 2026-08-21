@@ -20,13 +20,17 @@ layout: base.njk
         
         <h1 class="card-title display-5 fw-bold mb-3">{{ title }}</h1>
         <p class="card-subtitle lead text-secondary mb-4">{{ description }}</p>
-        
+
+        {% if image %}
+          <img src="{{ image | url }}" alt="{{ title }}" class="img-fluid rounded mb-4 w-100" style="max-height: 480px; object-fit: cover;">
+        {% endif %}
+
         <div class="card-text border-top pt-4">
           {{ content | safe }}
         </div>
         
         <div class="mt-5">
-          <a href="/portfolio/" class="btn btn-outline-primary">&larr; Back to Portfolio</a>
+          <a href="{{ '/work/' | url }}" class="btn btn-primary">&larr; Back to Portfolio</a>
         </div>
       </div>
     </div>

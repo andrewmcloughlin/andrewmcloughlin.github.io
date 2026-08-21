@@ -5,6 +5,7 @@ layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false
 stack: ["Kubernetes", "Docker", "Python", "Django", "HTMX", "PostgreSQL", "Bootstrap", "Metabase"]
+image: /images/hmbt.png
 ---
 Fulfillments were recorded on spreadsheets, which was time consuming and error prone. I designed and built a web application to manage the fulfillment of orders, which significantly reduced the time and effort required to fulfill orders and improved the accuracy of the data. We used embedded Metabase dashboards to provide real-time insights into the fulfillment process.
 
