@@ -5,4 +5,5 @@ layout: item.njk
 tags: ["portfolio", "Software", "UI"]
 pinned: true
 stack: ["Kubernetes", "Docker", "Python", "Django", "django-ninja", "HTMX", "PostgreSQL", "Bootstrap"]
+image: "/images/macha.png"
 ---
