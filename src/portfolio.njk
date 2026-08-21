@@ -23,7 +23,7 @@ permalink: /work/index.html
           <p>{{ item.data.description }}</p>
             {% if item.data.stack %}
               {% for tool in item.data.stack %}
-                  <span class="badge bg-primary me-1">{{ tool }}</span>
+                  <span class="badge bg-primary-outline text-primary me-1">{{ tool }}</span>
               {% endfor %}
             {% endif %}
             </div>
@@ -60,7 +60,7 @@ permalink: /work/index.html
         <p>{{ item.data.description }}</p>
           {% if item.data.stack %}
             {% for tool in item.data.stack %}
-                <span class="badge bg-primary me-1">{{ tool }}</span>
+                <span class="badge bg-primary-outline text-primary me-1">{{ tool }}</span>
             {% endfor %}
           {% endif %}
           </div>
