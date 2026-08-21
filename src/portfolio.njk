@@ -22,7 +22,7 @@ permalink: /work/index.html
               {% endfor %}
             </span>
           </div>
-          <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+          <h3><a href="{{ item.url | url }}">{{ item.data.title }}</a></h3>
           <p>{{ item.data.description }}</p>
             {% if item.data.stack %}
               {% for tool in item.data.stack %}
@@ -62,7 +62,7 @@ permalink: /work/index.html
             {% endfor %}
           </span>
         </div>
-        <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+        <h3><a href="{{ item.url | url }}">{{ item.data.title }}</a></h3>
         <p>{{ item.data.description }}</p>
           {% if item.data.stack %}
             {% for tool in item.data.stack %}
