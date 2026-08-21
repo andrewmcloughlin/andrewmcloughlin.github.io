@@ -1,0 +1,70 @@
+---
+layout: base.njk
+title: Portfolio
+---
+
+<section class="mb-5">
+  <h2 class="mb-4 pb-2 border-bottom">Featured Work</h2>
+  <div class="row g-4 mt-2">
+    {% for item in collections.portfolio | reverse %}
+      {% if item.data.pinned %}
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+              <span class="badge bg-secondary text-light">
+              {% for tag in item.data.tags %}
+                {% if tag != "portfolio" %}{{ tag }} {% endif %}
+              {% endfor %}
+            </span>
+          </div>
+          <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+          <p>{{ item.data.description }}</p>
+            {% if item.data.stack %}
+              {% for tool in item.data.stack %}
+                  <span class="badge bg-primary me-1">{{ tool }}</span>
+              {% endfor %}
+            {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="mb-5">
+  <h2 class="mb-4 pb-2 border-bottom">All Projects</h2>
+  
+  <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
+    <button class="btn btn-outline-primary active" data-filter="all">All</button>
+    <button class="btn btn-outline-primary" data-filter="UI">UI Work</button>
+    <button class="btn btn-outline-primary" data-filter="Software">Software</button>
+    <button class="btn btn-outline-primary" data-filter="Other">Other</button>
+  </div>
+
+  <div class="row g-4">
+    {% for item in collections.portfolio | reverse %}
+      <div class="col-md-4 portfolio-item" data-tags="{{ item.data.tags | join(' ') }}">
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body">
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+            <span class="badge bg-secondary text-light">
+            {% for tag in item.data.tags %}
+              {% if tag != "portfolio" %}{{ tag }} {% endif %}
+            {% endfor %}
+          </span>
+        </div>
+        <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+        <p>{{ item.data.description }}</p>
+          {% if item.data.stack %}
+            {% for tool in item.data.stack %}
+                <span class="badge bg-primary me-1">{{ tool }}</span>
+            {% endfor %}
+          {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>
