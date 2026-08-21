@@ -154,8 +154,21 @@ footer {
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--border-color);
   border-radius: 16px;
-  padding: 2rem;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card .card-body {
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .card.flex-md-row>img {
+    width: 40%;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 0;
+  }
 }
 
 .card:hover {
