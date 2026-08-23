@@ -33,11 +33,11 @@ As my first public facing product, I was keen to ensure that the application was
 
 ### Legal
 
-Legal Team required that users accept the latest T&Cs and Privacy Policies before accessing the site. To do this I created a modular legal django app, which stored the legal docs as markdown  files in the database and used `markdownify` to render them to HTML. This allowed the legal team to update the T&Cs and Privacy Policies without requiring a code change.
+Legal Team required that users accept the latest T&Cs and Privacy Policies before accessing the site. To do this I created a modular legal django app, which stored the legal docs as markdown  files in the database and used [markdownify](https://pypi.org/project/markdownify/) to render them to HTML. This allowed the legal team to update the T&Cs and Privacy Policies without requiring a code change.
 
 ### Chemistry
 
-All compounds are stores as InChI strings in the database. The cool thing about InChi strings is that they encode the entire chemical structure, so you can use a package like ([rdkit](https://www.rdkit.org/)) to generate 2D and 3D representations of the molecules in JavaScript. Not only that but you can also interrogate the compound structure to determine properties of the molecule, such as molecular weight, logP, etc. I chose to  have `rdkit` generate these properties on compound creation and store them in the database, so we could easily query compounds based on these properties. This was a significant performance improvement over generating these properties on the fly.
+All compounds are stores as InChI strings in the database. The cool thing about InChi strings is that they encode the entire chemical structure, so you can use a package like [rdkit](https://www.rdkit.org/) to generate 2D and 3D representations of the molecules in JavaScript. Not only that but you can also interrogate the compound structure to determine properties of the molecule, such as molecular weight, logP, etc. I chose to  have `rdkit` generate these properties on compound creation and store them in the database, so we could easily query compounds based on these properties. This was a significant performance improvement over generating these properties on the fly.
 
 ### Biology
 
