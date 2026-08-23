@@ -91,9 +91,7 @@ a:hover {
 
 /* Layout */
 header {
-  background: var(--bg-glass);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
+  background: var(--bg-color);
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
@@ -137,6 +135,77 @@ main {
   margin: 0 auto;
   padding: 4rem 2rem;
   width: 100%;
+}
+
+/* Mobile swipe transition */
+@media (max-width: 991.98px) {
+  main {
+    overflow-x: hidden;
+  }
+
+  main.slide-out-left {
+    animation: slideOutLeft 0.3s ease forwards;
+  }
+
+  main.slide-out-right {
+    animation: slideOutRight 0.3s ease forwards;
+  }
+
+  main.slide-in-left {
+    animation: slideInLeft 0.3s ease forwards;
+  }
+
+  main.slide-in-right {
+    animation: slideInRight 0.3s ease forwards;
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 footer {
