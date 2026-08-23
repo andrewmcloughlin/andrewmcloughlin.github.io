@@ -19,6 +19,7 @@ CRFs are the backbone of clinical trials, used to collect data from patients. Th
 
 ## Key Challenges
 
+
 ### (Almost) Infinite Flexibility in a Rigid Framework
 
 Every novel study necessarily asks different questions, so it seems like an impossible task to create a library of reusable CRFs. If one study asks "Has the participant ever had asthma?" and another asks "Has the participant had COPD in the last 12 months?" it seems impossible that they could use the same CRF.
@@ -31,7 +32,14 @@ Response (`RESP`) (user entered) eg "Yes" or "No"
 
 By putting the above 3 fields into a repeating group and setting different hard-coded values for TERM and DUR, you can create a CRF that can create a medical history CRF that is immensely flexible with just 3 fields.
 
-Of course now, you have to store the hard-coding and code-sets in the database, which is where the [define-xml](https://www.cdisc.org/standards/data-collection/define-xml) standard comes in.
+And just to demostrate how flexible this is, if you happen to have a study that asks if a narwhal has ever had an injury caused by falling from a hot air balloon, you can encode that in SDTM. It's as simple as:
+- `SBJ-SPECIES`: `763003` (SNOMED code for Narwhal)
+- `MHTERM`: `242208006` (SNOMED code for "Injury caused by falling from a hot air balloon")
+- `MHEVTXT`: `EVER`
+
+I kid you not. And what's more these codes are hierarchical, so you could browse to by digging down from "Marine mammals" and "aircraft accidents" to get to the concept. 
+
+Of course now, you have to store the hard-coded values and code-sets in the database, which is where the [define-xml](https://www.cdisc.org/standards/data-collection/define-xml) standard comes in.
 
 
 ### My Solution
