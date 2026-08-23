@@ -39,7 +39,12 @@ All compounds are stores as InChI strings in the database. The cool thing about 
 
 ### Biology
 
-Biology is messy. Originally we planned for Atlas to compare compounds across diseases, but we discovered that many of studies we used weren't using disease categories, but were comparing symptoms or healthy populations or biological processes, rather than diseases. This meant whatever system we used to classify these comparative groups had to flexible enough to accommodate this. Fortunately this is where ([SNOMED-CT](https://termbrowser.nhs.uk/)) comes in. It is a comprehensive clinical terminology that includes a wide range of medical concepts, including diseases, symptoms, and biological processes. You want a code for "injury to a narwhal caused by a laser in warfare"? that's `SCTID: 219427009 + SCTID: 763003`. I kid you not. and what's more these codes are heirarchical, so you could browse to by digging down from "Marine mammals" and "Warfare" to get to the concept. 
+Biology is messy. Originally we planned for Atlas to compare compounds across diseases, but we discovered that many of studies we used weren't using disease categories, but were comparing symptoms or healthy populations or biological processes, rather than diseases. This meant whatever system we used to classify these comparative groups had to flexible enough to accommodate this. Fortunately this is where ([SNOMED-CT](https://termbrowser.nhs.uk/)) comes in. It is a comprehensive clinical terminology that includes a wide range of medical concepts, including diseases, symptoms, and biological processes. You want a code for "injury to a narwhal caused by falling from a hot air balloon"? that's:
+- `SPECIES`: `763003`
+- `MHTERM`: `242208006`
+- `MHEVTXT`: EVER
+
+I kid you not. and what's more these codes are heirarchical, so you could browse to by digging down from "Marine mammals" and "Warfare" to get to the concept. 
 
 ## Impact
 
