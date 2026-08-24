@@ -10,12 +10,15 @@ title: Home
 </section>
 
 <section id="cv" class="spa-section mb-5">
-  <h2 class="mb-4 pb-2 border-bottom">Employment History</h2>
+  <h2 class="mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">Employment History</h2>
   <div class="timeline">
     {% for job in cv.employmentHistory %}
       <div class="card timeline-item mb-4 shadow-sm border-0 bg-transparent">
         <div class="card-body">
-          <h3 class="card-title h4">{{ job.role }}</h3>
+          {% if job.logo %}
+            <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="card-img-top" style="object-fit: cover; max-width: 100%;">
+          {% endif %}
+          <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ job.role }}</h3>
           <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
           <p class="card-text">{{ job.description }}</p>
         </div>
@@ -23,13 +26,16 @@ title: Home
     {% endfor %}
   </div>
 
-  <h2 class="mt-5 mb-4 pb-2 border-bottom">Qualifications</h2>
+  <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">Qualifications</h2>
   <div class="row g-4 mt-2">
     {% for qual in cv.qualifications %}
       <div class="col-md-6">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body">
-            <h3 class="card-title h4">{{ qual.degree }}</h3>
+            {% if qual.logo %}
+              <img src="{{ qual.logo | url }}" alt="{{ qual.company }}" class="card-img-top" style="object-fit: cover; max-width: 100%;">
+            {% endif %}
+            <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ qual.degree }}</h3>
             <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
             <dl>
               {% if qual.award %}
@@ -54,7 +60,7 @@ title: Home
 </section>
 
 <section id="projects" class="spa-section mb-5">
-  <h2 class="mb-4 pb-2 border-bottom">Featured Work</h2>
+  <h2 class="mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">Featured Work</h2>
   <div class="row g-4 mt-2">
     {% for item in collections.portfolio | reverse %}
       {% if item.data.pinned %}
@@ -71,7 +77,7 @@ title: Home
                 {% endfor %}
                 </span>
               </div>
-              <h3><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
+              <h3 style="font-family: 'Mackinac', serif;"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
               <p>{{ item.data.description }}</p>
               {% if item.data.stack %}
                 {% for tool in item.data.stack %}
@@ -85,7 +91,7 @@ title: Home
     {% endfor %}
   </div>
 
-  <h2 class="mt-5 mb-4 pb-2 border-bottom">All Projects</h2>
+  <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">All Projects</h2>
   <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
     <button class="btn btn-outline-primary active" data-filter="all">All</button>
     <button class="btn btn-outline-primary" data-filter="UI">UI Work</button>
@@ -108,7 +114,7 @@ title: Home
               {% endfor %}
               </span>
             </div>
-            <h3><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
+            <h3 style="font-family: 'Mackinac', serif;"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
             <p>{{ item.data.description }}</p>
             {% if item.data.stack %}
               {% for tool in item.data.stack %}
