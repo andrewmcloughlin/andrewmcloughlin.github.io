@@ -5,20 +5,23 @@ module.exports = {
             institution: "University of Cambridge",
             link: "https://www.postgradschl.lifesci.cam.ac.uk/research-themes-1/Epidem",
             year: "2015 - 2016",
-            description: "Awarded the MRC Postgraduate Scholarship. Thesis: Investigating the relationship between cardiovascular risk factors and cardiovascular disease in the EPIC-Norfolk cohort."
+            award: "MRC Postgraduate Scholarship",
+            thesis: "Investigating the relationship between cardiovascular risk factors and cardiovascular disease in the EPIC-Norfolk cohort."
         },
         {
-            degree: "MSc Computational Systems Science",
+            degree: "MSc Computational Systems Biology",
             institution: "University of Warwick",
             link: "https://warwick.ac.uk/fac/sci/systemsbiology/",
             year: "2014 - 2015",
-            description: "Awarded the Systems Biology Studentship. Graduated with merit. Thesis: Developing signal processing algorithms for actimetry data from a smart watch."
+            award: "Systems Biology Studentship",
+            thesis: "Developing signal processing algorithms for actimetry data from a smart watch."
         },
         {
             degree: "BSc Biomedical Science",
             institution: "University of Warwick",
             year: "2011 - 2014",
-            description: "Graduated with 2:1 honours. Thesis: The Metabolism Browser an interactive tool for exploring metabolic pathways built in VBA."
+            award: "2:1 honours",
+            thesis: "The Metabolism Browser an interactive tool for exploring metabolic pathways built in VBA."
         }
     ],
     employmentHistory: [

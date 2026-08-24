@@ -31,7 +31,21 @@ title: Home
           <div class="card-body">
             <h3 class="card-title h4">{{ qual.degree }}</h3>
             <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
-            <p class="card-text">{{ qual.description }}</p>
+            <dl>
+              {% if qual.award %}
+                <dt class="text-muted">Awarded</dt>
+                <dd class="mb-3">{{ qual.award }}</dd>
+              {% endif %}
+              {% if qual.thesis %}
+                <dt class="text-muted">Thesis</dt>
+                <dd class="mb-3">{{ qual.thesis }}</dd>
+              {% endif %}
+            </dl>
+            {% if qual.link %}
+              <a href="{{ qual.link | url }}" class="stretched-link text-decoration-none text-body">
+                <i class="bi bi-arrow-right text-white float-end"></i>
+              </a>
+            {% endif %}
           </div>
         </div>
       </div>
