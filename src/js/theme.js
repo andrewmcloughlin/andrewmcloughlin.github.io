@@ -1,35 +1,37 @@
-// Check for saved user preference, if any
 const getPreferredTheme = () => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        return savedTheme;
-    }
+    if (savedTheme) return savedTheme;
     return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+};
+
+const setThemeIcon = (theme) => {
+    const icon = theme === 'light' ? 'fa-sun' : 'fa-moon';
+    document.querySelectorAll('.theme-icon').forEach(el => {
+        el.className = `fa-solid ${icon}`;
+    });
 };
 
 const setTheme = (theme) => {
     document.documentElement.setAttribute('data-bs-theme', theme);
     localStorage.setItem('theme', theme);
+    setThemeIcon(theme);
 };
 
-// Initialize theme
 setTheme(getPreferredTheme());
 
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleBtn = document.getElementById('theme-toggle');
+    setThemeIcon(getPreferredTheme());
 
-    // Watch for system preference changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         if (!localStorage.getItem('theme')) {
             setTheme(e.matches ? 'dark' : 'light');
         }
     });
 
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
+    document.querySelectorAll('#theme-toggle, #theme-toggle-mobile').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-bs-theme');
+            setTheme(current === 'light' ? 'dark' : 'light');
         });
-    }
+    });
 });

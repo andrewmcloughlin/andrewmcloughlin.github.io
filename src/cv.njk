@@ -9,9 +9,15 @@ title: Curriculum Vitae
     {% for job in cv.employmentHistory %}
       <div class="card timeline-item mb-4 shadow-sm border-0 bg-transparent">
         <div class="card-body">
-          <h3 class="card-title h4">{{ job.role }}</h3>
-          <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
-          <p class="card-text">{{ job.description }}</p>
+          {% if job.link %}
+            <a href="{{ job.link }}" target="_blank" rel="noopener noreferrer">
+          {% endif %}
+            <h3 class="card-title h4">{{ job.role }}</h3>
+            <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
+            <p class="card-text">{{ job.description }}</p>
+          {% if job.link %}
+            </a>
+          {% endif %}
         </div>
       </div>
     {% endfor %}
@@ -25,9 +31,15 @@ title: Curriculum Vitae
       <div class="col-md-6">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body">
+          {% if qual.link %}
+            <a href="{{ qual.link }}" target="_blank" rel="noopener noreferrer">
+          {% endif %}
             <h3 class="card-title h4">{{ qual.degree }}</h3>
             <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
             <p class="card-text">{{ qual.description }}</p>
+          {% if qual.link %}
+            </a>
+          {% endif %}
           </div>
         </div>
       </div>
