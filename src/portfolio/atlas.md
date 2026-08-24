@@ -12,14 +12,14 @@ image: /images/atlas.png
 
 ## What is the VOC Atlas?
 
-[VOC Atlas](https://www.voatlas.com)
+[VOC Atlas](https://www.vocatlas.com)
 
 A django-based web application for exploring the world of Volatile Organic Compounds (VOCs). It consists of a public-facing read only interface and a private interface for Owlstone employees to upload and manage data.
 
 
 ## What problems does it solve?
 
-You may have heard stories of [dogs that can smell diseases](https://www.bbc.com/news/health-60636541) or [the nurse who could smell Alzheimer's disease](https://www.bbc.com/news/uk-scotland-68537913). There is good biological prior to suggest that signals for diseases are present in the air we exhale and this theory is why [Owlstone Medical](https://www.owlstonemedical.com) was founded. The challenge however is that breath is full of noise from the food we eat, the environment we live in and the medications we take. The [VOC Atlas](https://www.voatlas.com) is a collaborative tool to allow the breath research community to contribute breath data to attempt to find correlations between signals on breath and diseases.
+You may have heard stories of [dogs that can smell diseases](https://www.bbc.com/news/health-60636541) or [the nurse who could smell Alzheimer's disease](https://www.bbc.com/news/uk-scotland-68537913). There is good biological prior to suggest that signals for diseases are present in the air we exhale and this theory is why [Owlstone Medical](https://www.owlstonemedical.com) was founded. The challenge however is that breath is full of noise from the food we eat, the environment we live in and the medications we take. The [VOC Atlas](https://www.vocatlas.com) is a collaborative tool to allow the breath research community to contribute breath data to attempt to find correlations between signals on breath and diseases.
 
 
 ## Key Challenges
