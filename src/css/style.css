@@ -145,6 +145,10 @@ nav a.active {
   color: var(--text-primary);
 }
 
+.logo {
+  width: 5%;
+  height: 5%;
+}
 
 .fab {
   position: fixed;

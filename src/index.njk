@@ -15,11 +15,15 @@ title: Home
     {% for job in cv.employmentHistory %}
       <div class="card timeline-item mb-4 shadow-sm border-0 bg-transparent">
         <div class="card-body">
-          {% if job.logo %}
-            <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="card-img-top" style="object-fit: cover; max-width: 100%;">
-          {% endif %}
-          <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ job.role }}</h3>
-          <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+            {% if job.logo %}
+              <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="logo me-2">
+            {% endif %}
+            <div style="display: flex; flex-direction: column;">
+              <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ job.role }}</h3>
+              <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
+            </div>
+          </div>
           <p class="card-text">{{ job.description }}</p>
         </div>
       </div>
@@ -32,11 +36,15 @@ title: Home
       <div class="col-md-6">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body">
-            {% if qual.logo %}
-              <img src="{{ qual.logo | url }}" alt="{{ qual.company }}" class="card-img-top" style="object-fit: cover; max-width: 100%;">
-            {% endif %}
-            <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ qual.degree }}</h3>
-            <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+              {% if qual.logo %}
+                <img src="{{ qual.logo | url }}" alt="{{ qual.company }}" class="logo me-2">
+              {% endif %}
+              <div style="display: flex; flex-direction: column;">
+                <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ qual.degree }}</h3>
+                <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
+              </div>
+            </div>
             <dl>
               {% if qual.award %}
                 <dt class="text-muted">Awarded</dt>
