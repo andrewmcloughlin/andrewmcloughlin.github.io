@@ -1,4 +1,4 @@
-/* Highlight active nav link in the mobile top navbar using IntersectionObserver */
+/* Highlight active nav link using IntersectionObserver */
 (function () {
     const sections = document.querySelectorAll('.spa-section');
     const mobileLinks = document.querySelectorAll('#mobileScrollNav .nav-link');
@@ -34,4 +34,16 @@
             }
         });
     });
+
+    /* Scroll-to-top FAB */
+    const fab = document.getElementById('scroll-top-fab');
+    if (fab) {
+        window.addEventListener('scroll', () => {
+            fab.classList.toggle('visible', window.scrollY > 300);
+        }, { passive: true });
+
+        fab.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 })();
