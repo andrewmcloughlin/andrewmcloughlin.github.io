@@ -374,3 +374,66 @@ nav a.active {
 .timeline-item:last-child {
   margin-bottom: 0;
 }
+
+/* Gallery Marquee */
+.gallery-marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.gallery-marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll-marquee 25s linear infinite;
+}
+
+.gallery-marquee:hover {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  justify-content: flex-start;
+  width: max-content;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.gallery-img {
+  height: 200px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow-base);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .gallery-img {
+    height: 120px;
+  }
+
+  .gallery-marquee-container {
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  }
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
