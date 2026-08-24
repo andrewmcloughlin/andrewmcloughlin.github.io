@@ -4,8 +4,8 @@
   --bg-glass: rgba(30, 41, 59, 0.7);
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
-  --accent-color: #38bdf8;
-  --accent-glow: rgba(56, 189, 248, 0.5);
+  --accent-color: #f8a73d;
+  --accent-glow: rgba(253, 193, 64, 0.5);
   --border-color: rgba(255, 255, 255, 0.1);
   --glass-blur: 12px;
   --card-shadow-base: rgba(0, 0, 0, 0.5);
@@ -16,7 +16,7 @@
   --bg-glass: rgba(255, 255, 255, 0.7);
   --text-primary: #0f172a;
   --text-secondary: #334155;
-  --accent-color: #0284c7;
+  --accent-color: #f8a73d;
   --accent-glow: rgba(2, 132, 199, 0.5);
   --border-color: rgba(0, 0, 0, 0.1);
   --glass-blur: 12px;
@@ -29,12 +29,26 @@
     --bg-glass: rgba(255, 255, 255, 0.7);
     --text-primary: #0f172a;
     --text-secondary: #334155;
-    --accent-color: #0284c7;
+    --accent-color: #f8a73d;
     --accent-glow: rgba(2, 132, 199, 0.5);
     --border-color: rgba(0, 0, 0, 0.1);
     --glass-blur: 12px;
     --card-shadow-base: rgba(0, 0, 0, 0.05);
   }
+}
+
+@font-face {
+  font-family: 'Mackinac';
+  src: url('../fonts/P22MackinacPro-Bold_16.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mackinac';
+  src: url('../fonts/P22MackinacPro-Book_25.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 * {
@@ -75,6 +89,10 @@ h2 {
   font-size: 2rem;
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-family: 'Mackinac', serif;
 }
 
 a {
