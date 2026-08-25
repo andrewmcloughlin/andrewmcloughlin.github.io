@@ -25,11 +25,11 @@ One of the biggest challenges was the variety of data sources we had to deal wit
 
 ## My Solution
 
-I serendipitously discovered Metabase, an open source BI tool that allowed us to provide self-service analytics to our stakeholders. This was a game changer for the company, as it allowed us to get insights from our data quickly and easily. Prior to this we were using Looker Studio, which was less intuitive and required more technical expertise to use effectively.
+I serendipitously discovered [Metabase](https://www.metabase.com), an open source BI tool that allowed us to provide self-service analytics to our stakeholders. This was a game changer for the company, as it allowed us to get insights from our data quickly and easily. Prior to this we were using Looker Studio, which was less intuitive and required more technical expertise to use effectively.
 
-We also used Airbyte, which has prebuilt connectors for a tonne of common sources. This meant that we didn't have to write custom connectors for each data source, which saved us a lot of time and effort. We hooked Airflow up to Teams to notify us of failed jobs, which meant that we could react quickly to any issues.
+We also used [Airbyte](https://airbyte.com), which has prebuilt connectors for a tonne of common sources. This meant that we didn't have to write custom connectors for each data source, which saved us a lot of time and effort. We hooked Airflow up to Teams to notify us of failed jobs, which meant that we could react quickly to any issues.
 
-We used Airflow to orchestrate the data pipelines, and dbt to transform the data according to Kimball methodology.
+We used [Airflow](https://airflow.apache.org/) to orchestrate the data pipelines, and dbt to transform the data according to Kimball methodology.
 
 ## Impact
 
