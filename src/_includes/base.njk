@@ -49,16 +49,21 @@
     </main>
   </div>
 
-  <footer class="site-footer">
-    <a href="https://linkedin.com/in/amcloughlin1" target="_blank" rel="noopener" aria-label="LinkedIn">
-      <i class="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://cambridge.academia.edu/AndrewMcLoughlin" target="_blank" rel="noopener" aria-label="Academia">
-      <i class="fa-solid fa-graduation-cap"></i>
-    </a>
-    <a href="https://figma.com/@maclin" target="_blank" rel="noopener" aria-label="Figma">
-      <i class="fa-brands fa-figma"></i>
-    </a>
+  <footer class="site-footer flex-column align-items-center">
+    <div class="d-flex gap-4">
+      <a href="https://linkedin.com/in/amcloughlin1" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="https://cambridge.academia.edu/AndrewMcLoughlin" target="_blank" rel="noopener" aria-label="Academia">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </a>
+      <a href="https://figma.com/@maclin" target="_blank" rel="noopener" aria-label="Figma">
+        <i class="fa-brands fa-figma"></i>
+      </a>
+    </div>
+    <div class="mt-2 text-center">
+      <a href="{{ '/about/' | url }}" class="text-decoration-none" style="font-size: 0.95rem; opacity: 0.7;">About this site</a>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -66,8 +71,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
   <script>window.__pathPrefix = "{{ '/' | url }}";</script>
   <script src="{{ '/js/theme.js' | url }}"></script>
-  <script src="{{ '/js/filters.js' | url }}"></script>
   <script src="{{ '/js/scrollspy.js' | url }}"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
   <button id="scroll-top-fab" class="d-lg-none fab" aria-label="Scroll to top">
     <i class="fa-solid fa-arrow-up"></i>
   </button>

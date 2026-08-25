@@ -1,0 +1,59 @@
+---
+layout: base.njk
+title: About this site
+---
+
+<section class="spa-section py-5">
+  <div class="row pt-4">
+    <div class="col-12">
+      <h1 class="display-4 fw-bold hero-title mb-5" style="font-family: 'Mackinac', serif;">About this Site</h1>
+      
+      <div class="card shadow-sm border-0 mb-4">
+        <div class="card-body">
+          <h2 style="font-family: 'Mackinac', serif;">Tech Stack</h2>
+          <p class="lead text-secondary mb-4">This portfolio was built with modern, lightweight web technologies to ensure fast load times and a premium user experience.</p>
+          
+          <ul class="list-group list-group-flush bg-transparent">
+            <li class="list-group-item bg-transparent d-flex align-items-center gap-3 py-3 px-0 border-bottom" style="border-color: var(--border-color) !important;">
+              <i class="fa-solid fa-bolt text-warning fs-3" style="width: 40px; text-align: center;"></i>
+              <div>
+                <strong>Eleventy (11ty)</strong>
+                <p class="text-secondary mb-0 mt-1 small">My go-to static site generator used to compile the Nunjucks templates and Markdown data into optimised static HTML files.</p>
+              </div>
+            </li>
+            <li class="list-group-item bg-transparent d-flex align-items-center gap-3 py-3 px-0 border-bottom" style="border-color: var(--border-color) !important;">
+              <i class="fa-brands fa-bootstrap fs-3" style="color: #6f42c1; width: 40px; text-align: center;"></i>
+              <div>
+                <strong>Bootstrap 5.3</strong>
+                <p class="text-secondary mb-0 mt-1 small">I know Tailwind is all the rage, but Boostrap is just so easy.</p>
+              </div>
+            </li>
+            <li class="list-group-item bg-transparent d-flex align-items-center gap-3 py-3 px-0 border-bottom" style="border-color: var(--border-color) !important;">
+              <i class="fa-brands fa-js fs-3 text-info" style="width: 40px; text-align: center;"></i>
+              <div>
+                <strong>Alpine.js</strong>
+                <p class="text-secondary mb-0 mt-1 small">A rugged, minimal tool for composing behaviour directly in the markup. Used for declarative UI data binding and the dynamic portfolio filtering.</p>
+              </div>
+            </li>
+            <li class="list-group-item bg-transparent d-flex align-items-center gap-3 py-3 px-0 border-bottom" style="border-color: var(--border-color) !important;">
+              <i class="fa-regular fa-images text-danger fs-3" style="width: 40px; text-align: center;"></i>
+              <div>
+                <strong>Splide.js</strong>
+                <p class="text-secondary mb-0 mt-1 small">I love a good carousel but writing JS for a good UX (with dragging, touch support, and auto-play) is a pain. Splide makes it so easy.</p>
+              </div>
+            </li>
+            <li class="list-group-item bg-transparent d-flex align-items-center gap-3 py-3 px-0 border-bottom" style="border-color: var(--border-color) !important;">
+              <i class="fa-brands fa-markdown text-primary fs-3" style="width: 40px; text-align: center;"></i>
+              <div>
+                <strong>Markdown & Nunjucks</strong>
+                <p class="text-secondary mb-0 mt-1 small">Content for projects and the CV is maintained easily in structured Markdown and JSON, seamlessly injected via Nunjucks templating.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <a href="{{ '/' | url }}" class="btn btn-primary mt-3"><i class="fa-solid fa-arrow-left me-2"></i>Back to Home</a>
+    </div>
+  </div>
+</section>
