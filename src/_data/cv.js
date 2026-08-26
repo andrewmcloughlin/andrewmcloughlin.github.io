@@ -22,6 +22,26 @@ module.exports = {
             year: "2011 - 2014",
             award: "2:1 honours",
             thesis: "The Metabolism Browser an interactive tool for exploring metabolic pathways built in VBA."
+        },
+        {
+            name: "Accrediated Scrum Master",
+            institution: "Scrum Alliance",
+            year: "2022",
+        },
+        {
+            name: "Accrediated Product Owner",
+            institution: "Scrum Alliance",
+            year: "2023",
+        },
+        {
+            name: "GDPR Training",
+            institution: "",
+            year: "2023",
+        },
+        {
+            name: "GCP Training",
+            institution: "",
+            year: "2020",
         }
     ],
     employmentHistory: [

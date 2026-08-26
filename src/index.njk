@@ -140,37 +140,62 @@ title: Home
   <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">Qualifications</h2>
   <div class="row g-4 mt-2">
     {% for qual in cv.qualifications %}
-      <div class="col-md-6">
-        <div class="card h-100 shadow-sm border-0">
-          <div class="card-body">
-            <div style="display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
-              {% if qual.logo %}
-                <img src="{{ qual.logo | url }}" alt="{{ qual.institution }}" class="timeline-logo">
-              {% endif %}
-              <div style="display: flex; flex-direction: column;">
-                <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ qual.degree }}</h3>
-                <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
+      {% if qual.degree %}
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm border-0">
+            <div class="card-body">
+              <div style="display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                {% if qual.logo %}
+                  <img src="{{ qual.logo | url }}" alt="{{ qual.institution }}" class="timeline-logo">
+                {% endif %}
+                <div style="display: flex; flex-direction: column;">
+                  <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ qual.degree }}</h3>
+                  <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
+                </div>
               </div>
+              <dl>
+                {% if qual.award %}
+                  <dt class="text-muted">Awarded</dt>
+                  <dd class="mb-3">{{ qual.award }}</dd>
+                {% endif %}
+                {% if qual.thesis %}
+                  <dt class="text-muted">Thesis</dt>
+                  <dd class="mb-3">{{ qual.thesis }}</dd>
+                {% endif %}
+              </dl>
+              {% if qual.link %}
+                <a href="{{ qual.link | url }}" class="stretched-link text-decoration-none text-body">
+                  <i class="bi bi-arrow-right text-white float-end"></i>
+                </a>
+              {% endif %}
             </div>
-            <dl>
-              {% if qual.award %}
-                <dt class="text-muted">Awarded</dt>
-                <dd class="mb-3">{{ qual.award }}</dd>
-              {% endif %}
-              {% if qual.thesis %}
-                <dt class="text-muted">Thesis</dt>
-                <dd class="mb-3">{{ qual.thesis }}</dd>
-              {% endif %}
-            </dl>
-            {% if qual.link %}
-              <a href="{{ qual.link | url }}" class="stretched-link text-decoration-none text-body">
-                <i class="bi bi-arrow-right text-white float-end"></i>
-              </a>
-            {% endif %}
           </div>
         </div>
-      </div>
+      {% endif %}
     {% endfor %}
+    
+    <div class="col-md-6">
+      <div class="h-100 border-0">
+        <div>
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+            {% for qual in cv.qualifications %}
+              {% if qual.name %}
+                <div class="cert-chip d-flex align-items-center gap-2 px-3 py-2 w-100">
+                  <div>
+                    <b class="fw-600" style="font-size: 0.9rem; line-height: 1.2;">{{ qual.name }}</b>
+                    {% if qual.institution %}
+                      <div class="text-muted" style="font-size: 0.75rem;">{{ qual.institution }} &bull; {{ qual.year }}</div>
+                    {% else %}
+                      <div class="text-muted" style="font-size: 0.75rem;">{{ qual.year }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        </div>
+    </div>
   </div>
 </section>
 

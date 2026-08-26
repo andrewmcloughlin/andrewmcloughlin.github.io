@@ -512,3 +512,17 @@ nav a.active {
   transform: translate(6px, -6px);
   background-color: var(--accent-color) !important;
 }
+/* Certificate chips */
+.cert-chip {
+  background: var(--bg-glass);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-chip:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--card-shadow-base);
+}
