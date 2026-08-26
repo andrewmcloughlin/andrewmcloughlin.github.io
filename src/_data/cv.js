@@ -59,7 +59,7 @@ module.exports = {
             logo: "images/logos/oml_logo.png",
             link: "https://www.owlstonemedical.com/",
             duration: "2018 - 2020",
-            description: "Leading the Clinicial Data Management Team and designing and building data collection tools for clinical trials."
+            description: "Leading the Clinicial Data Management Team and designing and building electronic data collection tools for clinical trials."
         },
         {
             role: "Senior Clinical Data Manager",
