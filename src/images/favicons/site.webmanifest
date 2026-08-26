@@ -1,0 +1,21 @@
+{
+  "name": "Andrew McLoughlin",
+  "short_name": "Andrew McLoughlin",
+  "description": "Personal site and portfolio for Andrew McLoughlin",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fe8246",
+  "theme_color": "#fe8246",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
