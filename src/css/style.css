@@ -4,7 +4,7 @@
   --bg-glass: rgba(30, 41, 59, 0.7);
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
-  --accent-color: #f8a73d;
+  --accent-color: #3ddcf8;
   --accent-glow: rgba(253, 193, 64, 0.5);
   --border-color: rgba(255, 255, 255, 0.1);
   --glass-blur: 12px;
@@ -16,7 +16,7 @@
   --bg-glass: rgba(255, 255, 255, 0.7);
   --text-primary: #0f172a;
   --text-secondary: #334155;
-  --accent-color: #f8a73d;
+  --accent-color: #3dccf8;
   --accent-glow: rgba(2, 132, 199, 0.5);
   --border-color: rgba(0, 0, 0, 0.1);
   --glass-blur: 12px;
@@ -29,7 +29,7 @@
     --bg-glass: rgba(255, 255, 255, 0.7);
     --text-primary: #0f172a;
     --text-secondary: #334155;
-    --accent-color: #f8a73d;
+    --accent-color: #3decf8;
     --accent-glow: rgba(2, 132, 199, 0.5);
     --border-color: rgba(0, 0, 0, 0.1);
     --glass-blur: 12px;
@@ -58,7 +58,8 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 300;
   background-color: var(--bg-color);
   color: var(--text-primary);
   line-height: 1.6;
@@ -101,10 +102,6 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
-  text-shadow: 0 0 8px var(--accent-glow);
-}
-
 /* Layout */
 header {
   background: var(--bg-color);
@@ -145,9 +142,16 @@ nav a.active {
   color: var(--text-primary);
 }
 
-.logo {
-  width: 5%;
-  height: 5%;
+.timeline-logo {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: block;
 }
 
 .fab {
@@ -361,7 +365,7 @@ nav a.active {
   content: '';
   position: absolute;
   left: calc(-2rem - 9px);
-  top: 1.5rem;
+  top: 3rem;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -383,10 +387,8 @@ nav a.active {
 }
 
 .gallery-img {
-  height: 200px;
+  height: 300px;
   width: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--card-shadow-base);
   object-fit: cover;
   transition: transform 0.3s ease;
   display: block;
@@ -403,6 +405,110 @@ nav a.active {
   }
 }
 
-.gallery-img:hover {
+.gallery-link:hover .gallery-img {
   transform: scale(1.05);
+}
+
+.gallery-link {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--card-shadow-base);
+}
+
+.gallery-link:hover {
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-glass);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 12px;
+}
+
+.gallery-link:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-title {
+  font-family: 'Mackinac', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding: 0 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width:-768px) {
+  .gallery-title {
+    font-size: 1rem;
+  }
+}
+
+.gallery-link:hover .gallery-title {
+  transform: translateY(0);
+}
+
+/* Project Cards */
+.project-card {
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .w-md-65 {
+    width: 65% !important;
+  }
+
+  .w-md-35 {
+    width: 35% !important;
+  }
+}
+
+.project-image-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-image {
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.02);
+}
+
+.project-title {
+  font-family: 'Mackinac', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.project-link-btn {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.project-card:hover .project-link-btn,
+.gallery-link:hover .project-link-btn {
+  transform: translate(6px, -6px);
+  background-color: var(--accent-color) !important;
 }

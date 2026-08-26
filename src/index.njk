@@ -4,19 +4,90 @@ title: Home
 ---
 
 <section id="home" class="spa-section text-center py-5">
-  <h1 class="display-4 fw-bold hero-title" style="font-family: 'Mackinac', serif;">Hi, I'm Andrew</h1>
-  <p class="lead text-secondary my-4">I am a full-stack developer of scientific software based in Cambridge, UK.</p>
-  <a href="#projects" class="btn btn-primary btn-lg mt-3 mb-5">View My Work</a>
+  <h1 class="display-6 fw-bold hero-title mb-4 pb-4" style="font-family: 'Mackinac', serif;">Hi,<br>I'm Andrew</h1>
+  <h1 class="display-4 fw-bold hero-title mb-4 pb-4" style="font-family: 'Mackinac', serif;">a full-stack developer<br>of scientific software</h1>
 
-  <div class="gallery-marquee-container mt-4 splide" id="gallery-carousel">
+  <div class="gallery-marquee-container mt-4 pt-4 splide" id="gallery-carousel">
     <div class="splide__track">
       <ul class="splide__list">
-        <li class="splide__slide"><img src="{{ '/images/gallery/atlas-web.png' | url }}" alt="Atlas Web" class="gallery-img"></li>
-        <li class="splide__slide"><img src="{{ '/images/gallery/disease-voc.png' | url }}" alt="Disease VOC" class="gallery-img"></li>
-        <li class="splide__slide"><img src="{{ '/images/gallery/omed.png' | url }}" alt="OMED" class="gallery-img"></li>
-        <li class="splide__slide"><img src="{{ '/images/gallery/voc-sphere.png' | url }}" alt="VOC Sphere" class="gallery-img"></li>
-        <li class="splide__slide"><img src="{{ '/images/gallery/voc.png' | url }}" alt="VOC" class="gallery-img"></li>
-        <li class="splide__slide"><img src="{{ '/images/gallery/actigraphy.png' | url }}" alt="Actigraphy" class="gallery-img"></li>
+        <li class="splide__slide">
+          <a href="{{ '/portfolio/atlas/' | url }}" class="gallery-link position-relative d-block">
+            <img src="{{ '/images/gallery/atlas-web.png' | url }}" alt="Atlas Web" class="gallery-img">
+            <div class="gallery-overlay p-4">
+              <span class="gallery-title mt-auto pt-4">VOC Atlas: a public web app for breath science</span>
+              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+                <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                  <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a href="{{ '/portfolio/atlas/' | url }}" class="gallery-link position-relative d-block">
+            <img src="{{ '/images/gallery/disease-voc.png' | url }}" alt="Disease VOC" class="gallery-img">
+            <div class="gallery-overlay p-4">
+              <span class="gallery-title mt-auto pt-4">Interactive mapping of VOC-disease relationships</span>
+              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+                <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                  <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a href="{{ '/portfolio/omed_app/' | url }}" class="gallery-link position-relative d-block">
+            <img src="{{ '/images/gallery/omed.png' | url }}" alt="OMED" class="gallery-img">
+            <div class="gallery-overlay p-4">
+              <span class="gallery-title mt-auto pt-4">OMED Health app screen designs & user flows</span>
+              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+                <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                  <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a href="{{ '/portfolio/atlas/' | url }}" class="gallery-link position-relative d-block">
+            <img src="{{ '/images/gallery/voc-sphere.png' | url }}" alt="VOC Sphere" class="gallery-img">
+            <div class="gallery-overlay p-4">
+              <span class="gallery-title mt-auto pt-4">Interactive marketing for VOC Atlas</span>
+              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+                <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                  <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a href="{{ '/portfolio/data_warehouse/' | url }}" class="gallery-link position-relative d-block">
+            <img src="{{ '/images/gallery/voc.png' | url }}" alt="VOC" class="gallery-img">
+            <div class="gallery-overlay p-4">
+              <span class="gallery-title mt-auto pt-4">Interactive 3D compound viewer</span>
+              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+                <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                  <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <li class="splide__slide">
+          <a href="{{ '/portfolio/tyto/' | url }}" class="gallery-link position-relative d-block">
+            <img src="{{ '/images/gallery/actigraphy.png' | url }}" alt="Actigraphy" class="gallery-img">
+            <div class="gallery-overlay p-4">
+              <span class="gallery-title mt-auto pt-4">Algorithms to learn actigraphy from actimetry data</span>
+              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+                <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                  <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
@@ -47,18 +118,20 @@ title: Home
   <h2 class="mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">Employment History</h2>
   <div class="timeline">
     {% for job in cv.employmentHistory %}
-      <div class="card timeline-item mb-4 shadow-sm border-0 bg-transparent">
-        <div class="card-body">
-          <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-            {% if job.logo %}
-              <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="logo me-2">
-            {% endif %}
-            <div style="display: flex; flex-direction: column;">
-              <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ job.role }}</h3>
-              <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
+      <div class="timeline-item">
+        <div class="card shadow-sm border-0 bg-transparent">
+          <div class="card-body">
+            <div style="display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+              {% if job.logo %}
+                <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="timeline-logo">
+              {% endif %}
+              <div style="display: flex; flex-direction: column;">
+                <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ job.role }}</h3>
+                <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
+              </div>
             </div>
+            <p class="card-text text-muted">{{ job.description }}</p>
           </div>
-          <p class="card-text">{{ job.description }}</p>
         </div>
       </div>
     {% endfor %}
@@ -70,9 +143,9 @@ title: Home
       <div class="col-md-6">
         <div class="card h-100 shadow-sm border-0">
           <div class="card-body">
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+            <div style="display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
               {% if qual.logo %}
-                <img src="{{ qual.logo | url }}" alt="{{ qual.company }}" class="logo me-2">
+                <img src="{{ qual.logo | url }}" alt="{{ qual.institution }}" class="timeline-logo">
               {% endif %}
               <div style="display: flex; flex-direction: column;">
                 <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ qual.degree }}</h3>
@@ -107,25 +180,29 @@ title: Home
     {% for item in collections.portfolio | reverse %}
       {% if item.data.pinned %}
         <div class="col-12">
-          <div class="card shadow-sm border-0 position-relative flex-md-row">
+          <div class="project-card position-relative d-flex flex-column flex-md-row gap-4 mb-5">
             {% if item.data.image %}
-              <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="card-img-top card-img-md-left" style="object-fit: cover; max-width: 100%;">
-            {% endif %}
-            <div class="card-body">
-              <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-                <span class="badge bg-secondary-outline text-secondary">
-                {% for tag in item.data.tags %}
-                  {% if tag != "portfolio" %}{{ tag }} {% endif %}
-                {% endfor %}
-                </span>
+              <div class="project-image-wrapper w-100 w-md-65">
+                <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="project-image w-100" style="object-fit: cover;">
               </div>
-              <h3 style="font-family: 'Mackinac', serif;"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
-              <p>{{ item.data.description }}</p>
+            {% endif %}
+            <div class="project-content d-flex flex-column w-100 w-md-35 py-md-3 pe-md-3">
+              <h3 class="project-title mb-3"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
+              <p class="text-secondary" style="font-size: 1.1rem;">{{ item.data.description }}</p>
+              
               {% if item.data.stack %}
-                {% for tool in item.data.stack %}
-                  <span class="badge bg-primary-subtle text-primary me-1">{{ tool }}</span>
-                {% endfor %}
+                <div class="mt-2 mb-4">
+                  {% for tool in item.data.stack %}
+                    <span class="badge bg-secondary-subtle text-secondary me-1">{{ tool }}</span>
+                  {% endfor %}
+                </div>
               {% endif %}
+              
+              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+                <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                  <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -135,34 +212,38 @@ title: Home
 
   <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">All Projects</h2>
   <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'all' }" @click="filter = 'all'">All</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'UI' }" @click="filter = 'UI'">UI Work</button>
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'">All</button>
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'UI' }"       @click="filter = 'UI'">UI Work</button>
     <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'">Software</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Other' }" @click="filter = 'Other'">Other</button>
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Other' }"    @click="filter = 'Other'">Other</button>
   </div>
 
   <div class="row g-4">
     {% for item in collections.portfolio | reverse %}
       <div class="col-12 portfolio-item" x-show="filter === 'all' || '{{ item.data.tags | join(' ') }}'.includes(filter)" x-transition.opacity.duration.400ms>
-        <div class="card h-100 shadow-sm border-0 position-relative flex-md-row">
+        <div class="project-card position-relative d-flex flex-column flex-md-row gap-4 mb-5">
           {% if item.data.image %}
-            <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="card-img-top" style="object-fit: cover; max-width: 100%;">
-          {% endif %}
-          <div class="card-body">
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-              <span class="badge bg-secondary-subtle text-secondary">
-              {% for tag in item.data.tags %}
-                {% if tag != "portfolio" %}{{ tag }} {% endif %}
-              {% endfor %}
-              </span>
+            <div class="project-image-wrapper w-100 w-md-65">
+              <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="project-image w-100" style="object-fit: cover;">
             </div>
-            <h3 style="font-family: 'Mackinac', serif;"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
-            <p>{{ item.data.description }}</p>
+          {% endif %}
+          <div class="project-content d-flex flex-column w-100 w-md-35 py-md-3 pe-md-3">
+            <h3 class="project-title mb-3"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
+            <p class="text-secondary" style="font-size: 1.1rem;">{{ item.data.description }}</p>
+            
             {% if item.data.stack %}
-              {% for tool in item.data.stack %}
-                <span class="badge bg-primary-subtle text-primary me-1">{{ tool }}</span>
-              {% endfor %}
+              <div class="mt-2 mb-4">
+                {% for tool in item.data.stack %}
+                  <span class="badge bg-secondary-subtle text-secondary me-1">{{ tool }}</span>
+                {% endfor %}
+              </div>
             {% endif %}
+            
+            <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+              <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
