@@ -4,7 +4,7 @@ description: "An interactive web application for exploring the world of Volatile
 layout: item.njk
 tags: ["portfolio", "UI", "Software"]
 pinned: true
-stack: ["Kubernetes", "Docker", "Python", "Django", "HTMX", "PostgreSQL", "Bootstrap", "RDKit"]
+stack: ["Kubernetes", "Docker", "Python", "Django", "HTMX", "htpy", "PostgreSQL", "Bootstrap", "RDKit"]
 image: /images/atlas.png
 ---
 
