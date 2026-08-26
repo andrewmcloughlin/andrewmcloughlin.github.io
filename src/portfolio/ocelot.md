@@ -1,6 +1,6 @@
 ---
 title: "Ocelot: A CLI for making forms"
-description: "A sleek, fast, and responsive UI theme built with glassmorphism."
+description: "A CLI tool for building and validating Case Report Forms (CRFs)."
 layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false

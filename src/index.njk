@@ -6,9 +6,9 @@ title: Home
 <section id="home" class="spa-section text-center align-items-center py-5">
   <div class="d-flex flex-column align-items-start justify-content-center">
     <div class="d-flex justify-content-start">
-      <h1 class="fs-5 fw-bold mb-4 pt-4 ps-4 pb-0" style="font-family: 'Mackinac', serif;">Hi, I'm Andrew,</h1>
+      <h1 class="fs-5 fw-bold mb-4 pt-4 ps-4 pb-0" style="font-family: var(--font-heading);">Hi, I'm Andrew,</h1>
     </div>
-    <h1 class="display-4 fw-bold hero-title mb-4 pt-0 pb-4 ps-4" style="font-family: 'Mackinac', serif;">a full-stack developer<br>of scientific software</h1>
+    <h1 class="display-4 fw-bold hero-title mb-4 pt-0 pb-4 ps-4" style="font-family: var(--font-heading);">a full-stack developer<br>of scientific software</h1>
   </div>
 
   <div class="gallery-marquee-container mt-4 pt-4 splide" id="gallery-carousel">
@@ -119,7 +119,7 @@ title: Home
 </script>
 
 <section id="cv" class="spa-section mb-5">
-  <h2 class="mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">Employment History</h2>
+  <h2 class="mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">Employment History</h2>
   <div class="timeline">
     {% for job in cv.employmentHistory %}
       <div class="timeline-item">
@@ -130,7 +130,7 @@ title: Home
                 <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="timeline-logo">
               {% endif %}
               <div style="display: flex; flex-direction: column;">
-                <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ job.role }}</h3>
+                <h3 class="card-title h4" style="font-family: var(--font-heading);">{{ job.role }}</h3>
                 <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
               </div>
             </div>
@@ -141,7 +141,7 @@ title: Home
     {% endfor %}
   </div>
 
-  <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">Qualifications</h2>
+  <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">Qualifications</h2>
   <div class="row g-4 mt-2">
     {% for qual in cv.qualifications %}
       {% if qual.degree %}
@@ -153,7 +153,7 @@ title: Home
                   <img src="{{ qual.logo | url }}" alt="{{ qual.institution }}" class="timeline-logo">
                 {% endif %}
                 <div style="display: flex; flex-direction: column;">
-                  <h3 class="card-title h4" style="font-family: 'Mackinac', serif;">{{ qual.degree }}</h3>
+                  <h3 class="card-title h4" style="font-family: var(--font-heading);">{{ qual.degree }}</h3>
                   <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
                 </div>
               </div>
@@ -204,7 +204,7 @@ title: Home
 </section>
 
 <section id="projects" class="spa-section mb-5" x-data="{ filter: 'all' }">
-  <h2 class="mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">Featured Work</h2>
+  <h2 class="mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">Featured Work</h2>
   <div class="row g-4 mt-2">
     {% for item in collections.portfolio | reverse %}
       {% if item.data.pinned %}
@@ -239,7 +239,7 @@ title: Home
     {% endfor %}
   </div>
 
-  <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: 'Mackinac', serif;">All Projects</h2>
+  <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">All Projects</h2>
   <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
     <button class="btn btn-outline-primary" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'">All</button>
     <button class="btn btn-outline-primary" :class="{ 'active': filter === 'UI' }"       @click="filter = 'UI'">UI Work</button>

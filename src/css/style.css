@@ -1,3 +1,7 @@
+:root {
+  --font-heading: 'Gallante', serif;
+}
+
 :root,
 [data-bs-theme="dark"] {
   --bg-color: #0f172a;
@@ -38,16 +42,9 @@
 }
 
 @font-face {
-  font-family: 'Mackinac';
-  src: url('../fonts/P22MackinacPro-Bold_16.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Mackinac';
-  src: url('../fonts/P22MackinacPro-Book_25.otf') format('opentype');
-  font-weight: 400;
+  font-family: 'Gallante';
+  src: url('../fonts/Gallante-AR1ap.otf') format('opentype');
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -93,7 +90,7 @@ h2 {
 }
 
 .hero-title {
-  font-family: 'Mackinac', serif;
+  font-family: var(--font-heading);
 }
 
 a {
@@ -442,7 +439,7 @@ nav a.active {
 }
 
 .gallery-title {
-  font-family: 'Mackinac', serif;
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -493,7 +490,7 @@ nav a.active {
 }
 
 .project-title {
-  font-family: 'Mackinac', serif;
+  font-family: var(--font-heading);
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 1.2;
@@ -512,6 +509,7 @@ nav a.active {
   transform: translate(6px, -6px);
   background-color: var(--accent-color) !important;
 }
+
 /* Certificate chips */
 .cert-chip {
   background: var(--bg-glass);
