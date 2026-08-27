@@ -1,5 +1,6 @@
 :root {
   --font-heading: 'P22 Mackinac', serif;
+  --font-body: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   /* --font-heading: 'Gallante', serif; */
 }
 
@@ -440,7 +441,7 @@ nav a.active {
 }
 
 .gallery-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--text-primary);
@@ -448,7 +449,6 @@ nav a.active {
   transition: transform 0.3s ease;
   text-align: center;
   padding: 0 1rem;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width:-768px) {
