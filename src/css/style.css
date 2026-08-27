@@ -374,6 +374,19 @@ nav a.active {
   z-index: 1;
 }
 
+.timeline-item.has-logo::before {
+  display: none;
+}
+
+.timeline-item .timeline-logo.timeline-logo-absolute {
+  position: absolute;
+  left: calc(-2rem - 25px);
+  top: 2rem;
+  z-index: 2;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
 .timeline-item:last-child {
   margin-bottom: 0;
 }
@@ -383,6 +396,8 @@ nav a.active {
   /* Provide Splide overflow mask to mimic the fade effect */
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .gallery-img {

@@ -122,13 +122,13 @@ title: Home
   <h2 class="mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">Employment History</h2>
   <div class="timeline">
     {% for job in cv.employmentHistory %}
-      <div class="timeline-item">
+      <div class="timeline-item {% if job.logo %}has-logo{% endif %}">
+        {% if job.logo %}
+          <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="timeline-logo timeline-logo-absolute">
+        {% endif %}
         <div class="card shadow-sm border-0 bg-transparent">
           <div class="card-body">
             <div style="display: flex; flex-wrap: nowrap; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
-              {% if job.logo %}
-                <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="timeline-logo">
-              {% endif %}
               <div style="display: flex; flex-direction: column;">
                 <h3 class="card-title h4" style="font-family: var(--font-heading);">{{ job.role }}</h3>
                 <h6 class="card-subtitle mb-3 text-primary">{{ job.company }} &bull; {{ job.duration }}</h6>
