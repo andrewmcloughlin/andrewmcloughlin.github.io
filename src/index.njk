@@ -249,6 +249,7 @@ title: Home
 
   <div class="row g-4">
     {% for item in collections.portfolio | reverse %}
+    {% if item.data.pinned == false %}
       <div class="col-12 portfolio-item" x-show="filter === 'all' || '{{ item.data.tags | join(' ') }}'.includes(filter)" x-transition.opacity.duration.400ms>
         <div class="project-card position-relative d-flex flex-column flex-md-row gap-4 mb-5">
           {% if item.data.image %}
@@ -276,6 +277,7 @@ title: Home
           </div>
         </div>
       </div>
+    {% endif %}
     {% endfor %}
   </div>
 </section>
