@@ -4,7 +4,7 @@ description: ""
 layout: item.njk
 tags: ["portfolio", "UI"]
 pinned: false
-stack: ["Figma"]
+featured_stack: ["Figma"]
 image: /images/omed.png
 ---
 

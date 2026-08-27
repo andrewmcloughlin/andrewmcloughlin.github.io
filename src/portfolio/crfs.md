@@ -4,7 +4,8 @@ description: "A library of 50+ modular, reusable and CDISC-compliant CRFs for cl
 layout: item.njk
 tags: ["portfolio", "Software", "UI"]
 pinned: false
-stack: ["Ocelot", "XLSForm", "OpenClinica", "CDISC"]
+featured_stack: ["OpenClinica", "CDISC"]
+other_stack: ["Ocelot", "XLSForm", "YAML", "TOML"]
 image: /images/crfs.png
 ---
 Case Report Forms (CRFs) are the backbone of clinical trials, used to collect data from patients.

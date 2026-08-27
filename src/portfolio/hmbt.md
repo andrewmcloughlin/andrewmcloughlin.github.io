@@ -4,7 +4,8 @@ description: "A web application for managing the fulfillment of orders."
 layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false
-stack: ["Docker", "Python", "Django", "HTMX", "PostgreSQL", "Bootstrap", "Metabase"]
+featured_stack: ["Python", "Django", "HTMX", "PostgreSQL", "Bootstrap"]
+other_stack: ["Docker", "Kubernetes", "Metabase", "RabbitMQ", "Celery"]
 image: /images/hmbt.png
 ---
 

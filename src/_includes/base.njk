@@ -57,7 +57,8 @@
         {% set navPrefix = "" if page.url == "/" else ("/" | url) %}
         <li class="nav-item"><a href="{{ navPrefix }}#home" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="{{ navPrefix }}#cv" class="nav-link">CV</a></li>
-        <li class="nav-item"><a href="{{ navPrefix }}#projects" class="nav-link">My Work</a></li>
+        <li class="nav-item"><a href="{{ navPrefix }}#projects" class="nav-link">Featured Projects</a></li>
+        <li class="nav-item"><a href="{{ '/projects/' | url }}" class="nav-link">All Projects</a></li>
       </ul>
       <button id="theme-toggle-mobile" class="btn btn-outline-secondary border-0 btn-sm ms-auto" aria-label="Toggle theme"><i class="fa-solid fa-moon theme-icon"></i></button>
     </nav>
@@ -74,7 +75,8 @@
         {% set navPrefix = "" if page.url == "/" else ("/" | url) %}
         <li class="nav-item"><a href="{{ navPrefix }}#home" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="{{ navPrefix }}#cv" class="nav-link">CV</a></li>
-        <li class="nav-item"><a href="{{ navPrefix }}#projects" class="nav-link">My Work</a></li>
+        <li class="nav-item"><a href="{{ navPrefix }}#projects" class="nav-link">Featured Projects</a></li>
+        <li class="nav-item"><a href="{{ '/projects/' | url }}" class="nav-link">All Projects</a></li>
       </ul>
       <div class="mt-auto pt-3">
         <button id="theme-toggle" class="btn btn-outline-secondary border-0 w-100" aria-label="Toggle theme"><i class="fa-solid fa-moon theme-icon"></i></button>

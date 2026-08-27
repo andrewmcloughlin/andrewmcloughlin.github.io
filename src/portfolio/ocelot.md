@@ -4,7 +4,8 @@ description: "A CLI tool for building and validating Case Report Forms (CRFs)."
 layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false
-stack: ["Python", "Click", "Pydantic", "XLSForm"]
+featured_stack: ["Python", "Click", "Pydantic"]
+other_stack: ["XLSForm", "YAML", "TOML", "HTML", "OpenClinica", "OpenRosa"]
 image: /images/ocelot.png
 ---
 

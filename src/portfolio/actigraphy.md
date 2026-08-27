@@ -4,7 +4,7 @@ description: "Development of algorithms to learn actigraphy from actimetry data.
 layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false
-stack: ["Matlab"]
+featured_stack: ["Matlab"]
 image: /images/actigraphy.png
 ---
 My first Master's thesis was to work on the Texas Instrument's hackable (MSP430 MCU)[https://www.itopen.it/the-hackable-watch-a-wearable-msp430-mcu/] watch to develop algorithms to learn activity (eg. walking, running, sleeping) from the accelerometer data.

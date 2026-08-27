@@ -203,7 +203,7 @@ title: Home
   </div>
 </section>
 
-<section id="projects" class="spa-section mb-5 fade-in delay-5" x-data="{ filter: 'all' }">
+<section id="projects" class="spa-section mb-5 fade-in delay-5">
   <h2 class="mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">Featured Work</h2>
   <div class="row g-4 mt-2">
     {% for item in collections.portfolio | reverse %}
@@ -218,15 +218,17 @@ title: Home
             <div class="project-content d-flex flex-column w-100 w-md-35 py-md-3 pe-md-3">
               <h3 class="project-title mb-3"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
               <p class="text-secondary" style="font-size: 1.1rem;">{{ item.data.description }}</p>
-              
-              {% if item.data.stack %}
+              {% if item.data.featured_stack %}
                 <div class="mt-2 mb-4">
-                  {% for tool in item.data.stack %}
+                  {% for tool in item.data.featured_stack %}
                     <span class="badge bg-secondary-subtle text-secondary me-1">{{ tool }}</span>
                   {% endfor %}
+                  {% if item.data.other_stack %}
+                    {% set count = item.data.other_stack | length %}
+                    <span class="badge bg-secondary-subtle text-secondary me-1">+{{ count }}</span>
+                  {% endif %}
                 </div>
               {% endif %}
-              
               <div class="mt-auto d-flex justify-content-end w-100 pt-3">
                 <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
                   <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
@@ -238,46 +240,8 @@ title: Home
       {% endif %}
     {% endfor %}
   </div>
-
-  <h2 class="mt-5 mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">All Projects</h2>
-  <div class="d-flex justify-content-center gap-2 mb-4 flex-wrap">
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'">All</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'UI' }"       @click="filter = 'UI'">UI Work</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'">Software</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Other' }"    @click="filter = 'Other'">Other</button>
-  </div>
-
-  <div class="row g-4">
-    {% for item in collections.portfolio | reverse %}
-    {% if item.data.pinned == false %}
-      <div class="col-12 portfolio-item" x-show="filter === 'all' || '{{ item.data.tags | join(' ') }}'.includes(filter)" x-transition.opacity.duration.400ms>
-        <div class="project-card position-relative d-flex flex-column flex-md-row gap-4 mb-5">
-          {% if item.data.image %}
-            <div class="project-image-wrapper w-100 w-md-65">
-              <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="project-image w-100" style="object-fit: cover;">
-            </div>
-          {% endif %}
-          <div class="project-content d-flex flex-column w-100 w-md-35 py-md-3 pe-md-3">
-            <h3 class="project-title mb-3"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
-            <p class="text-secondary" style="font-size: 1.1rem;">{{ item.data.description }}</p>
-            
-            {% if item.data.stack %}
-              <div class="mt-2 mb-4">
-                {% for tool in item.data.stack %}
-                  <span class="badge bg-secondary-subtle text-secondary me-1">{{ tool }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
-            
-            <div class="mt-auto d-flex justify-content-end w-100 pt-3">
-              <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
-                <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    {% endif %}
-    {% endfor %}
+  <div class="d-flex justify-content-end mt-2">
+    <a href="{{ '/projects/' | url }}" class="btn btn-outline-primary">See All Projects &rarr;</a>
   </div>
 </section>
+

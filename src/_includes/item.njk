@@ -11,10 +11,14 @@ layout: base.njk
               {% if tag != "portfolio" %}{{ tag }} {% endif %}
             {% endfor %}
           </span>
-          {% if stack %}
-            {% for tool in stack %}
+          {% if featured_stack %}
+            {% for tool in featured_stack %}
               <span class="badge bg-primary-outline text-primary">{{ tool }}</span>
             {% endfor %}
+          {% endif %}
+          {% if other_stack %}
+            {% set count = other_stack | length %}
+            <span class="badge bg-secondary-subtle text-secondary me-1">+{{ count }} others</span>
           {% endif %}
         </div>
         

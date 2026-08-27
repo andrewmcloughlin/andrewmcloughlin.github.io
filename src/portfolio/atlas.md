@@ -4,7 +4,8 @@ description: "An interactive web application for exploring the world of Volatile
 layout: item.njk
 tags: ["portfolio", "UI", "Software"]
 pinned: true
-stack: ["Kubernetes", "Docker", "Python", "Django", "HTMX", "htpy", "PostgreSQL", "Bootstrap", "RDKit"]
+featured_stack: ["Python", "Django", "HTMX", "htpy", "Bootstrap", "RDKit"]
+other_stack: ["Kubernetes", "Docker", "PostgreSQL"]
 image: /images/atlas.png
 ---
 
@@ -40,6 +41,10 @@ All compounds are stores as InChI strings in the database. The cool thing about 
 ### Biology
 
 Biology is messy. Originally we planned for Atlas to compare compounds across diseases, but we discovered that many of studies we used weren't using disease categories, but were comparing symptoms or healthy populations or biological processes, rather than diseases. This meant whatever system we used to classify these comparative groups had to flexible enough to accommodate this. Fortunately this is where ([SNOMED-CT](https://termbrowser.nhs.uk/)) comes in. It is a comprehensive clinical terminology that includes a wide range of medical concepts, including diseases, symptoms, and biological processes. More about that in the [CRF Library](/portfolio/crfs/) section.
+
+## GDPR & Anonymisation
+
+We were contractually obliged by the [Gates Foundation](https://www.gatesfoundation.org/) to share our findings publicly using FAIR data principles ([Findable, Accessible, Interoperable, and Reusable](https://www.go-fair.org/fair-principles/)), but we also had to ensure that the data was anonymised and GDPR compliant. This meant that we couldn't store any personal data in the database. We stored PII (Personally Identifiable Information) in a separate internal database and built an irreversible anonymisation step into the data ingestion pipeline. Thereby ensuring that the public facing database could never be linked to any individual.
 
 ## Impact
 
