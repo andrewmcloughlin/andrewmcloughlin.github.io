@@ -8,7 +8,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/files");
 
     return {
-        pathPrefix: isProduction ? "/portfolio/" : "/",
+        pathPrefix: "/",
         dir: {
             input: "src",
             output: "_site"
