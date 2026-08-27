@@ -3,7 +3,7 @@ title: "Fulfillments Application"
 description: "A web application for managing the fulfillment of orders."
 layout: item.njk
 tags: ["portfolio", "Software"]
-pinned: false
+pinned: true
 featured_stack: ["Python", "Django", "HTMX", "PostgreSQL", "Bootstrap"]
 other_stack: ["Docker", "Kubernetes", "Metabase", "RabbitMQ", "Celery"]
 image: /images/hmbt.png
