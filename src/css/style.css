@@ -397,7 +397,7 @@ nav a.active {
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+  transform: translateZ(0) !important;
 }
 
 .gallery-img {
