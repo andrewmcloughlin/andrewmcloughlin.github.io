@@ -1,0 +1,29 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }} - Portfolio
+
+> {{ site.description }}
+
+Author: {{ site.author.name }}
+Website: {{ site.url }}
+
+## About
+This file provides language models with a high-level overview of Andrew McLoughlin's personal portfolio site.
+
+Andrew McLoughlin is a full-stack developer specialising in scientific software.
+For more details about projects, experience, and contact information, please visit the main website.
+
+## Employment History
+{% for job in cv.employmentHistory %}
+- **{{ job.role }}** at {{ job.company }} ({{ job.duration }})
+  {{ job.description }}
+{% endfor %}
+
+## Qualifications
+{% for qual in cv.qualifications %}
+- **{{ qual.degree or qual.name }}** at {{ qual.institution }} ({{ qual.year }}){% if qual.award %}
+  - Award: {{ qual.award }}{% endif %}{% if qual.thesis %}
+  - Thesis: {{ qual.thesis }}{% endif %}
+{% endfor %}
