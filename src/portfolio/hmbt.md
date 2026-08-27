@@ -22,7 +22,6 @@ The system worked like a self-checkout: operations users would import today's fi
 This was a very quick greenfield project, built in django, htmx and postgres. To save time we embedded live Metabase dashboards to provide real-time insights into the fulfillment process.
 
 
-
 ## Challenges
 
 ### Integration with third party order management system
@@ -30,9 +29,9 @@ This was a very quick greenfield project, built in django, htmx and postgres. To
 The main challenge was integration with the third party order management system, which had no APIs and only offered XLSX exports with lots of freetext fields being used for categorical data. I build an idempotent importer which rigorously checked the schema. We used fuzzy matching of freetext against categories to guess what the user intended and if a perfect match was not obtained we presented the original free-text alongside our best-guess to the opeartions user to either confirm or correct.
 
 
-### Data Quality
+### Data are guilty until proven innocent
 
-Importing the historical data was a challenge. There was no validation on the spreadsheets, so we had to do a lot of data cleaning and transformation to get the data into a usable format. I identified an average of 5% of rows had some form of data quality issue, after the app, we tracked the number of issues over a 2 year period and not a single data quality issue was identified.
+Never assume data match your schema. The historical spreadsheets had no validation and were often missing data. We imputed data where appropriate and logged all errors. I used Pydantic to validate the data and ensure that it matched the schema. I identified an average of 5% of rows had some form of data quality issue, after the app, we tracked the number of issues over a 2 year period and not a single data quality issue was identified.
 
 
 

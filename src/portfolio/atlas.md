@@ -22,6 +22,10 @@ A django-based web application for exploring the world of Volatile Organic Compo
 
 You may have heard stories of [dogs that can smell diseases](https://www.bbc.com/news/health-60636541) or [the nurse who could smell Alzheimer's disease](https://www.bbc.com/news/uk-scotland-68537913). There is good biological prior to suggest that signals for diseases are present in the air we exhale and this theory is why [Owlstone Medical](https://www.owlstonemedical.com) was founded. The challenge however is that breath is full of noise from the food we eat, the environment we live in and the medications we take. The [VOC Atlas](https://www.vocatlas.com) is a collaborative tool to allow the breath research community to contribute breath data to attempt to find correlations between signals on breath and diseases.
 
+## Design Philosophy
+
+I was keen for Atlas to have an immutable database, so that we could always trace the provenance of the data. I designed the data models to be append-only with no risk of losing data. The only instance in which data might need to be amended is if a user withdraws consent for their data to be used or if PII is discovered in the dataset.
+
 
 ## Key Challenges
 

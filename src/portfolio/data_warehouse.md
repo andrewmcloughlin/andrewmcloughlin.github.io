@@ -23,6 +23,10 @@ Before the data warehouse, the company's data was stored in various silos, makin
 One of the biggest challenges was the variety of data sources we had to deal with. We had clinical data from various sources, laboratory data from various sources, and financial data from various sources. Each source had its own format and structure, making it difficult to integrate the data into a single repository. 
 
 
+## Design Philosophy
+
+Fast, graceful failures. When a pipeline fails, we favour outdated data over no data. I used Teams webhooks to notify us of failed jobs.
+
 
 ## My Solution
 
