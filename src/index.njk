@@ -5,13 +5,13 @@ title: Home
 
 <section id="home" class="spa-section text-center align-items-center py-5">
   <div class="d-flex flex-column align-items-start justify-content-center">
-    <div class="d-flex justify-content-start">
+    <div class="d-flex justify-content-start fade-in delay-1">
       <h1 class="fs-5 fw-bold mb-4 pt-4 ps-4 pb-0" style="font-family: var(--font-heading);">Hi, I'm Andrew,</h1>
     </div>
-    <h1 class="display-4 fw-bold hero-title mb-4 pt-0 pb-4 ps-4" style="font-family: var(--font-heading);">a full-stack developer<br>of scientific software</h1>
+    <h1 class="display-4 fw-bold hero-title mb-4 pt-0 pb-4 ps-4 fade-in delay-2" style="font-family: var(--font-heading);">a full-stack developer<br>of scientific software</h1>
   </div>
 
-  <div class="gallery-marquee-container mt-4 pt-4 splide" id="gallery-carousel">
+  <div class="gallery-marquee-container mt-4 pt-4 splide fade-in delay-3" id="gallery-carousel">
     <div class="splide__track">
       <ul class="splide__list">
         <li class="splide__slide">
@@ -118,7 +118,7 @@ title: Home
   });
 </script>
 
-<section id="cv" class="spa-section mb-5">
+<section id="cv" class="spa-section mb-5 fade-in delay-4">
   <h2 class="mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">Employment History</h2>
   <div class="timeline">
     {% for job in cv.employmentHistory %}
@@ -203,7 +203,7 @@ title: Home
   </div>
 </section>
 
-<section id="projects" class="spa-section mb-5" x-data="{ filter: 'all' }">
+<section id="projects" class="spa-section mb-5 fade-in delay-5" x-data="{ filter: 'all' }">
   <h2 class="mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">Featured Work</h2>
   <div class="row g-4 mt-2">
     {% for item in collections.portfolio | reverse %}
