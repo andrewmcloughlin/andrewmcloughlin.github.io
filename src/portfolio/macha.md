@@ -26,6 +26,7 @@ The same application was used by exterrnal and internal clinicians, internal ful
 
 As the company expanded into the US market, we needed to support multiple currencies, address formats, date formats and timezones. GDPR required that US data be stored in the US, while UK data be stored in the UK, so we would need separate instances of the application. We used `django-local-flavor` to handle the different address formats and set the region based on the subdomain.
 
+
 ### Code Ownership
 
 We found senior developers were getting bogged down in constant reviews. To address this, we used [CODEOWNERS](https://docs.gitlab.com/user/project/codeowners/) to ensure that only the appropriate team members could review and approve changes to the codebase. This also allows more junior developers to take ownership of the more simple or less risky django apps, freeing up senior developers to actually write code.

@@ -58,3 +58,20 @@ The VOC Atlas has been cited in over 10 publications to date and is used frequen
 ## My Role
 
 As the Product Owner and Lead Developer on this project, I was responsible for the entire lifecycle of the application, from conception to deployment and maintenance.
+
+
+## User Personas
+
+![User Personas](/images/article/atlas_user_personas.png)
+
+## Low Fidelity Wireframes
+
+![Low Fidelity Wireframes](/images/article/atlas_lowfi.png)
+
+## High Fidelity Mockups
+
+![High Fidelity Mockups](/images/article/atlas_highfi.png)
+
+## Reporting Slide Decks
+
+![Reporting Slide Decks](/images/article/atlas-slides.png)
