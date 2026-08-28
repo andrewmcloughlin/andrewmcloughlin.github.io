@@ -78,4 +78,4 @@ As the Product Owner and Lead Developer on this project, I was responsible for t
 
 ## Reporting Slide Decks
 
-![Reporting Slide Decks](/images/article/atlas-slides.png)
+![Reporting Slide Decks](/images/article/atlas_slides.png)
