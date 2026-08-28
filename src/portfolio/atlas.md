@@ -64,7 +64,7 @@ As the Product Owner and Lead Developer on this project, I was responsible for t
 
 ![User Personas](/images/article/atlas_user_personas.png)
 
-## Low Fidelity Wireframes
+## Low Fidelity Wireframes & User Flows
 
 ![Low Fidelity Wireframes](/images/article/atlas_lowfi.png)
 
