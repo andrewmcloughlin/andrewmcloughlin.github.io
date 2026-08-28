@@ -410,7 +410,7 @@ nav a.active {
 
 @media (max-width: 768px) {
   .gallery-img {
-    height: 120px;
+    height: 400px;
   }
 
   .gallery-marquee-container {
