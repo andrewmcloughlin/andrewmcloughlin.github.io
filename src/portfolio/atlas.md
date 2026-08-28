@@ -72,6 +72,10 @@ As the Product Owner and Lead Developer on this project, I was responsible for t
 
 ![High Fidelity Mockups](/images/article/atlas_highfi.png)
 
+## User Feedback
+
+![User Feedback](/images/article/atlas_user_feedback.png)
+
 ## Reporting Slide Decks
 
 ![Reporting Slide Decks](/images/article/atlas-slides.png)
