@@ -31,3 +31,6 @@ As the company expanded into the US market, we needed to support multiple curren
 
 We found senior developers were getting bogged down in constant reviews. To address this, we used [CODEOWNERS](https://docs.gitlab.com/user/project/codeowners/) to ensure that only the appropriate team members could review and approve changes to the codebase. This also allows more junior developers to take ownership of the more simple or less risky django apps, freeing up senior developers to actually write code.
 
+## Integrations
+
+I wrote API endpoints for integration with an internal calibration service. I wrote GET and POST endpoints (avoiding mutable PUT/PATCH ones) to keep the database append-only.
