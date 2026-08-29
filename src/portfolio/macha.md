@@ -2,7 +2,7 @@
 title: "Clinician's Web Portal"
 description: "A web portal for clinicians to manage their patients, patient pathways, order tests, view results and record diagnoses."
 layout: item.njk
-tags: ["portfolio", "Software", "UI"]
+tags: ["portfolio", "Software"]
 pinned: true
 featured_stack: ["Python", "Django", "django-ninja", "Alpine.js", "Bootstrap"]
 other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Stripe", "Salesforce", "GDPR", "django-local-flavor"]

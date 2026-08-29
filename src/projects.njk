@@ -4,23 +4,27 @@ title: All Projects
 description: Browse all projects by Andrew McLoughlin, filtered by technology stack or category.
 ---
 
-<section class="spa-section mb-5" x-data="{ filter: 'all' }">
+<section class="spa-section mb-5" x-data="{ filter: 'all', stackFilter: '' }">
   <h2 class="mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">All Projects</h2>
 
   <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'">All</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'UI' }"       @click="filter = 'UI'">UI Work</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'">Software</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Other' }"    @click="filter = 'Other'">Other</button>
-    <span class="text-muted" style="opacity: 0.4; font-size: 1.2rem; line-height: 1;">|</span>
-    {% for stackItem in collections.stackItems %}
-      <button class="btn btn-outline-secondary" :class="{ 'active': filter === '{{ stackItem }}' }" @click="filter = '{{ stackItem }}'">{{ stackItem }}</button>
-    {% endfor %}
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Product' }"       @click="filter = 'Product'; stackFilter = ''">Product</button>
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'; stackFilter = ''">Software</button>
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Data' }" @click="filter = 'Data'; stackFilter = ''">Data</button>
+    <template x-if="filter === 'Software'">
+      <div class="d-flex align-items-center gap-2 flex-wrap">
+        <span class="text-muted" style="opacity: 0.4; font-size: 1.2rem; line-height: 1;">|</span>
+        {% for stackItem in collections.stackItems %}
+          <button class="btn btn-outline-secondary" :class="{ 'active': stackFilter === '{{ stackItem }}' }" @click="stackFilter = stackFilter === '{{ stackItem }}' ? '' : '{{ stackItem }}'">{{ stackItem }}</button>
+        {% endfor %}
+      </div>
+    </template>
   </div>
 
   <div class="row g-4">
     {% for item in collections.portfolio | reverse %}
-        <div class="col-12 portfolio-item" x-show="filter === 'all' || '{{ item.data.tags | join(',') }}'.split(',').includes(filter) || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(filter)" x-transition.opacity.duration.400ms>
+        <div class="col-12 portfolio-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
           <div class="project-card position-relative d-flex flex-column flex-md-row gap-4 mb-5">
             {% if item.data.image %}
               <div class="project-image-wrapper w-100 w-md-65">

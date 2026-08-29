@@ -2,7 +2,7 @@
 title: "Data Warehouse"
 description: "Designed, built and maintained a data warehouse for clinical, laboratory and financial data."
 layout: item.njk
-tags: ["portfolio", "Software"]
+tags: ["portfolio", "Data"]
 pinned: true
 featured_stack: ["Airflow", "dbt", "Airbyte", "Metabase", "GCP", "SQL"]
 other_stack: ["PostgreSQL", "Google Looker Studio"]
