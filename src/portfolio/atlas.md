@@ -54,7 +54,7 @@ I kept relevant stakeholders in the loop at every round, integrating their feedb
 
 ![Reporting Slide Decks](/images/article/atlas_slides.png)
 
-Part of this role involved presenting updates to the Gates Foundation every month. This included updates on roadmap progress, user feedback, user adoption and new features. 
+Part of this role involved presenting updates to the Gates Foundation every month. This included updates on roadmap progress, user feedback, user adoption and new features.
 
 
 # Data Engineering
@@ -66,9 +66,17 @@ I was keen for Atlas to have an immutable database, so that we could always trac
 
 ## Key Challenges
 
-Chemistry is complex and biology is messy. Trying to model the subtleties of chemistry (especially the limits of our detection capabilities) and trying to model the ontogology of human diseases proved to be a significant challenge.
 
-As my first public facing product, I was keen to ensure that the application was accessible and easy to use. This led to the decision to use HTMX and Bootstrap to create a modern and responsive user interface.
+### Modelling Biochemistry
+
+![Entity Relationship Diagram](/images/article/atlas_erd.png)
+
+Chemistry is complex and biology is messy. Trying to model the subtleties of chemistry (especially the limits of our detection capabilities) and trying to model the ontology of human diseases proved to be a significant challenge. We opted to explicitly model the ambiguity of chemical structures inherent in the data, which saved a lot of questions downstream about our capabilities.
+
+
+### User Interface
+
+As Owlstone's first public facing product, I was keen to ensure that the application was accessible and easy to use. This led to the decision to use HTMX and Bootstrap to create a modern and responsive user interface. This was a significant departure from the internal tools I had built previously, which were primarily internal tools for data scientists and clinicians.
 
 
 ### Legal
