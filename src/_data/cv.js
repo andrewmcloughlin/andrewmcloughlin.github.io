@@ -48,7 +48,7 @@ module.exports = {
         {
             role: "Senior Data Engineer & Product Owner",
             company: "Owlstone Medical",
-            logo: "images/logos/oml_logo.png",
+            logo: "/images/logos/oml_logo.png",
             link: "https://www.owlstonemedical.com/",
             duration: "2020 - Present",
             description: "Building data pipelines and data infrastructure for clinical trials."
@@ -56,7 +56,7 @@ module.exports = {
         {
             role: "Senior Clinical Data Manager",
             company: "Owlstone Medical",
-            logo: "images/logos/oml_logo.png",
+            logo: "/images/logos/oml_logo.png",
             link: "https://www.owlstonemedical.com/",
             duration: "2018 - 2020",
             description: "Leading the Clinicial Data Management Team and designing and building electronic data collection tools for clinical trials."
@@ -64,14 +64,14 @@ module.exports = {
         {
             role: "Senior Clinical Data Manager",
             company: "Optimum Patient Care",
-            logo: "images/logos/opc_logo.png",
+            logo: "/images/logos/opc_logo.png",
             duration: "2015 - 2017",
             description: "Leading the Clinicial Data Management Team and designing and building data collection tools for clinical trials."
         },
         {
             role: "Clinical Data Manager",
             company: "Optimum Patient Care",
-            logo: "images/logos/opc_logo.png",
+            logo: "/images/logos/opc_logo.png",
             duration: "2013 - 2015",
             description: "Building data collection tools for clinical trials."
         },
