@@ -75,7 +75,9 @@ Chemistry is complex and biology is messy. Trying to model the subtleties of che
 
 ## Automating Manual Data Entry
 
-We found scientists using the Atlas were spending a lot of time manually entering data about literature. This was a time consuming and error prone process. I decided to use the [CrossRef API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) to automate this process. This was a significant improvement in terms of user experience and data quality, as users only needed to enter the DOI of the paper and the rest of the data was automatically populated. However, as CrossRef occassionally returned malformed data, we presented the retrieved data in a form that the user could edit before saving, which allowed them to correct any errors.
+We found scientists using the Atlas were spending a lot of time manually entering data about literature. This was a time consuming and error prone process. I decided to use the [CrossRef API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) to automate this process, such that literature details (title, authors, journal, abstract etc.) could be populated from just the DOI of the paper. However, as CrossRef occassionally returns malformed data, we presented the retrieved data in a form that the user could edit before saving, which allowed them to correct any errors. This process saved internal scientists hours of tedious work per week.
+
+Following internal restructuring, we had to find ways to fully automate this process. I used [Elicit's API](https://docs.elicit.com/) to extract the relevant information from the papers and populate the database. This was a significant improvement over the previous process.
 
 ### User Interface
 
