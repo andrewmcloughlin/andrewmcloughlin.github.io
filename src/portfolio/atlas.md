@@ -73,6 +73,9 @@ I was keen for Atlas to have an immutable database, so that we could always trac
 
 Chemistry is complex and biology is messy. Trying to model the subtleties of chemistry (especially the limits of our detection capabilities) and trying to model the ontology of human diseases proved to be a significant challenge. We opted to explicitly model the ambiguity of chemical structures inherent in the data, which saved a lot of questions downstream about our capabilities.
 
+## Automating Manual Data Entry
+
+We found scientists using the Atlas were spending a lot of time manually entering data about literature. This was a time consuming and error prone process. I decided to use the [CrossRef API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) to automate this process. This was a significant improvement in terms of user experience and data quality, as users only needed to enter the DOI of the paper and the rest of the data was automatically populated. However, as CrossRef occassionally returned malformed data, we presented the retrieved data in a form that the user could edit before saving, which allowed them to correct any errors.
 
 ### User Interface
 
