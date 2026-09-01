@@ -5,7 +5,7 @@ layout: item.njk
 tags: ["portfolio", "Product", "Software", "Data"]
 pinned: true
 featured_stack: ["Python", "Django", "HTMX", "htpy", "Bootstrap", "RDKit"]
-other_stack: ["Kubernetes", "Docker", "PostgreSQL"]
+other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Elicit API", "CrossRef API", "Figma", "Excalidraw", "Google Analytics", "Umami", "SMILES.drawer"]
 image: /images/atlas.png
 ---
 
@@ -30,6 +30,26 @@ You may have heard stories of [dogs that can smell diseases](https://www.bbc.com
 
 # Product Ownership
 
+## Definition of Success
+
+Owlstone's USP is thaqt our breatjomics data are validated and quantified. No other company (and few academic groups) can claim this at a scale of hundreds of VOCs. The best way to demonstrate this is to make our data available to the wider breath research community to allow them to see the quality of our data and in doing so stregthen our Breath Biopsy brand and encourage partnerships.
+
+The definition of success is therefor two-fold:
+
+1. Establish the Breath Biopsy brand as the go-to platform for breath research
+2. Encourage collaboration and data sharing within the breath research community
+
+Success can be quantified by tracking:
+- the number of active users,
+- the number of citations,
+- the number of collaborations brought in as a result of the platform.
+
+The VOC Atlas has nearly 3000 users, >500 user submissions and has been cited in 10 research papers in the 3 years since launch. It has also been used as a platform for several collaborations between Owlstone and academic groups, although this is harder to quantify.
+
+## Competitive Analysis
+
+Atlas is a unique product, to date no other platform exists that allows for the collaborative sharing of breath data, because no other company can replicate our platform. So, from the software standpoint we have no threats from a competitive standpoint. That doesn't mean that we can't learn from other platforms. I performed a competitive analysis of other chemical and biological data sharing platforms to understand what they do well and what they do poorly. I explored platforms such as PubChem, ChEMBL, DrugBank, the Human Metabolome Database, and the Human Protein Atlas. Many competitors were academic platforms that did not have professional software development teams, and it showed. They were often slow, difficult to navigate and lacked modern interfaces; this was an area in which we could easily differentiate ourselves and acheive our goal of establishing the Breath Biopsy brand as the go-to platform for breath research. I looked at how data are presented, what filtering and search capabilities they offer and how they handle data provenance and versioning. This competitor analysis prevented us from re-inventing the wheel and allowed us to discover and take advantage of ChEBI's API to pull in chemical structure information.
+
 ## User Personas
 
 ![User Personas](/images/article/atlas_user_personas.png)
@@ -50,12 +70,29 @@ I moved iteratively from whiteboard scribbles to low-fidelity mockups, to quick 
 
 I kept relevant stakeholders in the loop at every round, integrating their feedback with technical limitations and opportunities.
 
+## Writing Tickets
+
+I wrote all tickets for the project in Jira using Gherkion syntax to ensure that the requirements were clear and unambiguous. Every tickets was linked back to User Personas and had clean acceptance criteria. This meant that there was no ambiguity for the developers and we could move quickly.
+
+## Backlog Management
+
+As AGILE development team we wanted to get an MVP out as quickly as possible. As the product was initally internal, we prioritised shipping features and quick iterations over perfecting them. While this did mean occassionally refactoring and even reversing decisions, it kept up momentum and excitement as stakeholders could see their ideas being realised every 2 weeks. During this phase of the project we used MoSCOW to prioritise features.
+
+As the product matured and gained buy-in we demo'ed the product to the Gates Foundation and selected key opinion leaders in the field. On the basis of their feedback we deicded to deploy the Atlas as a public platform. This meant that we had to be more considered in our approach to feature development and we switched to using RICE to prioritise features going forwards.
+
 ## Reporting Slide Decks
 
 ![Reporting Slide Decks](/images/article/atlas_slides.png)
 
 Part of this role involved presenting updates to the Gates Foundation every month. This included updates on roadmap progress, user feedback, user adoption and new features.
 
+{# ## Key Challenges
+
+// going live
+
+// UI micromanagement
+
+// Legal vs FAIR #}
 
 # Data Engineering
 
@@ -94,7 +131,7 @@ All compounds are stores as InChI strings in the database. The cool thing about 
 
 ### Biology
 
-Biology is messy. Originally we planned for Atlas to compare compounds across diseases, but we discovered that many of studies we used weren't using disease categories, but were comparing symptoms or healthy populations or biological processes, rather than diseases. This meant whatever system we used to classify these comparative groups had to flexible enough to accommodate this. Fortunately this is where ([SNOMED-CT](https://termbrowser.nhs.uk/)) comes in. It is a comprehensive clinical terminology that includes a wide range of medical concepts, including diseases, symptoms, and biological processes. More about that in the [CRF Library](/portfolio/crfs/) section.
+Biology is messy. Originally we planned for Atlas to compare compounds across diseases, but we discovered that many of studies we used weren't using disease categories, but were comparing symptoms or healthy populations or biological processes, rather than diseases. This meant whatever system we used to classify these comparative groups had to flexible enough to accommodate this. Fortunately this is where [SNOMED-CT](https://termbrowser.nhs.uk/) comes in. It is a comprehensive clinical terminology that includes a wide range of medical concepts, including diseases, symptoms, and biological processes. More about that in the [CRF Library](/portfolio/crfs/) section.
 
 ## Privacy
 

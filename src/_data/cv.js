@@ -6,7 +6,10 @@ module.exports = {
             link: "https://www.postgradschl.lifesci.cam.ac.uk/research-themes-1/Epidem",
             year: "2015 - 2016",
             award: "MRC Postgraduate Scholarship",
-            thesis: "Investigating the relationship between cardiovascular risk factors and cardiovascular disease in the EPIC-Norfolk cohort."
+            thesis: (
+                "Thesis 1: 'Prevalence of Classic Phenylketonuria in Europe'"
+                + "Thesis 2: 'Systematic Literature Review of the Effect of FEV1 on Risk of Cardiovascular Disease'"
+            )
         },
         {
             degree: "MSc Computational Systems Biology",
@@ -14,7 +17,10 @@ module.exports = {
             link: "https://warwick.ac.uk/fac/sci/systemsbiology/",
             year: "2014 - 2015",
             award: "Systems Biology Studentship",
-            thesis: "Developing signal processing algorithms for actimetry data from a smart watch."
+            thesis: (
+                "Coursework: Developing signal processing algorithms for actimetry data from a smart watch."
+                + "Numerical methods and statistics for analysing large scale data in R, simulation and modelling methods (ODEs, Markov-chain, Monte-Carlo) in Matlab."
+            )
         },
         {
             degree: "BSc Biomedical Science",
