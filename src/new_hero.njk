@@ -134,13 +134,13 @@ title: Home
     {% endfor %}
   </div>
     <h2 class="mt-5 mb-4 pb-2 border-bottom font-heading">Qualifications</h2>
-  <div class="row g-4 mt-2">
+  <div class="timeline">
     {% for qual in cv.qualifications %}
       {% if qual.degree %}
         {% include "components/qual-item.njk" %}
       {% endif %}
     {% endfor %}
-    
+    </div>
     <div class="col-md-6">
       <div class="h-100 border-0">
         <div>

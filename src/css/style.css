@@ -319,7 +319,7 @@ nav a.active {
   content: '';
   position: absolute;
   left: calc(-2rem - 9px);
-  top: 3rem;
+  top: 1.5rem;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -336,7 +336,7 @@ nav a.active {
 .timeline-item .timeline-logo.timeline-logo-absolute {
   position: absolute;
   left: calc(-2rem - 25px);
-  top: 2rem;
+  top: 1rem;
   z-index: 2;
   box-shadow: 0 0 10px var(--accent-glow);
 }

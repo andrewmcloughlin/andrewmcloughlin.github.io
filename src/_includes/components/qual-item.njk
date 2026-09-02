@@ -1,29 +1,49 @@
-<div class="col-md-6">
-  <div class="card h-100 shadow-sm border-0">
-    <div class="card-body">
+<div class="timeline-item {% if qual.logo %}has-logo{% endif %}">
+  {% if qual.logo %}
+    <img src="{{ qual.logo | url }}" alt="{{ qual.institution }}" class="timeline-logo timeline-logo-absolute">
+  {% endif %}
+  <div class="card shadow-sm border-0 bg-white text-start">
+    <div class="card-body py-2 px-3">
       <div class="cv-row">
-        {% if qual.logo %}
-          <img src="{{ qual.logo | url }}" alt="{{ qual.institution }}" class="timeline-logo">
-        {% endif %}
-        <div class="cv-col">
-          <h3 class="card-title h4 font-heading">{{ qual.degree }}</h3>
-          <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
+        <div class="cv-col w-100">
+          <div class="d-flex justify-content-between align-items-start mt-2">
+            <div>
+              <h3 class="card-title h4 font-heading mb-1">
+                {% if qual.link %}
+                  <a href="{{ qual.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-body-secondary d-inline-flex align-items-center">
+                    {{ qual.degree }} <i class="fa-solid fa-arrow-up-right-from-square opacity-50 text-xs ms-2"></i>
+                  </a>
+                {% else %}
+                  {{ qual.degree }}
+                {% endif %}
+              </h3>
+              <h6 class="card-subtitle mt-1 mb-3 text-body-secondary text-uppercase fw-medium letter-spacing-wide">
+                {{ qual.institution }}
+              </h6>
+            </div>
+            <div class="text-end text-body-secondary fw-medium text-nowrap ms-3 mt-1">{{qual.year}}</div>
+          </div>
         </div>
       </div>
-      <dl>
+      <dl class="mb-1">
         {% if qual.award %}
-          <dt class="text-muted">Awarded</dt>
-          <dd class="mb-3">{{ qual.award }}</dd>
+          <dt class="text-muted fw-medium">Awarded</dt>
+          <dd class="mb-2 text-muted">{{ qual.award }}</dd>
         {% endif %}
         {% if qual.thesis %}
-          <dt class="text-muted">Thesis</dt>
-          <dd class="mb-3">{{ qual.thesis }}</dd>
+          <dt class="text-muted fw-medium">Thesis</dt>
+          <dd class="mb-2 text-muted">{{ qual.thesis }}</dd>
         {% endif %}
       </dl>
-      {% if qual.link %}
-        <a href="{{ qual.link | url }}" class="stretched-link text-decoration-none text-body">
-          <i class="bi bi-arrow-right text-white float-end"></i>
-        </a>
+      {% if qual.theses %}
+        <div class="text-muted mb-2">
+        {% for thesis in qual.theses %}
+           <p class="mb-1">{{ thesis }}</p>
+        {% endfor %}
+        </div>
+      {% endif %}
+      {% if qual.description %}
+        <p class="card-text text-muted mb-0">{{ qual.description }}</p>
       {% endif %}
     </div>
   </div>
