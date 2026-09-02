@@ -9,9 +9,9 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 
   <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
     <button class="btn btn-outline-primary" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Product' }"       @click="filter = 'Product'; stackFilter = ''">Product</button>
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Product' }"  @click="filter = 'Product'; stackFilter = ''">Product</button>
     <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'; stackFilter = ''">Software</button>
-    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Data' }" @click="filter = 'Data'; stackFilter = ''">Data</button>
+    <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button>
     <template x-if="filter === 'Software'">
       <div class="d-flex align-items-center gap-2 flex-wrap">
         <span class="text-muted" style="opacity: 0.4; font-size: 1.2rem; line-height: 1;">|</span>
@@ -46,7 +46,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
                 </div>
               {% endif %}
               <div class="mt-auto d-flex justify-content-end w-100 pt-3">
-                <div class="project-link-btn d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm">
+                <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm" style="width: 48px; height: 48px; flex-shrink: 0;">
                   <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
                 </div>
               </div>

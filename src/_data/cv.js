@@ -3,32 +3,39 @@ module.exports = {
         {
             degree: "MPhil Cardiovascular Epidemiology",
             institution: "University of Cambridge",
+            logo: "/images/logos/UoC_logo.png",
             link: "https://www.postgradschl.lifesci.cam.ac.uk/research-themes-1/Epidem",
-            year: "2015 - 2016",
+            year: "2013",
             award: "MRC Postgraduate Scholarship",
-            thesis: (
-                "Thesis 1: 'Prevalence of Classic Phenylketonuria in Europe'"
-                + "Thesis 2: 'Systematic Literature Review of the Effect of FEV1 on Risk of Cardiovascular Disease'"
-            )
+            theses: [
+                "Prevalence of Classic Phenylketonuria in Europe",
+                "Systematic Literature Review of the Effect of FEV1 on Risk of Cardiovascular Disease"
+            ]
         },
         {
             degree: "MSc Computational Systems Biology",
             institution: "University of Warwick",
+            logo: "/images/logos/UoW_logo.png",
             link: "https://warwick.ac.uk/fac/sci/systemsbiology/",
-            year: "2014 - 2015",
+            year: "2012",
             award: "Systems Biology Studentship",
-            thesis: (
+            theses: [
                 "Coursework: Developing signal processing algorithms for actimetry data from a smart watch."
-                + "Numerical methods and statistics for analysing large scale data in R, simulation and modelling methods (ODEs, Markov-chain, Monte-Carlo) in Matlab."
-            )
+            ],
+            description: "Numerical methods and statistics for analysing large scale data in R, simulation and modelling methods (ODEs, Markov-chain, Monte-Carlo) in Matlab."
         },
         {
             degree: "BSc Biomedical Science",
             institution: "University of Warwick",
-            year: "2011 - 2014",
+            logo: "/images/logos/UoW_logo.png",
+            year: "2011",
             award: "2:1 honours",
-            thesis: "The Metabolism Browser an interactive tool for exploring metabolic pathways built in VBA."
+            theses: [
+                "The Metabolism Browser an interactive tool for exploring metabolic pathways built in VBA."
+            ]
         },
+    ],
+    certificates: [
         {
             name: "Accrediated Scrum Master",
             institution: "Scrum Alliance",
