@@ -5,7 +5,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 ---
 
 <section class="spa-section mb-5" x-data="{ filter: 'all', stackFilter: '' }">
-  <h2 class="mb-4 pb-2 border-bottom" style="font-family: var(--font-heading);">All Projects</h2>
+  <h2 class="mb-4 pb-2 border-bottom font-heading">All Projects</h2>
 
   <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
     <button class="btn btn-outline-primary" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
@@ -14,7 +14,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
     <button class="btn btn-outline-primary" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button>
     <template x-if="filter === 'Software'">
       <div class="d-flex align-items-center gap-2 flex-wrap">
-        <span class="text-muted" style="opacity: 0.4; font-size: 1.2rem; line-height: 1;">|</span>
+        <span class="text-muted text-separator">|</span>
         {% for stackItem in collections.stackItems %}
           <button class="btn btn-outline-secondary" :class="{ 'active': stackFilter === '{{ stackItem }}' }" @click="stackFilter = stackFilter === '{{ stackItem }}' ? '' : '{{ stackItem }}'">{{ stackItem }}</button>
         {% endfor %}
@@ -28,12 +28,12 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
           <div class="project-card position-relative d-flex flex-column flex-md-row gap-4 mb-5">
             {% if item.data.image %}
               <div class="project-image-wrapper w-100 w-md-65">
-                <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="project-image w-100" style="object-fit: cover;">
+                <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="project-image w-100 object-fit-cover">
               </div>
             {% endif %}
             <div class="project-content d-flex flex-column w-100 w-md-35 py-md-3 pe-md-3">
               <h3 class="project-title mb-3"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
-              <p class="text-secondary" style="font-size: 1.1rem;">{{ item.data.description }}</p>
+              <p class="text-secondary fs-5">{{ item.data.description }}</p>
               {% if item.data.featured_stack %}
                 <div class="mt-2 mb-4">
                   {% for tool in item.data.featured_stack %}
@@ -46,8 +46,8 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
                 </div>
               {% endif %}
               <div class="mt-auto d-flex justify-content-end w-100 pt-3">
-                <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm" style="width: 48px; height: 48px; flex-shrink: 0;">
-                  <i class="fa-solid fa-arrow-right" style="transform: rotate(-45deg);"></i>
+                <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm icon-arrow-circle">
+                  <i class="fa-solid fa-arrow-right icon-arrow-rotated"></i>
                 </div>
               </div>
             </div>

@@ -51,13 +51,12 @@
 </head>
 <body data-bs-spy="scroll" data-bs-target="#sideNav" data-bs-offset="80" tabindex="0">
   <header>
-    <!-- Mobile / small-screen top navbar -->
-    <nav class="d-lg-none mobile-topnav" id="topNav">
+    <nav class="mobile-topnav" id="topNav">
       <ul class="nav nav-pills justify-content-center" id="mobileScrollNav">
         {% set navPrefix = "" if page.url == "/" else ("/" | url) %}
         <li class="nav-item"><a href="{{ navPrefix }}#home" class="nav-link">Home</a></li>
-        {# <li class="nav-item"><a href="{{ navPrefix }}#cv" class="nav-link">CV</a></li>
-        <li class="nav-item"><a href="{{ navPrefix }}#projects" class="nav-link">Featured Projects</a></li> #}
+        <li class="nav-item"><a href="{{ navPrefix }}#cv" class="nav-link">CV</a></li>
+        <li class="nav-item"><a href="{{ navPrefix }}#projects" class="nav-link">Featured Projects</a></li>
         <li class="nav-item"><a href="{{ '/projects/' | url }}" class="nav-link">My Work</a></li>
       </ul>
       <button id="theme-toggle-mobile" class="btn btn-outline-secondary border-0 btn-sm ms-auto" aria-label="Toggle theme"><i class="fa-solid fa-moon theme-icon"></i></button>
@@ -65,20 +64,6 @@
   </header>
 
   <div class="spa-wrapper">
-    <!-- Large-screen sidebar scrollspy nav -->
-    <nav id="sideNav" class="d-none d-lg-flex flex-column sidebar-nav">
-      <ul class="nav flex-column nav-pills mb-auto" id="sideScrollNav">
-        {% set navPrefix = "" if page.url == "/" else ("/" | url) %}
-        <li class="nav-item"><a href="{{ navPrefix }}#home" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="{{ navPrefix }}#cv" class="nav-link">CV</a></li>
-        <li class="nav-item"><a href="{{ navPrefix }}#projects" class="nav-link">Featured Projects</a></li>
-        <li class="nav-item"><a href="{{ '/projects/' | url }}" class="nav-link">My Work</a></li>
-      </ul>
-      <div class="mt-auto pt-3">
-        <button id="theme-toggle" class="btn btn-outline-secondary border-0 w-100" aria-label="Toggle theme"><i class="fa-solid fa-moon theme-icon"></i></button>
-      </div>
-    </nav>
-
     <main class="spa-main flex-grow-1">
       {{ content | safe }}
     </main>
