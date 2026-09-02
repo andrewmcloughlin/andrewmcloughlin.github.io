@@ -1,0 +1,25 @@
+<div class="timeline-item {% if job.logo %}has-logo{% endif %}">
+  {% if job.logo %}
+    <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="timeline-logo timeline-logo-absolute">
+  {% endif %}
+  <div class="card shadow-sm border-0 bg-transparent">
+    <div class="card-body">
+      <div class="cv-row">
+        <div class="cv-col">
+          <h3 class="card-title h4 font-heading">{{ job.role }}</h3>
+          <h6 class="card-subtitle mb-3 text-primary">
+            {% if job.link %}
+              <a href="{{ job.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-primary">
+                {{ job.company }} <i class="fa-solid fa-arrow-up-right-from-square text-secondary opacity-50 text-xs ms-1"></i>
+              </a>
+            {% else %}
+              {{ job.company }}
+            {% endif %}
+            &bull; {{ job.duration }}
+          </h6>
+        </div>
+      </div>
+      <p class="card-text text-muted">{{ job.description }}</p>
+    </div>
+  </div>
+</div>

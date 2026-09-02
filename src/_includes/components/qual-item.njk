@@ -1,0 +1,30 @@
+<div class="col-md-6">
+  <div class="card h-100 shadow-sm border-0">
+    <div class="card-body">
+      <div class="cv-row">
+        {% if qual.logo %}
+          <img src="{{ qual.logo | url }}" alt="{{ qual.institution }}" class="timeline-logo">
+        {% endif %}
+        <div class="cv-col">
+          <h3 class="card-title h4 font-heading">{{ qual.degree }}</h3>
+          <h6 class="card-subtitle mb-3 text-primary">{{ qual.institution }} &bull; {{ qual.year }}</h6>
+        </div>
+      </div>
+      <dl>
+        {% if qual.award %}
+          <dt class="text-muted">Awarded</dt>
+          <dd class="mb-3">{{ qual.award }}</dd>
+        {% endif %}
+        {% if qual.thesis %}
+          <dt class="text-muted">Thesis</dt>
+          <dd class="mb-3">{{ qual.thesis }}</dd>
+        {% endif %}
+      </dl>
+      {% if qual.link %}
+        <a href="{{ qual.link | url }}" class="stretched-link text-decoration-none text-body">
+          <i class="bi bi-arrow-right text-white float-end"></i>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -25,33 +25,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
   <div class="row g-4">
     {% for item in collections.portfolio | reverse %}
         <div class="col-12 portfolio-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
-          <div class="project-card position-relative d-flex flex-column flex-md-row gap-4 mb-5">
-            {% if item.data.image %}
-              <div class="project-image-wrapper w-100 w-md-65">
-                <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="project-image w-100 object-fit-cover">
-              </div>
-            {% endif %}
-            <div class="project-content d-flex flex-column w-100 w-md-35 py-md-3 pe-md-3">
-              <h3 class="project-title mb-3"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
-              <p class="text-secondary fs-5">{{ item.data.description }}</p>
-              {% if item.data.featured_stack %}
-                <div class="mt-2 mb-4">
-                  {% for tool in item.data.featured_stack %}
-                    <span class="badge bg-secondary-subtle text-secondary me-1">{{ tool }}</span>
-                  {% endfor %}
-                  {% if item.data.other_stack %}
-                    {% set count = item.data.other_stack | length %}
-                    <span class="badge bg-secondary-subtle text-secondary me-1">+{{ count }}</span>
-                  {% endif %}
-                </div>
-              {% endif %}
-              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
-                <div class="d-flex align-items-center justify-content-center bg-dark text-white rounded-circle shadow-sm icon-arrow-circle">
-                  <i class="fa-solid fa-arrow-right icon-arrow-rotated"></i>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% include "components/project-card.njk" %}
         </div>
     {% endfor %}
   </div>

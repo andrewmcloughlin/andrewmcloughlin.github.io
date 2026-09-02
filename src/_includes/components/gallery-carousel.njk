@@ -1,0 +1,65 @@
+<div class="gallery-marquee-container mt-4 pt-4 splide fade-in delay-3" id="gallery-carousel">
+  <div class="splide__track">
+    <ul class="splide__list">
+      {% for slide in gallery %}
+        <li class="splide__slide">
+          <a href="{{ slide.link | url }}" class="gallery-link">
+            {% if slide.type == 'video' %}
+              <video autoplay loop muted playsinline class="gallery-img pe-none">
+                <source src="{{ slide.media | url }}" type="video/{{ slide.videoFormat }}">
+              </video>
+            {% else %}
+              <img src="{{ slide.media | url }}" alt="{{ slide.title }}" class="gallery-img">
+            {% endif %}
+          
+            <div class="gallery-overlay">
+              <span class="gallery-title fs-5 fw-bold text-center px-3 mt-auto pt-4">{{ slide.title }}</span>
+              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+                <div class="icon-arrow-circle">
+                  <i class="fa-solid fa-arrow-right icon-arrow-rotated"></i>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Splide !== 'undefined') {
+      new Splide('#gallery-carousel', {
+        type   : 'loop',
+        drag   : 'free',
+        focus  : 'center',
+        autoWidth: true,
+        gap    : '1rem',
+        arrows : false,
+        pagination: false,
+        autoScroll: {
+          speed: 1,
+          pauseOnHover: true,
+          pauseOnFocus: false,
+        },
+      }).mount(window.splide.Extensions);
+    }
+    
+    /* Mobile: tap-to-reveal overlay, second tap navigates */
+    if (window.matchMedia('(hover: none)').matches) {
+      document.querySelectorAll('.gallery-link').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          const overlay = this.querySelector('.gallery-overlay');
+          if (!overlay.classList.contains('gallery-overlay--active')) {
+            e.preventDefault();
+            document.querySelectorAll('.gallery-overlay--active').forEach(function (o) {
+              o.classList.remove('gallery-overlay--active');
+            });
+            overlay.classList.add('gallery-overlay--active');
+          }
+        });
+      });
+    }
+  });
+</script>
