@@ -11,14 +11,8 @@
             {% else %}
               <img src="{{ slide.media | url }}" alt="{{ slide.title }}" class="gallery-img">
             {% endif %}
-          
             <div class="gallery-overlay">
               <span class="gallery-title fs-5 fw-bold text-center px-3 mt-auto pt-4">{{ slide.title }}</span>
-              <div class="mt-auto d-flex justify-content-end w-100 pt-3">
-                <div class="icon-arrow-circle">
-                  <i class="fa-solid fa-arrow-right icon-arrow-rotated"></i>
-                </div>
-              </div>
             </div>
           </a>
         </li>
