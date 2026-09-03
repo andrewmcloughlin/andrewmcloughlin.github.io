@@ -5,7 +5,7 @@ layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false
 featured_stack: ["Python", "Click", "Pydantic"]
-other_stack: ["XLSForm", "YAML", "TOML", "HTML", "OpenClinica", "OpenRosa"]
+other_stack: ["XLSForm", "YAML", "HTML", "OpenClinica", "OpenRosa", "pyYAML", "pandas", "openpyxl"]
 image: /images/ocelot.png
 ---
 
@@ -19,7 +19,7 @@ The lack of validation meant a reliance on manual User Acceptance Testing (UAT) 
 
 [Ocelot - Github](https://github.com/andrewmcloughlin/ocelot)
 
-I wanted to build CRFs in code from my IDE and store them in git. I built a CLI tool called Ocelot (because it takes a lot of pain out of OC). This let's users write CRFs in YAML or TOML and have them automatically validated, tested, converted to XLSForm and demo'd as a live HTML form in the browser.
+I wanted to build CRFs in code from my IDE and store them in git. I built a CLI tool called Ocelot (because it takes a lot of pain out of OC). This let's users write CRFs in YAML and have them automatically validated, tested, converted to XLSForm and demo'd as a live HTML form in the browser.
 
 ## Results
 
