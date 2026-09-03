@@ -17,6 +17,8 @@ The lack of validation meant a reliance on manual User Acceptance Testing (UAT) 
 
 ## My Solution
 
+[Ocelot - Github](https://github.com/andrewmcloughlin/ocelot)
+
 I wanted to build CRFs in code from my IDE and store them in git. I built a CLI tool called Ocelot (because it takes a lot of pain out of OC). This let's users write CRFs in YAML or TOML and have them automatically validated, tested, converted to XLSForm and demo'd as a live HTML form in the browser.
 
 ## Results
