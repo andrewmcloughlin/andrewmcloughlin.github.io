@@ -86,13 +86,7 @@ As the product matured and gained buy-in we demo'ed the product to the Gates Fou
 
 Part of this role involved presenting updates to the Gates Foundation every month. This included updates on roadmap progress, user feedback, user adoption and new features.
 
-{# ## Key Challenges
 
-// going live
-
-// UI micromanagement
-
-// Legal vs FAIR #}
 
 # Data Engineering
 

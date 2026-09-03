@@ -199,10 +199,8 @@ nav a.active {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.mobile-topnav .nav-link:hover,
-.mobile-topnav .nav-link.active {
-  color: var(--text-primary);
-  background: var(--bg-glass);
+.mobile-topnav .nav-link:hover {
+  color: var(--text-secondary);
 }
 
 #mobileScrollNav {
@@ -257,10 +255,8 @@ nav a.active {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.sidebar-nav .nav-link:hover,
-.sidebar-nav .nav-link.active {
+.sidebar-nav .nav-link:hover {
   color: var(--text-primary);
-  background: var(--bg-glass);
 }
 
 /* Single-page main content */
