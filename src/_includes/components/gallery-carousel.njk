@@ -3,10 +3,14 @@
     <ul class="splide__list">
       {% for slide in gallery %}
         <li class="splide__slide">
-          <a href="{{ slide.link | url }}" class="gallery-link">
+          <a href="{{ slide.link | url }}" class="gallery-link" aria-label="{{ slide.title }}">
             {% if slide.type == 'video' %}
-              <video autoplay loop muted playsinline class="gallery-img pe-none">
+              <video autoplay loop muted playsinline {% if slide.poster %}poster="{{ slide.poster | url }}"{% endif %} class="gallery-img pe-none">
                 <source src="{{ slide.media | url }}" type="video/{{ slide.videoFormat }}">
+                Sorry, your browser does not support the video tag. Just imagine some cool stuff happening here.
+                {% if slide.poster %}
+                  <img src="{{ slide.poster | url }}" alt="{{ slide.title }}" class="gallery-img">
+                {% endif %}
               </video>
             {% else %}
               <img src="{{ slide.media | url }}" alt="{{ slide.title }}" class="gallery-img">
