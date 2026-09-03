@@ -1,0 +1,290 @@
+{
+  "basics": {
+    "name": "Andrew McLoughlin",
+    "pronouns": "he/him/his",
+    "label": "Full-stack developer of scientific software / Data Engineer / Statistician",
+    "email": "andrew.mcloughlin@cantab.net",
+    "phone": "07926 716 026",
+    "location": {
+      "city": "Cambridge",
+      "countryCode": "GB",
+      "region": "Cambridgeshire"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "amcloughlin1",
+        "url": "https://linkedin.com/in/amcloughlin1"
+      },
+      {
+        "network": "GitHub/Portfolio",
+        "username": "andrewmcloughlin",
+        "url": "https://andrewmcloughlin.github.io/portfolio"
+      },
+      {
+        "network": "UI Work",
+        "username": "maclin",
+        "url": "https://figma.com/@maclin"
+      },
+      {
+        "network": "Academia",
+        "username": "Andrew McLoughlin",
+        "url": "https://cambridge.academia.edu/AndrewMcLoughlin"
+      }
+    ]
+  },
+  "summary": "Full-stack developer of scientific software[cite: 1] with an academic foundation in computational biology and epidemiology[cite: 1] (MPhil from Cambridge[cite: 3], MSc/BSc from Warwick[cite: 3]). Over a decade of experience across healthcare-related start-ups[cite: 10] specializing in building robust data pipelines, analytics applications, clinical data systems[cite: 1], and public-facing scientific databases (such as the Gates Foundation-funded VOC Atlas)[cite: 2]. Combines technical production-grade expertise in Python, Django, PostgreSQL, and dbt with deep knowledge of clinical data management, compliance (GDPR, GCP, 21 CFR Part 11, CDISC/CDASH)[cite: 2], and product ownership[cite: 2].",
+  "work": [
+    {
+      "name": "Owlstone Medical",
+      "position": "Senior Data Engineer & Product Owner",
+      "startDate": "2020-08",
+      "endDate": "present",
+      "highlights": [
+        "Product Owner and lead developer for www.vocatlas.com, a greenfield public-facing Django application helping scientists identify compounds on breath across populations, funded in part by the Bill & Melinda Gates Foundation[cite: 1, 2, 4, 5].",
+        "Managed cross-functional teams (scientists, designers, developers, QC, marketing), maintaining Jira backlogs, tracking OKRs, defining user personas, and leading stakeholder meetings with the Gates Foundation[cite: 2, 5].",
+        "Designed and deployed a lightweight internal order fulfillment management application with interactive analytics dashboards integrated with Royal Mail shipping API, reducing data entry error rates from 5% to negligible levels and completely obsolescing a 2-hour weekly meeting[cite: 1, 5].",
+        "Set up the company Data Team to tackle inefficient/non-compliant data practices and championed the adoption of a single company-wide open-source Data Warehouse (using Airbyte, Airflow, dbt, PostgreSQL, and SQL) following Kimball's toolkit best practices[cite: 1, 2, 8].",
+        "Built and automated ETL pipelines ingesting millions of rows of GCMS data, connecting third-party APIs, and feeding interactive business intelligence dashboards used by hundreds of employees to drive key leadership decisions[cite: 1, 2].",
+        "Led UX/UI design of the OMED mobile app and website, building interactive prototypes in Figma and Penpot to quickly iterate on user feedback[cite: 6, 7].",
+        "Maintained a monolithic Django-based Laboratory Management Information System (LIMS) used daily by over 200 employees with 100% uptime over 8 years, utilizing Kubernetes, Docker/containers, PostgreSQL, Gitlab CI/CD, Pytest, and Sentry[cite: 6, 7].",
+        "Ensured rigorous data governance, security, and compliance with GDPR, GCP, and 21 CFR Part 11 via automated immutable audit logging, SSO, and MFA minimal access controls[cite: 2].",
+        "Productionised statisticians' research code into tested, version-controlled Python packages with strict automated testing and 100% code coverage[cite: 1, 2]."
+      ]
+    },
+    {
+      "name": "Owlstone Medical",
+      "position": "Lead Clinical Data Manager",
+      "startDate": "2017-12",
+      "endDate": "2020-08",
+      "highlights": [
+        "Managed clinical trial data (such as the LuCID clinical trial, a large-scale prospective case-control study evaluating breath-based biomarkers for lung cancer over a 24-month follow-up across 26 clinical sites in 5 countries)[cite: 2].",
+        "Applied Multivariate Pattern Recognition and Classification Algorithms in Python to differentiate signals between cases and controls, presenting insights via PowerBI[cite: 2].",
+        "Designed CDISC/CDASH-compatible Case Report Forms (CRFs) using SNOMED-CT and MedDRA clinical terminologies, preparing datasets for FDA submission and cross-study aggregation[cite: 1, 2]."
+      ]
+    },
+    {
+      "name": "Optimum Patient Care (Research in Real Life)",
+      "position": "Clinical Data Manager / Data Manager",
+      "startDate": "2013-08",
+      "endDate": "2017-12",
+      "highlights": [
+        "Designed and built CRFs in OpenClinica, enforcing robust data quality with edit checks, skip logic, and comprehensive documentation[cite: 2, 3].",
+        "Built interactive dashboards to report study recruitment metrics and endpoints to study managers, enabling early identification and resolution of demographic imbalances across study arms[cite: 2, 3].",
+        "Ingested and processed complex real-world data into OPCRD, executing data validation and cleaning scripts[cite: 2, 3].",
+        "Transitioned clinical teams from paper-based operations to fast, efficient, and compliant digital systems across the EU, UK, and US for over 10 clinical trials[cite: 6, 7]."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Cambridge",
+      "area": "Statistical Epidemiology / Cardiovascular Epidemiology",
+      "studyType": "MPhil",
+      "startDate": "2013",
+      "endDate": "2013",
+      "score": "MRC / Pfizer Scholarship"
+    },
+    {
+      "institution": "University of Warwick",
+      "area": "Computational Biology / Computational Systems Biology",
+      "studyType": "MSc",
+      "startDate": "2012",
+      "endDate": "2012",
+      "score": "Systems Biology Studentship"
+    },
+    {
+      "institution": "University of Warwick",
+      "area": "Biomedical Science",
+      "studyType": "BSc",
+      "startDate": "2011",
+      "endDate": "2011",
+      "score": "2.1 Hons"
+    }
+  ],
+  "projects": [
+    {
+      "name": "VOC Atlas (www.vocatlas.com)",
+      "description": "A public-access breathomics database and educational web application built with Django to help scientists identify volatile organic compounds on breath across populations.",
+      "highlights": [
+        "Served as Product Owner and Lead Developer, taking the project from ideation and Figma low-fi mockups to full deployment, user testing, and population[cite: 1, 4, 5].",
+        "Involved complex chemical data modeling, user interviews, shadowing, analytics tracking, and stakeholder management with the Gates Foundation[cite: 1, 4, 5]."
+      ],
+      "keywords": [
+        "Python 3.12",
+        "Django",
+        "PostgreSQL",
+        "Pytest",
+        "Bootstrap",
+        "Sentry",
+        "Allauth",
+        "Figma"
+      ]
+    },
+    {
+      "name": "Enterprise Data Warehouse & ETL Pipelines",
+      "description": "Company-wide data architecture replacing fragmented reporting with open-source infrastructure.",
+      "highlights": [
+        "Designed and built automated ETL pipelines and an open-source Data Warehouse following Kimball's best practices, extracting sensitive medical data and loading it into interactive BI dashboards[cite: 1, 6, 7].",
+        "Integrated automated data quality testing and monitoring to notify teams of QC issues[cite: 1]."
+      ],
+      "keywords": [
+        "Airbyte",
+        "Airflow",
+        "dbt",
+        "PostgreSQL",
+        "SQL",
+        "Metabase",
+        "BigQuery",
+        "Google Looker Studio",
+        "Rundeck"
+      ]
+    },
+    {
+      "name": "Internal Order Fulfillment & Logistics Application",
+      "description": "Lightweight operations management app replacing manual spreadsheets.",
+      "highlights": [
+        "Prototyped in Figma after shadowing operations teams, built with Django, and integrated with the Royal Mail shipping API[cite: 1, 5].",
+        "Provided live KPI dashboards and an immutable audit trail, reducing data entry errors from 5% to effectively zero[cite: 1, 5]."
+      ],
+      "keywords": [
+        "Django",
+        "Figma",
+        "Metabase",
+        "Google Analytics",
+        "Umami",
+        "Royal Mail API"
+      ]
+    },
+    {
+      "name": "Smart Watch Actimetry Algorithm (MSc Thesis)",
+      "description": "Researched and developed signal processing algorithms to train machine learning models identifying physical activities from raw actimetry data collected via open-source smartwatch prototypes[cite: 6, 7].",
+      "keywords": [
+        "Python",
+        "Jupyter",
+        "MATLAB",
+        "R",
+        "Signal Processing",
+        "Machine Learning"
+      ]
+    },
+    {
+      "name": "Metabolism Browser (BSc Thesis)",
+      "description": "Interactive software teaching aid built in Visual Basic designed to help students explore and visualize complex metabolic pathways[cite: 6, 7].",
+      "keywords": [
+        "Visual Basic (VBA)"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages & Core",
+      "level": "Advanced",
+      "keywords": [
+        "Python 3.12",
+        "SQL",
+        "R",
+        "JavaScript",
+        "VBA"
+      ]
+    },
+    {
+      "category": "Backend & Web Frameworks",
+      "level": "Advanced",
+      "keywords": [
+        "Django",
+        "Pydantic",
+        "APIs",
+        "Pytest",
+        "Bootstrap",
+        "Sentry",
+        "Allauth"
+      ]
+    },
+    {
+      "category": "Data Engineering & Warehousing",
+      "level": "Advanced",
+      "keywords": [
+        "dbt",
+        "Airflow",
+        "Airbyte",
+        "PostgreSQL",
+        "MS SQL Server",
+        "Google BigQuery",
+        "Rundeck",
+        "ETL/ELT Architecture",
+        "Kimball Data Modeling"
+      ]
+    },
+    {
+      "category": "Data Science & Statistics",
+      "level": "Intermediate",
+      "keywords": [
+        "Pandas",
+        "NumPy",
+        "Statistical Modelling",
+        "Multivariate Pattern Recognition",
+        "Signal Processing",
+        "Clinical Data Analysis"
+      ]
+    },
+    {
+      "category": "DevOps, Infra & Version Control",
+      "level": "Proficient",
+      "keywords": [
+        "Kubernetes",
+        "Docker",
+        "Git",
+        "GitLab CI/CD",
+        "Linux"
+      ]
+    },
+    {
+      "category": "Clinical Data Management & Standards",
+      "level": "Expert",
+      "keywords": [
+        "OpenClinica",
+        "RedCap",
+        "CDISC",
+        "CDASH",
+        "SNOMED-CT",
+        "MedDRA",
+        "OPCRD",
+        "ISAR",
+        "CRF Design",
+        "GDPR",
+        "GCP",
+        "21 CFR Part 11"
+      ]
+    },
+    {
+      "category": "BI & Data Visualization",
+      "level": "Advanced",
+      "keywords": [
+        "Metabase",
+        "Google Looker Studio",
+        "PowerBI",
+        "Tableau / BI Dashboards"
+      ]
+    },
+    {
+      "category": "Product & Design",
+      "level": "Advanced",
+      "keywords": [
+        "Product Ownership",
+        "Agile / Scrum (Certified Scrum Master)",
+        "Jira",
+        "Figma",
+        "Penpot",
+        "UX/UI Prototyping",
+        "User Interviewing & Shadowing"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    }
+  ]
+}

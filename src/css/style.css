@@ -195,6 +195,7 @@ nav a.active {
   font-size: 0.9rem;
   padding: 0.35rem 0.75rem;
   border-radius: 8px;
+  white-space: nowrap;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -202,6 +203,19 @@ nav a.active {
 .mobile-topnav .nav-link.active {
   color: var(--text-primary);
   background: var(--bg-glass);
+}
+
+#mobileScrollNav {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  min-width: 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#mobileScrollNav::-webkit-scrollbar {
+  display: none;
 }
 
 /* Page wrapper — centres everything on very wide screens */

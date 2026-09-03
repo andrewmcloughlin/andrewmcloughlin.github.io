@@ -52,7 +52,7 @@
 <body data-bs-spy="scroll" data-bs-target="#sideNav" data-bs-offset="80" tabindex="0">
   <header>
     <nav class="mobile-topnav" id="topNav">
-      <ul class="nav nav-pills justify-content-center" id="mobileScrollNav">
+      <ul class="nav nav-pills" id="mobileScrollNav">
         {% set navPrefix = "" if page.url == "/" else ("/" | url) %}
         <li class="nav-item"><a href="{{ navPrefix }}#home" class="nav-link">Home</a></li>
         <li class="nav-item"><a href="{{ navPrefix }}#qualifications" class="nav-link">Qualifications</a></li>

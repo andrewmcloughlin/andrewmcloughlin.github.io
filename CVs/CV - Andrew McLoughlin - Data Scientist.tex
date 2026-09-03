@@ -1,0 +1,213 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage{standalone}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins for a compact layout
+\usepackage[paperwidth=210mm, paperheight=5000mm, margin=0.75in]{geometry}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME TEMPLATE STARTS HERE  %%%%%%%%
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Andrew McLoughlin}
+\end{center}
+
+%-----------Summary-----------
+\section{Summary}
+Full-stack developer of scientific software with an academic foundation in computational biology and epidemiology (MPhil from Cambridge, MSc/BSc from Warwick). Over a decade of experience across healthcare-related start-ups specializing in building robust data pipelines, analytics applications, clinical data systems, and public-facing scientific databases (such as the Gates Foundation-funded VOC Atlas). Combines technical production-grade expertise in Python, Django, PostgreSQL, and dbt with deep knowledge of clinical data management, compliance (GDPR, GCP, 21 CFR Part 11, CDISC/CDASH), and product ownership.
+
+%-----------Experience-----------
+\section{Experience}    
+\resumeSubHeadingListStart
+    \resumeSubheading
+    {Senior Data Engineer \& Product Owner}{Owlstone Medical}
+    {}{\textbf{2020-08} -- \textbf{present}}
+    \resumeItemListStart
+      \resumeItem{Product Owner and lead developer for www.vocatlas.com, a greenfield public-facing Django application helping scientists identify compounds on breath across populations, funded in part by the Bill \& Melinda Gates Foundation.}
+      \resumeItem{Managed cross-functional teams (scientists, designers, developers, QC, marketing), maintaining Jira backlogs, tracking OKRs, defining user personas, and leading stakeholder meetings with the Gates Foundation.}
+      \resumeItem{Designed and deployed a lightweight internal order fulfillment management application with interactive analytics dashboards integrated with Royal Mail shipping API, reducing data entry error rates from 5\% to negligible levels and completely obsolescing a 2-hour weekly meeting.}
+      \resumeItem{Set up the company Data Team to tackle inefficient/non-compliant data practices and championed the adoption of a single company-wide open-source Data Warehouse (using Airbyte, Airflow, dbt, PostgreSQL, and SQL) following Kimball's toolkit best practices.}
+      \resumeItem{Built and automated ETL pipelines ingesting millions of rows of GCMS data, connecting third-party APIs, and feeding interactive business intelligence dashboards used by hundreds of employees to drive key leadership decisions.}
+      \resumeItem{Led UX/UI design of the OMED mobile app and website, building interactive prototypes in Figma and Penpot to quickly iterate on user feedback.}
+      \resumeItem{Maintained a monolithic Django-based Laboratory Management Information System (LIMS) used daily by over 200 employees with 100\% uptime over 8 years, utilizing Kubernetes, Docker/containers, PostgreSQL, Gitlab CI/CD, Pytest, and Sentry.}
+      \resumeItem{Ensured rigorous data governance, security, and compliance with GDPR, GCP, and 21 CFR Part 11 via automated immutable audit logging, SSO, and MFA minimal access controls.}
+      \resumeItem{Productionised statisticians' research code into tested, version-controlled Python packages with strict automated testing and 100\% code coverage.}
+    \resumeItemListEnd
+    \resumeSubheading
+    {Lead Clinical Data Manager}{Owlstone Medical}
+    {}{\textbf{2017-12} -- \textbf{2020-08}}
+    \resumeItemListStart
+      \resumeItem{Managed clinical trial data (such as the LuCID clinical trial, a large-scale prospective case-control study evaluating breath-based biomarkers for lung cancer over a 24-month follow-up across 26 clinical sites in 5 countries).}
+      \resumeItem{Applied Multivariate Pattern Recognition and Classification Algorithms in Python to differentiate signals between cases and controls, presenting insights via PowerBI.}
+      \resumeItem{Designed CDISC/CDASH-compatible Case Report Forms (CRFs) using SNOMED-CT and MedDRA clinical terminologies, preparing datasets for FDA submission and cross-study aggregation.}
+    \resumeItemListEnd
+    \resumeSubheading
+    {Clinical Data Manager / Data Manager}{Optimum Patient Care (Research in Real Life)}
+    {}{\textbf{2013-08} -- \textbf{2017-12}}
+    \resumeItemListStart
+      \resumeItem{Designed and built CRFs in OpenClinica, enforcing robust data quality with edit checks, skip logic, and comprehensive documentation.}
+      \resumeItem{Built interactive dashboards to report study recruitment metrics and endpoints to study managers, enabling early identification and resolution of demographic imbalances across study arms.}
+      \resumeItem{Ingested and processed complex real-world data into OPCRD, executing data validation and cleaning scripts.}
+      \resumeItem{Transitioned clinical teams from paper-based operations to fast, efficient, and compliant digital systems across the EU, UK, and US for over 10 clinical trials.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------Skills-----------
+\section{Skills}
+\resumeSubHeadingListStart
+    \resumeSubheading
+     {Languages \& Core}{}{}
+     {}{}
+     \resumeItemListStart
+     \vspace{-5mm}
+     \resumeItem{Python 3.12, SQL, R, JavaScript, VBA}
+       \resumeItemListEnd
+    \resumeSubheading
+     {Backend \& Web Frameworks}{}{}
+     {}{}
+     \resumeItemListStart
+     \vspace{-5mm}
+     \resumeItem{Django, Pydantic, APIs, Pytest, Bootstrap, Sentry, Allauth}
+       \resumeItemListEnd
+    \resumeSubheading
+     {Data Engineering \& Warehousing}{}{}
+     {}{}
+     \resumeItemListStart
+     \vspace{-5mm}
+     \resumeItem{dbt, Airflow, Airbyte, PostgreSQL, MS SQL Server, Google BigQuery, Rundeck, ETL/ELT Architecture, Kimball Data Modeling}
+       \resumeItemListEnd
+    \resumeSubheading
+     {Data Science \& Statistics}{}{}
+     {}{}
+     \resumeItemListStart
+     \vspace{-5mm}
+     \resumeItem{Pandas, NumPy, Statistical Modelling, Multivariate Pattern Recognition, Signal Processing, Clinical Data Analysis}
+       \resumeItemListEnd
+    \resumeSubheading
+     {DevOps, Infra \& Version Control}{}{}
+     {}{}
+     \resumeItemListStart
+     \vspace{-5mm}
+     \resumeItem{Kubernetes, Docker, Git, GitLab CI/CD, Linux}
+       \resumeItemListEnd
+    \resumeSubheading
+     {Clinical Data Management \& Standards}{}{}
+     {}{}
+     \resumeItemListStart
+     \vspace{-5mm}
+     \resumeItem{OpenClinica, RedCap, CDISC, CDASH, SNOMED-CT, MedDRA, OPCRD, ISAR, CRF Design, GDPR, GCP, 21 CFR Part 11}
+       \resumeItemListEnd
+    \resumeSubheading
+     {BI \& Data Visualization}{}{}
+     {}{}
+     \resumeItemListStart
+     \vspace{-5mm}
+     \resumeItem{Metabase, Google Looker Studio, PowerBI, Tableau / BI Dashboards}
+       \resumeItemListEnd
+    \resumeSubheading
+     {Product \& Design}{}{}
+     {}{}
+     \resumeItemListStart
+     \vspace{-5mm}
+     \resumeItem{Product Ownership, Agile / Scrum (Certified Scrum Master), Jira, Figma, Penpot, UX/UI Prototyping, User Interviewing \& Shadowing}
+       \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%-----------Education-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {MPhil in Statistical Epidemiology / Cardiovascular Epidemiology}{University of Cambridge}
+      {\textit{MRC / Pfizer Scholarship}}{\textbf{2013} -- \textbf{2013}}
+\vspace{1mm}
+    \resumeSubheading
+      {MSc in Computational Biology / Computational Systems Biology}{University of Warwick}
+      {\textit{Systems Biology Studentship}}{\textbf{2012} -- \textbf{2012}}
+\vspace{1mm}
+    \resumeSubheading
+      {BSc in Biomedical Science}{University of Warwick}
+      {\textit{2.1 Hons}}{\textbf{2011} -- \textbf{2011}}
+  \resumeSubHeadingListEnd
+  
+%-----------Contact Info-----------
+
+\vspace{3mm}
+
+\begin{center}
+\small 07926 716 026 $|$
+\href{mailto:andrew.mcloughlin@cantab.net}{\underline{andrew.mcloughlin@cantab.net}} $|$
+\href{https://linkedin.com/in/amcloughlin1}{\underline{linkedin.com/in/amcloughlin1}}
+\end{center}
+
+\end{document}
