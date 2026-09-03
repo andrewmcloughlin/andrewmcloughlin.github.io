@@ -4,7 +4,7 @@
       <img src="{{ item.data.image | url }}" alt="{{ item.data.title }}" class="project-image w-100 object-fit-cover rounded-4">
     </div>
   {% endif %}
-  <div class="project-content col-12 col-md-4 py-md-3 pe-md-3 text-start">
+  <div class="project-content col-12 col-md-4 py-md-3 pe-md-3 text-start bg-body">
     <h3 class="project-title fs-2 fw-bold lh-sm mb-3"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
     <p class="text-secondary fs-6">{{ item.data.description }}</p>
     {% if item.data.featured_stack %}
