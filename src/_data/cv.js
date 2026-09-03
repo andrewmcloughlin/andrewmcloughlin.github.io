@@ -37,23 +37,23 @@ module.exports = {
     ],
     certificates: [
         {
-            name: "Accrediated Scrum Master",
-            institution: "Scrum Alliance",
+            name: "Scrum Master",
+            issuer: "Scrum Alliance",
             year: "2022",
         },
         {
-            name: "Accrediated Product Owner",
-            institution: "Scrum Alliance",
+            name: "Product Owner",
+            issuer: "Scrum Alliance",
             year: "2023",
         },
         {
-            name: "GDPR Training",
-            institution: "",
+            name: "GDPR Certified",
+            issuer: "",
             year: "2023",
         },
         {
-            name: "GCP Training",
-            institution: "",
+            name: "GCP Certified",
+            issuer: "",
             year: "2020",
         }
     ],

@@ -39,18 +39,17 @@ title: Home
 
 <section id="qualifications" class="spa-section mb-5 fade-in delay-5 py-5">
   <h2 class="my-4 py-2 border-bottom font-heading">Qualifications</h2>
-  <div class="timeline">
+  <div class="timeline mb-4 pb-4">
     {% for qual in cv.qualifications %}
       {% include "components/qual-item.njk" %}
     {% endfor %}
   </div>
-</section>
-
-<section id="certificates" class="spa-section mb-5 fade-in delay-5 py-5">
-  <h2 class="my-4 py-2 border-bottom font-heading">Certificates</h2>
-  <div class="timeline">
+  <h2 id="certificates" class="my-4 py-2 border-bottom font-heading pt-4">Certificates</h2>
+  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mt-2 d-flex align-items-stretch">
     {% for cert in cv.certificates %}
-      {% include "components/cert-item.njk" %}
+      <div class="col">
+        {% include "components/cert-item.njk" %}
+      </div>
     {% endfor %}
   </div>
 </section>

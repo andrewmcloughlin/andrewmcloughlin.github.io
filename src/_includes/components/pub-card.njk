@@ -1,25 +1,21 @@
 <div class="card shadow-sm border-0 bg-white text-start">
   <div class="card-body py-2 px-3">
-    <div class="cv-row">
-      <div class="cv-col w-100">
-        <div class="d-flex justify-content-between align-items-start mt-2">
-          <div>
-            <h3 class="card-title h4 font-heading mb-1">
-              {% if pub.link %}
-                <a href="{{ pub.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-body-secondary d-inline-flex align-items-center stre">
-                  {{ pub.title }}
-                </a>
-              {% else %}
-                {{ pub.title }}
-              {% endif %}
-            </h3>
-            <h6 class="card-subtitle mt-1 mb-3 text-body-secondary text-uppercase fw-medium letter-spacing-wide">
-              {{ pub.journal }}
-            </h6>
-          </div>
-          <div class="text-end text-body-secondary fw-medium text-nowrap ms-3 mt-1">{{pub.year}}</div>
-        </div>
+    <div class="d-flex justify-content-between align-items-start mt-2">
+      <div>
+        <h3 class="card-title h4 font-heading mb-1">
+          {% if pub.link %}
+            <a href="{{ pub.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-body-secondary d-inline-flex align-items-center stre">
+              {{ pub.title }}
+            </a>
+          {% else %}
+            {{ pub.title }}
+          {% endif %}
+        </h3>
+        <h6 class="card-subtitle mt-1 mb-3 text-body-secondary text-uppercase fw-medium letter-spacing-wide">
+          {{ pub.journal }}
+        </h6>
       </div>
+      <div class="text-end text-body-secondary fw-medium text-nowrap ms-3 mt-1">{{pub.year}}</div>
     </div>
     <dl class="mb-1">
       {% if pub.abstract %}
