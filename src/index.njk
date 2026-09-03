@@ -43,10 +43,14 @@ title: Home
     {% for qual in cv.qualifications %}
       {% include "components/qual-item.njk" %}
     {% endfor %}
+  </div>
+</section>
 
-
-    {% for cert in certificates %}
-      {{cert}}
+<section id="certificates" class="spa-section mb-5 fade-in delay-5 py-5">
+  <h2 class="my-4 py-2 border-bottom font-heading">Certificates</h2>
+  <div class="timeline">
+    {% for cert in cv.certificates %}
+      {% include "components/cert-item.njk" %}
     {% endfor %}
   </div>
 </section>
