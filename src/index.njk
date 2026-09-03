@@ -7,7 +7,7 @@ title: Home
   <div class="d-flex flex-column align-items-center justify-content-center">
     <h1 class="fs-3 fw-bold mb-4 pt-4 ps-4 pb-0 font-heading fade-in delay-1">Hi, I'm Andrew,</h1>
     <h1 class="display-4 fw-bold hero-title mb-4 pt-0 pb-4 ps-4 fade-in delay-2 font-heading">I make scientific software</h1>
-    <p class="lead ps-4">I'm a full-stack developer and product owner specialising in scientific software and data products. </p>
+    <p class="lead ps-4 fade-in delay-3">I'm a full-stack developer and product owner specialising in scientific software and data products. </p>
   </div>
 
   {% include "components/gallery-carousel.njk" %}
@@ -47,6 +47,15 @@ title: Home
 
     {% for cert in certificates %}
       {{cert}}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="papers" class="spa-section mb-5 fade-in delay-5 py-5">
+  <h2 class="my-4 py-2 border-bottom font-heading">Publications</h2>
+  <div class="row g-4 mt-2">
+    {% for pub in cv.publications %}
+      {% include "components/pub-card.njk" %}
     {% endfor %}
   </div>
 </section>
