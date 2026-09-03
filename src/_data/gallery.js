@@ -35,7 +35,8 @@ module.exports = [
     {
         title: 'Interactive marketing for VOC Atlas',
         link: '/portfolio/atlas/',
-        media: '/images/gallery/voc-sphere.png',
-        type: 'image'
+        media: '/images/gallery/voc-sphere.mp4',
+        type: 'video',
+        videoFormat: 'mp4'
     }
 ];
