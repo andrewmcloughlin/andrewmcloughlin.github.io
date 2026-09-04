@@ -8,7 +8,7 @@
 
 :root,
 [data-bs-theme="dark"] {
-  --bg-color: #0f172a;
+  --bg-color: #1a1a1a;
 
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
@@ -94,7 +94,7 @@ a {
 }
 
 /* Layout */
-header {
+.site-header {
   background: var(--bg-color);
   border-bottom: 1px solid var(--border-color);
   position: sticky;
