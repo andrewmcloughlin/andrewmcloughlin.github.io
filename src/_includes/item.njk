@@ -1,38 +1,59 @@
 ---
 layout: base.njk
 ---
-<main class="row justify-content-center">
-  <article class="col-md-11 col-lg-10 col-xl-9 card shadow-sm border-0 mb-5">
-    <div class="card-body p-4 p-md-5">
-      <div class="d-flex flex-wrap gap-2 mb-3" aria-label="Technology stack">
-        {% if featured_stack %}
-          {% for tool in featured_stack %}
-            <span class="badge bg-primary-subtle text-primary">{{ tool }}</span>
-          {% endfor %}
-        {% endif %}
-        {% if other_stack %}
-          {% for tool in other_stack %}
-            <span class="badge bg-primary-subtle text-primary me-1">{{ tool }}</span>
-          {% endfor %}
-        {% endif %}
-      </div>
-      
-      <header>
-        <h1 class="card-title display-5 fw-bold mb-3">{{ title }}</h1>
-        <p class="card-subtitle lead text-secondary mb-4">{{ description }}</p>
-      </header>
+<div class="item-layout">
+  {# Left sidebar: article list, large screens only #}
+  <aside class="item-sidebar d-none d-lg-flex flex-column" aria-label="All articles">
+    <nav class="item-sidebar__nav">
+      <p class="item-sidebar__heading text-uppercase fw-semibold small mb-3 text-secondary">Articles</p>
+      <ul class="list-unstyled mb-0">
+        {% set sortedPortfolio = collections.portfolio | sort(false, false, 'data.order') %}
+        {% for item in sortedPortfolio %}
+          <li>
+            <a href="{{ item.url | url }}"
+               class="item-sidebar__link nav-link px-0 py-2{% if page.url == item.url %} active{% endif %}">
+              {{ item.data.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
 
-      {% if image %}
-        <img src="{{ image | url }}" alt="{{ title }}" class="img-fluid rounded mb-4 w-100" style="max-height: 480px; object-fit: cover;">
-      {% endif %}
+  {# Main article content #}
+  <main class="item-main">
+    <article class="card shadow-sm border-0 mb-5">
+      <div class="card-body p-4 p-md-5">
+        <div class="d-flex flex-wrap gap-2 mb-3" aria-label="Technology stack">
+          {% if featured_stack %}
+            {% for tool in featured_stack %}
+              <span class="badge bg-primary-subtle text-primary">{{ tool }}</span>
+            {% endfor %}
+          {% endif %}
+          {% if other_stack %}
+            {% for tool in other_stack %}
+              <span class="badge bg-primary-subtle text-primary me-1">{{ tool }}</span>
+            {% endfor %}
+          {% endif %}
+        </div>
 
-      <div class="card-text border-top pt-4">
-        {{ content | safe }}
+        <header class="bg-body mb-4">
+          <h1 class="card-title display-5 fw-bold mb-3">{{ title }}</h1>
+          <p class="card-subtitle lead text-secondary mb-4">{{ description }}</p>
+        </header>
+
+        {% if image %}
+          <img src="{{ image | url }}" alt="{{ title }}" class="img-fluid rounded mb-4 w-100">
+        {% endif %}
+
+        <div class="card-text border-top pt-4">
+          {{ content | safe }}
+        </div>
+
+        <nav class="mt-5">
+          <a href="{{ '/' | url }}" class="btn btn-primary text-white">&larr; Back to Home</a>
+        </nav>
       </div>
-      
-      <nav class="mt-5">
-        <a href="{{ '/' | url }}" class="btn btn-primary">&larr; Back to Home</a>
-      </nav>
-    </div>
-  </article>
-</main>
+    </article>
+  </main>
+</div>
