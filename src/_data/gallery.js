@@ -21,7 +21,7 @@ module.exports = [
     },
     {
         title: 'Algorithms to learn actigraphy from actimetry data',
-        link: '/portfolio/tyto/',
+        link: '/portfolio/actigraphy/',
         media: '/images/gallery/actigraphy.png',
         type: 'image'
     },
