@@ -15,7 +15,7 @@ title: Home
 <section id="projects" class="spa-section mb-5 fade-in delay-5 py-5 mt-5">
   <h2 class="my-4 py-4 border-bottom font-heading">Featured Work</h2>
   <div class="row g-4 mt-2">
-    {% for item in collections.portfolio | reverse %}
+    {% for item in collections.portfolio | sort(attribute="data.order") %}
       {% if item.data.pinned %}
         <div class="col-12">
           {% include "components/project-card.njk" %}

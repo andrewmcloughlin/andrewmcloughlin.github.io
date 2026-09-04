@@ -4,6 +4,7 @@ description: "A web portal for clinicians to manage their patients, patient path
 layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: true
+order: 3
 featured_stack: ["Python", "Django", "django-ninja", "Alpine.js", "Bootstrap"]
 other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Stripe", "Salesforce", "GDPR", "django-local-flavor"]
 image: "/images/macha.png"

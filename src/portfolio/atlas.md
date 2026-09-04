@@ -4,6 +4,7 @@ description: "An interactive web application for exploring the world of Volatile
 layout: item.njk
 tags: ["portfolio", "Product", "Software", "Data"]
 pinned: true
+order: 1
 featured_stack: ["Python", "Django", "HTMX", "htpy", "Bootstrap", "RDKit"]
 other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Elicit API", "CrossRef API", "Figma", "Excalidraw", "Google Analytics", "Umami", "SMILES.drawer"]
 image: /images/atlas.png
@@ -93,6 +94,18 @@ Part of this role involved presenting updates to the Gates Foundation every mont
 ## Design Philosophy
 
 I was keen for Atlas to have an immutable database, so that we could always trace the provenance of the data. I designed the data models to be append-only with no risk of losing data. The only instance in which data might need to be amended is if a user withdraws consent for their data to be used or if PII is discovered in the dataset.
+
+## Architecture Decisions
+
+### Backend
+We were a small team of developers (3-4) building the full-stack on multiple internal projects, so our main considerations were familiarity, speed and ease of maintenance. With that in mind we elected to use a familiar stack, which had served us well on previous projects: Python, Django, PostgreSQL and Bootstrap.
+
+As Atlas was ingesting large GCMS datasets, we used S3 to store the raw data, and PostgreSQL to store the metadata and processed data, with async Celery workers to process the data.
+
+Initially Atlas was intended to be an internal tool, so it was built as a Django app of an existing project. This allowed us to get it into the hands of internal users within 1 month. However, as the product matured and gained buy-in we deicded to deploy the Atlas as a public platform, which became as issue as it was built ontop of an internal LIMS which could not be publicly exposed. We spent 3 months refactoring the application to be a standalone Django project.
+
+### Frontend
+As Owlstone's first public application, we had to learn a lot about deploying and maintaining a public facing web application, including security, scalability and accessibility. We opted to use AllAuth for authentication and recognising that we needed to improve the UI/UX of the application for an external audience, we used AlpineJS to make more dynamic user-friendly components. We also recognised that we needed to start testing our templates as the risk of breaking the UI for external users was now a real concern, so we used htpy to generate components in python and test them in isolation.
 
 
 ## Key Challenges
