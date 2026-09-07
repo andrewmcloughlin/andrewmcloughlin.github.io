@@ -4,8 +4,8 @@
   "description": "Personal site and portfolio for Andrew McLoughlin",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
   "icons": [
     {
       "src": "/images/favicons/android-chrome-192x192.png",
