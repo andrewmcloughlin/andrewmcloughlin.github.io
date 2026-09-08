@@ -8,11 +8,24 @@ title: About this site
     <div class="col-12">
       <h1 class="display-4 fw-bold hero-title mb-5 font-heading">Colophon</h1>
       
-      <div class="card mb-4">
-        <div class="card-body">
-          No cookies, no data collected. Self-hosted font. No framework just simple custom CSS.
+      <div class="card m-4 p-4">
+        <div class="card-body m-4 p-4">
           <h2 class="font-heading">Stack</h2>
-          <ul>
+          <h3 class="font-heading mt-4">Back End</h3>
+          Built using 11ty static site generator with nunjucks templating, because I want something low-maintenance.
+          Articles can written in markdown with the option to include custom HTML, so the best of both worlds.
+          Hosted on Github and deployed using Github Pages, but planning to move to Gitlab.
+          
+          <h3 class="font-heading my-4">Front End</h3>
+          All screenshots are of software I have worked on.
+          All other images are my own creations, mostly drawn in Figma.
+          All animations are either screen recordings of my software or generated in Figma Motion based on my prototypes.
+          The intearctive molecule was rendered in rdkit.
+          I'm using alpine.js for filtering, because it's just nice to have your interactions defined inline.
+          The smooth-scrolling gallery is provided by splide.js because writing a good, smooth, interactive gallery in vanilla JS is beyond by JS ability.
+          Icons provided by the awesome Font Awesome.
+          
+          <ul class="my-3">
             <li><a href="https://www.11ty.dev/">Eleventy (11ty)</a> (static site builder)</li>
             <li><a href="https://nunjucks.io/">Nunjucks</a> (templating)</li>
             <li><a href="https://www.markdownguide.org/">Markdown</a> (content)</li>
@@ -29,20 +42,20 @@ title: About this site
       </div>
       
       
-      <div class="card mb-4">
-        <div class="card-body">
+      <div class="card m-4 p-4">
+        <div class="card-body m-4 p-4">
           <h2 class="font-heading">Inspiration</h2>
           Cred where credit's due. I believe in sharing your sources. The design for this site was inspired by many great creators who you should check out
           <ul>
-            <li>The stick figure design is based on Randall Munroe's ever-genius<a href="https://www.xkcd.com/">XKCD</a> and the associated font is literally Randall's own handwriting.</li>
-            <li>Rob Cantor: Rob's site used to load with a seemingly static photo of him staring into your soul, except after a few seconds you realilse it was a video as he starts to eat a random fruit, every time it loads the site serves up a different random video of him eating something different.</li>
-            <li>Zen Browser: The cream and charcoal styling and Bricolage Grotesque font was basically stolen from Zen's marketing</li>
-            <li>My good friend and incredible UX designer, Dev Patel, has a wonderful portfolio, I stole the design of several of his components</li>
+            <li>The stick figure design is based on Randall Munroe's ever-genius <a href="https://www.xkcd.com/">XKCD</a> and the associated font is literally Randall's own handwriting.</li>
+            {# <li>Rob Cantor: Rob's site used to load with a seemingly static photo of him staring into your soul, except after a few seconds you realilse it was a video as he starts to eat a random fruit, every time it loads the site serves up a different random video of him eating something different.</li> #}
+            <li>The cream and charcoal styling and Bricolage Grotesque font was basically stolen from <a href="https://zen-browser.app/" target="_blank">Zen browser</a> (which incidentally is my favourite browser)</li>
+            <li>My good friend and incredible UX designer, Dev Patel, has <a href="https://healthy-office-579727.framer.app/" target="_blank">a wonderful portfolio</a>, I stole the design of several of his components</li>
           </ul>
         </div>
       </div>
       
-      <a href="{{ '/' | url }}" class="btn mt-3"><i class="fa-solid fa-arrow-left me-2"></i>Back to Home</a>
+      <a href="{{ '/' | url }}" class="btn btn-arrow-left mt-3">Back to Home</a>
     </div>
   </div>
 </section>

@@ -21,6 +21,7 @@
   --zen-cream: #F2F0E3;
   --zen-cream-lighter: #F4F3EB;
   --zen-cream-darker: #E0D5B7;
+  --highlight: #f76f53;
 
   --zen-charcoal: #2E2E2E;
   --zen-charcoal-lighter: #4A4A4A;
@@ -92,6 +93,7 @@ nav:not(.item-sidebar__nav) .btn {
   transition: padding 0.3s ease, background-color 0.2s ease;
 }
 
+/* Right arrow (default) */
 .btn::after,
 nav:not(.item-sidebar__nav) .btn::after {
   content: '\2192';
@@ -104,12 +106,31 @@ nav:not(.item-sidebar__nav) .btn::after {
   overflow: hidden;
 }
 
+/* Left arrow */
+.btn-arrow-left::before,
+nav:not(.item-sidebar__nav) .btn-arrow-left::before {
+  content: '\2190';
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  margin-right: 0;
+  transition: max-width 0.3s ease, opacity 0.3s ease, margin-right 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn-arrow-left::after,
+nav:not(.item-sidebar__nav) .btn-arrow-left::after {
+  content: none;
+}
+
 .btn-lg {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: var(--border-radius-lg);
 }
 
+/* Hover: right arrow (default) */
 .btn:hover,
 nav:not(.item-sidebar__nav) .btn:hover {
   background-color: var(--zen-charcoal-darker);
@@ -122,6 +143,27 @@ nav:not(.item-sidebar__nav) .btn:hover::after {
   max-width: 1.5rem;
   opacity: 1;
   margin-left: 0.5rem;
+}
+
+/* Hover: left arrow */
+.btn-arrow-left:hover,
+nav:not(.item-sidebar__nav) .btn-arrow-left:hover {
+  padding-right: 1rem;
+  padding-left: 1.5rem;
+}
+
+.btn-arrow-left:hover::before,
+nav:not(.item-sidebar__nav) .btn-arrow-left:hover::before {
+  max-width: 1.5rem;
+  opacity: 1;
+  margin-right: 0.5rem;
+}
+
+.btn-arrow-left:hover::after,
+nav:not(.item-sidebar__nav) .btn-arrow-left:hover::after {
+  max-width: 0;
+  opacity: 0;
+  margin-left: 0;
 }
 
 .btn-outline {
@@ -677,7 +719,10 @@ nav:not(.item-sidebar__nav) a.active {
   transform: translateY(0);
 }
 
-/* Always-visible mobile top nav (< lg) */
+a {
+  color: var(--highlight);
+}
+
 .mobile-topnav {
   background: var(--zen-cream-darker);
   border-radius: var(--border-radius-lg);
