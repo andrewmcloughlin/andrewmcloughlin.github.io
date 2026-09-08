@@ -1,20 +1,19 @@
 ---
 layout: base.njk
-title: Home
+title: All Projects
+description: Browse all projects by Andrew McLoughlin, filtered by technology stack or category.
 ---
 
-<section id="home" class="spa-section text-center align-items-center py-5">
-  <div class="d-flex flex-column align-items-center justify-content-center">
-    <h1 class="fs-3 fw-bold mb-4 pt-4 ps-4 pb-0 font-heading fade-in delay-1">Hi, I'm Andrew,</h1>
-    <h2 class="display-4 fw-bold hero-title mb-4 pt-0 pb-4 ps-4 fade-in delay-2 font-heading">I make scientific software</h2>
-    <p class="lead ps-4 fade-in delay-3">I'm a full-stack developer and product owner specialising in scientific software and data products. </p>
-  </div>
-
+<section id="projects" class="spa-section mb-5 fade-in delay-5 py-5 mt-5 text-center">
+  <h2 class="my-5 pt-5 fs-1 fw-semibold">I'm Andrew McLoughlin,</h2>
+  <h2 class="my-5 pb-5 fs-1 fw-normal">I make scientific software</h2>
+  <p>Here's some of my favourite work:</p>
   {% include "components/gallery-carousel.njk" %}
+</section>
 
-<section id="projects" class="spa-section mb-5 fade-in delay-5 py-5 mt-5">
-  <h2 class="my-4 py-4 border-bottom font-heading">Featured Work</h2>
-  <div class="row g-4 mt-2">
+
+<section>
+  <div class="row g-4 mt-4 pt-4">
     {% for item in collections.portfolio | sort(attribute="data.order") %}
       {% if item.data.pinned %}
         <div class="col-12">
@@ -23,48 +22,33 @@ title: Home
       {% endif %}
     {% endfor %}
   </div>
-  <div class="d-flex justify-content-end mt-2">
-    <a href="{{ '/projects/' | url }}" class="btn btn-outline-primary w-100 py-2">More Projects &rarr;</a>
-  </div>
 </section>
 
-<section id="employment" class="spa-section mb-5 fade-in delay-4 py-5">
-  <h2 class="mb-4 pb-2 border-bottom font-heading">Employment History</h2>
-  <div class="timeline">
-    {% for job in cv.employmentHistory %}
-    {% include "components/employment-item.njk" %}
-    {% endfor %}
-  </div>
-</section>
 
-<section id="qualifications" class="spa-section mb-5 fade-in delay-5 py-5">
-  <h2 class="my-4 py-2 border-bottom font-heading">Qualifications</h2>
-  <div class="timeline mb-4 pb-4">
-    {% for qual in cv.qualifications %}
-      {% include "components/qual-item.njk" %}
-    {% endfor %}
-  </div>
-  <h2 id="certificates" class="my-4 py-2 border-bottom font-heading pt-4">Certificates</h2>
-  <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mt-2 d-flex align-items-stretch">
-    {% for cert in cv.certificates %}
-      <div class="col">
-        {% include "components/cert-item.njk" %}
+
+<section class="spa-section mb-5" x-data="{ filter: 'all', stackFilter: '' }">
+  <h2 class="mb-4 pb-2 border-bottom font-heading">All Projects</h2>
+
+  <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
+    <button class="btn btn-outline" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
+    <button class="btn btn-outline" :class="{ 'active': filter === 'Product' }"  @click="filter = 'Product'; stackFilter = ''">Product</button>
+    <button class="btn btn-outline" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'; stackFilter = ''">Software</button>
+    <button class="btn btn-outline" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button>
+    <template x-if="filter === 'Software'">
+      <div class="d-flex align-items-center gap-2 flex-wrap">
+        <span class="text-muted text-separator">|</span>
+        {% for stackItem in collections.stackItems %}
+          <button class="btn btn-outline-secondary" :class="{ 'active': stackFilter === '{{ stackItem }}' }" @click="stackFilter = stackFilter === '{{ stackItem }}' ? '' : '{{ stackItem }}'">{{ stackItem }}</button>
+        {% endfor %}
       </div>
+    </template>
+  </div>
+
+  <div class="row g-4">
+    {% for item in collections.portfolio | reverse %}
+        <div class="col-12 portfolio-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
+          {% include "components/project-card.njk" %}
+        </div>
     {% endfor %}
   </div>
 </section>
-
-<section id="papers" class="spa-section mb-5 fade-in delay-5 py-5">
-  <h2 class="my-4 py-2 border-bottom font-heading">Publications</h2>
-  <div class="row g-4 mt-2">
-    {% for pub in cv.publications %}
-      {% include "components/pub-card.njk" %}
-    {% endfor %}
-  </div>
-  <div class="d-flex justify-content-end mt-4">
-    <a href="https://cambridge.academia.edu/AndrewMcLoughlin" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary w-100 py-2">More Publications &rarr;</a>
-  </div>
-</section>
-
-
-

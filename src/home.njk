@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Home
+---
+
+<section id="home" class="spa-section text-center align-items-center mt-5 py-5">
+  <div class="d-flex flex-column align-items-center justify-content-center py-5 my-4">
+    {% include "images/hero-img.svg" %}
+    <h1 class="fs-3 fw-bold mb-4 pt-4 ps-4 pb-0 font-xkcd fade-in delay-1 py-4 my-4">
+      Hi, I'm Andrew,
+    </h1>
+    <h2 class="display-4 fw-bold hero-title mb-4 pt-0 pb-4 ps-4 fade-in delay-2 font-xkcd">
+      I make scientific software
+    </h2>
+    <p class="lead ps-4 fade-in delay-3 mb-4 pb-4">
+      Full-stack developer and product owner specialising in scientific software & data products.<br>
+      Based in Cambridge, UK.
+    </p>
+  </div>
+
+  <a class="btn btn-lg delay-4" href="{{ '/me/' | url }}">About me</a>
+  <a class="btn btn-lg delay-4" href="{{ '/work/' | url }}">My work</a>
+</section>

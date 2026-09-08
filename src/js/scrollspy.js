@@ -9,6 +9,11 @@
             const href = link.getAttribute('href');
             link.classList.toggle('active', href === '#' + id);
         });
+
+        const activeLink = document.querySelector('#mobileScrollNav .nav-link.active');
+        if (activeLink) {
+            activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
     }
 
     const observer = new IntersectionObserver(

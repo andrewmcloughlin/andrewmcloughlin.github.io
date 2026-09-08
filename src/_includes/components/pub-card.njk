@@ -1,27 +1,24 @@
-<div class="card shadow-sm border-0 bg-body text-start">
-  <div class="card-body py-2 px-3">
-    <div class="d-flex justify-content-between align-items-start mt-2">
-      <div>
-        <h3 class="card-title h4 font-heading mb-1">
-          {% if pub.link %}
-            <a href="{{ pub.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-body-secondary d-inline-flex align-items-center stre">
-              {{ pub.title }}
-            </a>
-          {% else %}
+<div class="card text-start h-100 p-4 p-md-5">
+  <div class="d-flex justify-content-between gap-3 align-items-start mb-3">
+    <div>
+      <h3 class="card-title h5 font-heading mb-2">
+        {% if pub.link %}
+          <a href="{{ pub.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-body-secondary stretched-link">
             {{ pub.title }}
-          {% endif %}
-        </h3>
-        <h6 class="card-subtitle mt-1 mb-3 text-body-secondary text-uppercase fw-medium letter-spacing-wide">
-          {{ pub.journal }}
-        </h6>
-      </div>
-      <div class="text-end text-body-secondary fw-medium text-nowrap ms-3 mt-1">{{pub.year}}</div>
+          </a>
+        {% else %}
+          {{ pub.title }}
+        {% endif %}
+      </h3>
+      <h6 class="card-subtitle mt-0 mb-0 text-body-secondary text-uppercase fw-medium letter-spacing-wide fs-6">
+        {{ pub.journal }}
+      </h6>
     </div>
-    <dl class="mb-1">
-      {% if pub.abstract %}
-        <dd class="mb-2 text-muted">{{ pub.abstract }}</dd>
-      {% endif %}
-    </dl>
+    <div class="text-end text-body-secondary fw-bold text-nowrap ms-3 mt-1">{{ pub.year }}</div>
   </div>
+  {% if pub.abstract %}
+    <p class="mb-0 text-muted fs-6">
+      {{ pub.abstract }}
+    </p>
+  {% endif %}
 </div>
-

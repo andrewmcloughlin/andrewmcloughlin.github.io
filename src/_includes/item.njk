@@ -10,7 +10,7 @@ layout: base.njk
         {% for item in sortedPortfolio %}
           <li>
             <a href="{{ item.url | url }}"
-               class="item-sidebar__link nav-link px-0 py-2{% if page.url == item.url %} active{% endif %}">
+               class="item-sidebar__link nav-link{% if page.url == item.url %} active{% endif %}">
               {{ item.data.title }}
             </a>
           </li>
@@ -20,9 +20,9 @@ layout: base.njk
   </aside>
 
   <main class="item-main">
-    <article class="card shadow-sm border-0 mb-5">
-      <div class="card-body p-4 p-md-5">
-        <div class="d-flex flex-wrap gap-2 mb-3" aria-label="Technology stack">
+    <article class="card mb-5 border-0 shadow-sm">
+      <div class="card-body p-4 p-md-5 p-lg-5">
+        <div class="d-flex flex-wrap gap-2 mb-4" aria-label="Technology stack">
           {% if featured_stack %}
             {% for tool in featured_stack %}
               <span class="badge bg-primary-subtle text-primary">{{ tool }}</span>
@@ -35,21 +35,21 @@ layout: base.njk
           {% endif %}
         </div>
 
-        <header class="bg-body mb-4">
-          <h1 class="card-title display-5 fw-bold mb-3">{{ title }}</h1>
-          <p class="card-subtitle lead text-secondary mb-4">{{ description }}</p>
+        <header class="mb-5 pb-2">
+          <h1 class="card-title display-5 fw-bold mb-4">{{ title }}</h1>
+          <p class="card-subtitle lead text-secondary mb-3">{{ description }}</p>
         </header>
 
         {% if image %}
-          <img src="{{ image | url }}" alt="{{ title }}" class="img-fluid rounded mb-4 w-100">
+          <img src="{{ image | url }}" alt="{{ title }}" class="img-fluid rounded-4 mb-5 w-100 shadow-sm">
         {% endif %}
 
-        <div class="card-text border-top pt-4">
+        <div class="card-text border-top pt-5 mt-2">
           {{ content | safe }}
         </div>
 
         <nav class="mt-5">
-          <a href="{{ '/' | url }}" class="btn btn-primary text-white">&larr; Back to Home</a>
+          <a href="{{ '/' | url }}" class="btn">&larr; Back to Home</a>
         </nav>
       </div>
     </article>

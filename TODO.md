@@ -14,3 +14,7 @@ Atlas Challenges
     - zen
     - antigravity
 - add blog
+
+
+Other work
+- Resupply project with Teams integration
