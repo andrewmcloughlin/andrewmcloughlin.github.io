@@ -740,7 +740,9 @@ a {
   background: var(--zen-cream-darker);
   border-radius: var(--border-radius-lg);
   width: 58px;
+  min-width: 58px;
   height: 58px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
