@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="415" height="275" fill="none" class="hero-img" viewBox="0 0 415 275">
+  <style>
+    .hero-img .stroke-charcoal { stroke: var(--zen-charcoal); }
+    .hero-img .fill-charcoal   { fill:   var(--zen-charcoal); }
+  </style>
   <defs>
     <filter id="turbulence-filter" x="-50%" y="-50%" width="200%" height="200%" filterUnits="userSpaceOnUse">
       <!-- Creates the noise texture. 
@@ -38,50 +42,50 @@
 
 
   <g class="Group 215">
-    <path stroke="#000" stroke-linecap="round" stroke-width="3.141" d="m250.68 177.087 22.32 16.93m-142.508-18.886-20.603 17.17" class="bicep"/>
-    <path stroke="#000" stroke-linecap="round" stroke-width="3.141" d="m273 194.018-22.32-4.571m-139.077 2.854 20.604-2.854" class="fore-arm"/>
+    <path stroke-width="3.141" d="m250.68 177.087 22.32 16.93m-142.508-18.886-20.603 17.17" class="bicep stroke-charcoal" stroke-linecap="round"/>
+    <path stroke-width="3.141" d="m273 194.018-22.32-4.571m-139.077 2.854 20.604-2.854" class="fore-arm stroke-charcoal" stroke-linecap="round"/>
     <g class="guy">
-      <path stroke="#000" stroke-linecap="round" stroke-width="3.141" d="M140.748 101.07c1.188 4.167 2.435 10.743 5.766 17.17m93.818-22.321c-.793 7.141-3.92 15.229-9.513 22.321" class="face"/>
-      <path stroke="#000" stroke-linejoin="round" stroke-width="3.141" d="M137.508 103.695c5.167-4.31 15.706-16.044 16.518-28.499 28.081 23.485 47.139 10.819 57.558 6.201 8.335-3.694 15.67 4.002 18.296 8.312 4.778-4.96 5.294-9.807 4.956-11.61 2.032 5.497 5.87 17.943 4.955 23.748 18.416-82.691-46.266-92.337-79.161-78.67-.748-2.774 2.804-8.907 4.673-11.628-4.985 4.964-15.177 17.789-16.072 29.376-11.723-3.264-22.138 47.408-11.723 62.77Z" class="hair"/>
+      <path stroke-width="3.141" d="M140.748 101.07c1.188 4.167 2.435 10.743 5.766 17.17m93.818-22.321c-.793 7.141-3.92 15.229-9.513 22.321" class="face stroke-charcoal" stroke-linecap="round"/>
+      <path stroke-width="3.141" d="M137.508 103.695c5.167-4.31 15.706-16.044 16.518-28.499 28.081 23.485 47.139 10.819 57.558 6.201 8.335-3.694 15.67 4.002 18.296 8.312 4.778-4.96 5.294-9.807 4.956-11.61 2.032 5.497 5.87 17.943 4.955 23.748 18.416-82.691-46.266-92.337-79.161-78.67-.748-2.774 2.804-8.907 4.673-11.628-4.985 4.964-15.177 17.789-16.072 29.376-11.723-3.264-22.138 47.408-11.723 62.77Z" class="hair stroke-charcoal" stroke-linejoin="round"/>
       <g class="glasses">
-        <path fill="#fff" fill-opacity=".3" stroke="#000" stroke-width="3.141" d="M180.025 113.105c-2.516 3.291-19.743 6.194-27.084 3.097s-6.584-18.388-5.616-20.323c.968-1.936 33.11-2.517 35.615 1.935s-.399 12-2.915 15.291Z" class="lens-right"/>
-        <path fill="#fff" fill-opacity=".3" stroke="#000" stroke-width="3.141" d="M196.608 113.105c2.516 3.291 19.742 6.194 27.084 3.097s6.583-18.388 5.616-20.323c-.968-1.936-33.11-2.517-35.615 1.935s.398 12 2.915 15.291Z" class="lens-left"/>
-        <path stroke="#000" stroke-width="3.141" d="M184.652 101.345h7.23" class="bridge"/>
+        <path fill="#fff" fill-opacity=".3" stroke-width="3.141" d="M180.025 113.105c-2.516 3.291-19.743 6.194-27.084 3.097s-6.584-18.388-5.616-20.323c.968-1.936 33.11-2.517 35.615 1.935s-.399 12-2.915 15.291Z" class="lens-right stroke-charcoal"/>
+        <path fill="#fff" fill-opacity=".3" stroke-width="3.141" d="M196.608 113.105c2.516 3.291 19.742 6.194 27.084 3.097s6.583-18.388 5.616-20.323c-.968-1.936-33.11-2.517-35.615 1.935s.398 12 2.915 15.291Z" class="lens-left stroke-charcoal"/>
+        <path stroke-width="3.141" d="M184.652 101.345h7.23" class="bridge stroke-charcoal"/>
       </g>
     </g>
     <path fill="url(#a)" d="m0 193.215 134.112 2.519-7.056-77.496h128.907l-6.814 74.977h164.587V0H0z" class="laptop-glow"/>
     <g class="desk">
       <g class="desk-top" filter="url(#b)">
-        <path stroke="#000" stroke-width="3.141" d="M6.441 195.491v15.49h382.093v-15.49z"/>
+        <path stroke-width="3.141" d="M6.441 195.491v15.49h382.093v-15.49z" class="stroke-charcoal"/>
       </g>
       <g class="desk-bottom" filter="url(#c)">
-        <path stroke="#000" stroke-width="3.141" d="M20.738 273.586V210.98h346.325v62.606"/>
+        <path stroke-width="3.141" d="M20.738 273.586V210.98h346.325v62.606" class="stroke-charcoal"/>
       </g>
     </g>
     <g class="laptop" filter="url(#d)">
-      <path stroke="#000" stroke-width="3.141" d="m125.852 118.372 8.075 77.118h115.037l6.706-77.118z"/>
+      <path stroke-width="3.141" d="m125.852 118.372 8.075 77.118h115.037l6.706-77.118z" class="stroke-charcoal"/>
     </g>
     <g class="lamp">
       <g class="lamp-head">
-        <path stroke="#000" stroke-width="3.141" d="m306.178 72.705-45.907-9.227c-1.136-18.721 19.595-28.64 31.27-26.415s22.098 16.197 14.637 35.642Z" class="Vector 280"/>
-        <path stroke="#000" stroke-width="3.141" d="M317.614 71.63c-3.162-.725-7.041-1.545-10.176-2.02l.922-10.897 11.781 2.966a5.1 5.1 0 0 1 3.588 6.574c-.852 2.53-3.513 3.975-6.115 3.378Z" class="Vector 281"/>
+        <path stroke-width="3.141" d="m306.178 72.705-45.907-9.227c-1.136-18.721 19.595-28.64 31.27-26.415s22.098 16.197 14.637 35.642Z" class="Vector 280 stroke-charcoal"/>
+        <path stroke-width="3.141" d="M317.614 71.63c-3.162-.725-7.041-1.545-10.176-2.02l.922-10.897 11.781 2.966a5.1 5.1 0 0 1 3.588 6.574c-.852 2.53-3.513 3.975-6.115 3.378Z" class="Vector 281 stroke-charcoal"/>
       </g>
-      <path stroke="#000" stroke-linejoin="round" stroke-width="3.141" d="m323.461 70.01 74.822 43.076 14.147-5.309-88.969-42.766" class="lam-arm-top"/>
-      <path fill="#000" d="m398.284 113.087-.603-1.608-.367.138-.27.282zm-65.245 68.139-1.24-1.188-.477.498v.69zm0 3.974h-1.717v1.716h1.717zm19.151 0v1.716h1.717V185.2zm0-3.974-1.33-1.086-.387.474v.612zm59.83-73.29 1.33 1.086a1.719 1.719 0 0 0-1.933-2.694zm-13.736 5.151-1.24-1.188-65.245 68.139 1.24 1.188 1.24 1.187 65.245-68.139zm-65.245 68.139h-1.717v3.974h3.141v-3.974zm0 3.974v1.716h19.151v-3.433h-19.151zm19.151 0h1.717v-3.974h-3.141v3.974zm0-3.974 1.33 1.085 59.83-73.289-1.33-1.086-1.33-1.086-59.83 73.29zm59.83-73.29-.603-1.608-13.736 5.151.603 1.608.603 1.608 13.735-5.151z" class="lamp=arm-bottom"/>
+      <path stroke-width="3.141" d="m323.461 70.01 74.822 43.076 14.147-5.309-88.969-42.766" class="lam-arm-top stroke-charcoal" stroke-linejoin="round"/>
+      <path d="m398.284 113.087-.603-1.608-.367.138-.27.282zm-65.245 68.139-1.24-1.188-.477.498v.69zm0 3.974h-1.717v1.716h1.717zm19.151 0v1.716h1.717V185.2zm0-3.974-1.33-1.086-.387.474v.612zm59.83-73.29 1.33 1.086a1.719 1.719 0 0 0-1.933-2.694zm-13.736 5.151-1.24-1.188-65.245 68.139 1.24 1.188 1.24 1.187 65.245-68.139zm-65.245 68.139h-1.717v3.974h3.141v-3.974zm0 3.974v1.716h19.151v-3.433h-19.151zm19.151 0h1.717v-3.974h-3.141v3.974zm0-3.974 1.33 1.085 59.83-73.289-1.33-1.086-1.33-1.086-59.83 73.29zm59.83-73.29-.603-1.608-13.736 5.151.603 1.608.603 1.608 13.735-5.151z" class="lamp=arm-bottom fill-charcoal"/>
       <g class="lamp-base" filter="url(#e)">
-        <path stroke="#000" stroke-width="3.141" d="M315.762 185.726v9.156h51.294v-9.156z"/>
+        <path stroke-width="3.141" d="M315.762 185.726v9.156h51.294v-9.156z" class="stroke-charcoal"/>
       </g>
     </g>
     <g class="mug">
-      <path stroke="#000" stroke-linecap="round" stroke-width="3.141" d="M66.962 168.7c5.15-1.717 13.735 1.717 10.301 8.585-2.747 5.494-8.012 10.302-10.301 12.019m-25.759 4.713v-32.622h24.038v32.622z" class="mug"/>
+      <path stroke-width="3.141" d="M66.962 168.7c5.15-1.717 13.735 1.717 10.301 8.585-2.747 5.494-8.012 10.302-10.301 12.019m-25.759 4.713v-32.622h24.038v32.622z" class="mug stroke-charcoal" stroke-linecap="round"/>
         <g filter="url(#turbulence-filter)">
     <path 
-      class="steam-left"
-      stroke="#000" stroke-linecap="round" stroke-width="3.141" 
+      class="steam-left stroke-charcoal"
+      stroke-linecap="round" stroke-width="3.141" 
       d="m49.794 151.094-3.141-3.141a4.856 4.856 0 0 1 0-6.868 4.856 4.856 0 0 0 0-6.868 4.856 4.856 0 0 1 0-6.868l3.141-3.141"/>
     <path 
-      class="steam-right"
-      stroke="#000" stroke-linecap="round" stroke-width="3.141" 
+      class="steam-right stroke-charcoal"
+      stroke-linecap="round" stroke-width="3.141" 
       d="m60.094 127.056-3.141 3.141a4.855 4.855 0 0 0 0 6.867 4.856 4.856 0 0 1 0 6.868 4.856 4.856 0 0 0 0 6.868l1.717 1.717"/>
   </g>
     </g>
