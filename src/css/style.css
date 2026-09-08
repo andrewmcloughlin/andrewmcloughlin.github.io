@@ -88,7 +88,20 @@ nav:not(.item-sidebar__nav) .btn {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  overflow: hidden;
+  transition: padding 0.3s ease, background-color 0.2s ease;
+}
+
+.btn::after,
+nav:not(.item-sidebar__nav) .btn::after {
+  content: '\2192';
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  margin-left: 0;
+  transition: max-width 0.3s ease, opacity 0.3s ease, margin-left 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .btn-lg {
@@ -101,6 +114,14 @@ nav:not(.item-sidebar__nav) .btn {
 nav:not(.item-sidebar__nav) .btn:hover {
   background-color: var(--zen-charcoal-darker);
   color: var(--zen-cream);
+  padding-right: 1.5rem;
+}
+
+.btn:hover::after,
+nav:not(.item-sidebar__nav) .btn:hover::after {
+  max-width: 1.5rem;
+  opacity: 1;
+  margin-left: 0.5rem;
 }
 
 .btn-outline {
