@@ -5,9 +5,9 @@ const getPreferredTheme = () => {
 };
 
 const setThemeIcon = (theme) => {
-    const icon = theme === 'light' ? 'fa-sun' : 'fa-moon';
+    const icon = theme === 'light' ? 'fa-moon' : 'fa-sun';
     document.querySelectorAll('.theme-icon').forEach(el => {
-        el.className = `fa-solid ${icon}`;
+        el.className = `fa-solid ${icon} theme-icon`;
     });
 };
 

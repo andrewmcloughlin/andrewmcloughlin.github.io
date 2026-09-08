@@ -39,6 +39,17 @@
   --border-radius-sm: 8px;
 }
 
+[data-bs-theme="dark"] {
+  --white: #1A1A1A;
+  --zen-cream: #2E2E2E;
+  --zen-cream-lighter: #1A1A1A;
+  --zen-cream-darker: #4A4A4A;
+
+  --zen-charcoal: #F2F0E3;
+  --zen-charcoal-lighter: #D6D3B6;
+  --zen-charcoal-darker: #F4F3EB;
+}
+
 .card {
   position: relative;
   background-color: var(--white);
@@ -794,6 +805,8 @@ nav:not(.item-sidebar__nav) a.active {
 }
 
 .site-footer {
+  position: relative;
+  overflow: hidden;
   background-color: var(--zen-charcoal);
   color: var(--zen-cream);
   margin-top: auto;
