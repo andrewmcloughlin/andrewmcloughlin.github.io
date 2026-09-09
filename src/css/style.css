@@ -12,6 +12,10 @@
   text-transform: uppercase;
 }
 
+[x-cloak] {
+  display: none !important;
+}
+
 :root {
   --font-heading: "Bricolage Grotesque", sans-serif;
   --font-body: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -51,6 +55,18 @@
   --zen-charcoal-darker: #F4F3EB;
 }
 
+::selection {
+  background: var(--zen-charcoal);
+  color: var(--zen-cream);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: var(--zen-charcoal);
+  color: var(--zen-cream);
+  text-shadow: none;
+}
+
 .card {
   position: relative;
   background-color: var(--white);
@@ -64,6 +80,17 @@
 .card-subtitle {
   color: var(--text-secondary);
   font-size: 0.9em;
+}
+
+.pub-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+}
+
+.pub-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--zen-charcoal-lighter);
 }
 
 .stretched-link::after {
@@ -486,12 +513,18 @@ nav:not(.item-sidebar__nav) .btn-arrow-left:hover::after {
   flex: 0 0 33.333333%;
 }
 
+.col-lg-3 {
+  width: 25%;
+  flex: 0 0 25%;
+}
+
 @media (max-width: 768px) {
 
   .col-md-4,
   .col-md-6,
   .col-md-8,
-  .col-lg-4 {
+  .col-lg-4,
+  .col-lg-3 {
     width: 100%;
     flex: 0 0 100%;
   }

@@ -19,32 +19,36 @@ title: Home
 
 <section id="qualifications" class="spa-section mb-5 fade-in delay-5 py-5">
   <h2 class="my-4 py-2 border-bottom font-heading">Qualifications</h2>
-  <div class="timeline mb-4 pb-4">
+  <div class="timeline card mb-4 pb-4">
     {% for qual in cv.qualifications %}
       {% include "components/qual-item.njk" %}
     {% endfor %}
   </div>
   <h2 id="certificates" class="my-4 py-2 border-bottom font-heading pt-4">Certificates</h2>
-  <div class="row flex-wrap g-4 mt-2 d-flex align-items-stretch">
+  <div class="row flex-wrap g-2 mt-2 d-flex align-items-stretch">
     {% for cert in cv.certificates %}
-      <div class="col-md-6 col-lg-4">
+      <div class="col-md-6 col-lg-3">
         {% include "components/cert-item.njk" %}
       </div>
     {% endfor %}
   </div>
 </section>
 
-<section id="publications" class="spa-section mb-5 fade-in delay-5 py-5">
-  <h2 class="my-4 py-2 border-bottom font-heading">Publications</h2>
+<section id="publications" class="spa-section mb-5 fade-in delay-5 py-5" x-data="{ expandedPubs: false }">
+  <h2 class="my-4 py-2 border-bottom font-heading">Publications, Posters & Papers</h2>
+  <p class="mb-4">These are some of the publications, posters, white papers and editorials that I have written or contributed to.</p>
   <div class="row g-4 mt-2">
     {% for pub in cv.publications %}
-      <div class="col-12">
+      <div class="col-12 col-md-6" {% if loop.index > 4 %} x-show="expandedPubs" x-transition x-cloak {% endif %}>
         {% include "components/pub-card.njk" %}
       </div>
     {% endfor %}
   </div>
   <div class="d-flex justify-content-end mt-4">
-    <a href="https://cambridge.academia.edu/AndrewMcLoughlin" target="_blank" rel="noopener noreferrer" class="btn btn-outline w-100 py-2">More Publications &rarr;</a>
+    <a class="btn btn-outline w-100 py-2" style="cursor: pointer;" @click="expandedPubs = !expandedPubs">
+      <span x-show="!expandedPubs">More Publications</span>
+      <span x-show="expandedPubs" x-cloak>Fewer Publications</span>
+    </a>
   </div>
 </section>
 
@@ -62,7 +66,7 @@ title: Home
     {% endfor %}
   </div>
   <div class="d-flex justify-content-end mt-2">
-    <a href="{{ '/work/' | url }}" class="btn btn-outline w-100 py-2">More Projects &rarr;</a>
+    <a href="{{ '/work/' | url }}" class="btn btn-outline w-100 py-2">More Projects</a>
   </div>
 </section>
 
