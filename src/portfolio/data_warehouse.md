@@ -9,7 +9,7 @@ featured_stack: ["Airflow", "dbt", "Airbyte", "Metabase", "GCP", "SQL"]
 other_stack: ["PostgreSQL", "Google Looker Studio"]
 image: "/images/metabase.png"
 ---
-I designed and built a data warehouse for clinical, laboratory and financial data, which significantly improved the time and effort required to generate reports and insights. It also allowed us to provide self-service analytics to our stakeholders, which reduced the time and effort required to generate reports and insights.
+I designed and built a data warehouse for clinical, laboratory and financial data, which significantly improved the time and effort required to generate reports and insights.
 
 ## What is the Data Warehouse?
 
@@ -17,21 +17,31 @@ The Data Warehouse is a centralised repository for all of the company's data. It
 
 ## What problems does it solve?
 
-Before the data warehouse, the company's data was stored in various silos, making it difficult to access and analyse. The data warehouse solved this problem by providing a centralised repository for all of the company's data. It also allowed us to provide self-service analytics to our stakeholders, which reduced the time and effort required to generate reports and insights.
+Before the data warehouse, the company's data was stored in various silos, making it difficult to access and analyse. The data warehouse solved this problem by providing a centralised repository for all of the company's data.
 
 ## Key Challenges
 
-One of the biggest challenges was the variety of data sources we had to deal with. We had clinical data from various sources, laboratory data from various sources, and financial data from various sources. Each source had its own format and structure, making it difficult to integrate the data into a single repository. 
+One of the biggest challenges was the variety of data sources we had to deal with. We had:
+
+- clinical trial data (exported from OpenClinica's API) which included Subject Visits, Demography and Adverse Events
+- laboratory data (coming from 2 separate in house LIMS)
+- operations data (about requests, shipments and analyses)
+- commercial data (sales, projections and customer support)
+- chemical data (pulled from the VOC Atlas and ChEBI)
+- publication records (pulled via the CrossRef API)
+- common dimensional elements (such as date and time of day)
 
 
 ## Design Philosophy
 
 Fast, graceful failures. When a pipeline fails, we favour outdated data over no data. I used Teams webhooks to notify us of failed jobs.
+Used dbt incremental runs and snapshot models to efficiently manage high-volume telemetry and historical state changes without full-table re-scans.
+We implemented automated schema tests (such as unique, not_null, relationships), and freshness checks to catch silent anomalies before downstream dashboards break or incorrect clinical reports were generated.
 
 
 ## My Solution
 
-I serendipitously discovered [Metabase](https://www.metabase.com), an open source BI tool that allowed us to provide self-service analytics to our stakeholders. This was a game changer for the company, as it allowed us to get insights from our data quickly and easily. Prior to this we were using Looker Studio, which was less intuitive and required more technical expertise to use effectively.
+We use [Metabase](https://www.metabase.com), an open source and incredibly easy-to-use BI tool. Prior to this we were using Looker Studio, which was less intuitive and required more technical expertise to use effectively.
 
 We also used [Airbyte](https://airbyte.com), which has prebuilt connectors for a tonne of common sources. This meant that we didn't have to write custom connectors for each data source, which saved us a lot of time and effort. We hooked Airflow up to Teams to notify us of failed jobs, which meant that we could react quickly to any issues.
 
