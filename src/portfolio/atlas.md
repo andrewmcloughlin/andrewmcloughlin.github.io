@@ -1,12 +1,12 @@
 ---
-title: "VOC Atlas: The Periodic Table of Breath"
+title: "The Periodic Table of Breath"
 description: "An interactive web application for exploring the world of Volatile Organic Compounds (VOCs)."
 layout: item.njk
 tags: ["portfolio", "Product", "Software", "Data"]
 pinned: true
 order: 1
 featured_stack: ["Python", "Django", "HTMX", "htpy", "Bootstrap", "RDKit"]
-other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Elicit API", "CrossRef API", "Figma", "Excalidraw", "Google Analytics", "Umami", "SMILES.drawer"]
+other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer"]
 image: /images/atlas.png
 ---
 
@@ -61,7 +61,7 @@ I started by interviewing potential users to understand their needs and requirem
 
 ![Low Fidelity Wireframes](/images/article/atlas_lowfi.png)
 
-I moved iteratively from whiteboard scribbles to low-fidelity mockups, to quick interactive prototypes in Figma and finally to high-fidelity mockups.
+I moved iteratively from whiteboard scribbles to low-fidelity mockups in Excalidraw and Penpot, to quick interactive prototypes in Figma and finally to high-fidelity mockups.
 
 ![High Fidelity Mockups](/images/article/atlas_highfi.png)
 
