@@ -10,7 +10,7 @@ image: /images/omed.png
 ## The App
 
 
-The OMED Health app is an app for [Android](https://play.google.com/store/apps/details?id=com.owlstone.omed&hl=en) and [iOS](https://apps.apple.com/gb/app/omed-health/id6450515246) that allows users to track gastrointestinal symptoms and food intake, share data with their clinicians and receive clinician's diagnoses and treatment plans.
+The OMED Health app is an app for [Android](https://play.google.com/store/apps/details?id=com.owlstone.omed&hl=en) and [iOS](https://apps.apple.com/gb/app/omed-health/id6450515246) that allows users to track gastrointestinal symptoms, food intake, pair their OMED breath device, log breath tests and share data with their clinicians and receive clinician's diagnoses and treatment plans.
 
 
 ## Visualisation Redesign
