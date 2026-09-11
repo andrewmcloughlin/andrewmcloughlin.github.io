@@ -12,13 +12,13 @@ image: /images/atlas.png
 
 
 
-## What is the VOC Atlas?
-
 <div class="text-center mb-4">
   <a href="https://www.vocatlas.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
     <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>Live application: VOC Atlas
   </a>
 </div>
+
+## What is the VOC Atlas?
 
 A django-based web application for exploring the world of Volatile Organic Compounds (VOCs). It consists of a public-facing read only interface and an internal interface for Owlstone employees to upload and manage data.
 

@@ -357,6 +357,21 @@ nav:not(.item-sidebar__nav) .btn-arrow-left:hover::after {
   padding-right: 1rem;
 }
 
+.px-4 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-5 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.py-4 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .py-5 {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -372,6 +387,32 @@ nav:not(.item-sidebar__nav) .btn-arrow-left:hover::after {
 
 .p-5 {
   padding: 3rem;
+}
+
+@media (min-width: 425px) {
+  .p-sm-0 {
+    padding: 0rem;
+  }
+
+  .p-sm-1 {
+    padding: 0.5rem;
+  }
+
+  .p-sm-2 {
+    padding: 1rem;
+  }
+
+  .p-sm-3 {
+    padding: 2rem;
+  }
+
+  .p-sm-4 {
+    padding: 1.5rem;
+  }
+
+  .p-sm-5 {
+    padding: 3rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -642,6 +683,7 @@ h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 h1 {
@@ -1129,12 +1171,9 @@ a {
   align-items: center;
   justify-content: center;
   background-color: #212529;
-  /* bg-dark */
   color: #fff;
-  /* text-white */
   border-radius: 50%;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  /* shadow-sm */
   width: 48px;
   height: 48px;
   flex-shrink: 0;
@@ -1426,7 +1465,7 @@ a {
   margin: 0 auto;
 }
 
-/* Left sidebar — visible only on lg+ (toggled via d-none d-lg-flex in markup) */
+/* Left sidebar */
 .item-sidebar {
   width: 240px;
   min-width: 240px;
@@ -1435,7 +1474,6 @@ a {
   /* clears the sticky topnav */
   max-height: calc(100vh - 56px);
   overflow-y: auto;
-  padding: 3rem 1.5rem 3rem 2rem;
   border-right: 1px solid var(--border-color);
   scrollbar-width: none;
 }

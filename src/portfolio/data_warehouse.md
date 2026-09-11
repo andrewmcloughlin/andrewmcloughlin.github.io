@@ -47,6 +47,8 @@ We also used [Airbyte](https://airbyte.com), which has prebuilt connectors for a
 
 We used [Airflow](https://airflow.apache.org/) to orchestrate the data pipelines, and dbt to transform the data according to Kimball methodology.
 
+We enforced strict data contracts: explicit schemas (data types, ranges, nullability constraints, regular expressions) enforced in dbt. Early on we agreed on terminolgies with other teams (does a "sample" refer to the contents of a single tube following a breath collection, or all of them, and is the content of a tube prior to a beath sample also a "sample"?). These were the questions we had to get on the same page about, in order for teams to be able to speak to each other, let alone share data. We also wrote Service Layer Agreements tied to KPIs about data freshness and versioning rules for breaking schema changes.
+
 ## Impact
 
 The data warehouse has been a valuable asset to the company. It has allowed us to provide self-service analytics to our stakeholders, which has reduced the time and effort required to generate reports and insights. It has also allowed us to identify trends and patterns in the data that would have been difficult to identify otherwise.
