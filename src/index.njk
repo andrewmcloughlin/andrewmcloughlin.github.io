@@ -4,7 +4,7 @@ title: All Projects
 description: Browse all projects by Andrew McLoughlin, filtered by technology stack or category.
 ---
 
-<section id="projects" class="spa-section mb-5 fade-in delay-1 py-5 mt-5 text-center">
+<section id="projects" class="page-section mb-5 fade-in delay-1 py-5 mt-5 text-center">
   <h2 class="my-5 pt-5 fs-1 fw-semibold">I'm Andrew,</h2>
   <h2 class="my-5 pb-5 fs-1 fw-normal">I make scientific software</h2>
   <p>Here's some of my favourite work:</p>
@@ -26,7 +26,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 
 
 
-<section class="spa-section mb-5 fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }">
+<section class="page-section mb-5 fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }">
   <h2 class="mb-4 pb-2 border-bottom font-heading">All Projects</h2>
 
   <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
@@ -36,7 +36,6 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
     <button class="btn btn-outline" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button>
     <template x-if="filter === 'Software'">
       <div class="d-flex align-items-center gap-2 flex-wrap">
-        <span class="text-muted text-separator">|</span>
         {% for stackItem in collections.stackItems %}
           <button class="btn btn-outline-secondary" :class="{ 'active': stackFilter === '{{ stackItem }}' }" @click="stackFilter = stackFilter === '{{ stackItem }}' ? '' : '{{ stackItem }}'">{{ stackItem }}</button>
         {% endfor %}

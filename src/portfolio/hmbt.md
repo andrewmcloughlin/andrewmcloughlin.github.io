@@ -5,8 +5,8 @@ layout: item.njk
 tags: ["portfolio", "Product","Software"]
 pinned: true
 order: 4
-featured_stack: ["Python", "Django", "HTMX", "PostgreSQL", "Bootstrap"]
-other_stack: ["Docker", "Kubernetes", "Metabase", "RabbitMQ", "Celery"]
+featured_stack: ["Python", "Django", "PostgreSQL"]
+other_stack: ["Docker", "Kubernetes",  "HTMX", "Metabase", "RabbitMQ", "Celery", "Bootstrap"]
 image: /images/hmbt.png
 ---
 

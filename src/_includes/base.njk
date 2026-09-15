@@ -48,11 +48,11 @@
   </script>
   <a href="#main" class="visually-hidden focusable">Skip to main content</a>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#sideNav" data-bs-offset="80" tabindex="0">
+<body tabindex="0">
   <header class="site-header">
     <div class="nav-container">
       <nav class="mobile-topnav" id="topNav">
-        <ul class="nav gap-1" id="mobileScrollNav">
+        <ul class="nav gap-1">
           <li class="nav-item"><a href="{{ '/home/' | url }}" class="nav-link{% if page.url == '/home/' %} active{% endif %}"{% if page.url == '/home/' %} aria-current="page"{% endif %}>Home</a></li>
           <li class="nav-item"><a href="{{ '/me/' | url }}" class="nav-link{% if page.url == '/me/' %} active{% endif %}"{% if page.url == '/me/' %} aria-current="page"{% endif %}>CV</a></li>
           <li class="nav-item"><a href="{{ '/' | url }}" class="nav-link{% if page.url == '/work/' %} active{% endif %}"{% if page.url == '/work/' %} aria-current="page"{% endif %}>My Work</a></li>
@@ -64,8 +64,8 @@
     </div>
   </header>
 
-  <div class="spa-wrapper">
-    <main class="spa-main flex-grow-1">
+  <div class="page-wrapper">
+    <main class="page-main flex-grow-1">
       {{ content | safe }}
     </main>
   </div>
@@ -85,19 +85,15 @@
       </ul>
     </div>
     
-    <div class="footer-img">
+    {# <div class="footer-img">
       {% include "images/footer-img.svg" %}
-    </div>
+    </div> #}
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
   <script>window.__pathPrefix = "{{ '/' | url }}";</script>
   <script src="{{ '/js/theme.js' | url }}"></script>
-  <script src="{{ '/js/scrollspy.js' | url }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
-  <button id="scroll-top-fab" class="d-lg-none fab" aria-label="Scroll to top">
-    <i class="fa-solid fa-arrow-up"></i>
-  </button>
 </body>
 </html>

@@ -5,8 +5,8 @@ layout: item.njk
 tags: ["portfolio", "Product", "Software", "Data"]
 pinned: true
 order: 1
-featured_stack: ["Python", "Django", "HTMX", "htpy", "Bootstrap", "RDKit"]
-other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer"]
+featured_stack: ["Python", "Django", "PostgreSQL"]
+other_stack: ["Kubernetes", "Docker", "HTMX", "htpy", "BootstrapPostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer", "RDKit"]
 image: /images/atlas.png
 ---
 
