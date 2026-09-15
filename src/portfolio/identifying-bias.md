@@ -3,8 +3,8 @@ title: "Automating Bias Detection"
 description: "Pipeline to detect bias across study arms."
 layout: item.njk
 tags: ["portfolio", "Data"]
-pinned: true
-order: 1
+pinned: false
+order: 999
 featured_stack: ["Python", "SQL", "dbt"]
 ---
 
