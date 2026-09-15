@@ -5,7 +5,7 @@
     </div>
   {% endif %}
   <div class="project-content col-12 col-md-4 py-md-3 pe-md-3 text-start">
-    <h3 class="project-title fs-2 fw-bold lh-sm mb-3"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body">{{ item.data.title }}</a></h3>
+    <h3 class="fs-2 fw-bold lh-sm mb-3 text-dark"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body text-dark">{{ item.data.title }}</a></h3>
     <p class="text-secondary fs-6">{{ item.data.description }}</p>
     {% if item.data.featured_stack %}
       <div class="mt-2 mb-4">

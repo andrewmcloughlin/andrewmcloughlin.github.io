@@ -35,7 +35,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
     <button class="btn btn-outline" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'; stackFilter = ''">Software</button>
     <button class="btn btn-outline" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button>
     <template x-if="filter === 'Software'">
-      <div class="d-flex align-items-center gap-2 flex-wrap">
+      <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap">
         {% for stackItem in collections.stackItems %}
           <button class="btn btn-outline-secondary" :class="{ 'active': stackFilter === '{{ stackItem }}' }" @click="stackFilter = stackFilter === '{{ stackItem }}' ? '' : '{{ stackItem }}'">{{ stackItem }}</button>
         {% endfor %}
