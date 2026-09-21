@@ -11,6 +11,12 @@ const setThemeIcon = (theme) => {
     });
 };
 
+const syncGlow = (theme) => {
+    const glow = document.querySelector('.lamp-glow');
+    if (!glow) return;
+    glow.classList.toggle('lamp-glow--on', theme === 'dark');
+};
+
 const setTheme = (theme) => {
     document.documentElement.setAttribute('data-bs-theme', theme);
     localStorage.setItem('theme', theme);
@@ -18,20 +24,27 @@ const setTheme = (theme) => {
 };
 
 setTheme(getPreferredTheme());
+syncGlow(getPreferredTheme());
 
 document.addEventListener('DOMContentLoaded', () => {
     setThemeIcon(getPreferredTheme());
 
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
         if (!localStorage.getItem('theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
+            const theme = e.matches ? 'dark' : 'light';
+            setTheme(theme);
+            syncGlow(theme);
         }
     });
 
     document.querySelectorAll('#theme-toggle, #theme-toggle-mobile').forEach(btn => {
         btn.addEventListener('click', () => {
             const current = document.documentElement.getAttribute('data-bs-theme');
-            setTheme(current === 'light' ? 'dark' : 'light');
+            const next = current === 'light' ? 'dark' : 'light';
+            setTheme(next);
+            const flick = document.getElementById('forearm-flick');
+            if (flick) flick.beginElement();
+            setTimeout(() => syncGlow(next), 240);
         });
     });
 });
