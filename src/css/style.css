@@ -44,6 +44,14 @@
   --border-radius-sm: 8px;
 }
 
+.lamp-glow {
+  display: none;
+}
+
+.lamp-glow--on {
+  display: initial;
+}
+
 [data-bs-theme="dark"] {
   --white: #1A1A1A;
   --zen-cream: #2E2E2E;
@@ -69,6 +77,11 @@
 
 .text-dark {
   color: var(--zen-charcoal)
+}
+
+/* Randal Murnoe's xkcd font has crap kerning */
+kerning {
+  margin-right: 0.2rem;
 }
 
 .card {
