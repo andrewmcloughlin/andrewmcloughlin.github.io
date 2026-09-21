@@ -8,7 +8,6 @@ Atlas Challenges
 
 
 - self-host fonts
-- add privacy
 - add favourite tools
     - figma
     - zen
