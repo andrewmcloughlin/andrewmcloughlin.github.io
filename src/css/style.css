@@ -1586,3 +1586,60 @@ a {
     display: flex !important;
   }
 }
+
+/* Keyboard Shortcut Badges */
+body.shortcuts-active .shortcut-badge {
+  opacity: 1;
+  transform: translate(0, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.shortcut-badge {
+  position: absolute;
+  top: 0;
+  right: -8px;
+  background-color: var(--highlight);
+  color: #fff;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.7em;
+  font-weight: 700;
+  padding: 0.1em 0.4em;
+  opacity: 0;
+  transform: translate(0, -50%) scale(0.8);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  min-width: 1.5em;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  line-height: 1.2;
+}
+
+[data-shortcut] {
+  position: relative;
+}
+
+.footer-hint {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 1rem;
+  opacity: 0.4;
+  font-size: 0.85rem;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.site-footer:hover .footer-hint {
+  opacity: 0.7;
+}
+
+.keyboard-icon {
+  display: inline-block;
+  padding: 0.1em 0.3em;
+  font-size: 0.8em;
+  font-family: inherit;
+  background-color: var(--zen-cream-darker);
+  color: var(--zen-charcoal);
+  border-radius: 3px;
+  vertical-align: text-top;
+}

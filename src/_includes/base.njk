@@ -53,9 +53,9 @@
     <div class="nav-container">
       <nav class="mobile-topnav" id="topNav">
         <ul class="nav gap-1">
-          <li class="nav-item"><a href="{{ '/home/' | url }}" class="nav-link{% if page.url == '/home/' %} active{% endif %}"{% if page.url == '/home/' %} aria-current="page"{% endif %}>Home</a></li>
-          <li class="nav-item"><a href="{{ '/me/' | url }}" class="nav-link{% if page.url == '/me/' %} active{% endif %}"{% if page.url == '/me/' %} aria-current="page"{% endif %}>CV</a></li>
-          <li class="nav-item"><a href="{{ '/' | url }}" class="nav-link{% if page.url == '/work/' %} active{% endif %}"{% if page.url == '/work/' %} aria-current="page"{% endif %}>My Work</a></li>
+          <li class="nav-item"><a href="{{ '/home/' | url }}" data-shortcut="h" class="nav-link{% if page.url == '/home/' %} active{% endif %}"{% if page.url == '/home/' %} aria-current="page"{% endif %}>Home</a></li>
+          <li class="nav-item"><a href="{{ '/me/' | url }}" data-shortcut="c" class="nav-link{% if page.url == '/me/' %} active{% endif %}"{% if page.url == '/me/' %} aria-current="page"{% endif %}>CV</a></li>
+          <li class="nav-item"><a href="{{ '/' | url }}" data-shortcut="w" class="nav-link{% if page.url == '/work/' %} active{% endif %}"{% if page.url == '/work/' %} aria-current="page"{% endif %}>My Work</a></li>
         </ul>
       </nav>
       <button id="theme-toggle-mobile" class="theme-toggle-pill" aria-label="Toggle theme">
@@ -74,20 +74,19 @@
     <lead class="xkcd-font">Andrew McLoughlin</lead>
     <div class="footer-links">
       <ul>
-        <li><a href="https://figma.com/@maclin" target="_blank">Figma</a></li>
-        <li><a href="https://linkedin.com/in/amcloughlin1" target="_blank">LinkedIn</a></li>
-        <li><a href="https://cambridge.academia.edu/AndrewMcLoughlin" target="_blank">Academia</a></li>
-        <li><a href="https://social.vivaldi.net/@mcloughlin" target="_blank">Mastodon</a></li>
+        <li><a href="https://figma.com/@maclin" target="_blank" data-shortcut="f">Figma</a></li>
+        <li><a href="https://linkedin.com/in/amcloughlin1" data-shortcut="l" target="_blank">LinkedIn</a></li>
+        <li><a href="https://cambridge.academia.edu/AndrewMcLoughlin" data-shortcut="a" target="_blank">Academia</a></li>
+        <li><a href="https://social.vivaldi.net/@mcloughlin" data-shortcut="m" target="_blank">Mastodon</a></li>
       </ul>
       <ul>
-        <li><a href="{{ '/privacy/' | url }}">Privacy</a></li>
-        <li><a href="{{ '/colophon/' | url }}">Colophon</a></li>
+        <li><a href="{{ '/privacy/' | url }}" data-shortcut="p">Privacy</a></li>
+        <li><a href="{{ '/colophon/' | url }}" data-shortcut="o">Colophon</a></li>
       </ul>
     </div>
-    
-    {# <div class="footer-img">
-      {% include "images/footer-img.svg" %}
-    </div> #}
+    <div class="footer-hint">
+      <small>Press <kbd class="keyboard-icon">\</kbd> for shortcuts</small>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
@@ -95,5 +94,6 @@
   <script>window.__pathPrefix = "{{ '/' | url }}";</script>
   <script src="{{ '/js/theme.js' | url }}"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script src="{{ '/js/shortcuts.js' | url }}"></script>
 </body>
 </html>
