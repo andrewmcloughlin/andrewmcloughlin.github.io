@@ -15,33 +15,39 @@ title: About this site
           Built using 11ty static site generator with nunjucks templating, because I want something low-maintenance.
           Articles can written in markdown with the option to include custom HTML, so the best of both worlds.
           Hosted on Github and deployed using Github Pages, but planning to move to Gitlab.
+
+          {# link to repo on GitHub #}
           
           <h3 class="font-heading my-4">Front End</h3>
           <ul>
             <li>All screenshots are of software I have worked on.</li>
             <li>All other images are my own creations, mostly drawn in Figma.</li>
             <li>All animations are either screen recordings of my software or generated in Figma Motion based on my prototypes.</li>
-            <li>The intearctive molecule was rendered in rdkit.</li>
+            <li>The intearctive molecule was rendered in <code>rdkit</code>.</li>
             <li>I'm using alpine.js for most interactivity, because it's just nice to have your interactions defined inline.
-              <li>The smooth-scrolling gallery is provided by splide.js because writing a good, smooth, interactive gallery in vanilla JS is beyond by JS ability.</li>
-              <li>Icons provided by the ever-awesome Font Awesome.</li>
-              <li>Hero animations: the subtle animation on the steam coming off the mug was acheived using an SVG fractalNoise filter; I want to learn more about these, because they are crazy powerful. For the animation to turn on/off the lamp, ended up hand-crafting it in CSS.
-              </ul>
+            <li>The smooth-scrolling gallery is provided by splide.js because writing a good, smooth, interactive gallery in vanilla JS is beyond by JS ability.</li>
+            <li>Icons provided by the ever-awesome Font Awesome.</li>
+          </ul>
               
           <h3 class="font-heading my-4">Tool List</h3>
           <ul class="my-3">
             <li><a href="https://www.11ty.dev/">Eleventy (11ty)</a> (static site builder)</li>
             <li><a href="https://nunjucks.io/">Nunjucks</a> (templating)</li>
             <li><a href="https://www.markdownguide.org/">Markdown</a> (content)</li>
+            <li><a href="https://github.com/">GitHub</a> (code hosting)</li>
             <li><a href="https://alpinejs.dev/">Alpine.js</a> (JavaScript)</li>
             <li><a href="https://splidejs.com/">Splide.js</a> (carousels)</li>
             <li><a href="https://fontawesome.com/">Font Awesome</a> (icons)</li>
-            <li><a href="https://github.com/">GitHub</a> (code hosting)</li>
             <li><a href="https://pages.github.com/">GitHub Pages</a> (deployment)</li>
             <li><a href="https://figma.com/">Figma</a> (graphic design)</li>
             <li><a href="https://figma.com/">Figma Motion</a> (animation)</li>
             <li><a href="https://www.rdkit.org/">RDKit</a> (3D molecule rendering)</li>
           </ul>
+
+          <h2 class="font-heading">Easter Eggs & Cool Things</h2>
+          <p>Manually switching between dark/light mode on the home page activates an SVG animation whereby the dude at the desk turns on/off his lamp. This is literally just CSS tied to a named element in the in line SVG activated by the vanilla JS dark mode logic. It's simple but it took hours to do.</p>
+          <p>The steam coming off the cup of tea on the hero image is actually an SVG fractal noise filter; I want to learn more about these, because they are crazy powerful.</p>
+
 
           <h2 class="font-heading">Inspiration</h2>
           Credit where credit's due. I believe in sharing your sources. The design for this site was inspired by several great creators who you should check out
@@ -60,7 +66,7 @@ title: About this site
             <li><a href="https://healthy-office-579727.framer.app/">Dev Patel</a> - UX engineer</li>
             <li><a href="https://blog.gpkb.org/">George Kettleborough</a> - Professional geek</li>
             <li><a href="https://www.paulnasca.com/">Paul Nasca</a> - Rubik's Cube Genius</li>
-            <li><a href="https://www.rmorrison.net/">Richard Morrison</a> - Another Professional Geek</li>
+            <li><a href="https://www.rmorrison.net/">Richard Morrison</a> - Another professional geek</li>
           </ul>
         </div>
       </div>

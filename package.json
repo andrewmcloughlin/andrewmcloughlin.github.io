@@ -7,8 +7,8 @@
     "build": "eleventy"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Andrew McLoughlin",
+  "license": "MIT",
   "description": "",
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",

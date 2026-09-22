@@ -1,5 +1,12 @@
 ## Usage
 
+
+
+```bash
+npm install
+```
+
+
 To run the creation of the static files:
 
 ```bash
@@ -12,6 +19,13 @@ To start a local webserver:
 ```bash
 npm start
 ```
+
+## Stack
+- Eleventy (static site generator)
+- Vanilla CSS (no framework)
+- Alpine.js, Splide.js (vendored)
+- Font Awesome (vendored)
+- Bricolage Grotesque + xkcd (vendored fonts)
 
 ## License
 
