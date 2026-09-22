@@ -16,6 +16,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/fonts");
     eleventyConfig.addPassthroughCopy("src/files");
     eleventyConfig.addPassthroughCopy("src/fontawesome");
+    eleventyConfig.addPassthroughCopy("src/_includes/sounds");
 
     return {
         pathPrefix: "/",

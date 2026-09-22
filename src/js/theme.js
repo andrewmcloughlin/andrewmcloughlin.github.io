@@ -15,6 +15,7 @@ const syncGlow = (theme) => {
     const glow = document.querySelector('.lamp-glow');
     if (!glow) return;
     glow.classList.toggle('lamp-glow--on', theme === 'dark');
+    new Audio('/_includes/sounds/lightswitch.wav').play();
 };
 
 const setTheme = (theme) => {
@@ -42,9 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const current = document.documentElement.getAttribute('data-bs-theme');
             const next = current === 'light' ? 'dark' : 'light';
             setTheme(next);
-            const flick = document.getElementById('forearm-flick');
-            if (flick) flick.beginElement();
-            setTimeout(() => syncGlow(next), 240);
+            const flickDelay = 300;
+            setTimeout(() => {
+                const flick = document.getElementById('forearm-flick');
+                if (flick) flick.beginElement();
+            }, flickDelay);
+            setTimeout(() => syncGlow(next), flickDelay + 240);
         });
     });
 });
