@@ -8,7 +8,14 @@ title: Home
   <h1 class="my-5 pt-5 fs-1 fw-semibold">Andrew McLoughlin</h1>
 </section>
 
-<section id="employment" class="page-section mb-5 fade-in delay-2 py-5 mt-5">
+<section class="fade-in delay-1">
+  <h2 class="mb-4 pb-2 border-bottom font-heading">Profile</h2>
+  <div class="timeline card py-4">
+    I have an academic background in Biomedical Science, Computational Systems Biology and Epidemiology and 5+ years' experience building production scientific software. I am passionate about building tools that a real-world scientific impact.
+  </div>
+</section>
+
+<section id="employment" class="mb-5 fade-in delay-2 py-5 mt-5">
   <h2 class="mb-4 pb-2 border-bottom font-heading">Employment History</h2>
   <div class="timeline card">
     {% for job in cv.employmentHistory %}
@@ -34,7 +41,7 @@ title: Home
   </div>
 </section>
 
-<section id="publications" class="page-section mb-5 fade-in delay-5 py-5" x-data="{ expandedPubs: false }">
+<section id="publications" class="mb-5 fade-in delay-5 py-5" x-data="{ expandedPubs: false }">
   <h2 class="my-4 py-2 border-bottom font-heading">Publications, Posters & Papers</h2>
   <p class="mb-4">These are some of the publications, posters, white papers and editorials that I have written or contributed to.</p>
   <div class="row g-4 mt-2">
@@ -52,7 +59,7 @@ title: Home
   </div>
 </section>
 
-<section id="projects" class="page-section mb-5 fade-in delay-5 py-5 mt-5">
+<section id="projects" class="mb-5 fade-in delay-5 py-5 mt-5">
   <h2 class="my-4 py-4 border-bottom font-heading text-center">Featured Work</h2>
   {% include "components/gallery-carousel.njk" %}
   <div class="row g-4 mt-4 pt-4">

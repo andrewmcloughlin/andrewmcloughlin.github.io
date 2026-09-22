@@ -992,13 +992,6 @@ a {
   overflow-x: clip;
 }
 
-.page-section {
-  min-height: 50vh;
-  padding-top: 1.5rem;
-  padding-bottom: 3.5rem;
-  scroll-margin-top: 1rem;
-}
-
 @media (max-width: 991.98px) {
   .page-wrapper {
     display: block;
