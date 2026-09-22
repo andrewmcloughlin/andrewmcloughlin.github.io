@@ -13,6 +13,20 @@ To run the creation of the static files:
 npm run build
 ```
 
+## Testing
+
+To run the full test suite locally:
+
+```bash
+npm run test
+```
+
+The `npm run test` command runs the following sequential checks against the `_site` build directory:
+- **Build integrity**: Verifies the site actually built without errors and output files exist.
+- **Link Checking**: Scans all local html files for broken outgoing or internal links. 
+  - *NB: External links to Figma are explicitly skipped, because Figma annoyingly blocks automated headless scrapers.*
+- **Lighthouse CI**: Runs automated headless browser audits ensuring strict pass values (>=90%) on Performance, Accessibility, SEO, and Best Practices.
+
 
 To start a local webserver:
 
