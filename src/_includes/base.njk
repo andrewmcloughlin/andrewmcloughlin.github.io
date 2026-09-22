@@ -6,7 +6,7 @@
   <title>{{ title | default("Portfolio") }} - {{ site.name }}</title>
   <meta name="description" content="{{ description | default(site.description) }}">
   <!-- Local Fonts: Bricolage Grotesque, xkcd -->
-  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+  <link href="{{ '/css/vendor/splide.min.css' | url }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
   <link rel="stylesheet" href="{{ '/fontawesome/css/all.min.css' | url }}">
   <!-- Favicons -->
@@ -87,11 +87,11 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/js/splide-extension-auto-scroll.min.js"></script>
+  <script src="{{ '/js/vendor/splide.min.js' | url }}"></script>
+  <script src="{{ '/js/vendor/splide-extension-auto-scroll.min.js' | url }}"></script>
   <script>window.__pathPrefix = "{{ '/' | url }}";</script>
   <script src="{{ '/js/theme.js' | url }}"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+  <script defer src="{{ '/js/vendor/alpine.min.js' | url }}"></script>
   <script src="{{ '/js/shortcuts.js' | url }}"></script>
 </body>
 </html>
