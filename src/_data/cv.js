@@ -211,5 +211,87 @@ module.exports = {
             link: "https://doi.org/10.2147/POR.S84517",
             abstract: ""
         }
+    ],
+    products: [
+        {
+            "name": "VOC Atlas",
+            "tagline": "The Periodic Table of Breath",
+            "description": "Funded by the Gates Foundation, The VOC Atlas is a public data portal to share reference datasets of breath related compounds across various populations. It has is used by 500 verified academics and scientists from Universities around the world.",
+            "image": "",
+            "stack": [],
+            "link": "www.vocatlas.com",
+            "roles": ["Product Owner", "Lead Developer"]
+        },
+        {
+            "name": "Clinician's Web Portal",
+            "description": "The OMED web portal allows clinicians to view and manage their patients' hydrogen and methane levels on breath collected from the OMED Health breath device synced via OMED Health mobile app. Clinicians can request their patients' data, order devices for their patients and make diagnoses.",
+            "tagline": "",
+            "image": "",
+            "stack": [],
+            "link": "",
+            "roles": ["Lead Developer"],
+        },
+        {
+            "name": "Data Warehouse",
+            "description": "The Data Warehouse is a centralised repository for all of the company's data. It is used to store and allow self-service analytics of data from various sources, including clinical trials, laboratory results, financial records and GC-MS outputs.",
+            "tagline": "",
+            "image": "",
+            "stack": [],
+            "link": "",
+            "roles": ["Lead Developer"]
+        },
+        {
+            "name": "HMBT",
+            "tagline": "Fulfilment Management System",
+            "description": "The HMBT application tracks the stock, ordering, shipment, return and analysis of hydrogen and methane test kits, keeping track of KPIs, QC issues and highlighting potential issues before they occur.",
+            "image": "",
+            "stack": [],
+            "link": "",
+            "roles": ["Product Owner", "Lead Developer"]
+        },
+        {
+            "name": "Tyto",
+            "description": "Tyto is a 10-year old monolithic LIMS tracking stock management (stock location and cumulative usage), study management and participant data",
+            "tagline": "Laboratory Information Management System",
+            "image": "",
+            "stack": [],
+            "link": "",
+            "roles": ["Developer"]
+        },
+        {
+            "name": "OMED Health",
+            "description": "OMED Health is a mobile app to allow users to pair and sync results from a breath collection device. Users can log activities and symptoms and explore their data and also order tests amd receive diagnoses from clinicians.",
+            "tagline": "Mobile App for collecting breath samples",
+            "image": "",
+            "stack": [],
+            "link": "",
+            "roles": ["UI Designer"]
+        },
+        {
+            "name": "Ocelot",
+            "description": "Ocelot is a CLI to build, validate, test and preview Case Report Forms in XLSForm format. It allows user to configure these using YAML instead of Excel spreadsheets.",
+            "tagline": "CLI for building Case Report Forms",
+            "image": "",
+            "stack": [],
+            "link": "",
+            "roles": ["Lead Developer"]
+        },
+        {
+            "name": "The CRF Library",
+            "tagline": "A library of 50+ modular, reusable and CDISC-compliant CRFs for clinical trials.",
+            "description": "The CRF Library is a collection of modular, reusable and CDISC-compliant CRFs for clinical trials. It is a web-based application that allows users to design and build CRFs for clinical trials, and to manage and maintain the CRF library.",
+            "image": "",
+            "stack": [],
+            "link": "",
+            "roles": ["Lead Developer"]
+        },
+        {
+            "name": "Smartwatch Actigraphy Algorithms",
+            "tagline": "",
+            "image": "",
+            "stack": [],
+            "link": "",
+            "roles": ["Algorithm Developer"]
+        }
     ]
 };

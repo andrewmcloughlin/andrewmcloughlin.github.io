@@ -13,7 +13,8 @@ module.exports = {
     social: [
         { title: "LinkedIn", url: "https://linkedin.com/in/amcloughlin1" },
         { title: "Academia", url: "https://cambridge.academia.edu/AndrewMcLoughlin" },
-        { title: "Figma", url: "https://figma.com/@maclin" }
+        { title: "Figma", url: "https://figma.com/@maclin" },
+        { title: "Mastodon", url: "https://social.vivaldi.net/@mcloughlin" }
     ],
     footer: {
         nav: [

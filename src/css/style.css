@@ -280,6 +280,10 @@ nav:not(.item-sidebar__nav) .btn-arrow-left:hover::before {
   display: flex;
 }
 
+.d-block {
+  display: block;
+}
+
 .flex-column {
   flex-direction: column;
 }
@@ -322,6 +326,35 @@ nav:not(.item-sidebar__nav) .btn-arrow-left:hover::before {
 
 .gap-4 {
   gap: 1.5rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m-0 {
+  margin: 0rem;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.m-3 {
+  margin: 1rem;
+}
+
+.m-4 {
+  margin: 1.5rem;
+}
+
+.m-5 {
+  margin: 3rem;
 }
 
 .mt-0 {
@@ -1030,7 +1063,6 @@ a {
   bottom: 0;
   right: 0;
   max-width: 300px;
-  /* adjust size as needed */
   height: auto;
   z-index: 0;
   pointer-events: none;
