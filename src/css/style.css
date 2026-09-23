@@ -1325,6 +1325,20 @@ picture:has(> .gallery-img) {
   margin: 2rem auto;
 }
 
+/* Article header image — enforce 16:9 aspect ratio */
+picture:has(> .img-fluid) {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg, 1rem);
+}
+
+picture:has(> .img-fluid)>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Bento Grid Layout */
 .bento-grid {
   display: grid;
