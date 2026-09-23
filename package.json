@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "eleventy --serve",
     "build": "eleventy",
@@ -13,7 +14,7 @@
   "keywords": [],
   "author": "Andrew McLoughlin",
   "license": "MIT",
-  "description": "",
+  "description": "Personal website and portfolio for Andrew McLoughlin",
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-img": "^6.0.4"
