@@ -1,4 +1,4 @@
-<div class="gallery-marquee-container mt-4 pt-4 splide fade-in delay-3" id="gallery-carousel">
+<div class="gallery-marquee-container mt-4 pt-4 splide" id="gallery-carousel">
   <div class="splide__track">
     <ul class="splide__list">
       {% for slide in gallery %}
@@ -13,7 +13,7 @@
                 {% endif %}
               </video>
             {% else %}
-              {{ slide.media | imageHtml(slide.title, "gallery-img") | safe }}
+              {{ slide.media | imageHtml(slide.title, "gallery-img", "eager", "high") | safe }}
             {% endif %}
             <div class="gallery-overlay">
               <span class="gallery-title fs-5 fw-bold text-center px-3 mt-auto pt-4">{{ slide.title }}</span>

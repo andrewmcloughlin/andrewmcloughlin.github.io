@@ -29,17 +29,21 @@ function getImageFiles(dir) {
     return files;
 }
 
-function imageHtmlSync(src, alt, cls) {
+function imageHtmlSync(src, alt, cls, loading = 'lazy', fetchpriority = 'auto') {
     if (!src) return '';
     const imgPath = resolveImagePath(src);
     try {
         const metadata = Image.statsSync(imgPath, IMAGE_OPTIONS);
-        return Image.generateHTML(metadata, {
+
+        let attrs = {
             alt: alt || '',
             class: cls || '',
-            loading: 'lazy',
             decoding: 'async',
-        });
+        };
+        if (loading) attrs.loading = loading;
+        if (fetchpriority && fetchpriority !== 'auto') attrs.fetchpriority = fetchpriority;
+
+        return Image.generateHTML(metadata, attrs);
     } catch (e) {
         return `<img src="${src}" alt="${alt || ''}" class="${cls || ''}">`;
     }
