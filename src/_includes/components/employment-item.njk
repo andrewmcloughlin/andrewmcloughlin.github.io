@@ -1,6 +1,6 @@
 <div class="timeline-item {% if job.logo %}has-logo{% endif %}">
   {% if job.logo %}
-    <img src="{{ job.logo | url }}" alt="{{ job.company }}" class="timeline-logo timeline-logo-absolute">
+    {% image job.logo, job.company, "timeline-logo timeline-logo-absolute" %}
   {% endif %}
   <div class="text-start">
     <div class="card-body py-2 px-3">
