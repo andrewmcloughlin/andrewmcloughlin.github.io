@@ -6,7 +6,7 @@
     "start": "eleventy --serve",
     "build": "eleventy",
     "test:pages": "node --test tests/",
-    "test:links": "linkinator _site --skip 'figma.com'",
+    "test:links": "linkinator _site --skip 'figma.com' --check-fragments",
     "test:lighthouse": "CHROME_PATH=$(node -e \"console.log(require('puppeteer').executablePath())\") lhci autorun",
     "test": "npm-run-all test:pages test:links test:lighthouse"
   },
