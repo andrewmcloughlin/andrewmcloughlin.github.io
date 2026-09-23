@@ -42,9 +42,9 @@
     <div class="nav-container">
       <nav class="mobile-topnav" id="topNav">
         <ul class="nav gap-1">
-          <li class="nav-item"><a href="{{ '/home/' | url }}" data-shortcut="h" class="nav-link{% if page.url == '/home/' %} active{% endif %}"{% if page.url == '/home/' %} aria-current="page"{% endif %}>Home</a></li>
-          <li class="nav-item"><a href="{{ '/me/' | url }}" data-shortcut="c" class="nav-link{% if page.url == '/me/' %} active{% endif %}"{% if page.url == '/me/' %} aria-current="page"{% endif %}>CV</a></li>
-          <li class="nav-item"><a href="{{ '/' | url }}" data-shortcut="w" class="nav-link{% if page.url == '/work/' %} active{% endif %}"{% if page.url == '/work/' %} aria-current="page"{% endif %}>My Work</a></li>
+          {% for link in site.nav %}
+          <li class="nav-item"><a href="{{ link.url | url }}" data-shortcut="{{ link.code }}" class="nav-link{% if page.url == link.url %} active{% endif %}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+          {% endfor %}
         </ul>
       </nav>
       <button id="theme-toggle-mobile" class="theme-toggle-pill" aria-label="Toggle theme">
@@ -65,15 +65,14 @@
     </a>
     <div class="footer-links">
       <ul>
-        <li><a href="https://figma.com/@maclin" target="_blank" data-shortcut="f">Figma</a></li>
-        <li><a href="https://linkedin.com/in/amcloughlin1" data-shortcut="l" target="_blank">LinkedIn</a></li>
-        <li><a href="https://cambridge.academia.edu/AndrewMcLoughlin" data-shortcut="a" target="_blank">Academia</a></li>
-        <li><a href="https://social.vivaldi.net/@mcloughlin" data-shortcut="m" target="_blank">Mastodon</a></li>
+        {% for link in site.social %}
+        <li><a href="{{ link.url }}" data-shortcut="{{ link.code }}" target="_blank">{{ link.title }}</a></li>
+        {% endfor %}
       </ul>
       <ul>
-        <li><a href="{{ '/privacy/' | url }}" data-shortcut="p">Privacy</a></li>
-        <li><a href="{{ '/terms/' | url }}" data-shortcut="t">Terms</a></li>
-        <li><a href="{{ '/colophon/' | url }}" data-shortcut="o">Colophon</a></li>
+        {% for link in site.footer.nav %}
+        <li><a href="{{ link.url | url }}" data-shortcut="{{ link.code }}">{{ link.title }}</a></li>
+        {% endfor %}
       </ul>
     </div>
     <div class="footer-hint">

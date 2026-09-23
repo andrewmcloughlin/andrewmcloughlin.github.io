@@ -6,19 +6,21 @@ module.exports = {
         name: "Andrew McLoughlin"
     },
     nav: [
-        { title: "Home", url: "/" },
-        { title: "Featured Projects", url: "/projects/" },
-        { title: "My Work", url: "/portfolio/" },
+        { code: "h", title: "Home", url: "/home/" },
+        { code: "c", title: "CV", url: "/me/" },
+        { code: "w", title: "My Work", url: "/" },
     ],
     social: [
-        { title: "LinkedIn", url: "https://linkedin.com/in/amcloughlin1" },
-        { title: "Academia", url: "https://cambridge.academia.edu/AndrewMcLoughlin" },
-        { title: "Figma", url: "https://figma.com/@maclin" },
-        { title: "Mastodon", url: "https://social.vivaldi.net/@mcloughlin" }
+        { code: "l", title: "LinkedIn", url: "https://linkedin.com/in/amcloughlin1" },
+        { code: "a", title: "Academia", url: "https://cambridge.academia.edu/AndrewMcLoughlin" },
+        { code: "f", title: "Figma", url: "https://figma.com/@maclin" },
+        { code: "m", title: "Mastodon", url: "https://social.vivaldi.net/@mcloughlin" }
     ],
     footer: {
         nav: [
-            { title: "About this site", url: "/about/" }
+            { code: "p", title: "Privacy", url: "/privacy/" },
+            { code: "t", title: "Terms", url: "/terms/" },
+            { code: "c", title: "Colophon", url: "/colophon/" }
         ]
     }
 };
