@@ -9,11 +9,11 @@
                 <source src="{{ slide.media | url }}" type="video/{{ slide.videoFormat }}">
                 Sorry, your browser does not support the video tag. Just imagine some cool stuff happening here.
                 {% if slide.poster %}
-                  {% image slide.poster, slide.title, "gallery-img" %}
+                  {{ slide.poster | imageHtml(slide.title, "gallery-img") | safe }}
                 {% endif %}
               </video>
             {% else %}
-              {% image slide.media, slide.title, "gallery-img" %}
+              {{ slide.media | imageHtml(slide.title, "gallery-img") | safe }}
             {% endif %}
             <div class="gallery-overlay">
               <span class="gallery-title fs-5 fw-bold text-center px-3 mt-auto pt-4">{{ slide.title }}</span>

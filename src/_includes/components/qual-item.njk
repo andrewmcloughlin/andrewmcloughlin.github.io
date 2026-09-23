@@ -1,6 +1,6 @@
 <div class="timeline-item {% if qual.logo %}has-logo{% endif %}">
   {% if qual.logo %}
-    {% image qual.logo, qual.company, "timeline-logo timeline-logo-absolute" %}
+    {{ qual.logo | imageHtml(qual.company, "timeline-logo timeline-logo-absolute") | safe }}
   {% endif %}
   <div class="text-start">
     <div class="card-body py-2 px-3">

@@ -14,13 +14,13 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 
 <section>
   <div class="row g-4 mt-4 pt-4 fade-in delay-2">
-    {% for item in collections.portfolio | sort(attribute="data.order") %}
+    {% asyncEach item in collections.portfolio | sort(attribute="data.order") %}
       {% if item.data.pinned %}
         <div class="col-12">
           {% include "components/project-card.njk" %}
         </div>
       {% endif %}
-    {% endfor %}
+    {% endeach %}
   </div>
 </section>
 
@@ -44,10 +44,10 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
   </div>
 
   <div class="row g-4">
-    {% for item in collections.portfolio | reverse %}
+    {% asyncEach item in collections.portfolio | reverse %}
         <div class="col-12 portfolio-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
           {% include "components/project-card.njk" %}
         </div>
-    {% endfor %}
+    {% endeach %}
   </div>
 </section>

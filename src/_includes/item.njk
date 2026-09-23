@@ -41,7 +41,7 @@ layout: base.njk
         </header>
 
         {% if image %}
-          {% image image, title, "img-fluid rounded-4 mb-5 w-100 shadow-sm" %}
+          {{ image | imageHtml(title, "img-fluid rounded-4 mb-5 w-100 shadow-sm") | safe }}
         {% endif %}
 
         <div class="card-text border-top pt-5 mt-2">

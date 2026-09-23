@@ -1,37 +1,57 @@
 const Image = require("@11ty/eleventy-img");
 const path = require("path");
+const fs = require("fs");
 
-async function imageShortcode(src, alt, cls = "") {
-    if (alt === undefined) {
-        alt = "";
+const IMAGE_OPTIONS = {
+    widths: [400, 800, "auto"],
+    formats: ["avif", "webp", "auto"],
+    urlPath: "/images/",
+    outputDir: "./_site/images/"
+};
+
+function resolveImagePath(src) {
+    if (!src) return null;
+    if (src.startsWith('/')) return path.join('./src', src);
+    return path.join('./src/images', src);
+}
+
+function getImageFiles(dir) {
+    if (!fs.existsSync(dir)) return [];
+    const files = [];
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const fullPath = path.join(dir, entry.name);
+        if (entry.isDirectory()) {
+            files.push(...getImageFiles(fullPath));
+        } else if (/\.(png|jpe?g|gif|webp)$/i.test(entry.name)) {
+            files.push(fullPath);
+        }
     }
+    return files;
+}
 
-    let imgPath = src;
-    if (src.startsWith('/')) {
-        imgPath = path.join('./src', src);
-    } else if (!src.startsWith('./src/')) {
-        imgPath = path.join('./src/images', src);
+function imageHtmlSync(src, alt, cls) {
+    if (!src) return '';
+    const imgPath = resolveImagePath(src);
+    try {
+        const metadata = Image.statsSync(imgPath, IMAGE_OPTIONS);
+        return Image.generateHTML(metadata, {
+            alt: alt || '',
+            class: cls || '',
+            loading: 'lazy',
+            decoding: 'async',
+        });
+    } catch (e) {
+        return `<img src="${src}" alt="${alt || ''}" class="${cls || ''}">`;
     }
-
-    let metadata = await Image(imgPath, {
-        widths: [400, 800, "auto"],
-        formats: ["avif", "webp", "auto"],
-        urlPath: "/images/",
-        outputDir: "./_site/images/"
-    });
-
-    let imageAttributes = {
-        alt,
-        class: cls,
-        loading: "lazy",
-        decoding: "async",
-    };
-
-    return Image.generateHTML(metadata, imageAttributes);
 }
 
 module.exports = function (eleventyConfig) {
-    eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+    eleventyConfig.on('eleventy.before', async () => {
+        const imageFiles = getImageFiles('./src/images');
+        await Promise.allSettled(imageFiles.map(imgPath => Image(imgPath, IMAGE_OPTIONS)));
+    });
+
+    eleventyConfig.addFilter("imageHtml", imageHtmlSync);
 
     eleventyConfig.addCollection("stackItems", function (collectionApi) {
         const items = collectionApi.getFilteredByTag("portfolio");
@@ -58,3 +78,4 @@ module.exports = function (eleventyConfig) {
         }
     };
 };
+

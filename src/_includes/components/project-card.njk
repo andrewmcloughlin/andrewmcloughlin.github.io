@@ -1,7 +1,7 @@
 <div class="project-card position-relative card row mb-5">
   {% if item.data.image %}
     <div class="project-image-wrapper overflow-hidden col-12 col-md-8">
-      {% image item.data.image, item.data.title, "project-image w-100 object-fit-cover rounded-4" %}
+      {{ item.data.image | imageHtml(item.data.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
     </div>
   {% endif %}
   <div class="project-content col-12 col-md-4 py-md-3 pe-md-3 text-start">
