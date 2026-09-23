@@ -1,5 +1,3 @@
-const isProduction = process.env.ELEVENTY_ENV === "production";
-
 module.exports = function (eleventyConfig) {
     eleventyConfig.addCollection("stackItems", function (collectionApi) {
         const items = collectionApi.getFilteredByTag("portfolio");
