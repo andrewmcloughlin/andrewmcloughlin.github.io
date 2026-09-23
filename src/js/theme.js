@@ -6,8 +6,17 @@ const getPreferredTheme = () => {
 
 const setThemeIcon = (theme) => {
     const icon = theme === 'light' ? 'fa-moon' : 'fa-sun';
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    const isPressed = theme === 'dark' ? 'true' : 'false';
+
     document.querySelectorAll('.theme-icon').forEach(el => {
         el.className = `fa-solid ${icon} theme-icon`;
+
+        const btn = el.closest('button');
+        if (btn) {
+            btn.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+            btn.setAttribute('aria-pressed', isPressed);
+        }
     });
 };
 
