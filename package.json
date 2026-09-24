@@ -8,7 +8,7 @@
     "build": "eleventy",
     "test:pages": "node --test tests/",
     "test:links": "linkinator _site --skip 'figma.com' --check-fragments",
-    "test:lighthouse": "CHROME_PATH='/mnt/c/Program Files (x86)/Google/Chrome/Application/chrome.exe' lhci autorun",
+    "test:lighthouse": "lhci autorun",
     "test": "npm-run-all test:pages test:links test:lighthouse"
   },
   "keywords": [],
