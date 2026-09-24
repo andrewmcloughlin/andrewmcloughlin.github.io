@@ -7,6 +7,7 @@
       stroke-linejoin: round;
       }
     .hero-img .fill-charcoal   { fill:   var(--zen-charcoal); }
+    .hero-img .lamp { cursor: pointer; }
   </style>
   <defs>
     <filter id="turbulence-filter" x="-50%" y="-50%" width="200%" height="200%" filterUnits="userSpaceOnUse">

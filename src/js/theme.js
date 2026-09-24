@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.querySelectorAll('#theme-toggle, #theme-toggle-mobile').forEach(btn => {
+    document.querySelectorAll('#theme-toggle, #theme-toggle-mobile, .lamp').forEach(btn => {
         btn.addEventListener('click', () => {
             const current = document.documentElement.getAttribute('data-bs-theme');
             const next = current === 'light' ? 'dark' : 'light';
