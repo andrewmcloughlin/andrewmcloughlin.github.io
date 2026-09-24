@@ -892,7 +892,7 @@ a {
 nav:not(.item-sidebar__nav) {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem 0.7rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -942,7 +942,6 @@ a {
 .mobile-topnav {
   background: var(--zen-cream-darker);
   border-radius: var(--border-radius-lg);
-  padding: 0;
   height: 58px;
   display: flex;
   align-items: center;
@@ -975,9 +974,9 @@ a {
 .mobile-topnav .nav {
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
   align-items: center;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .mobile-topnav .nav-link {
@@ -990,6 +989,21 @@ a {
   transition: all 0.2s ease;
   text-decoration: none;
   display: inline-block;
+}
+
+@media (max-width: 500px) {
+  .site-header {
+    position: absolute;
+  }
+
+  .mobile-topnav {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    pointer-events: auto;
+  }
 }
 
 .mobile-topnav .nav-link:hover {
@@ -1613,7 +1627,6 @@ picture:has(> .img-fluid)>img {
   min-width: 240px;
   position: sticky;
   top: 56px;
-  /* clears the sticky topnav */
   max-height: calc(100vh - 56px);
   overflow-y: auto;
   border-right: 1px solid var(--border-color);

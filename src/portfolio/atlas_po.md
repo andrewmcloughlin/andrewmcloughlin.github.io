@@ -2,7 +2,7 @@
 title: "Product Ownership: The Periodic Table of Breath"
 description: "An interactive web application for exploring the world of Volatile Organic Compounds (VOCs)."
 layout: item.njk
-tags: ["Product"]
+tags: ["portfolio"]
 pinned: true
 order: 1
 # featured_stack: ["Python", "Django", "PostgreSQL"]

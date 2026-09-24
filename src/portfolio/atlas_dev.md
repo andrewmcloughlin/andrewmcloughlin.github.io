@@ -2,7 +2,7 @@
 title: "Modularising a Big Ball of Mud"
 description: ""
 layout: item.njk
-tags: ["django"]
+tags: ["portfolio", "django"]
 pinned: true
 order: 1
 featured_stack: ["Python", "Django", "PostgreSQL"]
