@@ -5,9 +5,9 @@ layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: true
 order: 3
-featured_stack: ["Python", "Django"]
-other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Stripe", "Salesforce", "GDPR", "django-local-flavor", "django-ninja", "Alpine.js", "Bootstrap"]
-image: "/images/macha.png"
+# featured_stack: ["Python", "Django"]
+# other_stack: ["Kubernetes", "Docker", "PostgreSQL", "Stripe", "Salesforce", "GDPR", "django-local-flavor", "django-ninja", "Alpine.js", "Bootstrap"]
+# image: "/images/macha.png"
 ---
 
 ## Overview

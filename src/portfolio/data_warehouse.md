@@ -7,7 +7,7 @@ pinned: true
 order: 2
 featured_stack: ["Airflow", "dbt", "Airbyte", "Metabase", "GCP", "SQL"]
 other_stack: ["PostgreSQL", "Google Looker Studio"]
-image: "/images/metabase.png"
+# image: "/images/metabase.png"
 ---
 I designed and built a data warehouse for clinical, laboratory and financial data, which significantly improved the time and effort required to generate reports and insights.
 
@@ -17,7 +17,7 @@ The Data Warehouse is a centralised repository for all of the company's data. It
 
 ## What problems does it solve?
 
-Before the data warehouse, the company's data was stored in various silos, making it difficult to access and analyse. The data warehouse solved this problem by providing a centralised repository for all of the company's data.
+Before the data warehouse, the company's data were stored in various silos, making it difficult to access and analyse. The data warehouse solved this problem by providing a centralised repository for all of the company's data.
 
 ## Key Challenges
 
@@ -39,7 +39,7 @@ Used dbt incremental runs and snapshot models to efficiently manage high-volume 
 We implemented automated schema tests (such as unique, not_null, relationships), and freshness checks to catch silent anomalies before downstream dashboards break or incorrect clinical reports were generated.
 
 
-## My Solution
+## The Solution
 
 We use [Metabase](https://www.metabase.com), an open source and incredibly easy-to-use BI tool. Prior to this we were using Looker Studio, which was less intuitive and required more technical expertise to use effectively.
 

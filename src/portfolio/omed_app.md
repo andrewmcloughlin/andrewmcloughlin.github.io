@@ -4,7 +4,7 @@ description: ""
 layout: item.njk
 tags: ["portfolio", "Product"]
 pinned: false
-image: /images/omed.png
+# image: /images/omed.png
 ---
 
 ## The App

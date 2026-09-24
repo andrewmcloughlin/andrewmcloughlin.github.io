@@ -12,28 +12,38 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 </section>
 
 
-<section>
-  <div class="row g-4 mt-4 pt-4">
-    {% asyncEach item in collections.portfolio | sort(attribute="data.order") %}
-      {% if item.data.pinned %}
-        <div class="col-12">
-          {% include "components/project-card.njk" %}
+<section class="page-section mb-5 fade-in delay-2" x-data="{ expandedProducts: false }">
+  <h2 class="mb-4 pb-2 border-bottom font-heading">Products I've worked on</h2>
+  <div class="row g-4" id="products-list">
+    {% for product in cv.products %}
+        <div class="col-12 portfolio-item" {% if loop.index > 4 %} x-show="expandedProducts" x-transition x-cloak {% endif %}>
+          {% include "components/product-card.njk" %}
         </div>
-      {% endif %}
-    {% endeach %}
+    {% endfor %}
+  </div>
+  <div class="d-flex justify-content-end mt-4">
+    <button
+      type="button"
+      class="btn btn-outline w-100 py-2"
+      @click="expandedProducts = !expandedProducts"
+      :aria-expanded="expandedProducts"
+      aria-controls="products-list"
+    >
+      <span x-show="!expandedProducts">More Products</span>
+      <span x-show="expandedProducts" x-cloak>Fewer Products</span>
+  </button>
   </div>
 </section>
 
 
-
 <section class="page-section mb-5 fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }">
-  <h2 class="mb-4 pb-2 border-bottom font-heading">All Projects</h2>
+  <h2 class="mb-4 pb-2 border-bottom font-heading">Case Studies</h2>
 
   <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
-    <button class="btn btn-outline" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
+    {# <button class="btn btn-outline" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
     <button class="btn btn-outline" :class="{ 'active': filter === 'Product' }"  @click="filter = 'Product'; stackFilter = ''">Product</button>
     <button class="btn btn-outline" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'; stackFilter = ''">Software</button>
-    <button class="btn btn-outline" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button>
+    <button class="btn btn-outline" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button> #}
     <template x-if="filter === 'Software'">
       <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap">
         {% for stackItem in collections.stackItems %}
@@ -43,7 +53,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
     </template>
   </div>
 
-  <div class="row g-4">
+  <div class="row g-2">
     {% asyncEach item in collections.portfolio | reverse %}
         <div class="col-12 portfolio-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
           {% include "components/project-card.njk" %}

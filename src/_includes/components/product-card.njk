@@ -1,0 +1,39 @@
+<div class="{% if product.link %}project-card{% endif %} position-relative card row mb-5">
+  {% if product.image %}
+    <div class="project-image-wrapper overflow-hidden col-12 col-md-8">
+      {{ product.image | imageHtml(product.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
+    </div>
+  {% endif %}
+  <div class="project-content d-flex flex-column h-100 col-12 {% if product.image %}col-md-4{% else %}col-md-12{% endif %} py-md-3 pe-md-3 text-start">
+    <h3 class="fs-2 fw-bold lh-sm mb-3 text-dark">
+      {% if product.link %}
+        <a href="{{ product.link | url }}" class="stretched-link text-decoration-none text-body text-dark" target="_blank" rel="noopener noreferrer">{{ product.name }}</a>
+      {% else %}
+        {{ product.name }}
+      {% endif %}
+    </h3>
+    {% if product.roles %}
+      <div class="mb-2">
+        Role: 
+        {% for role in product.roles %}
+          <span class="badge me-1">{{ role }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <p class="text-secondary fs-6">{{ product.description }}</p>
+    {% if product.stack %}
+      <div class="mt-2 mb-4">
+        {% for tool in product.stack %}
+          <span class="badge bg-secondary-subtle text-secondary me-1">{{ tool }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="mt-auto d-flex justify-content-end w-100 pt-3">
+      {% if product.link %}
+      <div class="icon-arrow-circle">
+        <i class="fa-solid fa-arrow-right icon-arrow-rotated"></i>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

@@ -4,9 +4,9 @@ description: "A CLI tool for building and validating Case Report Forms (CRFs)."
 layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false
-featured_stack: ["Python", "Click", "Pydantic"]
-other_stack: ["XLSForm", "YAML", "HTML", "OpenClinica", "OpenRosa", "pyYAML", "pandas", "openpyxl"]
-image: /images/ocelot.png
+# featured_stack: ["Python", "Click", "Pydantic"]
+# other_stack: ["XLSForm", "YAML", "HTML", "OpenClinica", "OpenRosa", "pyYAML", "pandas", "openpyxl"]
+# image: /images/ocelot.png
 ---
 
 ## The Problem

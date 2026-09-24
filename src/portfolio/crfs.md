@@ -1,58 +1,49 @@
 ---
-title: "The CRF Library"
-description: "A library of 50+ modular, reusable and CDISC-compliant CRFs for clinical trials."
+title: "(Almost) Infinite Flexibility in a Rigid Framework"
+description: "Standardising Messy Clinical Data with CDISC and SNOMED"
 layout: item.njk
 tags: ["portfolio", "Data"]
 pinned: false
-image: /images/crfs.png
+order: 1
+# image: /images/crfs.png
 ---
-Case Report Forms (CRFs) are the backbone of clinical trials, used to collect data from patients.
 
-## What is the CRF Library?
+Every clinical study (almost by definition) tries to answer a different question, so it seems like an impossible task to create a library of reusable Case Report Forms (CRFs are essentially electronic clinical questionairres). If one study asks "Has the participant ever had asthma?" and another asks "Has the participant had COPD in the last 12 months?" it seems impossible that they could use the same CRF and that the data could be stored in the same table. This was my initial reaction to trying to standardise clinical data, but then I learnt about CDISC and SNOMED-CT.
 
-The CRF Library is a collection of modular, reusable and CDISC-compliant CRFs for clinical trials. It is a web-based application that allows users to design and build CRFs for clinical trials, and to manage and maintain the CRF library.
-
-## What problems does it solve?
-
-CRFs are the backbone of clinical trials, used to collect data from patients. They are also a significant source of errors in clinical trials. A study by the FDA found that 25% of all data errors in clinical trials were due to CRF design errors. The CRF Library solves this problem by providing a library of modular, reusable and CDISC-compliant CRFs that can be used to design and build CRFs for clinical trials. This significantly reduces the time and effort required to design and build CRFs for clinical trials and improves the accuracy of the data. Allowing us to design new studies in a matter of hours rather than weeks.
-
-## Key Challenges
+CDISC is a set of international standards for clinical data collection and defines standard ways to break up questions into standards constituent parts, and it works beautifully with SNOMED-CT, a clinical terminology for standardising vocabulary.
 
 
-### (Almost) Infinite Flexibility in a Rigid Framework
+## CDISC - Modularising Clinical Questions
 
-Every novel study necessarily asks different questions, so it seems like an impossible task to create a library of reusable CRFs. If one study asks "Has the participant ever had asthma?" and another asks "Has the participant had COPD in the last 12 months?" it seems impossible that they could use the same CRF.
+The key is to break down each question into its constituent parts. In the case of most most medical history questions, they share this format: a subject, a disease, a time frame and a response.
 
-The key is to break down each question into its constituent parts: a disease, a time frame and a response.
+Subject (`USUBJID`) | (system defined) study subject ID eg "SUBJECT123"
+Term (`TERM`) | (hardcoded) SNOMED-CT code eg "Asthma" or "COPD"
+Duration (`DUR`) | (hardcoded) eg "ever" or "in the last 12 months"
+Response (`RESP`) | (user entered) eg "Yes" or "No"
 
-Term (`TERM`) (hardcoded) SNOMED-CT code eg "Asthma" or "COPD"
-Duration (`DUR`) (hardcoded) eg "ever" or "in the last 12 months"
-Response (`RESP`) (user entered) eg "Yes" or "No"
+By putting the above 4 fields into a repeating group and setting different hard-coded values for `TERM` and `DUR`, you can create a medical history CRF that is immensely flexible.
 
-By putting the above 3 fields into a repeating group and setting different hard-coded values for TERM and DUR, you can create a CRF that can create a medical history CRF that is immensely flexible with just 3 fields.
+That covers medical history and CDISC has a set of 20 commonly asked CRFs (Demography, Adverse Events, Lab Findings etc.), for each one an international team of experts has asked what sort of questions clinical studies ask about each and identified the common threads, which have been converted into CDISC terms, each with either a standardised set of responses or using a SNOMED term for more flexibility.
 
-And just to demostrate how flexible this is, if you happen to have a study that asks if a narwhal has ever had an injury caused by falling from a hot air balloon, you can encode that in SDTM. It's as simple as:
-- `SBJ-SPECIES`: `763003` (SNOMED code for Narwhal)
-- `MHTERM`: `242208006` (SNOMED code for "Injury caused by falling from a hot air balloon")
-- `MHEVTXT`: `EVER`
+## SNOMED - A Code for Everything
 
-I kid you not. And what's more these codes are hierarchical, so you could browse to by digging down from "Marine mammals" and "aircraft accidents" to get to the concept. 
+If you are wondering what a SNOMED-CT term is. SNOMED Controlled Terminology is an ontology used by the NHS and internationally to describe pretty much everything: every disease, every operation, every species or molecule or material or common household object; there are SNOMED terms for each. Not only that but SNOMED is a hierarchial, so it "knows" that `asthma` is a type of `respiratory disease`. In fact SNOMED is poly-hierarchial, so `asthma` is a child of both `respiratory disease` and `inflammation`. You can browse SNOMED terms [here](https://termbrowser.nhs.uk/) and I challenge to find a concept that's not encoded.
 
-Of course now, you have to store the hard-coded values and code-sets in the database, which is where the [define-xml](https://www.cdisc.org/standards/data-collection/define-xml) standard comes in.
+Just to demostrate how incredibly flexible this approach is (expecially when combined with CDISC), let's imagine you have to encode the following somewhat fanciful medical history question:
+
+`Is your unusual appearance the result of falling from a hot air balloon that was shot down by an enemy death-ray?`
+
+That would be encoded as 3 Medical History records:
+- `MHTERM`: `80670004` | Bizarre personal appearance (finding) 
+- `MHTERM`: `242208006` | Injury caused by falling from a hot air balloon
+- `MHTERM`: `219427009` | War injury due to lasers (disorder)
+
+linked together with a `RELID` field containing the same sequential ID to indicate the 3 findings are associated. Here is where CDSIC lets us down somewhat because there is no standard way to encode _how_ these findings are related even though SNOMED does have specific terms for types of relationships.
 
 
-### My Solution
+## Summary
 
-If all of this is starting to feel like a lot to keep track of, you're not alone. Especially if your EDC system doesn't support CDISC standards, it can be a real PINTA to write to generate the necessary files to submit to the FDA. That's why I created [Ocelot](/portfolio/ocelot/), an internal CLI tool to automate the creation of define-xml files and streamline the process of creating CRFs.
+CDISC gives you the structured filing cabinet, while SNOMED gives you the hyper-specific contents.
 
-Using Ocelot, I was able to build up a library of 50+ modular, reusable and CDISC-compliant CRFs for clinical trials, which significantly reduced the time and effort required to design and build CRFs for clinical trials and improved the accuracy of the data. Allowing us to design new studies in a matter of hours rather than weeks.
-
-## Impact
-
-The CRF Library has been used in over 5 clinical trials to date and has helped to reduce the time and effort required to design and build CRFs for clinical trials and improved the accuracy of the data. Allowing us to design new studies in a matter of hours rather than weeks.
-
-## My Role
-
-I was Clinical Data Manager for all 10 Owlstone clinical studies from 2018 to 2026. A key 
-driver for me was to ensure that we were compliant with CDISC standards, as this would
-allow us to submit our data to the FDA for regulatory approval. This was the driving force behind the Ocelot project and the CRF Library output.
+While I hope I never actually need to process a trial cohort of unfortunate interplanetary balloonists, understanding how these standards interact has transformed how I look at data capture. By decomposing free-text clinical prose into modular entities, atomic responses, and post-coordinated relationships, I've stopped building rigid forms for single studies and started building systems that can handle whatever bizarre reality a clinical trial throws at me.

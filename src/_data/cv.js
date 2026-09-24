@@ -215,15 +215,17 @@ module.exports = {
     products: [
         {
             "name": "VOC Atlas",
+            "pinned": true,
             "tagline": "The Periodic Table of Breath",
             "description": "Funded by the Gates Foundation, The VOC Atlas is a public data portal to share reference datasets of breath related compounds across various populations. It has is used by 500 verified academics and scientists from Universities around the world.",
             "image": "images/atlas.png",
             "stack": ["python", "django", "rdkit"],
-            "link": "www.vocatlas.com",
+            "link": "https://www.vocatlas.com",
             "roles": ["Product Owner", "Lead Developer"]
         },
         {
             "name": "OMED Health Portal",
+            "pinned": true,
             "description": "The OMED web portal allows clinicians to view and manage their patients' hydrogen and methane levels on breath collected from the OMED Health breath device synced via OMED Health mobile app. Clinicians can request their patients' data, order devices for their patients and make diagnoses.",
             "tagline": "Clinician's Web Portal",
             "image": "images/macha.png",
@@ -233,15 +235,17 @@ module.exports = {
         },
         {
             "name": "Data Warehouse",
+            "pinned": true,
             "description": "The Data Warehouse is a centralised repository for all of the company's data. It is used to store and allow self-service analytics of data from various sources, including clinical trials, laboratory results, financial records and GC-MS outputs.",
             "tagline": "",
-            "image": "",
+            "image": "images/metabase.png",
             "stack": ["airbyte", "airflow", "dbt", "metabase"],
-            "link": "images/metabase.png",
+            "link": "",
             "roles": ["Lead Developer"]
         },
         {
             "name": "HMBT",
+            "pinned": true,
             "tagline": "Fulfilment Management System",
             "description": "The HMBT application tracks the stock, ordering, shipment, return and analysis of hydrogen and methane test kits, keeping track of KPIs, QC issues and highlighting potential issues before they occur.",
             "image": "images/hmbt.png",

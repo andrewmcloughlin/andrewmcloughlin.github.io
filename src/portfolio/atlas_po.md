@@ -1,13 +1,12 @@
 ---
-title: "The Periodic Table of Breath"
+title: "Product Ownership: The Periodic Table of Breath"
 description: "An interactive web application for exploring the world of Volatile Organic Compounds (VOCs)."
 layout: item.njk
-tags: ["portfolio", "Product", "Software", "Data"]
+tags: ["Product"]
 pinned: true
 order: 1
-featured_stack: ["Python", "Django", "PostgreSQL"]
-other_stack: ["Kubernetes", "Docker", "HTMX", "htpy", "BootstrapPostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer", "RDKit"]
-image: /images/atlas.png
+# featured_stack: ["Python", "Django", "PostgreSQL"]
+# other_stack: ["Kubernetes", "Docker", "HTMX", "htpy", "BootstrapPostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer", "RDKit"]
 ---
 
 

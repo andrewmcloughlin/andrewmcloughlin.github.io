@@ -4,7 +4,7 @@ description: "Development of algorithms to learn actigraphy from actimetry data.
 layout: item.njk
 tags: ["portfolio", "Software"]
 pinned: false
-image: /images/actigraphy.png
+# image: /images/actigraphy.png
 ---
 My first Master's thesis was to work on the Texas Instrument's hackable (MSP430 MCU)[https://www.itopen.it/the-hackable-watch-a-wearable-msp430-mcu/] watch to develop algorithms to learn activity (eg. walking, running, sleeping) from the accelerometer data.
 
@@ -27,6 +27,11 @@ I researched and developed algorithms (written in Matlab) for processing actigra
 **Method 2 (Repulsive Thresholding)**: I designed an autonomous threshold that pushes away signals approaching it from either side, enabling fast and simple binary classification of high versus low activity status.
 
 **Method 3 (Linear Regression Analysis)**: By comparing statistics from an 11-minute sliding window against a database of baseline sleep/wake stats, I assign a sleep probability score to classify sleep, low activity, and high activity.
+
+
+#### In Retrospect
+
+If I were approaching this problem today, I would be using Monte Carlo simulations to categorise the signals or even proper ML methods, but I was blissfully ignorant of those back in the day.
 
 <a href="/files/actigraphy-poster.pdf" class="btn btn-primary" download>
   <i class="fa-solid fa-file-arrow-down me-2"></i>Download poster

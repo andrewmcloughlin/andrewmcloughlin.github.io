@@ -5,9 +5,9 @@ layout: item.njk
 tags: ["portfolio", "Product","Software"]
 pinned: true
 order: 4
-featured_stack: ["Python", "Django", "PostgreSQL"]
-other_stack: ["Docker", "Kubernetes",  "HTMX", "Metabase", "RabbitMQ", "Celery", "Bootstrap"]
-image: /images/hmbt.png
+# featured_stack: ["Python", "Django", "PostgreSQL"]
+# other_stack: ["Docker", "Kubernetes",  "HTMX", "Metabase", "RabbitMQ", "Celery", "Bootstrap"]
+# image: /images/hmbt.png
 ---
 
 ## The Problem

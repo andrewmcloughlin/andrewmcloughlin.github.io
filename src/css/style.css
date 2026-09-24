@@ -163,6 +163,16 @@ kerning {
   border-color: var(--zen-charcoal-lighter);
 }
 
+.product-image-wrapper img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  display: block;
+  margin: -1.5rem -1.5rem 0;
+  width: calc(100% + 3rem);
+}
+
 .stretched-link::after {
   position: absolute;
   top: 0;
