@@ -28,6 +28,5 @@ Tyto is a Laboratory Management Information System (LIMS) which records lab oper
 I was responsible for:
 <ul>
     <li>introducing a number of new django apps and enforced that all cross-app imports be restricted to services, making it much more modular</li>
-    <li>Writing and running idempotent data scripts. An important pattern was asserting the state of the database both before and after the script and ensuring the correct number of records had been amended. These data scripts were stored in a separate git repo and uploaded to the app database via admin to be run with an async job.
-</li>
+    <li>Writing and running idempotent data scripts. An important pattern was asserting the state of the database both before and after the script and ensuring the correct number of records had been amended. These data scripts were stored in a separate git repo and uploaded to the app database via admin to be run with an async job.</li>
 </ul>

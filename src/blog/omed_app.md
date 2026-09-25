@@ -1,6 +1,6 @@
 ---
-title: "OMED Medical App Design"
-description: ""
+title: "Medical App Design"
+description: "Redesign visualisations for the OMED Mobile App"
 layout: item.njk
 tags: ["blog", "Product"]
 pinned: false
