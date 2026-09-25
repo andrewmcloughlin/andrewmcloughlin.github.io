@@ -1,6 +1,6 @@
 ---
-title: "Medical App Design"
-description: "Redesign visualisations for the OMED Mobile App"
+title: "Re-Designing Visualisations for a Mobile Health Tracking App"
+description: "Redesign visualisations to support patients throughout the breath sampling process."
 layout: item.njk
 tags: ["blog", "Product"]
 pinned: false

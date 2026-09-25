@@ -1,6 +1,6 @@
 ---
-title: "Data Warehouse"
-description: "Designed, built and maintained a data warehouse for clinical, laboratory and financial data."
+title: "Building a Data Warehouse"
+description: "Integrating clinical, laboratory and financial data into a central warehouse for analysis, reporting & downstream applications."
 layout: item.njk
 tags: ["blog", "Data"]
 pinned: true

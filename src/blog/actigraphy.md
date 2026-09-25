@@ -1,6 +1,6 @@
 ---
-title: "Actigraphy Research"
-description: "Development of algorithms to learn actigraphy from actimetry data."
+title: "Turning Wearable Sensor Data into Research-Ready Measures"
+description: "Developing algorithms & analysis tools to transform raw actigraphy data into meaningful measures of activity & sleep."
 layout: item.njk
 tags: ["blog", "Software"]
 pinned: false

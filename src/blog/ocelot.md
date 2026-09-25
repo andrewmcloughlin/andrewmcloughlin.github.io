@@ -1,6 +1,6 @@
 ---
-title: "Ocelot: A CLI for making forms"
-description: "A CLI tool for building and validating Case Report Forms (CRFs)."
+title: "Making Complex Clinical Forms Easier to Build & Validate"
+description: "Designing a declarative, reusable approach to generating & validating structured clinical forms."
 layout: item.njk
 tags: ["blog", "Software"]
 pinned: false

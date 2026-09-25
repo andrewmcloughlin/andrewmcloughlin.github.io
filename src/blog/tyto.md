@@ -1,6 +1,6 @@
 ---
-title: "Brownfield LIMS Development"
-description: "Inheriting a Big old Ball o' Mud."
+title: "Modernising a Lab System Without Disrupting Workflows"
+description: "Brownfield development of a laboratory information management system, working within an established clinical & technical environment."
 layout: item.njk
 tags: ["blog", "Software"]
 pinned: false

@@ -1,6 +1,6 @@
 ---
-title: "Clinician's Web Portal"
-description: "A web portal for clinicians to manage their patients, patient pathways, order tests, view results and record diagnoses."
+title: "Building a Web Portal for Clinical Data and Workflows"
+description: "Designing and developing a clinician-facing application for accessing, managing & acting on clinical information."
 layout: item.njk
 tags: ["blog", "Software"]
 pinned: true

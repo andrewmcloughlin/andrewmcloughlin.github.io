@@ -1,6 +1,6 @@
 ---
-title: "Automating Bias Detection"
-description: "Pipeline to detect bias across study arms."
+title: "Automating Bias Detection in Clinical Data"
+description: "Building automated checks to identify potential sources of bias across clinical datasets."
 layout: item.njk
 tags: ["blog", "Data"]
 pinned: false

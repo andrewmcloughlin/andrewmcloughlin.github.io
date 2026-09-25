@@ -217,7 +217,7 @@ module.exports = {
             "name": "VOC Atlas",
             "pinned": true,
             "tagline": "The Periodic Table of Breath",
-            "description": "Funded by the Gates Foundation, The VOC Atlas is a public data portal to share reference datasets of breath related compounds across various populations. It has is used by 500 verified academics and scientists from Universities around the world.",
+            "description": "Funded by the Gates Foundation, The VOC Atlas is a public data portal to share reference datasets of breath related compounds across various populations. It is used by 500 verified academics and scientists from Universities around the world.",
             "image": "images/atlas.png",
             "stack": ["python", "django", "rdkit"],
             "link": "https://www.vocatlas.com",
