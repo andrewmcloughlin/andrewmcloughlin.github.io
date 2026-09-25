@@ -292,6 +292,7 @@ module.exports = {
         {
             "name": "Smartwatch Actigraphy Algorithms",
             "tagline": "",
+            "description": "Researched and developed signal processing algorithms to train machine learning models identifying physical activities from raw actimetry data collected via open-source smartwatch prototypes.",
             "image": "images/actigraphy.png",
             "stack": ["Matlab"],
             "link": "",
