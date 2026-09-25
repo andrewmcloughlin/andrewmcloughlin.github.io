@@ -4,9 +4,9 @@ description: "Redesign visualisations to support patients throughout the breath 
 layout: item.njk
 tags: ["blog", "Product"]
 pinned: false
-image: /images/omed.png
 ---
 
+![OMED Redesign](/images/article/omed.png)
 
 ## The App
 
