@@ -93,7 +93,7 @@ module.exports = {
         {
             title: "A breathomics database to identify, contextualise and validate biomarkers of respiratory conditions",
             year: "2024",
-            abstract: "Breath-based biomarker development relies on advanced technology to collect and analyse volatile organic compounds (VOCs). Traditionally, untargetted GC-MS analysis is prefered for biomarker discover…",
+            abstract: "Breath-based biomarker development relies on advanced technology to collect and analyse volatile organic compounds (VOCs). Traditionally, untargeted GC-MS analysis is preferred for biomarker discover…",
             journal: "European Respiratory Journal",
             link: "https://publications.ersnet.org/content/erj/64/suppl68/pa1710"
         },
@@ -180,7 +180,7 @@ module.exports = {
             title: "Establishing breath as a biomarker platform—take home messages from the Breath Biopsy Conference 2023",
             year: "2023",
             abstract: "The annual Breath Biopsy Conference hosted by Owlstone Medical gathers together the leading experts, early career researchers, and physicians working with breath as a biomarker platform for clinical …",
-            journal: "Editorial for the Breat Biopsy Conference",
+            journal: "Editorial for the Breath Biopsy Conference",
             link: "https://link.springer.com/article/10.1007/s11306-024-02142-x"
         },
         {
@@ -255,7 +255,7 @@ module.exports = {
         },
         {
             "name": "Tyto",
-            "description": "Tyto is a 10-year old monolithic LIMS tracking stock management (stock location and cumulative usage), study management and participant data",
+            "description": "Tyto is a 10-year-old monolithic LIMS tracking stock management (stock location and cumulative usage), study management and participant data",
             "tagline": "Laboratory Information Management System",
             "image": "images/tyto.png",
             "stack": ["postgresql", "python", "django", "docker", "htmx"],
@@ -264,7 +264,7 @@ module.exports = {
         },
         {
             "name": "OMED Health",
-            "description": "OMED Health is a mobile app to allow users to pair and sync results from a breath collection device. Users can log activities and symptoms and explore their data and also order tests amd receive diagnoses from clinicians.",
+            "description": "OMED Health is a mobile app to allow users to pair and sync results from a breath collection device. Users can log activities and symptoms and explore their data and also order tests and receive diagnoses from clinicians.",
             "tagline": "Mobile App for collecting breath samples",
             "image": "images/omed.png",
             "stack": ["Figma"],
