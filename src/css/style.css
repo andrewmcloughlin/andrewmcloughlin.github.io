@@ -1234,6 +1234,44 @@ a {
   margin-bottom: 0;
 }
 
+/* Gallery controls */
+.gallery-controls {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem 0;
+}
+
+.gallery-pause-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.gallery-pause-btn:hover {
+  background: var(--zen-charcoal);
+  color: var(--zen-cream);
+}
+
+.gallery-pause-btn .gallery-play-icon {
+  display: none;
+}
+
+.gallery-pause-btn[aria-pressed="true"] .gallery-pause-icon {
+  display: none;
+}
+
+.gallery-pause-btn[aria-pressed="true"] .gallery-play-icon {
+  display: block;
+}
+
 /* Gallery */
 .gallery-marquee-container {
   /* Provide Splide overflow mask to mimic the fade effect */

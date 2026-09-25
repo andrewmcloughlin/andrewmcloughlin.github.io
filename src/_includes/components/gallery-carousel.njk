@@ -5,7 +5,7 @@
         <li class="splide__slide">
           <a href="{{ slide.link | url }}" class="gallery-link" aria-label="{{ slide.title }}">
             {% if slide.type == 'video' %}
-              <video autoplay loop muted playsinline {% if slide.poster %}poster="{{ slide.poster | url }}"{% endif %} class="gallery-img pe-none">
+              <video loop muted playsinline {% if slide.poster %}poster="{{ slide.poster | url }}"{% endif %} class="gallery-img pe-none" x-data x-bind:autoplay="!window.matchMedia('(prefers-reduced-motion: reduce)').matches">
                 <source src="{{ slide.media | url }}" type="video/{{ slide.videoFormat }}">
                 Sorry, your browser does not support the video tag. Just imagine some cool stuff happening here.
                 {% if slide.poster %}
@@ -24,11 +24,24 @@
     </ul>
   </div>
 </div>
+<div class="gallery-controls">
+  <button id="gallery-pause-btn" class="gallery-pause-btn" aria-label="Pause gallery" aria-pressed="false" hidden>
+    <svg class="gallery-pause-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <rect x="3" y="2" width="3.5" height="12" rx="1"/>
+      <rect x="9.5" y="2" width="3.5" height="12" rx="1"/>
+    </svg>
+    <svg class="gallery-play-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+      <path d="M4 2.5l10 5.5-10 5.5V2.5z"/>
+    </svg>
+  </button>
+</div>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (typeof Splide !== 'undefined') {
-      new Splide('#gallery-carousel', {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const splide = new Splide('#gallery-carousel', {
         type   : 'loop',
         drag   : 'free',
         focus  : 'center',
@@ -36,12 +49,31 @@
         gap    : '3rem',
         arrows : false,
         pagination: false,
-        autoScroll: {
+        autoScroll: prefersReducedMotion ? false : {
           speed: 1,
           pauseOnHover: true,
           pauseOnFocus: false,
         },
-      }).mount(window.splide.Extensions);
+      });
+      splide.mount(window.splide.Extensions);
+
+      const pauseBtn = document.getElementById('gallery-pause-btn');
+      if (!prefersReducedMotion && pauseBtn) {
+        const autoScroll = splide.Components.AutoScroll;
+        pauseBtn.hidden = false;
+        pauseBtn.addEventListener('click', function () {
+          const paused = pauseBtn.getAttribute('aria-pressed') === 'true';
+          if (paused) {
+            autoScroll.play();
+            pauseBtn.setAttribute('aria-pressed', 'false');
+            pauseBtn.setAttribute('aria-label', 'Pause gallery');
+          } else {
+            autoScroll.pause();
+            pauseBtn.setAttribute('aria-pressed', 'true');
+            pauseBtn.setAttribute('aria-label', 'Play gallery');
+          }
+        });
+      }
     }
     
     /* Mobile: tap-to-reveal overlay, second tap navigates */
