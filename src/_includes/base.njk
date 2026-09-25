@@ -68,11 +68,12 @@
     <a href="/">
       <b class="fs-1 fw-bold">Andrew McLoughlin</b>
     </a>
-    <div class="footer-links">
+    <div class="footer-links pt-2">
       <ul>
         {% for link in site.social %}
         <li><a href="{{ link.url }}" data-shortcut="{{ link.code }}" target="_blank">{{ link.title }}</a></li>
         {% endfor %}
+        <li x-data="{ p1: 'andrew', p2: 'mcloughlin', p3: 'cantab', p4:'net' }"><a x-bind:href="`mailto:${p1}.${p2}@${p3}.${p4}`" data-shortcut="e">Email</a></li>
       </ul>
       <ul>
         {% for link in site.footer.nav %}
