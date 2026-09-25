@@ -6,8 +6,8 @@ layout: base.njk
     <nav class="item-sidebar__nav">
       <p class="item-sidebar__heading text-uppercase fw-semibold small mb-3 text-secondary">Articles</p>
       <ul class="list-unstyled mb-0">
-        {% set sortedPortfolio = collections.portfolio | sort(false, false, 'data.order') %}
-        {% for item in sortedPortfolio %}
+        {% set sortedBlog = collections.blog | sort(false, false, 'data.order') %}
+        {% for item in sortedBlog %}
           <li>
             <a href="{{ item.url | url }}"
                class="item-sidebar__link nav-link{% if page.url == item.url %} active{% endif %}">

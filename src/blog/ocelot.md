@@ -2,7 +2,7 @@
 title: "Ocelot: A CLI for making forms"
 description: "A CLI tool for building and validating Case Report Forms (CRFs)."
 layout: item.njk
-tags: ["portfolio", "Software"]
+tags: ["blog", "Software"]
 pinned: false
 # featured_stack: ["Python", "Click", "Pydantic"]
 # other_stack: ["XLSForm", "YAML", "HTML", "OpenClinica", "OpenRosa", "pyYAML", "pandas", "openpyxl"]

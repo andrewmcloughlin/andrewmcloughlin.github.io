@@ -1172,11 +1172,11 @@ a {
   opacity: 0.7;
 }
 
-.portfolio-item {
+.blog-item {
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.portfolio-item.hidden {
+.blog-item.hidden {
   display: none;
 }
 

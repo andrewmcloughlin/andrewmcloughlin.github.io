@@ -64,23 +64,3 @@ title: Home
   </button>
   </div>
 </section>
-
-<section id="projects" class="mb-5 fade-in delay-5 py-5 mt-5">
-  <h2 class="my-4 py-4 border-bottom font-heading text-center">Featured Work</h2>
-  {% include "components/gallery-carousel.njk" %}
-  <div class="row g-4 mt-4 pt-4">
-
-    {% asyncEach item in collections.portfolio | sort(attribute="data.order") %}
-      {% if item.data.pinned %}
-        <div class="col-12">
-          {% include "components/project-card.njk" %}
-        </div>
-      {% endif %}
-    {% endeach %}
-  </div>
-  <div class="d-flex justify-content-end mt-2">
-    <a href="{{ '/work/' | url }}" class="btn btn-outline w-100 py-2">More Projects</a>
-  </div>
-</section>
-
-

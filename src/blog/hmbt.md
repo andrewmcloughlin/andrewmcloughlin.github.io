@@ -2,7 +2,7 @@
 title: "Fulfillments Application"
 description: "A web application for managing the fulfillment of orders."
 layout: item.njk
-tags: ["portfolio", "Product","Software"]
+tags: ["blog", "Product","Software"]
 pinned: true
 order: 4
 # featured_stack: ["Python", "Django", "PostgreSQL"]

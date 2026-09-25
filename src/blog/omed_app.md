@@ -2,7 +2,7 @@
 title: "OMED Medical App Design"
 description: ""
 layout: item.njk
-tags: ["portfolio", "Product"]
+tags: ["blog", "Product"]
 pinned: false
 # image: /images/omed.png
 ---

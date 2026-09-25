@@ -2,7 +2,7 @@
 title: "Brownfield Development for a Laboratory Information Management System"
 description: "Maintenance and continuous development of a LIMS system critical to the everyday running of the company."
 layout: item.njk
-tags: ["portfolio", "Software"]
+tags: ["blog", "Software"]
 pinned: false
 featured_stack: ["Python", "Django", "PostgreSQL"]
 other_stack: ["Kubernetes", "Docker", "Bootstrap", "HTMX"]

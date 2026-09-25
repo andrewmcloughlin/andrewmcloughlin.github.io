@@ -1,13 +1,15 @@
 ---
-title: "Modularising a Big Ball of Mud"
-description: ""
+title: "Product Ownership: The Periodic Table of Breath"
+description: "An interactive web application for exploring the world of Volatile Organic Compounds (VOCs)."
 layout: item.njk
-tags: ["portfolio", "django"]
+tags: ["blog"]
 pinned: true
 order: 1
-featured_stack: ["Python", "Django", "PostgreSQL"]
-other_stack: ["Kubernetes", "Docker", "HTMX", "htpy", "BootstrapPostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer", "RDKit"]
+# featured_stack: ["Python", "Django", "PostgreSQL"]
+# other_stack: ["Kubernetes", "Docker", "HTMX", "htpy", "BootstrapPostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer", "RDKit"]
 ---
+
+
 
 <div class="text-center mb-4">
   <a href="https://www.vocatlas.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
@@ -21,6 +23,72 @@ A django-based web application for exploring the world of Volatile Organic Compo
 
 As both **Product Owner** and **Lead Developer**, I led the product lifecycle from initial conception and clinical stakeholder engagement through to data architecture, front-end development, and deployment.
 
+## What problems does it solve?
+
+You may have heard stories of [dogs that can smell diseases](https://www.bbc.com/news/health-60636541) or [the nurse who could smell Alzheimer's disease](https://www.bbc.com/news/uk-scotland-68537913). There is good biological prior to suggest that signals for diseases are present in the air we exhale and this theory is why [Owlstone Medical](https://www.owlstonemedical.com) was founded. The challenge however is that breath is full of noise from the food we eat, the environment we live in and the medications we take. The [VOC Atlas](https://www.vocatlas.com) is a collaborative tool to allow the breath research community to contribute breath data to attempt to find correlations between signals on breath (patterns of VOC expression) and diseases.
+
+
+# Product Ownership
+
+## Definition of Success
+
+Owlstone's USP is thaqt our breatjomics data are validated and quantified. No other company (and few academic groups) can claim this at a scale of hundreds of VOCs. The best way to demonstrate this is to make our data available to the wider breath research community to allow them to see the quality of our data and in doing so stregthen our Breath Biopsy brand and encourage partnerships.
+
+The definition of success is therefor two-fold:
+
+1. Establish the Breath Biopsy brand as the go-to platform for breath research
+2. Encourage collaboration and data sharing within the breath research community
+
+Success can be quantified by tracking:
+- the number of active users,
+- the number of citations,
+- the number of collaborations brought in as a result of the platform.
+
+The VOC Atlas has nearly 3000 users, >500 user submissions and has been cited in 10 research papers in the 3 years since launch. It has also been used as a platform for several collaborations between Owlstone and academic groups, although this is harder to quantify.
+
+## Competitive Analysis
+
+Atlas is a unique product, to date no other platform exists that allows for the collaborative sharing of breath data, because no other company can replicate our platform. So, from the software standpoint we have no threats from a competitive standpoint. That doesn't mean that we can't learn from other platforms. I performed a competitive analysis of other chemical and biological data sharing platforms to understand what they do well and what they do poorly. I explored platforms such as PubChem, ChEMBL, DrugBank, the Human Metabolome Database, and the Human Protein Atlas. Many competitors were academic platforms that did not have professional software development teams, and it showed. They were often slow, difficult to navigate and lacked modern interfaces; this was an area in which we could easily differentiate ourselves and acheive our goal of establishing the Breath Biopsy brand as the go-to platform for breath research. I looked at how data are presented, what filtering and search capabilities they offer and how they handle data provenance and versioning. This competitor analysis prevented us from re-inventing the wheel and allowed us to discover and take advantage of ChEBI's API to pull in chemical structure information.
+
+## User Personas
+
+![User Personas](/images/article/atlas_user_personas.png)
+
+I started by interviewing potential users to understand their needs and requirements. This involved speaking to clinicians, researchers, and data scientists to understand their workflows and pain points.
+
+## User Flows -> High Fidelity Mockups
+
+![Low Fidelity Wireframes](/images/article/atlas_lowfi.png)
+
+I moved iteratively from whiteboard scribbles to low-fidelity mockups in Excalidraw and Penpot, to quick interactive prototypes in Figma and finally to high-fidelity mockups.
+
+![High Fidelity Mockups](/images/article/atlas_highfi.png)
+
+## User Feedback
+
+![User Feedback](/images/article/atlas_user_feedback.png)
+
+I kept relevant stakeholders in the loop at every round, integrating their feedback with technical limitations and opportunities.
+
+## Writing Tickets
+
+I wrote all tickets for the project in Jira using Gherkion syntax to ensure that the requirements were clear and unambiguous. Every tickets was linked back to User Personas and had clean acceptance criteria. This meant that there was no ambiguity for the developers and we could move quickly.
+
+## Backlog Management
+
+As AGILE development team we wanted to get an MVP out as quickly as possible. As the product was initally internal, we prioritised shipping features and quick iterations over perfecting them. While this did mean occassionally refactoring and even reversing decisions, it kept up momentum and excitement as stakeholders could see their ideas being realised every 2 weeks. During this phase of the project we used MoSCOW to prioritise features.
+
+As the product matured and gained buy-in we demo'ed the product to the Gates Foundation and selected key opinion leaders in the field. On the basis of their feedback we deicded to deploy the Atlas as a public platform. This meant that we had to be more considered in our approach to feature development and we switched to using RICE to prioritise features going forwards.
+
+## Reporting Slide Decks
+
+![Reporting Slide Decks](/images/article/atlas_slides.png)
+
+Part of this role involved presenting updates to the Gates Foundation every month. This included updates on roadmap progress, user feedback, user adoption and new features.
+
+
+
+# Data Engineering
 
 ## Design Philosophy
 
@@ -29,7 +97,6 @@ I was keen for Atlas to have an immutable database, so that we could always trac
 ## Architecture Decisions
 
 ### Backend
-
 We were a small team of developers (3-4) building the full-stack on multiple internal projects, so our main considerations were familiarity, speed and ease of maintenance. With that in mind we elected to use a familiar stack, which had served us well on previous projects: Python, Django, PostgreSQL and Bootstrap.
 
 As Atlas was ingesting large GCMS datasets, we used S3 to store the raw data, and PostgreSQL to store the metadata and processed data, with async Celery workers to process the data.
@@ -37,7 +104,6 @@ As Atlas was ingesting large GCMS datasets, we used S3 to store the raw data, an
 Initially Atlas was intended to be an internal tool, so it was built as a Django app of an existing project. This allowed us to get it into the hands of internal users within 1 month. However, as the product matured and gained buy-in we deicded to deploy the Atlas as a public platform, which became as issue as it was built ontop of an internal LIMS which could not be publicly exposed. We spent 3 months refactoring the application to be a standalone Django project.
 
 ### Frontend
-
 As Owlstone's first public application, we had to learn a lot about deploying and maintaining a public facing web application, including security, scalability and accessibility. We opted to use AllAuth for authentication and recognising that we needed to improve the UI/UX of the application for an external audience, we used AlpineJS to make more dynamic user-friendly components. We also recognised that we needed to start testing our templates as the risk of breaking the UI for external users was now a real concern, so we used htpy to generate components in python and test them in isolation.
 
 

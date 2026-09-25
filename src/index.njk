@@ -16,7 +16,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
   <h2 class="mb-4 pb-2 border-bottom font-heading">Products I've worked on</h2>
   <div class="row g-4" id="products-list">
     {% for product in cv.products %}
-        <div class="col-12 portfolio-item" {% if loop.index > 4 %} x-show="expandedProducts" x-transition x-cloak {% endif %}>
+        <div class="col-12 blog-item" {% if loop.index > 4 %} x-show="expandedProducts" x-transition x-cloak {% endif %}>
           {% include "components/product-card.njk" %}
         </div>
     {% endfor %}
@@ -54,8 +54,8 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
   </div>
 
   <div class="row g-2">
-    {% asyncEach item in collections.portfolio | reverse %}
-        <div class="col-12 portfolio-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
+    {% asyncEach item in collections.blog | reverse %}
+        <div class="col-12 blog-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
           {% include "components/project-card.njk" %}
         </div>
     {% endeach %}

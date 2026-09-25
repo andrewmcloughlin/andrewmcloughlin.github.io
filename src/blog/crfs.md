@@ -2,7 +2,7 @@
 title: "(Almost) Infinite Flexibility in a Rigid Framework"
 description: "Standardising Messy Clinical Data with CDISC and SNOMED"
 layout: item.njk
-tags: ["portfolio", "Data"]
+tags: ["blog", "Data"]
 pinned: false
 order: 1
 # image: /images/crfs.png
