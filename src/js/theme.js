@@ -20,11 +20,11 @@ const setThemeIcon = (theme) => {
     });
 };
 
-const syncGlow = (theme) => {
+const syncGlow = (theme, playSound = false) => {
     const glow = document.querySelector('.lamp-glow');
     if (!glow) return;
     glow.classList.toggle('lamp-glow--on', theme === 'dark');
-    new Audio('/_includes/sounds/lightswitch.wav').play();
+    if (playSound) new Audio('/_includes/sounds/lightswitch.wav').play();
 };
 
 const setTheme = (theme) => {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!localStorage.getItem('theme')) {
             const theme = e.matches ? 'dark' : 'light';
             setTheme(theme);
-            syncGlow(theme);
+            syncGlow(theme, true);
         }
     });
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const flick = document.getElementById('forearm-flick');
                 if (flick) flick.beginElement();
             }, flickDelay);
-            setTimeout(() => syncGlow(next), flickDelay + 240);
+            setTimeout(() => syncGlow(next, true), flickDelay + 240);
         });
     });
 });
