@@ -11,6 +11,7 @@ module.exports = {
         { code: "w", title: "My Work", url: "/" },
     ],
     social: [
+        { code: "g", title: "Github", url: "https://github.com/andrewmcloughlin" },
         { code: "l", title: "LinkedIn", url: "https://linkedin.com/in/amcloughlin1" },
         { code: "a", title: "Academia", url: "https://cambridge.academia.edu/AndrewMcLoughlin" },
         { code: "f", title: "Figma", url: "https://figma.com/@maclin" },
