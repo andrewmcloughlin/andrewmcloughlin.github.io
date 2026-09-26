@@ -4,7 +4,7 @@ description: "Building automated checks to identify potential sources of bias ac
 layout: item.njk
 tags: ["blog", "Data"]
 pinned: false
-order: 999
+index: 3
 featured_stack: ["Python", "SQL", "dbt"]
 ---
 

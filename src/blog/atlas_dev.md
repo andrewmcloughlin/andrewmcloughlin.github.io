@@ -4,7 +4,7 @@ description: "Modelling chemistry and standardising biology data"
 layout: item.njk
 tags: ["blog", "django"]
 pinned: true
-order: 1
+index: 6
 featured_stack: ["Python", "Django", "PostgreSQL"]
 other_stack: ["Kubernetes", "Docker", "HTMX", "htpy", "BootstrapPostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer", "RDKit"]
 ---

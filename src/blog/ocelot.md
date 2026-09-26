@@ -4,6 +4,7 @@ description: "Designing a declarative, reusable approach to generating & validat
 layout: item.njk
 tags: ["blog", "Software"]
 pinned: false
+index: 8
 # featured_stack: ["Python", "Click", "Pydantic"]
 # other_stack: ["XLSForm", "YAML", "HTML", "OpenClinica", "OpenRosa", "pyYAML", "pandas", "openpyxl"]
 # image: /images/ocelot.png

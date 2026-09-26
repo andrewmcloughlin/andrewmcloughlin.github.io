@@ -4,7 +4,7 @@ description: "Integrating clinical, laboratory and financial data into a central
 layout: item.njk
 tags: ["blog", "Data"]
 pinned: true
-order: 2
+index: 7
 featured_stack: ["Airflow", "dbt", "Airbyte", "Metabase", "GCP", "SQL"]
 other_stack: ["PostgreSQL", "Google Looker Studio"]
 # image: "/images/metabase.png"

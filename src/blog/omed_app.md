@@ -4,6 +4,7 @@ description: "Redesign visualisations to support patients throughout the breath 
 layout: item.njk
 tags: ["blog", "Product"]
 pinned: false
+index: 13
 ---
 
 ![OMED Redesign](/images/article/omed.png)

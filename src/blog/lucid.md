@@ -5,6 +5,7 @@ layout: item.njk
 tags: ["blog", "Software"]
 pinned: false
 featured_stack: ["OpenClinica"]
+index: 1
 # other_stack: ["Kubernetes", "Docker", "Bootstrap", "HTMX"]
 # image: /images/tyto.png
 ---

@@ -54,10 +54,11 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
   </div>
 
   <div class="row g-2">
-    {% asyncEach item in collections.blog | reverse %}
+    {% for item in collections.blog | sort(false, false, 'data.index') %}
+        {% set cardIndex = loop.index %}
         <div class="col-12 blog-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
           {% include "components/project-card.njk" %}
         </div>
-    {% endeach %}
+    {% endfor %}
   </div>
 </section>

@@ -6,6 +6,7 @@ tags: ["blog", "Software"]
 pinned: false
 featured_stack: ["Python", "Django", "PostgreSQL"]
 other_stack: ["Kubernetes", "Docker", "Bootstrap", "HTMX"]
+index: 9
 # image: /images/tyto.png
 ---
 

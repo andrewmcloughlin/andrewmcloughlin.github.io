@@ -1,5 +1,6 @@
-<div class="project-card position-relative card row mb-0">
-  <div class="project-content d-flex flex-column h-100 col-12 {% if item.data.image %}col-md-4{% else %}col-md-12{% endif %} py-md-3 pe-md-3 text-start">
+<div class="project-card position-relative card row mb-0 d-flex flex-row align-items-center">
+  <span class="project-card__number" aria-hidden="true">{{ item.data.index }}</span>
+  <div class="project-content d-flex flex-column h-100 py-md-3 pe-md-3 text-start">
     <h3 class="fs-4 fw-bold lh-sm mb-2 mt-0 text-dark"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body text-dark">{{ item.data.title }}</a></h3>
     <p class="text-secondary fs-6">{{ item.data.description }}</p>
   </div>

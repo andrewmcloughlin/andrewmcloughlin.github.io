@@ -4,6 +4,7 @@ description: "How software development practices can improve clinical data manag
 layout: item.njk
 tags: ["blog", "Software"]
 pinned: false
+index: 2
 ---
 
 

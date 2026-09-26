@@ -4,7 +4,7 @@ description: "Standardising Messy Clinical Data with CDISC and SNOMED"
 layout: item.njk
 tags: ["blog", "Data"]
 pinned: false
-order: 1
+index: 4
 # image: /images/crfs.png
 ---
 

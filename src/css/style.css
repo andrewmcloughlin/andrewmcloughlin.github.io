@@ -138,6 +138,21 @@ kerning {
   cursor: pointer;
 }
 
+.project-card__number {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--border-color);
+  flex-shrink: 0;
+  padding-right: 1.25rem;
+  user-select: none;
+}
+
+.project-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .project-image-wrapper {
   min-height: 300px;
 }
