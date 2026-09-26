@@ -52,10 +52,22 @@
         autoScroll: prefersReducedMotion ? false : {
           speed: 1,
           pauseOnHover: true,
-          pauseOnFocus: false,
+          pauseOnFocus: true,
         },
       });
       splide.mount(window.splide.Extensions);
+
+      /* Scroll focused slide to centre of the visible track */
+      splide.Components.Elements.track.addEventListener('focusin', function (e) {
+        const link = e.target.closest('.gallery-link');
+        if (!link) return;
+        const slide = link.closest('.splide__slide');
+        if (!slide) return;
+        const idx = slide.dataset.splideIndex;
+        if (idx !== undefined) {
+          splide.go(Number(idx));
+        }
+      });
 
       const pauseBtn = document.getElementById('gallery-pause-btn');
       if (!prefersReducedMotion && pauseBtn) {

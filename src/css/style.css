@@ -1255,6 +1255,11 @@ a {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
+.gallery-pause-btn:focus-visible {
+  outline: 3px solid var(--accent-color, #FF8D28);
+  outline-offset: 3px;
+}
+
 .gallery-pause-btn:hover {
   background: var(--zen-charcoal);
   color: var(--zen-cream);
@@ -1287,6 +1292,13 @@ a {
   overflow: hidden;
   position: relative;
   display: block;
+  outline: none;
+}
+
+.gallery-link:focus-visible {
+  outline: 3px solid var(--accent-color, #FF8D28);
+  outline-offset: 4px;
+  border-radius: 2rem;
 }
 
 .gallery-img,
@@ -1320,7 +1332,9 @@ picture:has(> .gallery-img) {
 }
 
 @media (hover: hover) {
-  .gallery-link:hover .gallery-overlay {
+
+  .gallery-link:hover .gallery-overlay,
+  .gallery-link:focus-visible .gallery-overlay {
     opacity: 1;
   }
 }
