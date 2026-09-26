@@ -6,9 +6,12 @@ tags: ["blog", "Software"]
 pinned: false
 # image: /images/actigraphy.png
 ---
-My first Master's thesis was to work on the Texas Instrument's hackable (MSP430 MCU)[https://www.itopen.it/the-hackable-watch-a-wearable-msp430-mcu/] watch to develop algorithms to learn activity (eg. walking, running, sleeping) from the accelerometer data.
+My first Master's thesis was to work on the Texas Instrument's hackable [MSP430 MCU](https://www.itopen.it/the-hackable-watch-a-wearable-msp430-mcu/) watch to develop algorithms to learn activity (eg. walking, running, sleeping) from the accelerometer data.
 
 I researched and developed algorithms (written in Matlab) for processing actigraphy data to quantify human activity for clinical and health-monitoring applications comparing the effectiveness of 3 different methods.
+
+![The watch](/images/article/watch.png)
+
 
 ### Preprocessing Pipeline
 
@@ -28,6 +31,7 @@ I researched and developed algorithms (written in Matlab) for processing actigra
 
 **Method 3 (Linear Regression Analysis)**: By comparing statistics from an 11-minute sliding window against a database of baseline sleep/wake stats, I assign a sleep probability score to classify sleep, low activity, and high activity.
 
+![Poster](/images/article/actigraphy.png)
 
 #### In Retrospect
 

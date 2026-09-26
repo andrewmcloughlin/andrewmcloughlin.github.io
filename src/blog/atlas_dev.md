@@ -1,6 +1,6 @@
 ---
-title: "Modularising a Big Ball of Mud"
-description: ""
+title: "Building a Breathomics Data Platform"
+description: "Modelling chemistry and standardising biology data"
 layout: item.njk
 tags: ["blog", "django"]
 pinned: true
