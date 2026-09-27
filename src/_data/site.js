@@ -1,5 +1,6 @@
 module.exports = {
     name: "Andrew McLoughlin",
+    ipa_pronounciation: "/məˈklɒk.lɪn/",
     url: "https://andrewmcloughlin.github.io",
     description: "A full-stack developer of scientific software.",
     author: {
@@ -21,7 +22,8 @@ module.exports = {
         nav: [
             { code: "p", title: "Privacy", url: "/privacy/" },
             { code: "t", title: "Terms", url: "/terms/" },
-            { code: "c", title: "Colophon", url: "/colophon/" }
+            { code: "c", title: "Colophon", url: "/colophon/" },
+            { code: "a", title: "Accessibility", url: "/accessibility/" }
         ]
     }
 };
