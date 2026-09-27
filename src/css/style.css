@@ -117,6 +117,10 @@ kerning {
   margin-right: 0.2rem;
 }
 
+address {
+  display: inline !important;
+}
+
 .card {
   position: relative;
   background-color: var(--white);
