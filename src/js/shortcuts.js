@@ -1,39 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hintTriggerKey = '\\';
-    let shortcutsActive = false;
+    let charShortcutsEnabled = localStorage.getItem('charShortcutsEnabled') !== 'false';
 
-    // Create live region for accessibility
-    const announcer = document.createElement('div');
-    announcer.setAttribute('aria-live', 'polite');
-    announcer.className = 'visually-hidden';
-    document.body.appendChild(announcer);
+    // Elements
+    const dialog = document.getElementById('shortcuts-dialog');
+    const triggerBtn = document.getElementById('shortcuts-trigger');
+    const closeBtn = document.getElementById('close-shortcuts-dialog');
+    const checkbox = document.getElementById('enable-char-shortcuts');
 
-    // Initialise badges on links
-    const shortcutLinks = document.querySelectorAll('[data-shortcut]');
-    const shortcuts = new Map();
-
-    shortcutLinks.forEach(link => {
-        const key = link.getAttribute('data-shortcut').toLowerCase();
-        shortcuts.set(key, link);
-
-        const badge = document.createElement('kbd');
-        badge.className = 'shortcut-badge';
-        badge.setAttribute('aria-hidden', 'true');
-        badge.textContent = key;
-
-        // Ensure link is relative for absolute positioning of badge
-        if (getComputedStyle(link).position === 'static') {
-            link.style.position = 'relative';
-        }
-
-        link.appendChild(badge);
+    checkbox.checked = charShortcutsEnabled;
+    checkbox.addEventListener('change', (e) => {
+        charShortcutsEnabled = e.target.checked;
+        localStorage.setItem('charShortcutsEnabled', charShortcutsEnabled);
     });
 
-    const toggleHints = (active) => {
-        shortcutsActive = active;
-        document.body.classList.toggle('shortcuts-active', active);
-        announcer.textContent = active ? 'Keyboard navigation hints active' : 'Keyboard navigation hints dismissed';
-    };
+    triggerBtn.addEventListener('click', () => {
+        dialog.showModal();
+    });
+
+    closeBtn.addEventListener('click', () => {
+        dialog.close();
+    });
+
+    // Mapping generated from Eleventy
+    const shortcutsMap = new Map();
+    if (window.__shortcuts) {
+        window.__shortcuts.forEach(shortcut => {
+            shortcutsMap.set(shortcut.code, shortcut.url);
+        });
+    }
 
     document.addEventListener('keydown', (e) => {
         // Don't trigger if user is typing in an input
@@ -43,32 +38,38 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (e.key === hintTriggerKey) {
-            e.preventDefault();
-            toggleHints(!shortcutsActive);
+        // Ignore when modifier is pressed
+        if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) {
             return;
         }
 
-        if (shortcutsActive) {
-            if (e.key === 'Escape') {
-                toggleHints(false);
-                return;
-            }
-
-            const key = e.key.toLowerCase();
-            if (shortcuts.has(key)) {
+        if (e.key === hintTriggerKey) {
+            if (charShortcutsEnabled && !dialog.open) {
                 e.preventDefault();
-                const link = shortcuts.get(key);
-                toggleHints(false);
-                window.location.href = link.href;
+                dialog.showModal();
             }
+            return;
         }
-    });
 
-    // Dismiss on click outside
-    document.addEventListener('mousedown', () => {
-        if (shortcutsActive) {
-            toggleHints(false);
+        if (charShortcutsEnabled || dialog.open) {
+            const key = e.key.toLowerCase();
+            if (shortcutsMap.has(key)) {
+                e.preventDefault();
+                const targetPath = shortcutsMap.get(key);
+
+                if (dialog.open) {
+                    dialog.close();
+                }
+
+                if (targetPath === '#email') {
+                    const emailLink = document.querySelector('.email-link');
+                    if (emailLink) {
+                        emailLink.click();
+                    }
+                } else {
+                    window.location.href = targetPath;
+                }
+            }
         }
     });
 });

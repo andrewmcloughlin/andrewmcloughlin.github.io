@@ -1913,49 +1913,28 @@ picture:has(> .img-fluid)>img {
   }
 }
 
-/* Keyboard Shortcut Badges */
-body.shortcuts-active .shortcut-badge {
-  opacity: 1;
-  transform: translate(0, -50%) scale(1);
-  pointer-events: auto;
-}
 
-.shortcut-badge {
-  position: absolute;
-  top: 0;
-  right: -8px;
-  background-color: var(--highlight);
-  color: #fff;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 0.7em;
-  font-weight: 700;
-  padding: 0.1em 0.4em;
-  opacity: 0;
-  transform: translate(0, -50%) scale(0.8);
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-  min-width: 1.5em;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  line-height: 1.2;
-}
-
-[data-shortcut] {
-  position: relative;
-}
 
 .footer-hint {
   position: absolute;
   bottom: 0.5rem;
   right: 1rem;
-  opacity: 0.4;
+}
+
+.shortcuts-trigger {
+  background: none;
+  font-family: inherit;
   font-size: 0.85rem;
-  pointer-events: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  opacity: 0.4;
+  cursor: pointer;
   transition: opacity 0.2s ease;
 }
 
-.site-footer:hover .footer-hint {
+.site-footer:hover .shortcuts-trigger,
+.shortcuts-trigger:focus-visible {
   opacity: 0.7;
 }
 
@@ -1968,4 +1947,58 @@ body.shortcuts-active .shortcut-badge {
   color: var(--zen-charcoal);
   border-radius: 3px;
   vertical-align: text-top;
+}
+
+/* Dialog Styles */
+.shortcuts-dialog {
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+}
+
+.shortcuts-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.shortcuts-dialog-content {
+  padding: 1.5rem;
+}
+
+.shortcuts-list {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shortcuts-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.shortcuts-list kbd {
+  background-color: var(--zen-cream-darker);
+  color: var(--zen-charcoal);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: inherit;
+  font-weight: bold;
+  min-width: 2rem;
+  text-align: center;
+}
+
+.shortcuts-settings {
+  border-top: 1px solid var(--border-color, rgba(0, 0, 0, 0.1));
+  padding-top: 1rem;
 }

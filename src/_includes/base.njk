@@ -48,7 +48,7 @@
       <nav class="mobile-topnav" id="topNav">
         <ul class="nav gap-1">
           {% for link in site.nav %}
-          <li class="nav-item"><a href="{{ link.url | url }}" data-shortcut="{{ link.code }}" class="nav-link{% if page.url == link.url %} active{% endif %}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+          <li class="nav-item"><a href="{{ link.url | url }}" class="nav-link{% if page.url == link.url %} active{% endif %}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}
         </ul>
       </nav>
@@ -71,27 +71,62 @@
     <div class="footer-links pt-2">
       <ul>
         {% for link in site.social %}
-        <li><a href="{{ link.url }}" data-shortcut="{{ link.code }}" target="_blank">{{ link.title }}</a></li>
+        <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
         {% endfor %}
-        <li x-data="{ p1: 'andrew', p2: 'mcloughlin', p3: 'cantab', p4:'net' }"><a x-bind:href="`mailto:${p1}.${p2}@${p3}.${p4}`" data-shortcut="e">Email</a></li>
+        <li x-data="{ p1: 'andrew', p2: 'mcloughlin', p3: 'cantab', p4:'net' }"><a x-bind:href="`mailto:${p1}.${p2}@${p3}.${p4}`" class="email-link">Email</a></li>
       </ul>
       <ul>
         {% for link in site.footer.nav %}
-        <li><a href="{{ link.url | url }}" data-shortcut="{{ link.code }}">{{ link.title }}</a></li>
+        <li><a href="{{ link.url | url }}">{{ link.title }}</a></li>
         {% endfor %}
       </ul>
     </div>
     <div class="footer-hint">
-      <small>Press <kbd class="keyboard-icon">\</kbd> for shortcuts</small>
+      <button
+        type="button"
+        id="shortcuts-trigger"
+        class="shortcuts-trigger"
+        aria-haspopup="dialog"
+        aria-controls="shortcuts-dialog">
+        Keyboard shortcuts <kbd class="keyboard-icon">\</kbd>
+      </button>
     </div>
     <button type="button" id="theme-toggle-mobile" class="mobile-toggle lamp" aria-label="Switch to dark mode" aria-pressed="false"> 
       <i class="fa-solid fa-moon theme-icon"></i>
     </button>
   </footer>
 
+  <dialog id="shortcuts-dialog" aria-labelledby="shortcuts-title" class="shortcuts-dialog">
+    <div class="shortcuts-dialog-content">
+      <h2 id="shortcuts-title" class="h3 mb-1">Keyboard shortcuts</h2>
+      
+      <ul class="shortcuts-list" id="shortcuts-list">
+        <li><kbd>\</kbd> <span>Open shortcuts</span></li>
+        <li><kbd>Esc</kbd> <span>Close panel</span></li>
+        {% for shortcut in site.shortcuts %}
+        <li><kbd>{{ shortcut.code }}</kbd> <span>{{ shortcut.title }}</span></li>
+        {% endfor %}
+      </ul>
+
+      <div class="shortcuts-settings mt-2">
+        <label>
+          <input type="checkbox" id="enable-char-shortcuts">
+          Enable keyboard shortcuts
+        </label>
+      </div>
+
+      <div class="mt-2 text-end">
+        <button type="button" class="btn" id="close-shortcuts-dialog">Close</button>
+      </div>
+    </div>
+  </dialog>
+
   <script src="{{ '/js/vendor/splide.min.js' | url }}"></script>
   <script src="{{ '/js/vendor/splide-extension-auto-scroll.min.js' | url }}"></script>
-  <script>window.__pathPrefix = "{{ '/' | url }}";</script>
+  <script>
+    window.__pathPrefix = "{{ '/' | url }}";
+    window.__shortcuts = {{ site.shortcuts | dump | safe }};
+  </script>
   <script src="{{ '/js/theme.js' | url }}"></script>
   <script defer src="{{ '/js/vendor/alpine.min.js' | url }}"></script>
   <script src="{{ '/js/shortcuts.js' | url }}"></script>

@@ -12,7 +12,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 </section>
 
 
-<section class="page-section mb-5 fade-in delay-2" x-data="{ expandedProducts: false }">
+<section class="page-section mb-5 fade-in delay-2" x-data="{ expandedProducts: false }" aria-labelledby="products-heading">
   <h2 class="mb-4 pb-2 border-bottom font-heading">Products I've worked on</h2>
   <div class="row g-4" id="products-list">
     {% for product in cv.products %}
@@ -36,7 +36,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 </section>
 
 
-<section class="page-section mb-5 fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }">
+<section class="page-section mb-5 fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }" aria-labelledby="case-studies-heading">
   <h2 class="mb-4 pb-2 border-bottom font-heading">Case Studies</h2>
 
   <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
