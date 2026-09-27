@@ -77,6 +77,18 @@
   --border-radius-sm: 8px;
 }
 
+ol {
+  margin-bottom: 1rem;
+}
+
+ul:not(.nav) li {
+  margin-bottom: 0.2rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
 .lamp-glow {
   display: none;
 }
