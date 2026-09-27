@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const hintTriggerKey = '\\';
     let charShortcutsEnabled = localStorage.getItem('charShortcutsEnabled') !== 'false';
 
-    // Elements
     const dialog = document.getElementById('shortcuts-dialog');
     const triggerBtn = document.getElementById('shortcuts-trigger');
     const closeBtn = document.getElementById('close-shortcuts-dialog');
@@ -31,14 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('keydown', (e) => {
-        // Don't trigger if user is typing in an input
-        if (e.target.tagName === 'INPUT' ||
+        // Don't trigger if user is typing in a text field!
+        const isTextInput = (e.target.tagName === 'INPUT' && !['checkbox', 'radio', 'button', 'submit', 'reset'].includes(e.target.type)) ||
             e.target.tagName === 'TEXTAREA' ||
-            e.target.isContentEditable) {
+            e.target.isContentEditable;
+
+        if (isTextInput) {
             return;
         }
 
-        // Ignore when modifier is pressed
+        // Also, ignore when modifier is pressed
         if (e.ctrlKey || e.altKey || e.metaKey || e.shiftKey) {
             return;
         }
