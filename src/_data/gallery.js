@@ -1,7 +1,7 @@
 module.exports = [
     {
         title: 'Interactive 3D compound viewer',
-        link: '/blog/atlas/',
+        link: '/blog/atlas_dev/',
         media: '/images/gallery/voc.mp4',
         type: 'video',
         videoFormat: 'mp4'
@@ -14,7 +14,7 @@ module.exports = [
     },
     {
         title: 'VOC Atlas: a public web app for breath science',
-        link: '/blog/atlas/',
+        link: '/blog/atlas_po/',
         media: '/images/gallery/atlas-web.webm',
         type: 'video',
         videoFormat: 'webm'
@@ -27,14 +27,14 @@ module.exports = [
     },
     {
         title: 'Interactive mapping of VOC-disease relationships',
-        link: '/blog/atlas/',
+        link: '/blog/atlas_dev/',
         media: '/images/gallery/disease-voc.mp4',
         type: 'video',
         videoFormat: 'mp4'
     },
     {
         title: 'Interactive marketing for VOC Atlas',
-        link: '/blog/atlas/',
+        link: '/blog/atlas_po/',
         media: '/images/gallery/voc-sphere.mp4',
         type: 'video',
         videoFormat: 'mp4'

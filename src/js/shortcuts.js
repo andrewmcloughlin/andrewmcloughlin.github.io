@@ -29,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Page-level shortcuts (e.g. j/k on article pages)
+    const shortcutsList = document.getElementById('shortcuts-list');
+    if (window.__pageShortcuts && window.__pageShortcuts.length > 0) {
+        window.__pageShortcuts.forEach(shortcut => {
+            shortcutsMap.set(shortcut.code, shortcut.url);
+
+            const li = document.createElement('li');
+            li.innerHTML = `<kbd>${shortcut.code}</kbd> <span>${shortcut.title}</span>`;
+            shortcutsList.appendChild(li);
+        });
+    }
+
     document.addEventListener('keydown', (e) => {
         // Don't trigger if user is typing in a text field!
         const isTextInput = (e.target.tagName === 'INPUT' && !['checkbox', 'radio', 'button', 'submit', 'reset'].includes(e.target.type)) ||

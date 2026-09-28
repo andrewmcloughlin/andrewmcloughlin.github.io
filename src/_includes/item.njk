@@ -20,6 +20,23 @@ layout: base.njk
   </aside>
 
   <div class="item-main">
+    {% set sortedBlog = collections.blog | sort(false, false, 'data.order') %}
+    {% set currentIndex = 0 %}
+    {% for item in sortedBlog %}
+      {% if page.url == item.url %}
+        {% set currentIndex = loop.index0 %}
+      {% endif %}
+    {% endfor %}
+    {% set prevItem = sortedBlog[currentIndex - 1] if currentIndex > 0 else null %}
+    {% set nextItem = sortedBlog[currentIndex + 1] if currentIndex < (sortedBlog | length - 1) else null %}
+
+    <script>
+      window.__pageShortcuts = [
+        {% if prevItem %}{ "code": "k", "title": "Prev: {{ prevItem.data.title }}", "url": "{{ prevItem.url | url }}" }{% if nextItem %},{% endif %}{% endif %}
+        {% if nextItem %}{ "code": "j", "title": "Next: {{ nextItem.data.title }}", "url": "{{ nextItem.url | url }}" }{% endif %}
+      ];
+    </script>
+
     <article class="card mb-5 border-0 shadow-sm">
       <div class="card-body p-4 p-md-5 p-lg-5">
         <div class="d-flex flex-wrap gap-2 mb-4" aria-label="Technology stack">
@@ -48,8 +65,15 @@ layout: base.njk
           {{ content | safe }}
         </div>
 
-        <nav class="mt-5">
-          <a href="{{ '/' | url }}" class="btn">&larr; Back to Home</a>
+        <nav class="mt-5 d-flex justify-content-between" aria-label="Article navigation">
+          {% if prevItem %}
+            <a href="{{ prevItem.url | url }}" class="btn btn-arrow-left">{{ prevItem.data.title }}</a>
+          {% else %}
+            <span></span>
+          {% endif %}
+          {% if nextItem %}
+            <a href="{{ nextItem.url | url }}" class="btn">{{ nextItem.data.title }}</a>
+          {% endif %}
         </nav>
       </div>
     </article>

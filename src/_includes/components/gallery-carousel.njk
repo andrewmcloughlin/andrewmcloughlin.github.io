@@ -1,13 +1,33 @@
-<div class="gallery-marquee-container mt-4 pt-4 splide" id="gallery-carousel">
+<div
+  class="gallery-marquee-container mt-4 pt-4 splide"
+  id="gallery-carousel"
+  aria-label="Portfolio projects"
+>
   <div class="splide__track">
     <ul class="splide__list">
       {% for slide in gallery %}
         <li class="splide__slide">
           <a href="{{ slide.link | url }}" class="gallery-link" aria-label="{{ slide.title }}">
             {% if slide.type == 'video' %}
-              <video loop muted playsinline {% if slide.poster %}poster="{{ slide.poster | url }}"{% endif %} class="gallery-img pe-none" x-data x-bind:autoplay="!window.matchMedia('(prefers-reduced-motion: reduce)').matches">
-                <source src="{{ slide.media | url }}" type="video/{{ slide.videoFormat }}">
-                Sorry, your browser does not support the video tag. Just imagine some cool stuff happening here.
+              <video
+                loop
+                muted
+                playsinline
+                {% if slide.poster %}poster="{{ slide.poster | url }}"{% endif %}
+                class="gallery-img pe-none"
+                x-data
+                x-bind:autoplay="!window.matchMedia('(prefers-reduced-motion: reduce)').matches"
+                aria-hidden="true"
+              >
+                <source
+                  src="{{ slide.media | url }}"
+                  type="video/{{ slide.videoFormat }}"
+                >
+
+                <span aria-hidden="true">
+                  Sorry, your browser does not support the video tag. Just imagine some cool stuff happening here.
+                </span>
+
                 {% if slide.poster %}
                   {{ slide.poster | imageHtml(slide.title, "gallery-img") | safe }}
                 {% endif %}
@@ -15,8 +35,11 @@
             {% else %}
               {{ slide.media | imageHtml(slide.title, "gallery-img", "eager", "high") | safe }}
             {% endif %}
+
             <div class="gallery-overlay">
-              <span class="gallery-title fs-5 fw-bold text-center px-3 mt-auto pt-4">{{ slide.title }}</span>
+              <span class="gallery-title fs-5 fw-bold text-center px-3 mt-auto pt-4">
+                {{ slide.title }}
+              </span>
             </div>
           </a>
         </li>
@@ -24,13 +47,37 @@
     </ul>
   </div>
 </div>
+
 <div class="gallery-controls">
-  <button id="gallery-pause-btn" class="gallery-pause-btn" aria-label="Pause gallery" aria-pressed="false" hidden>
-    <svg class="gallery-pause-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+  <button
+    id="gallery-pause-btn"
+    class="gallery-pause-btn"
+    type="button"
+    aria-label="Pause gallery"
+    hidden
+  >
+    <svg
+      class="gallery-pause-icon"
+      aria-hidden="true"
+      focusable="false"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+    >
       <rect x="3" y="2" width="3.5" height="12" rx="1"/>
       <rect x="9.5" y="2" width="3.5" height="12" rx="1"/>
     </svg>
-    <svg class="gallery-play-icon" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+
+    <svg
+      class="gallery-play-icon"
+      aria-hidden="true"
+      focusable="false"
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+    >
       <path d="M4 2.5l10 5.5-10 5.5V2.5z"/>
     </svg>
   </button>
@@ -39,65 +86,132 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     if (typeof Splide !== 'undefined') {
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
 
       const splide = new Splide('#gallery-carousel', {
-        type   : 'loop',
-        drag   : 'free',
-        focus  : 'center',
+        type: 'loop',
+        drag: 'free',
+
+        /*
+         * The slides themselves are not interactive; the links inside
+         * them are. Avoid creating an unnecessary keyboard stop for
+         * each slide.
+         */
+        slideFocus: false,
+
+        /*
+         * This is a continuously scrolling gallery rather than a
+         * conventional keyboard-operated carousel. The links are the
+         * keyboard interaction, so don't capture arrow keys globally.
+         */
+        keyboard: false,
+
+        /*
+         * Keep the focused item centred when it receives keyboard focus.
+         */
+        focus: 'center',
+
         autoWidth: true,
-        gap    : '3rem',
-        arrows : false,
+        gap: '3rem',
+        arrows: false,
         pagination: false,
-        autoScroll: prefersReducedMotion ? false : {
-          speed: 1,
-          pauseOnHover: true,
-          pauseOnFocus: true,
-        },
+
+        autoScroll: prefersReducedMotion
+          ? false
+          : {
+              speed: 1,
+              pauseOnHover: true,
+              pauseOnFocus: true,
+            },
       });
+
       splide.mount(window.splide.Extensions);
 
-      /* Scroll focused slide to centre of the visible track */
-      splide.Components.Elements.track.addEventListener('focusin', function (e) {
-        const link = e.target.closest('.gallery-link');
-        if (!link) return;
-        const slide = link.closest('.splide__slide');
-        if (!slide) return;
-        const idx = slide.dataset.splideIndex;
-        if (idx !== undefined) {
-          splide.go(Number(idx));
-        }
-      });
+      /*
+       * Keyboard accessibility:
+       *
+       * When Tab moves focus onto a gallery link, make sure its slide
+       * is brought into the visible area of the marquee.
+       *
+       * pauseOnFocus stops AutoScroll while the link has focus, so the
+       * focused item doesn't immediately move away again.
+       */
+      splide.Components.Elements.track.addEventListener(
+        'focusin',
+        function (e) {
+          const link = e.target.closest('.gallery-link');
 
+          if (!link) {
+            return;
+          }
+
+          const slide = link.closest('.splide__slide');
+
+          if (!slide) {
+            return;
+          }
+
+          const index = Number(slide.dataset.splideIndex);
+
+          if (!Number.isNaN(index)) {
+            splide.go(index);
+          }
+        }
+      );
+
+      /*
+       * Pause / play control.
+       *
+       * The button is hidden when reduced motion is enabled because
+       * AutoScroll is disabled entirely in that case.
+       */
       const pauseBtn = document.getElementById('gallery-pause-btn');
+
       if (!prefersReducedMotion && pauseBtn) {
         const autoScroll = splide.Components.AutoScroll;
+
         pauseBtn.hidden = false;
+
         pauseBtn.addEventListener('click', function () {
-          const paused = pauseBtn.getAttribute('aria-pressed') === 'true';
-          if (paused) {
+          const isPaused =
+            pauseBtn.getAttribute('aria-label') === 'Play gallery';
+
+          if (isPaused) {
             autoScroll.play();
-            pauseBtn.setAttribute('aria-pressed', 'false');
             pauseBtn.setAttribute('aria-label', 'Pause gallery');
           } else {
             autoScroll.pause();
-            pauseBtn.setAttribute('aria-pressed', 'true');
             pauseBtn.setAttribute('aria-label', 'Play gallery');
           }
         });
       }
     }
-    
-    /* Mobile: tap-to-reveal overlay, second tap navigates */
+
+    /*
+     * Mobile:
+     * First tap reveals the overlay.
+     * Second tap follows the link.
+     *
+     * This behaviour is only enabled on devices without hover support.
+     */
     if (window.matchMedia('(hover: none)').matches) {
       document.querySelectorAll('.gallery-link').forEach(function (link) {
         link.addEventListener('click', function (e) {
           const overlay = this.querySelector('.gallery-overlay');
+
           if (!overlay.classList.contains('gallery-overlay--active')) {
             e.preventDefault();
-            document.querySelectorAll('.gallery-overlay--active').forEach(function (o) {
-              o.classList.remove('gallery-overlay--active');
-            });
+
+            document
+              .querySelectorAll('.gallery-overlay--active')
+              .forEach(function (activeOverlay) {
+                activeOverlay.classList.remove(
+                  'gallery-overlay--active'
+                );
+              });
+
             overlay.classList.add('gallery-overlay--active');
           }
         });
