@@ -100,7 +100,7 @@ ol {
   margin-left: 2rem;
 }
 
-ul:not(.nav) li {
+ul:not(.nav, .footer-links, .shortcuts-list) {
   margin-bottom: 1rem;
   margin-left: 2rem;
 }
