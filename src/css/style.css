@@ -771,7 +771,7 @@ a {
 .timeline-item picture:has(> .timeline-logo.timeline-logo-absolute) {
   position: absolute;
   left: calc(-2rem - 25px);
-  top: 1rem;
+  top: 0rem;
   z-index: 2;
   border: 1px;
   border-color: var(--accent-color);
@@ -786,6 +786,15 @@ a {
 
 .timeline-item:last-child {
   margin-bottom: 0;
+}
+
+.timeline-item h1,
+.timeline-item h2,
+.timeline-item h3,
+.timeline-item h4,
+.timeline-item h5,
+.timeline-item h6 {
+  margin-top: 0rem;
 }
 
 /* Gallery controls */

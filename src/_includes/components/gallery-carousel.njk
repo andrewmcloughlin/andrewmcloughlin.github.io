@@ -174,6 +174,53 @@
 
         pauseBtn.hidden = false;
 
+        /*
+         * For each video that has a poster, create a static <img> sibling
+         * that is shown in place of the video when the gallery is paused.
+         */
+        const videos = Array.from(
+          document.querySelectorAll('#gallery-carousel video[poster]')
+        );
+
+        videos.forEach(function (video) {
+          const img = document.createElement('img');
+          img.src = video.poster;
+          img.alt = '';
+          img.setAttribute('aria-hidden', 'true');
+          img.className = video.className;
+
+          /*
+           * The parent .gallery-link is position:relative + overflow:hidden.
+           * Position the poster absolutely so it overlays the video rather
+           * than stacking below it in normal flow.
+           */
+          img.style.cssText =
+            'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;';
+          video.insertAdjacentElement('afterend', img);
+        });
+
+        function showPosters() {
+          videos.forEach(function (video) {
+            video.pause();
+            video.style.visibility = 'hidden';
+            const img = video.nextElementSibling;
+            if (img && img.tagName === 'IMG') {
+              img.style.display = 'block';
+            }
+          });
+        }
+
+        function showVideos() {
+          videos.forEach(function (video) {
+            const img = video.nextElementSibling;
+            if (img && img.tagName === 'IMG') {
+              img.style.display = 'none';
+            }
+            video.style.visibility = '';
+            video.play();
+          });
+        }
+
         pauseBtn.addEventListener('click', function () {
           const isPaused =
             pauseBtn.getAttribute('aria-label') === 'Play gallery';
@@ -181,9 +228,13 @@
           if (isPaused) {
             autoScroll.play();
             pauseBtn.setAttribute('aria-label', 'Pause gallery');
+            pauseBtn.setAttribute('aria-pressed', 'false');
+            showVideos();
           } else {
             autoScroll.pause();
             pauseBtn.setAttribute('aria-label', 'Play gallery');
+            pauseBtn.setAttribute('aria-pressed', 'true');
+            showPosters();
           }
         });
       }
