@@ -43,6 +43,7 @@
 .font-xkcd {
   font-family: 'xkcd', sans-serif !important;
   text-transform: uppercase;
+  font-size: 2rem;
 }
 
 [x-cloak] {
@@ -96,10 +97,12 @@
 
 ol {
   margin-bottom: 1rem;
+  margin-left: 2rem;
 }
 
 ul:not(.nav) li {
-  margin-bottom: 0.2rem;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
 }
 
 p {
@@ -604,9 +607,18 @@ a {
   font-weight: 600;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-topnav .nav-link.active {
+    view-transition-name: active-nav;
+  }
 
+  ::view-transition-old(active-nav),
+  ::view-transition-new(active-nav) {
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
 
-/* Page wrapper — centres everything on very wide screens */
 .page-wrapper {
   display: flex;
   max-width: 1100px;
@@ -614,7 +626,6 @@ a {
   width: 100%;
 }
 
-/* Sidebar nav (large screens) */
 .sidebar-nav {
   position: sticky;
   top: 0;
@@ -797,7 +808,6 @@ a {
   margin-top: 0rem;
 }
 
-/* Gallery controls */
 .gallery-controls {
   display: flex;
   justify-content: flex-end;
@@ -840,9 +850,7 @@ a {
   display: block;
 }
 
-/* Gallery */
 .gallery-marquee-container {
-  /* Provide Splide overflow mask to mimic the fade effect */
   mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   -webkit-transform: translateZ(0);
@@ -851,7 +859,6 @@ a {
 
 .gallery-link {
   border-radius: 2rem;
-  /* rounded-5 */
   overflow: hidden;
   position: relative;
   display: block;
@@ -885,11 +892,8 @@ picture:has(> .gallery-img) {
   align-items: center;
   padding: 1.5rem;
   border-radius: 2rem;
-  /* Matches Bootstrap rounded-5 */
   background-color: rgba(33, 37, 41, 0.5);
-  /* Matches bg-dark bg-opacity-50 */
   color: #fff;
-  /* Matches text-white */
   opacity: 0;
   transition: opacity 0.25s ease;
 }
@@ -918,7 +922,6 @@ picture:has(> .gallery-img) {
 }
 
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -956,7 +959,6 @@ picture:has(> .gallery-img) {
   animation-delay: 0.7s;
 }
 
-/* Shared icon/utility classes */
 .icon-arrow-circle,
 .project-link-btn {
   display: flex;
@@ -990,7 +992,6 @@ picture:has(> .gallery-img) {
   line-height: 1;
 }
 
-/* Article image clamping */
 .card-text img {
   max-width: 100%;
   height: auto;
@@ -999,7 +1000,6 @@ picture:has(> .gallery-img) {
   margin: 2rem auto;
 }
 
-/* Article header image — enforce 16:9 aspect ratio */
 picture:has(> .img-fluid) {
   display: block;
   aspect-ratio: 16 / 9;
@@ -1013,7 +1013,6 @@ picture:has(> .img-fluid)>img {
   object-fit: cover;
 }
 
-/* Bento Grid Layout */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1276,7 +1275,7 @@ picture:has(> .img-fluid)>img {
   width: 240px;
   min-width: 240px;
   position: sticky;
-  top: 56px;
+  top: 100px;
   max-height: calc(100vh - 56px);
   overflow-y: auto;
   border-right: 1px solid var(--border-color);
@@ -1292,16 +1291,10 @@ picture:has(> .img-fluid)>img {
   list-style: none;
 }
 
-.item-sidebar__heading {
-  letter-spacing: 0.08em;
-  font-size: 0.7rem;
-}
-
 .item-sidebar__nav ul {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  /* slight gap for pills */
 }
 
 .item-sidebar__link {
@@ -1326,7 +1319,6 @@ picture:has(> .img-fluid)>img {
   font-weight: 600;
 }
 
-/* Main content column */
 .item-main {
   flex: 1;
   min-width: 0;
@@ -1365,7 +1357,6 @@ picture:has(> .img-fluid)>img {
   display: inline-block !important;
 }
 
-/* sm: ≥576px */
 @media (min-width: 576px) {
   .d-sm-none {
     display: none !important;
@@ -1388,7 +1379,6 @@ picture:has(> .img-fluid)>img {
   }
 }
 
-/* md: ≥768px */
 @media (min-width: 768px) {
   .d-md-none {
     display: none !important;
@@ -1493,7 +1483,6 @@ picture:has(> .img-fluid)>img {
   vertical-align: text-top;
 }
 
-/* Dialog Styles */
 .shortcuts-dialog {
   margin: auto;
   padding: 0;
@@ -1562,12 +1551,10 @@ picture:has(> .img-fluid)>img {
   }
 }
 
-/* Semantic Layout Variables */
 :root {
   --section-spacing: var(--spacing-5);
 }
 
-/* Sections & Typography */
 .page-section {
   margin-block-end: var(--section-spacing);
 }
@@ -1596,7 +1583,6 @@ picture:has(> .img-fluid)>img {
   font-family: var(--font-heading);
 }
 
-/* Grids */
 .grid-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -1613,7 +1599,6 @@ picture:has(> .img-fluid)>img {
   gap: var(--spacing-2);
 }
 
-/* UI Utilities */
 .filter-group {
   display: flex;
   justify-content: center;
@@ -1659,7 +1644,6 @@ picture:has(> .img-fluid)>img {
   align-items: stretch;
 }
 
-/* Grid Item Height Unification */
 .grid-item {
   display: flex;
   flex-direction: column;

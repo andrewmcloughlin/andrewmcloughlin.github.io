@@ -4,7 +4,6 @@ layout: base.njk
 <div class="item-layout">
   <aside class="item-sidebar" aria-label="All articles">
     <nav class="item-sidebar__nav">
-      <p class="item-sidebar__heading fw-semibold small text-secondary">Articles</p>
       <ul class="list-unstyled">
         {% set sortedBlog = collections.blog | sort(false, false, 'data.order') %}
         {% for item in sortedBlog %}
