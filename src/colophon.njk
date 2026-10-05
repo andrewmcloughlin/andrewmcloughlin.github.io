@@ -3,22 +3,22 @@ layout: base.njk
 title: Colophon
 ---
 
-<section class="page-section py-5">
-  <div class="row pt-4">
-    <div class="col-12">
-      <h1 class="display-4 fw-bold hero-title mb-5 font-heading">Colophon</h1>
+<section class="page-section">
+  <div >
+    <div >
+      <h1 class="display-4 fw-bold hero-title font-heading">Colophon</h1>
       
-      <div class="card px-5 pb-5">
+      <div class="card">
         <div class="card-body">
           <h2 class="font-heading">Stack</h2>
-          <h3 class="font-heading mt-4">Back End</h3>
+          <h3 class="font-heading">Back End</h3>
           Built using 11ty static site generator with nunjucks templating, because I want something low-maintenance.
           Articles can written in markdown with the option to include custom HTML, so the best of both worlds.
           Hosted on Github and deployed using Github Pages, but planning to move to Gitlab.
 
           <a href="https://github.com/andrewmcloughlin/andrewmcloughlin.github.io">Link to Github repo</a>
           
-          <h3 class="font-heading my-4">Front End</h3>
+          <h3 class="font-heading">Front End</h3>
           <ul>
             <li>All screenshots are of software I have worked on.</li>
             <li>All other images are my own creations, mostly drawn in Figma.</li>
@@ -31,8 +31,8 @@ title: Colophon
           </ul>
 
               
-          <h3 class="font-heading my-4">Tool List</h3>
-          <ul class="my-3">
+          <h3 class="font-heading">Tool List</h3>
+          <ul >
             <li><a href="https://www.11ty.dev/">Eleventy (11ty)</a> (static site builder)</li>
             <li><a href="https://nunjucks.io/">Nunjucks</a> (templating)</li>
             <li><a href="https://www.markdownguide.org/">Markdown</a> (content)</li>
@@ -48,7 +48,7 @@ title: Colophon
         </div>
       </div>
 
-      <div class="card my-4 px-5 pb-5">
+      <div class="card">
         <div class="card-body">
           <h2 class="font-heading">AI Usage Policy</h2>
           <p>
@@ -59,7 +59,7 @@ title: Colophon
         </div>
       </div>
       
-      <div class="card my-4 px-5 pb-5">
+      <div class="card">
         <div class="card-body">
           <h2 class="font-heading">Easter Eggs & Cool Things</h2>
           <p>Manually switching between dark/light mode on the home page activates an SVG animation whereby the dude at the desk turns on/off his lamp. This is literally just CSS tied to a named element in the in line SVG activated by the vanilla JS dark mode logic. It's simple but it took hours to do. Some may say this was a waste of time but I say the time you enjoy wasting is not wasted time.</p>
@@ -69,7 +69,7 @@ title: Colophon
       </div>
           
           
-        <div class="card my-4 px-5 pb-5">
+        <div class="card">
           <div class="card-body">
             <h2 class="font-heading">Inspiration</h2>
             Credit where credit's due. I believe in sharing your sources. The design for this site was inspired by several great creators who you should check out
@@ -82,7 +82,7 @@ title: Colophon
         </div>
             
             
-        <div class="card my-4 px-5 pb-5">
+        <div class="card">
           <div class="card-body">
           <h2 class="font-heading">Cool People You Should Check Out</h2>
           <p>If you're down in these weeds, you're probably someone who would appreciate the following sites:</p>
@@ -96,7 +96,7 @@ title: Colophon
         </div>
       </div>
       
-      <a href="{{ '/' | url }}" class="btn btn-arrow-left mt-3" data-shortcut="w" >Back to Home</a>
+      <a href="{{ '/' | url }}" class="btn btn-arrow-left" data-shortcut="w" >Back to Home</a>
     </div>
   </div>
 </section>

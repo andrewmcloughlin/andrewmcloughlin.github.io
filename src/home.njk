@@ -3,22 +3,22 @@ layout: base.njk
 title: Home
 ---
 
-<section id="home" class="page-section text-center align-items-center mt-5 py-5">
-  <div class="d-flex flex-column align-items-center justify-content-center py-5 my-4">
+<section id="home" class="page-section hero-section">
+  <div>
     {% include "images/hero-img.svg" %}
-    <h1 class="fs-3 fw-bold mb-4 pt-4 pb-0 ps-4 font-xkcd fade-in delay-1">
-      Hi, I<kerning>'</kerning>m Andrew,<br class="mb-4">
+    <h1 class="fw-bold font-xkcd fade-in delay-1">
+      Hi, I<kerning>'</kerning>m Andrew,<br/>
       I make scientific software
-    </h2>
-    <div class="lead ps-4 fade-in delay-3 mb-4 pb-4">
+    </h1>
+    <div class="lead fade-in delay-3" style="max-width: 600px; margin: 0 auto; margin-block-start: var(--spacing-2);">
       Full-stack developer and product owner<br>
       specialising in scientific software & data products.<br>
       Based in <address>Cambridge, UK</address>.
     </div>
   </div>
 
-  <div class="d-flex flex-row justify-content-center gap-4">
-    <a class="btn d-none d-md-block delay-4 btn-lg p-3" data-shortcut="w" href="{{ '/work/' | url }}">My work</a>
-    <a class="btn d-none d-md-block delay-4 btn-lg btn-outline p-3" data-shortcut="c" href="{{ '/me/' | url }}">About me</a>
+  <div class="button-group-center fade-in delay-4">
+    <a class="btn btn-lg" data-shortcut="w" href="{{ '/work/' | url }}">My work</a>
+    <a class="btn btn-lg btn-outline" data-shortcut="c" href="{{ '/me/' | url }}">About me</a>
   </div>
 </section>

@@ -72,4 +72,4 @@ Many EDCs do not support configuration with text files, but instead rely on XLSX
 
 ## Summary
 
-In sum, Clinical Data Management relies heavily on human attention to detail as a single source of failure in EDC design and testing, when automated deterministic methods are easily within reach. This is the reason I wrote the Ocelot package and I intend to expand it to work with more EDCs liek RedCAP and MACRO in the future.
+In sum, Clinical Data Management relies heavily on human attention to detail as a single source of failure in EDC design and testing, when automated deterministic methods are easily within reach. This is the reason I wrote the Ocelot package and I intend to expand it to work with more EDCs like RedCAP and MACRO in the future.

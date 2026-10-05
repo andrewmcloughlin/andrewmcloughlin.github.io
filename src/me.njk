@@ -4,19 +4,19 @@ title: CV
 ---
 
 
-<section class="py-5 my-5">
-  <h1 class="my-5 pt-5 fs-1 fw-semibold">Andrew McLoughlin</h1>
+<section class="page-section hero-section">
+  <h1 class="hero-title">Andrew McLoughlin</h1>
 </section>
 
-<section class="fade-in delay-1">
-  <h2 class="mb-4 pb-2 border-bottom font-heading">Profile</h2>
-  <div class="timeline card py-4">
+<section class="page-section fade-in delay-1">
+  <h2 class="section-title">Profile</h2>
+  <div class="timeline card">
     I have an academic background in Biomedical Science, Computational Systems Biology and Epidemiology and 5+ years' experience building production scientific software. I am passionate about building tools that have a real-world scientific impact.
   </div>
 </section>
 
-<section id="employment" class="mb-5 fade-in delay-2 py-5 mt-5">
-  <h2 class="mb-4 pb-2 border-bottom font-heading">Employment History</h2>
+<section id="employment" class="page-section fade-in delay-2">
+  <h2 class="section-title">Employment History</h2>
   <div class="timeline card">
     {% asyncEach job in cv.employmentHistory %}
     {% include "components/employment-item.njk" %}
@@ -24,37 +24,37 @@ title: CV
   </div>
 </section>
 
-<section id="qualifications" class="page-section mb-5 fade-in delay-3 py-5">
-  <h2 class="my-4 py-2 border-bottom font-heading">Qualifications</h2>
-  <div class="timeline card mb-4 pb-4">
+<section id="qualifications" class="page-section fade-in delay-3">
+  <h2 class="section-title">Qualifications</h2>
+  <div class="timeline card">
     {% asyncEach qual in cv.qualifications %}
       {% include "components/qual-item.njk" %}
     {% endeach %}
   </div>
-  <h2 id="certificates" class="my-4 py-2 border-bottom font-heading pt-4">Certificates</h2>
-  <div class="row flex-wrap g-2 mt-2 d-flex align-items-stretch">
+  <h2 id="certificates" class="section-title">Certificates</h2>
+  <div class="grid-list-certs">
     {% for cert in cv.certificates %}
-      <div class="col-md-6 col-lg-3">
+      <div class="grid-item">
         {% include "components/cert-item.njk" %}
       </div>
     {% endfor %}
   </div>
 </section>
 
-<section id="publications" class="mb-5 fade-in delay-5 py-5" x-data="{ expandedPubs: false }">
-  <h2 class="my-4 py-2 border-bottom font-heading">Publications, Posters & Papers</h2>
-  <p class="mb-4">These are some of the publications, posters, white papers and editorials that I have written or contributed to.</p>
-  <div class="row g-4 mt-2">
+<section id="publications" class="page-section fade-in delay-5" x-data="{ expandedPubs: false }">
+  <h2 class="section-title">Publications, Posters & Papers</h2>
+  <p class="section-description">These are some of the publications, posters, white papers and editorials that I have written or contributed to.</p>
+  <div class="grid-list">
     {% for pub in cv.publications %}
-      <div class="col-12 col-md-6" {% if loop.index > 4 %} x-show="expandedPubs" x-transition x-cloak {% endif %}>
+      <div class="grid-item" {% if loop.index > 4 %} x-show="expandedPubs" x-transition x-cloak {% endif %}>
         {% include "components/pub-card.njk" %}
       </div>
     {% endfor %}
   </div>
-  <div class="d-flex justify-content-end mt-4">
+  <div class="button-group-end">
     <button
       type="button"
-      class="btn btn-outline w-100 py-2"
+      class="btn btn-outline btn-full"
       @click="expandedPubs = !expandedPubs"
       :aria-expanded="expandedPubs"
       aria-controls="publications-list"

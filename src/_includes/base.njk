@@ -59,16 +59,16 @@
   </header>
 
   <div class="page-wrapper">
-    <main id="main" class="page-main flex-grow-1">
+    <main id="main" class="page-main -1">
       {{ content | safe }}
     </main>
   </div>
 
   <footer class="site-footer">
     <a href="/">
-      <b class="fs-1 fw-bold" data-ssml-phoneme-alphabet="ipa" data-ssml-phoneme-ph={{ site.ipa_pronounciation }}>{{ site.name }}</b>
+      <b id="site-name-footer" class="fw-bold" data-ssml-phoneme-alphabet="ipa" data-ssml-phoneme-ph={{ site.ipa_pronounciation }}>{{ site.name }}</b>
     </a>
-    <div class="footer-links pt-2">
+    <div class="footer-links">
       <ul>
         {% for link in site.social %}
         <li><a href="{{ link.url }}" target="_blank">{{ link.title }}</a></li>
@@ -98,7 +98,7 @@
 
   <dialog id="shortcuts-dialog" aria-labelledby="shortcuts-title" class="shortcuts-dialog">
     <div class="shortcuts-dialog-content">
-      <h2 id="shortcuts-title" class="h3 mb-1">Keyboard shortcuts</h2>
+      <h2 id="shortcuts-title" class="h3">Keyboard shortcuts</h2>
       
       <ul class="shortcuts-list" id="shortcuts-list">
         <li><kbd>\</kbd> <span>Open shortcuts</span></li>
@@ -108,14 +108,14 @@
         {% endfor %}
       </ul>
 
-      <div class="shortcuts-settings mt-2">
+      <div class="shortcuts-settings">
         <label>
           <input type="checkbox" id="enable-char-shortcuts">
           Enable keyboard shortcuts
         </label>
       </div>
 
-      <div class="mt-2 text-end">
+      <div class="text-end">
         <button type="button" class="btn" id="close-shortcuts-dialog">Close</button>
       </div>
     </div>

@@ -4,27 +4,27 @@ title: All Projects
 description: Browse all projects by Andrew McLoughlin, filtered by technology stack or category.
 ---
 
-<section id="projects" class="page-section mb-5 py-5 mt-5 text-center" class="splide" aria-label="Featured case studies">
-  <h1 class="my-5 pt-5 fs-1 fw-semibold">I'm Andrew,</h1>
-  <h2 class="my-5 pb-5 fs-1 fw-normal">I make scientific software</h2>
+<section id="projects" class="page-section hero-section" aria-label="Featured case studies">
+  <h1 class="hero-title">I'm Andrew,</h1>
+  <h2 class="hero-subtitle">I make scientific software</h2>
   <p>Here's some of my favourite work:</p>
   {% include "components/gallery-carousel.njk" %}
 </section>
 
 
-<section class="page-section mb-5 fade-in delay-2" x-data="{ expandedProducts: false }" aria-labelledby="products-heading">
-  <h2 class="mb-4 pb-2 border-bottom font-heading">Products I've worked on</h2>
-  <div class="row g-4" id="products-list">
+<section class="page-section product-section fade-in delay-2" x-data="{ expandedProducts: false }" aria-labelledby="products-heading">
+  <h2 class="section-title" id="products-heading">Products I've worked on</h2>
+  <div class="grid-list" id="products-list">
     {% for product in cv.products %}
-        <div class="col-12 blog-item" {% if loop.index > 4 %} x-show="expandedProducts" x-transition x-cloak {% endif %}>
+        <div class="grid-item blog-item" {% if loop.index > 4 %} x-show="expandedProducts" x-transition x-cloak {% endif %}>
           {% include "components/product-card.njk" %}
         </div>
     {% endfor %}
   </div>
-  <div class="d-flex justify-content-end mt-4">
+  <div class="button-group-end">
     <button
       type="button"
-      class="btn btn-outline w-100 py-2"
+      class="btn btn-outline btn-full"
       @click="expandedProducts = !expandedProducts"
       :aria-expanded="expandedProducts"
       aria-controls="products-list"
@@ -36,16 +36,16 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 </section>
 
 
-<section class="page-section mb-5 fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }" aria-labelledby="case-studies-heading">
-  <h2 class="mb-4 pb-2 border-bottom font-heading">Case Studies</h2>
+<section class="page-section filter-section fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }" aria-labelledby="case-studies-heading">
+  <h2 class="section-title" id="case-studies-heading">Case Studies</h2>
 
-  <div class="d-flex justify-content-center align-items-center gap-2 mb-4 flex-wrap">
+  <div class="filter-group">
     {# <button class="btn btn-outline" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
     <button class="btn btn-outline" :class="{ 'active': filter === 'Product' }"  @click="filter = 'Product'; stackFilter = ''">Product</button>
     <button class="btn btn-outline" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'; stackFilter = ''">Software</button>
     <button class="btn btn-outline" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button> #}
     <template x-if="filter === 'Software'">
-      <div class="d-flex justify-content-center align-items-center gap-2 flex-wrap">
+      <div class="filter-group">
         {% for stackItem in collections.stackItems %}
           <button class="btn btn-outline-secondary" :class="{ 'active': stackFilter === '{{ stackItem }}' }" @click="stackFilter = stackFilter === '{{ stackItem }}' ? '' : '{{ stackItem }}'">{{ stackItem }}</button>
         {% endfor %}
@@ -53,10 +53,10 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
     </template>
   </div>
 
-  <div class="row g-2">
+  <div class="grid-list grid-gap-sm">
     {% for item in collections.blog | sort(false, false, 'data.index') %}
         {% set cardIndex = loop.index %}
-        <div class="col-12 blog-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
+        <div class="grid-item blog-item" x-show="filter === 'all' || ('{{ item.data.tags | join(',') }}'.split(',').includes(filter) && (filter !== 'Software' || !stackFilter || '{{ (item.data.featured_stack or []) | join(',') }}'.split(',').includes(stackFilter)))" x-transition.opacity.duration.400ms>
           {% include "components/project-card.njk" %}
         </div>
     {% endfor %}

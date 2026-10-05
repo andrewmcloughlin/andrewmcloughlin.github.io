@@ -2,10 +2,10 @@
 layout: base.njk
 ---
 <div class="item-layout">
-  <aside class="item-sidebar d-none d-lg-flex flex-column" aria-label="All articles">
+  <aside class="item-sidebar" aria-label="All articles">
     <nav class="item-sidebar__nav">
-      <p class="item-sidebar__heading text-uppercase fw-semibold small mb-3 text-secondary">Articles</p>
-      <ul class="list-unstyled mb-0">
+      <p class="item-sidebar__heading fw-semibold small text-secondary">Articles</p>
+      <ul class="list-unstyled">
         {% set sortedBlog = collections.blog | sort(false, false, 'data.order') %}
         {% for item in sortedBlog %}
           <li>
@@ -37,9 +37,9 @@ layout: base.njk
       ];
     </script>
 
-    <article class="card mb-5 border-0 shadow-sm">
-      <div class="card-body p-4 p-md-5 p-lg-5">
-        <div class="d-flex flex-wrap gap-2 mb-4" aria-label="Technology stack">
+    <article class="card border-0">
+      <div class="card-body -5 -5">
+        <div class="gap-2" aria-label="Technology stack">
           {% if featured_stack %}
             {% for tool in featured_stack %}
               <span class="badge bg-primary-subtle text-primary">{{ tool }}</span>
@@ -52,28 +52,33 @@ layout: base.njk
           {% endif %}
         </div>
 
-        <header class="mb-5 pb-2">
-          <h1 class="display-5 fw-bold mb-4">{{ title }}</h1>
-          <p class="card-subtitle lead text-secondary mb-3">{{ description }}</p>
+        <header >
+          <h1 class="display-5 fw-bold">{{ title }}</h1>
+          <p class="card-subtitle lead text-secondary">{{ description }}</p>
         </header>
 
         {% if image %}
           {{ image | imageHtml(title, "img-fluid rounded-4 mb-5 w-100 shadow-sm") | safe }}
         {% endif %}
 
-        <div class="card-text border-top pt-5 mt-2">
+        <div class="card-text border-top">
           {{ content | safe }}
         </div>
 
-        <nav class="mt-5 d-flex justify-content-between" aria-label="Article navigation">
+        <nav  aria-label="Article navigation">
           {% if prevItem %}
-            <a href="{{ prevItem.url | url }}" class="btn btn-arrow-left">{{ prevItem.data.title }}</a>
-          {% else %}
-            <span></span>
-          {% endif %}
-          {% if nextItem %}
-            <a href="{{ nextItem.url | url }}" class="btn">{{ nextItem.data.title }}</a>
-          {% endif %}
+            <ul class="shortcuts-list">
+              <li><a href="{{ prevItem.url | url }}" ><kbd>k</kbd><span> Previous post</span></a></li>
+              </ul>
+              {% else %}
+              <span></span>
+              {% endif %}
+              {% if nextItem %}
+              <ul class="shortcuts-list">
+                <li><a href="{{ nextItem.url | url }}" ><kbd>j</kbd><span> Next post</span></a></li>
+              </ul>
+            {% endif %}
+
         </nav>
       </div>
     </article>

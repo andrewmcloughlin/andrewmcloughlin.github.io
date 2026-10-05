@@ -1,6 +1,6 @@
-<div class="card text-center h-100 cert-card">
-  <div class="card-body d-flex flex-column justify-content-center align-items-center p-2">
-    <h3 class="h6 font-heading mb-2">
+<div class="card cert-card">
+  <div class="card-body">
+    <h3 class="h6 font-heading">
       {% if cert.link %}
         <a href="{{ cert.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-body-emphasis stretched-link">
           {{ cert.name }}
@@ -9,9 +9,9 @@
         {{ cert.name }}
       {% endif %}
     </h3>
-    <h6 class="card-subtitle mt-1 mb-2 text-body-secondary text-uppercase fw-medium letter-spacing-1">
+    <h6 class="card-subtitle text-body-secondary fw-medium letter-spacing-1">
       {{ cert.issuer }}
     </h6>
-    <div class="mt-auto text-body-tertiary fw-bold small">{{cert.year}}</div>
+    <div class="text-body-tertiary fw-bold small">{{cert.year}}</div>
   </div>
 </div>
