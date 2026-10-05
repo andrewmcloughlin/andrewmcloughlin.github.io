@@ -128,11 +128,11 @@ p {
   --zen-charcoal-darker: #F4F3EB;
 }
 
-[data-bs-theme="dark"] .logo-light {
+html[data-bs-theme="dark"] .logo-light {
   display: none !important;
 }
 
-:not([data-bs-theme="dark"]) .logo-dark {
+html:not([data-bs-theme="dark"]) .logo-dark {
   display: none !important;
 }
 
