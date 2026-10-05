@@ -1,10 +1,12 @@
 <div class="timeline-item {% if qual.logo %}has-logo{% endif %}">
   {% if qual.logo %}
-    {{ qual.logo | imageHtml(qual.company, "timeline-logo timeline-logo-absolute") | safe }}
+    {{ qual.logo | imageHtml(qual.company, "timeline-logo timeline-logo-absolute logo-light") | safe }}
+    {% set darkLogo = job.logo | replace(".png", "_dark.png") %}
+    {{ darkLogo | imageHtml(qual.company, "timeline-logo timeline-logo-absolute logo-dark") | safe }}
   {% endif %}
   <div class="text-start">
     <div class="card-body">
-      <div class="-gap-2">
+      <div class="gap-2">
         <div>
           <h3 class="h4 font-heading">
             {% if qual.link %}
@@ -15,7 +17,7 @@
               {{ qual.degree }}
             {% endif %}
           </h3>
-          <h6 class="card-subtitle -3 text-body-secondary fw-medium letter-spacing-wide">
+          <h6 class="card-subtitle text-body-secondary fw-medium letter-spacing-wide">
             {{ qual.institution }}
           </h6>
         </div>

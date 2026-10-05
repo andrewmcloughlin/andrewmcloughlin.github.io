@@ -128,6 +128,14 @@ p {
   --zen-charcoal-darker: #F4F3EB;
 }
 
+[data-bs-theme="dark"] .logo-light {
+  display: none !important;
+}
+
+:not([data-bs-theme="dark"]) .logo-dark {
+  display: none !important;
+}
+
 ::selection {
   background: var(--zen-charcoal);
   color: var(--zen-cream);
@@ -175,6 +183,7 @@ address {
 .card-subtitle {
   color: var(--text-secondary);
   font-size: 0.9em;
+  margin-bottom: 0rem;
 }
 
 .pub-card,
@@ -484,7 +493,7 @@ picture:has(> .timeline-logo) {
   height: 48px;
   min-width: 48px;
   object-fit: contain;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 50%;
   padding: 4px;
   border: 0px;
