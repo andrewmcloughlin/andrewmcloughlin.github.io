@@ -54,8 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
             setTheme(next);
             const flickDelay = 300;
             setTimeout(() => {
-                const flick = document.getElementById('forearm-flick');
-                if (flick) flick.beginElement();
+                const flick_1 = document.getElementById('forearm-flick');
+                if (flick_1) flick_1.beginElement();
+                const flick_2 = document.getElementById('bicep-flick');
+                if (flick_2) flick_2.beginElement();
             }, flickDelay);
             setTimeout(() => syncGlow(next, true), flickDelay + 240);
         });

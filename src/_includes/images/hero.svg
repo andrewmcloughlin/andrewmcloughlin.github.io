@@ -44,15 +44,21 @@
 <g id="hero">
 <g id="hero-img">
 <g id="guy">
-<path id="right-bicep yes-this-bicep-width-is-to-scale" d="M270.164 341.411L294.5 325.5" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
+<path id="right-bicep yes-this-bicep-width-is-to-scale" d="M270 341L294 325" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
 <path id="left-forearm" d="M491 341L462 343" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round">
   <animate id="forearm-flick" attributeName="d" dur="0.6s" begin="indefinite" fill="freeze"
-    values="M490 341L463 323;M490 341L580 293;M490 341L462 343"
-    keyTimes="0;0.4;1"
+    values="M491 341L462 343;M540 307L580 293;M520 307L580 293;M491 341L462 343"
+    keyTimes="0;0.4;0.6;1"
     calcMode="spline"
-    keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
+    keySplines="0.4 0 0.2 1; 0 0 1 1; 0.4 0 0.2 1"/>
 </path>
-<path id="left-bicep" d="M490.129 341.411L463 323.5" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
+<path id="left-bicep" d="M490 341L463 323" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round">
+  <animate id="bicep-flick" attributeName="d" dur="0.6s" begin="indefinite" fill="freeze"
+    values="M490 341L463 323;M540 307L463 313;M520 307L463 313;M490 341L463 323"
+    keyTimes="0;0.4;0.6;1"
+    calcMode="spline"
+    keySplines="0.4 0 0.2 1; 0 0 1 1; 0.4 0 0.2 1"/>
+</path>
 <path id="right-forearm" d="M271.001 341.411L295 343" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
 <g id="head">
     <path id="Vector_265" d="M324.26 250C319.502 243.489 316.034 236.242 313.603 229M426.5 250C434.052 240.48 438.403 230.3 441.73 217.5" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
