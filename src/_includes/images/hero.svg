@@ -127,7 +127,6 @@
 
 <a href="/me#publications" aria-label="About me — Publications">
 <g id="books" class="hero-link">
-    <rect x="553" y="300" width="128" height="52" fill="transparent"/>
     <g id="Group_2627">
         <g id="Vector_369" filter="url(#filter7_g_3127_10319)">
             <path d="M558 341H553.5V348H669C677 343 674 330 670 325.5H553.5L553.992 332.5H558M558 341H664.508C666.108 337 665.667 335.167 665 332.5H558M558 341V332.5" class="stroke-charcoal" stroke-width="4.39395"></path>
