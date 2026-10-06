@@ -5,7 +5,6 @@ title: Home
 
 <section id="home" class="page-section hero-section">
   <div>
-    {% include "images/hero-img.svg" %}
     <h1 class="fw-bold font-xkcd fade-in delay-1">
       Hi, I<kerning>'</kerning>m Andrew,<br/>
       I make scientific software
@@ -15,10 +14,11 @@ title: Home
       specialising in scientific software & data products.<br>
       Based in <address>Cambridge, UK</address>.
     </div>
+    {% include "images/hero.svg" %}
   </div>
 
-  <div class="button-group-center fade-in delay-4">
+  {# <div class="button-group-center fade-in delay-4">
     <a class="btn btn-lg" data-shortcut="w" href="{{ '/work/' | url }}">My work</a>
     <a class="btn btn-lg btn-outline" data-shortcut="c" href="{{ '/me/' | url }}">About me</a>
-  </div>
+  </div> #}
 </section>

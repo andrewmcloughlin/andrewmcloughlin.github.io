@@ -59,7 +59,7 @@
   --zen-cream: #F2F0E3;
   --zen-cream-lighter: #F4F3EB;
   --zen-cream-darker: #E0D5B7;
-  --highlight: #f76f53;
+  --highlight: #e78f24;
 
   --zen-charcoal: #2E2E2E;
   --zen-charcoal-lighter: #4A4A4A;
@@ -1180,6 +1180,31 @@ picture:has(> .img-fluid)>img {
 
 .hero-img {
   align-items: center;
+  margin-top: 7rem;
+  max-width: 90vw;
+}
+
+.hero-link {
+  cursor: pointer;
+}
+
+.hero-link:hover {
+  fill: var(--highlight);
+  stroke: var(--highlight);
+  transition: stroke 0.2s ease;
+}
+
+
+@media (hover: hover) {
+  .hero-img .hero-link:hover .stroke-charcoal {
+    stroke: var(--highlight);
+    transition: stroke 0.2s ease;
+  }
+
+  .hero-img .hero-link:hover .fill-charcoal {
+    fill: var(--accent-color);
+    transition: fill 0.2s ease;
+  }
 }
 
 /* Hero title fluid sizing */

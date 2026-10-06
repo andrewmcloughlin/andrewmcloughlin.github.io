@@ -35,11 +35,11 @@
   </defs>
 
   <g class="whole-thing">
-    <path fill="url(#a)" fill-opacity=".5"  d="M380.922 195.861 333.535 79.769l-38.499-8.884L239 117.253h34.5l-7.5 78.608z" class="lamp-glow"/>
+    <path fill="url(#a)" fill-opacity=".2"  d="M380 195 333 79-38-8L239 117h34-7 78z" class="lamp-glow"/>
     <path  d="M269 174 290 194" class="lamp-arm-bicep yes-this-bicep-width-is-to-scale stroke-charcoal"/>
     <path  d="M289 194 267 189" class="lamp-arm-forearm stroke-charcoal">
       <animate id="forearm-flick" attributeName="d" dur="0.6s" begin="indefinite" fill="freeze"
-        values="M289 194 267 189;M289 194 344 189;M289 194 267 189"
+        values="M289 194 267 189;M289 194 354 189;M289 194 267 189"
         keyTimes="0;0.4;1"
         calcMode="spline"
         keySplines="0.4 0 0.2 1;0.4 0 0.2 1"/>
