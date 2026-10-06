@@ -645,7 +645,7 @@ a {
 
 .page-wrapper {
   display: flex;
-  max-width: 1100px;
+  max-width: 2100px;
   margin: 0 auto;
   width: 100%;
 }
@@ -1347,6 +1347,7 @@ picture:has(> .img-fluid)>img {
 .item-sidebar__nav ul {
   display: flex;
   flex-direction: column;
+  flex-direction: column;
   gap: 0.35rem;
 }
 
@@ -1385,6 +1386,16 @@ picture:has(> .img-fluid)>img {
 }
 
 @media (min-width: 992px) {
+
+  .item-layout {
+    max-width: 2360px;
+  }
+
+  .item-sidebar {
+    width: 280px;
+    min-width: 280px;
+  }
+
   .item-main {
     padding: 3rem 3rem 4rem 4rem;
   }
