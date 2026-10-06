@@ -16,28 +16,33 @@ title: CV
   </div>
 </section>
 
-<section id="employment" class="page-section fade-in delay-2">
-  <h2 class="section-title">Employment History</h2>
-  <div class="timeline card">
-    {% asyncEach job in cv.employmentHistory %}
-    {% include "components/employment-item.njk" %}
-    {% endeach %}
-  </div>
-</section>
-
-<section id="qualifications" class="page-section fade-in delay-3">
-  <h2 class="section-title">Qualifications</h2>
-  <div class="timeline card">
-    {% asyncEach qual in cv.qualifications %}
+<div id="cv">
+  <section id="employment" class="page-section fade-in delay-2">
+    <h2 class="section-title">Employment History</h2>
+    <div class="timeline card">
+      {% asyncEach job in cv.employmentHistory %}
+      {% include "components/employment-item.njk" %}
+      {% endeach %}
+    </div>
+  </section>
+  
+  <section id="qualifications" class="page-section fade-in delay-3">
+    <h2 class="section-title">Qualifications</h2>
+    <div class="timeline card">
+      {% asyncEach qual in cv.qualifications %}
       {% include "components/qual-item.njk" %}
-    {% endeach %}
-  </div>
+      {% endeach %}
+    </div>
+  </section>
+</div>
+
+<section id="certificates" class="page-section fade-in delay-2">
   <h2 id="certificates" class="section-title">Certificates</h2>
   <div class="grid-list-certs">
     {% for cert in cv.certificates %}
-      <div class="grid-item">
-        {% include "components/cert-item.njk" %}
-      </div>
+    <div class="grid-item">
+      {% include "components/cert-item.njk" %}
+    </div>
     {% endfor %}
   </div>
 </section>

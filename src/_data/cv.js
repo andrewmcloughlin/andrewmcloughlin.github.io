@@ -224,6 +224,16 @@ module.exports = {
             "roles": ["Product Owner", "Lead Developer"]
         },
         {
+            "name": "Fulfilment Management System",
+            "pinned": true,
+            "tagline": "",
+            "description": "The HMBT application tracks the stock, ordering, shipment, return and analysis of hydrogen and methane test kits, keeping track of KPIs, QC issues and highlighting potential issues before they occur.",
+            "image": "images/hmbt.png",
+            "stack": ["python", "django", "rabbitmq", "celery", "htpy"],
+            "link": "",
+            "roles": ["Product Owner", "Lead Developer"]
+        },
+        {
             "name": "Clinician's Web Portal",
             "pinned": true,
             "description": "The OMED web portal allows clinicians to view and manage their patients' hydrogen and methane levels on breath collected from the OMED Health breath device synced via OMED Health mobile app. Clinicians can request their patients' data, order devices for their patients and make diagnoses.",
@@ -242,16 +252,6 @@ module.exports = {
             "stack": ["airbyte", "airflow", "dbt", "metabase"],
             "link": "",
             "roles": ["Lead Developer"]
-        },
-        {
-            "name": "Fulfilment Management System",
-            "pinned": true,
-            "tagline": "",
-            "description": "The HMBT application tracks the stock, ordering, shipment, return and analysis of hydrogen and methane test kits, keeping track of KPIs, QC issues and highlighting potential issues before they occur.",
-            "image": "images/hmbt.png",
-            "stack": ["python", "django", "rabbitmq", "celery", "htpy"],
-            "link": "",
-            "roles": ["Product Owner", "Lead Developer"]
         },
         {
             "name": "Tyto",

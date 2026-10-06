@@ -210,6 +210,7 @@ address {
 .project-image-wrapper {
   width: 100%;
   overflow: hidden;
+  border-radius: 24px;
 }
 
 .project-image-wrapper picture {
@@ -1213,14 +1214,18 @@ picture:has(> .img-fluid)>img {
   line-height: 1.1;
 }
 
-/* Text roller / word flipper */
-.font-ubuntu {
-  font-family: 'Bricolage Grotesque', sans-serif;
+
+#cv {
+  display: flex;
+  flex-direction: column;
 }
 
-.font-marko {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  color: #FF8D28;
+@media (min-width: 768px) {
+  #cv {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
 }
 
 .bento-img-wrapper--darken {
