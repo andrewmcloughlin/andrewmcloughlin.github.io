@@ -1,7 +1,7 @@
 <div class="timeline-item {% if qual.logo %}has-logo{% endif %}">
   {% if qual.logo %}
     {{ qual.logo | imageHtml(qual.company, "timeline-logo timeline-logo-absolute logo-light") | safe }}
-    {% set darkLogo = job.logo | replace(".png", "_dark.png") %}
+    {% set darkLogo = qual.logo | replace(".png", "_dark.png") %}
     {{ darkLogo | imageHtml(qual.company, "timeline-logo timeline-logo-absolute logo-dark") | safe }}
   {% endif %}
   <div class="text-start">

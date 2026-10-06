@@ -1163,6 +1163,10 @@ picture:has(> .img-fluid)>img {
   }
 }
 
+.hero-img {
+  align-items: center;
+}
+
 /* Hero title fluid sizing */
 .hero-title-fluid {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
