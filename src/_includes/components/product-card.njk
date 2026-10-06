@@ -4,7 +4,7 @@
       {{ product.image | imageHtml(product.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
     </div>
   {% endif %}
-  <div class="project-content {% if product.image %}{% else %}{% endif %} -3 pe-md-3 text-start">
+  <div class="project-content {% if product.image %}{% else %}{% endif %}">
     <h3 class="fw-bold lh-sm text-dark">
       {% if product.link %}
         <a href="{{ product.link | url }}" class="stretched-link text-decoration-none text-body text-dark" target="_blank" rel="noopener noreferrer">{{ product.name }}</a>
@@ -13,16 +13,16 @@
       {% endif %}
     </h3>
     {% if product.roles %}
-      <div >
-        Role: 
+      <div class="product-role">
+        Role{% if product.roles.length > 1 %}s{% endif %}:&nbsp;
         {% for role in product.roles %}
           <span class="badge me-1">{{ role }}</span>
         {% endfor %}
       </div>
     {% endif %}
-    <p class="text-secondary">{{ product.description }}</p>
+    <p class="product-description">{{ product.description }}</p>
     {% if product.stack %}
-      <div >
+      <div class="product-stack">
         {% for tool in product.stack %}
           <span class="badge bg-secondary-subtle text-secondary me-1">{{ tool }}</span>
         {% endfor %}

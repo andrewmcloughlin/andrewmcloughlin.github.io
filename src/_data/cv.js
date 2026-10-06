@@ -214,9 +214,9 @@ module.exports = {
     ],
     products: [
         {
-            "name": "VOC Atlas",
+            "name": "The Periodic Table of Breath",
             "pinned": true,
-            "tagline": "The Periodic Table of Breath",
+            "tagline": "VOC Atlas",
             "description": "Funded by the Gates Foundation, The VOC Atlas is a public data portal to share reference datasets of breath related compounds across various populations. It is used by 500 verified academics and scientists from Universities around the world.",
             "image": "images/atlas.png",
             "stack": ["python", "django", "rdkit"],
@@ -224,7 +224,7 @@ module.exports = {
             "roles": ["Product Owner", "Lead Developer"]
         },
         {
-            "name": "OMED Health Portal",
+            "name": "Clinician's Web Portal",
             "pinned": true,
             "description": "The OMED web portal allows clinicians to view and manage their patients' hydrogen and methane levels on breath collected from the OMED Health breath device synced via OMED Health mobile app. Clinicians can request their patients' data, order devices for their patients and make diagnoses.",
             "tagline": "Clinician's Web Portal",
@@ -244,9 +244,9 @@ module.exports = {
             "roles": ["Lead Developer"]
         },
         {
-            "name": "HMBT",
+            "name": "Fulfilment Management System",
             "pinned": true,
-            "tagline": "Fulfilment Management System",
+            "tagline": "",
             "description": "The HMBT application tracks the stock, ordering, shipment, return and analysis of hydrogen and methane test kits, keeping track of KPIs, QC issues and highlighting potential issues before they occur.",
             "image": "images/hmbt.png",
             "stack": ["python", "django", "rabbitmq", "celery", "htpy"],

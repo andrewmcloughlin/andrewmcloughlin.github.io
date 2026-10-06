@@ -239,6 +239,21 @@ address {
   margin: -1.5rem -1.5rem 0;
 }
 
+.product-role {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  text-align: justify;
+  opacity: 0.8;
+}
+
+.product-stack {
+  margin-bottom: 1rem;
+}
+
+
 .stretched-link::after {
   position: absolute;
   top: 0;
