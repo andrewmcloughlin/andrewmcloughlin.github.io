@@ -988,8 +988,8 @@ picture:has(> .gallery-img) {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #212529;
-  color: #fff;
+  background-color: var(--zen-charcoal);
+  color: var(--zen-cream);
   border-radius: 50%;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   width: 48px;
