@@ -1,13 +1,19 @@
-<div class="product {% if product.pinned %}product--pinned{% endif %}">
+<div class="product {% if product.pinned %}product--pinned{% endif %}"{% if product.image and not product.link %} x-data="{ open: false }"{% endif %}>
   {% if product.image %}
     <div class="project-image-wrapper overflow-hidden">
       {% if product.link %}
         <a href="{{ product.link | url }}" class="text-decoration-none text-body text-dark" target="_blank" rel="noopener noreferrer">
-          {{ product.image | imageHtml(product.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
+          {{ product.image | imageHtml(product.name, "project-image w-100 object-fit-cover rounded-4") | safe }}
         </a>
-        {% else %}
-        {{ product.image | imageHtml(product.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
-        {% endif %}
+      {% else %}
+        <button class="product-image-btn" @click="open = true; $nextTick(() => $refs.lightbox.showModal())" aria-label="View full image of {{ product.name }}">
+          {{ product.image | imageHtml(product.name, "project-image w-100 object-fit-cover rounded-4") | safe }}
+        </button>
+        <dialog class="lightbox" x-ref="lightbox" @click.self="open = false; $refs.lightbox.close()" @keydown.escape.window="open = false; $refs.lightbox.close()">
+          <button class="lightbox__close" @click="open = false; $refs.lightbox.close()" aria-label="Close image">&times;</button>
+          <img src="/{{ product.image }}" alt="{{ product.name }}" class="lightbox__img">
+        </dialog>
+      {% endif %}
     </div>
   {% endif %}
   <div class="product-content">
@@ -20,7 +26,7 @@
       </div>
     {% endif %}
     {% if product.link %}
-        <a href="{{ product.link-title | url }}" target="_blank" rel="noopener noreferrer">{{ product.link_title }}</a>
+        <a href="{{ product.link | url }}" target="_blank" rel="noopener noreferrer">{{ product.link_title }}</a>
     {% endif %}
     <p class="product-description">{{ product.description }}</p>
     {% if product.related_articles %}
@@ -45,7 +51,5 @@
         {% endfor %}
       </div>
     {% endif %}
-    <div >
-    </div>
   </div>
 </div>
