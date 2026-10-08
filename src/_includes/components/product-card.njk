@@ -1,28 +1,43 @@
 <div class="product {% if product.pinned %}product--pinned{% endif %}">
   {% if product.image %}
     <div class="project-image-wrapper overflow-hidden">
-      {{ product.image | imageHtml(product.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
+      {% if product.link %}
+        <a href="{{ product.link | url }}" class="text-decoration-none text-body text-dark" target="_blank" rel="noopener noreferrer">
+          {{ product.image | imageHtml(product.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
+        </a>
+        {% else %}
+        {{ product.image | imageHtml(product.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
+        {% endif %}
     </div>
   {% endif %}
   <div class="product-content">
     <h3 class="fw-bold lh-sm text-dark">
-      {% if product.link %}
-        <a href="{{ product.link | url }}" class="stretched-link text-decoration-none text-body text-dark" target="_blank" rel="noopener noreferrer">{{ product.name }}</a>
-      {% else %}
         {{ product.name }}
-      {% endif %}
     </h3>
     {% if product.roles %}
       <div class="product-role">
-        {% for role in product.roles %}
-          <span>{{ role }} </span>
-        {% endfor %}
+        <span>{{ product.roles | join(', ') }}</span>
       </div>
     {% endif %}
     {% if product.link %}
-        <a href="{{ product.link-title | url }}" target="_blank" rel="noopener noreferrer">{{ product.link | url }}</a>
+        <a href="{{ product.link-title | url }}" target="_blank" rel="noopener noreferrer">{{ product.link_title }}</a>
     {% endif %}
     <p class="product-description">{{ product.description }}</p>
+    {% if product.related_articles %}
+      <ul>
+        {% for article in product.related_articles %}
+          {% for post in collections.blog %}
+            {% if post.fileSlug == article.slug %}
+              <li>
+                <a href="{{ post.url | url }}" class="text-decoration-none">
+                  {{ article.title }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    {% endif %}
     {% if product.stack %}
       <div class="product-stack">
         {% for tool in product.stack %}

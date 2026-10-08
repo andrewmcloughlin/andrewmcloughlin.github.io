@@ -221,8 +221,12 @@ module.exports = {
             "image": "images/atlas.png",
             "stack": ["python", "django", "rdkit"],
             "link": "https://www.vocatlas.com",
-            "link-title": "www.vocatlas.com",
-            "roles": ["Product Owner", "Lead Developer"]
+            "link_title": "www.vocatlas.com",
+            "roles": ["Product Owner", "Lead Developer"],
+            "related_articles": [
+                { "slug": "atlas_po", "title": "Product Owner Case Study" },
+                { "slug": "atlas_dev", "title": "Technical Deep Dive" }
+            ] 
         },
         {
             "name": "Fulfilment Management System",
@@ -232,7 +236,10 @@ module.exports = {
             "image": "images/hmbt.png",
             "stack": ["python", "django", "rabbitmq", "celery", "htpy"],
             "link": "",
-            "roles": ["Product Owner", "Lead Developer"]
+            "roles": ["Product Owner", "Lead Developer"],
+            "related_articles": [
+                { "slug": "hmbt", "title": "Case Study" }
+            ]
         },
         {
             "name": "Clinician's Web Portal",
@@ -243,6 +250,9 @@ module.exports = {
             "stack": ["python", "django", "django-ninja", "pytest"],
             "link": "",
             "roles": ["Lead Developer"],
+            "related_articles": [
+                { "slug": "macha", "title": "Case Study" }
+            ]
         },
         {
             "name": "Data Warehouse",
@@ -252,7 +262,10 @@ module.exports = {
             "image": "images/metabase.png",
             "stack": ["airbyte", "airflow", "dbt", "metabase"],
             "link": "",
-            "roles": ["Lead Developer"]
+            "roles": ["Lead Developer"],
+            "related_articles": [
+                { "slug": "data_warehouse", "title": "Case Study" }
+            ]
         },
         {
             "name": "Tyto",
@@ -261,7 +274,10 @@ module.exports = {
             "image": "images/tyto.png",
             "stack": ["postgresql", "python", "django", "docker", "htmx"],
             "link": "",
-            "roles": ["Developer"]
+            "roles": ["Developer"],
+            "related_articles": [
+                { "slug": "tyto", "title": "Case Study" }
+            ]
         },
         {
             "name": "OMED Health",
@@ -270,7 +286,10 @@ module.exports = {
             "image": "images/omed.png",
             "stack": ["Figma"],
             "link": "",
-            "roles": ["UI Designer"]
+            "roles": ["UI Designer"],
+            "related_articles": [
+                { "slug": "omed", "title": "Case Study" }
+            ]
         },
         {
             "name": "Ocelot",
