@@ -228,6 +228,8 @@ address {
 
 .product:hover .project-image-wrapper img,
 .product:hover .project-image-wrapper picture>img,
+.product-image-btn:focus-visible img,
+.product-image-btn:focus-visible picture>img,
 .project-card:hover .project-image-wrapper img,
 .project-card:hover .project-image-wrapper picture>img {
   transform: scale(1.2);
@@ -1689,6 +1691,12 @@ picture:has(> .img-fluid)>img {
   border: none;
   padding: 0;
   cursor: zoom-in;
+  border-radius: var(--border-radius);
+}
+
+.product-image-btn:focus-visible {
+  outline: 3px solid var(--highlight);
+  outline-offset: 3px;
 }
 
 .lightbox {
