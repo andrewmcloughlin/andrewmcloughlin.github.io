@@ -221,6 +221,7 @@ module.exports = {
             "image": "images/atlas.png",
             "stack": ["python", "django", "rdkit"],
             "link": "https://www.vocatlas.com",
+            "link-title": "www.vocatlas.com",
             "roles": ["Product Owner", "Lead Developer"]
         },
         {
@@ -293,10 +294,19 @@ module.exports = {
             "name": "Smartwatch Actigraphy Algorithms",
             "tagline": "",
             "description": "Researched and developed signal processing algorithms to train machine learning models identifying physical activities from raw actimetry data collected via open-source smartwatch prototypes.",
-            "image": "images/actigraphy.png",
+            "image": "images/ti-watch.png",
             "stack": ["Matlab"],
             "link": "",
             "roles": ["Algorithm Developer"]
+        },
+        {
+            "name": "React App for Retrospectives",
+            "tagline": "Hindsight",
+            "description": "Hindsight: A react app for collaborative retrospectives, with immediate updates as team members update notes, group them and vote on them.",
+            "image": "images/hindsight.png",
+            "stack": ["React", "SQLite", "Django", "React"],
+            "link": "",
+            "roles": ["Developer"]
         }
     ]
 };

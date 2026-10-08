@@ -5,7 +5,7 @@ layout: item.njk
 tags: ["blog", "Data"]
 pinned: false
 index: 4
-# image: /images/crfs.png
+# image: /images/article/crfs.png
 ---
 
 Every clinical study (almost by definition) tries to answer a different question, so it seems like an impossible task to create a library of reusable Case Report Forms (CRFs are essentially electronic clinical questionairres). If one study asks "Has the participant ever had asthma?" and another asks "Has the participant had COPD in the last 12 months?" it seems impossible that they could use the same CRF and that the data could be stored in the same table. This was my initial reaction to trying to standardise clinical data, but then I learnt about CDISC and SNOMED-CT.
@@ -40,6 +40,8 @@ That would be encoded as 3 Medical History records:
 - `MHTERM`: `219427009` | War injury due to lasers (disorder)
 
 linked together with a `RELID` field containing the same sequential ID to indicate the 3 findings are associated. Here is where CDSIC lets us down somewhat because there is no standard way to encode _how_ these findings are related even though SNOMED does have specific terms for types of relationships.
+
+![CRFs](/images/article/crfs.png)
 
 
 ## Summary

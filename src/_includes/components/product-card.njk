@@ -1,10 +1,10 @@
-<div class="{% if product.link %}project-card{% endif %} position-relative card">
+<div class="product {% if product.pinned %}product--pinned{% endif %}">
   {% if product.image %}
     <div class="project-image-wrapper overflow-hidden">
       {{ product.image | imageHtml(product.title, "project-image w-100 object-fit-cover rounded-4") | safe }}
     </div>
   {% endif %}
-  <div class="project-content {% if product.image %}{% else %}{% endif %}">
+  <div class="product-content">
     <h3 class="fw-bold lh-sm text-dark">
       {% if product.link %}
         <a href="{{ product.link | url }}" class="stretched-link text-decoration-none text-body text-dark" target="_blank" rel="noopener noreferrer">{{ product.name }}</a>
@@ -14,11 +14,13 @@
     </h3>
     {% if product.roles %}
       <div class="product-role">
-        Role{% if product.roles.length > 1 %}s{% endif %}:&nbsp;
         {% for role in product.roles %}
-          <span class="badge me-1">{{ role }}</span>
+          <span>{{ role }} </span>
         {% endfor %}
       </div>
+    {% endif %}
+    {% if product.link %}
+        <a href="{{ product.link-title | url }}" target="_blank" rel="noopener noreferrer">{{ product.link | url }}</a>
     {% endif %}
     <p class="product-description">{{ product.description }}</p>
     {% if product.stack %}
@@ -29,11 +31,6 @@
       </div>
     {% endif %}
     <div >
-      {% if product.link %}
-      <div class="icon-arrow-circle">
-        <i class="fa-solid fa-arrow-right icon-arrow-rotated"></i>
-      </div>
-      {% endif %}
     </div>
   </div>
 </div>

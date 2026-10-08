@@ -12,11 +12,14 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 </section>
 
 
-<section class="page-section product-section fade-in delay-2" x-data="{ expandedProducts: false }" aria-labelledby="products-heading">
+<section class="narrow-page page-section product-section fade-in delay-2" x-data="{ expandedProducts: false }" aria-labelledby="products-heading">
   <h2 class="section-title" id="products-heading">Products I've worked on</h2>
-  <div class="grid-list" id="products-list">
-    {% for product in cv.products %}
-        <div class="grid-item blog-item" {% if loop.index > 4 %} x-show="expandedProducts" x-transition x-cloak {% endif %}>
+  <div class="product-grid" id="products-list">
+    {% set pinnedProducts = cv.products | selectattr("pinned") | list %}
+    {% set unpinnedProducts = cv.products | rejectattr("pinned") | list %}
+    {% set allProducts = pinnedProducts.concat(unpinnedProducts) %}
+    {% for product in allProducts %}
+        <div class="{% if product.pinned %}product-wrapper--pinned{% else %}product-wrapper--regular{% endif %}" {% if loop.index > 4 %} x-show="expandedProducts" x-transition x-cloak {% endif %}>
           {% include "components/product-card.njk" %}
         </div>
     {% endfor %}
@@ -36,7 +39,7 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
 </section>
 
 
-<section class="page-section filter-section fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }" aria-labelledby="case-studies-heading">
+<section class="narrow-page page-section filter-section fade-in delay-4" x-data="{ filter: 'all', stackFilter: '' }" aria-labelledby="case-studies-heading">
   <h2 class="section-title" id="case-studies-heading">Case Studies</h2>
 
   <div class="filter-group">

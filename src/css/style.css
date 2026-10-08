@@ -223,6 +223,14 @@ address {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.4s ease;
+}
+
+.product:hover .project-image-wrapper img,
+.product:hover .project-image-wrapper picture>img,
+.project-card:hover .project-image-wrapper img,
+.project-card:hover .project-image-wrapper picture>img {
+  transform: scale(1.10);
 }
 
 .pub-card:hover,
@@ -704,6 +712,12 @@ a {
   .page-main {
     padding: 1.5rem 1rem;
   }
+}
+
+.narrow-page {
+  max-width: clamp(800px, 80vw, 1200px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .site-footer {
@@ -1661,6 +1675,40 @@ picture:has(> .img-fluid)>img {
 @media (min-width: 768px) {
   .grid-list {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.product {
+  position: relative;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-wrapper--pinned {
+    grid-column: span 2;
+  }
+
+  .product--pinned {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .product--pinned .project-image-wrapper {
+    flex: 0 0 50%;
+  }
+
+  .product--pinned .product-content {
+    flex: 1;
   }
 }
 

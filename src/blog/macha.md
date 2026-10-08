@@ -16,22 +16,26 @@ We needed a public interface for partner clinicians to order tests, view results
 
 Rather than have long forms with lots of conditional logic, I used Alpine.js to conditionally display relevant fields and sections, creating a more streamlined and user-friendly experience. I designed custom components, icons and illustrations in Figma to create a cohesive and modern look and feel.
 
-## Key Challenges
+## My Role
+
+I took over code ownership of this project, acting as the main developer. We were looking to expand to the US and have more developers working on the shared codebase, so my priorities were internationalisation, modularisation and implementing code ownership.
+
+## Key Work
 
 ### Modularisation
 
-The same application was used by exterrnal and internal clinicians, internal fulfillments staff and support staff, each with different requirements and permissions. We separated each use case into its own Django app, with its own models, views and templates and exclusively used services to move objects between apps. This ensured that we could maintain a clean separation of concerns and that we could easily add new use cases in the future.
+The same application was used by exterrnal and internal clinicians, internal fulfillments staff and support staff, each with different requirements and permissions. We separated each use case into its own Django app, with its own models, views and templates and exclusively used services to move objects between apps. This ensured that we could maintain a clean separation of concerns and that we could easily add new use cases in the future and turn on/off different apps for different locales.
 
 
 ### Internationalisation
 
-As the company expanded into the US market, we needed to support multiple currencies, address formats, date formats and timezones. GDPR required that US data be stored in the US, while UK data be stored in the UK, so we would need separate instances of the application. We used `django-local-flavor` to handle the different address formats and set the region based on the subdomain.
+As the company expanded into the US market, we needed to support multiple currencies, address formats, date formats and timezones. GDPR required that US data be stored in the US, while UK data be stored in the UK, so we would need separate instances of the application. I used `django-local-flavor` to handle the different address formats and set the region based on the subdomain.
 
 
 ### Code Ownership
 
 We found senior developers were getting bogged down in constant reviews. To address this, we used [CODEOWNERS](https://docs.gitlab.com/user/project/codeowners/) to ensure that only the appropriate team members could review and approve changes to the codebase. This also allows more junior developers to take ownership of the more simple or less risky django apps, freeing up senior developers to actually write code.
 
-## Integrations
+### Integrations
 
 I wrote API endpoints for integration with an internal calibration service. I wrote GET and POST endpoints (avoiding mutable PUT/PATCH ones) to keep the database append-only.
