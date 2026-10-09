@@ -3,43 +3,63 @@ layout: base.njk
 title: Accessibility
 ---
 
-<section class="page-section">
-  <div >
-    <div >
-    
-      <div class="card">
-        <div class="card-body">
-          <h1 class="font-heading">Accessibility</h1>
-          This site is built using progressive enhancement principles, meaning it should be fully usable even without CSS and JS.
-          Here are the features this site uses to improve accessibility:
-          <ol>
-            <li>Autism friendly colour scheme, with high contrast text</li>
-            <li>Media with alt text (enforced by pre-commit check)</li>
-            <li>Semantic HTML</li>
-            <li>Large, descriptive buttons</li>
-            <li>Blogs are (mostly) in simple English with few large blocks of texts</li>
-            <li>Simple and consistent, linear page layouts</li>
-            <li>Custom keyboard shortcuts are disablable</li>
-            <li>Respects reduced motion: gallery pauses and videos pause</li>
-            <li><a href="https://www.w3.org/TR/speech-synthesis11/" target="_blank">SSML pronounciation markup</a> on 'McLoughlin' so screen readers can pronounce it properly</li>
-          </ol>
-          <h2 class="font-heading">Ways this site could improve</h2>
-          Accesibility isn't a Boolean, it's a scale, and there's always work to be done.
-          Here are some ways this site could be improved:
-          <ol>
-            <li>Dyslexia friendly font</li>
-            <li>Splide gallery is unfriendly to keyboard users</li>
-            <li>Mail to link relies on JS email obfuscation, so doesn't adhere to progressive enhancement principles</li>
-            <li>More extensive use of <a href="https://www.w3.org/TR/speech-synthesis11/" target="_blank">SSML</a></li>
-            <li>Blogs entries could be re-written with fewer large blocks of text and more images/diagrams to split up content</li>
-            <li>On-screen controls to change font size</li>
-            <li>Some links lack sufficient affordance that they are interactable</li>
-          </ol>
-          I am aware that screen readers currently mis-pronounce several words on this site eg ('pytest', 'lead developer') but I haven't yet worked out a way to ensure easy and consistent SSML markup on dynamic elements.
-        </div>
-      </div>
-      
-      <a href="{{ '/' | url }}" class="btn btn-arrow-left" data-shortcut="h" >Back to Home</a>
-    </div>
+<section class="narrow-page page-section">
+  <div class="card">
+    <article class="card-body">
+      <h1 class="font-heading">Accessibility</h1>
+      This site is built using progressive enhancement principles, meaning it
+      should be fully usable even without CSS and JS. Here are the features this
+      site uses to improve accessibility:
+      <ol>
+        <li>Autism friendly colour scheme, with high contrast text</li>
+        <li>Media with alt text (enforced by pre-commit check)</li>
+        <li>Semantic HTML</li>
+        <li>Large, descriptive buttons</li>
+        <li>
+          Blogs are (mostly) in simple English with few large blocks of texts
+        </li>
+        <li>Simple and consistent, linear page layouts</li>
+        <li>Custom keyboard shortcuts are disablable</li>
+        <li>Respects reduced motion: gallery pauses and videos pause</li>
+        <li>
+          <a href="https://www.w3.org/TR/speech-synthesis11/" target="_blank"
+            >SSML pronounciation markup</a
+          >
+          on 'McLoughlin' so screen readers can pronounce it properly
+        </li>
+      </ol>
+      <h2 class="font-heading">Ways this site could improve</h2>
+      Accesibility isn't a Boolean, it's a scale, and there's always work to be
+      done. Here are some ways this site could be improved:
+      <ol>
+        <li>Dyslexia friendly font</li>
+        <li>Splide gallery is unfriendly to keyboard users</li>
+        <li>
+          Mail to link relies on JS email obfuscation, so doesn't adhere to
+          progressive enhancement principles
+        </li>
+        <li>
+          More extensive use of
+          <a href="https://www.w3.org/TR/speech-synthesis11/" target="_blank"
+            >SSML</a
+          >
+        </li>
+        <li>
+          Blogs entries could be re-written with fewer large blocks of text and
+          more images/diagrams to split up content
+        </li>
+        <li>On-screen controls to change font size</li>
+        <li>
+          Some links lack sufficient affordance that they are interactable
+        </li>
+      </ol>
+      I am aware that screen readers currently mis-pronounce several words on
+      this site eg ('pytest', 'lead developer') but I haven't yet worked out a
+      way to ensure easy and consistent SSML markup on dynamic elements.
+    </article>
   </div>
+
+  <a href="{{ '/' | url }}" class="btn btn-arrow-left" data-shortcut="h"
+    >Back to Home</a
+  >
 </section>

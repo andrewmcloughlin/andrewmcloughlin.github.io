@@ -9,15 +9,14 @@ title: CV
   <h1 class="hero-title">Andrew McLoughlin</h1>
 </section>
 
-<section class="page-section fade-in delay-1">
+<section class="narrow-page page-section fade-in delay-1">
   <h2 class="section-title">Profile</h2>
   <div class="timeline card">
     I have an academic background in Biomedical Science, Computational Systems Biology and Epidemiology and 5+ years' experience building production scientific software. I am passionate about building tools that have a real-world scientific impact.
   </div>
 </section>
 
-<div id="cv">
-  <section id="employment" class="page-section fade-in delay-2">
+  <section id="employment" class="narrow-page page-section fade-in delay-2">
     <h2 class="section-title">Employment History</h2>
     <div class="timeline card">
       {% asyncEach job in cv.employmentHistory %}
@@ -26,7 +25,7 @@ title: CV
     </div>
   </section>
   
-  <section id="qualifications" class="page-section fade-in delay-3">
+  <section id="qualifications" class="narrow-page page-section fade-in delay-3">
     <h2 class="section-title">Qualifications</h2>
     <div class="timeline card">
       {% asyncEach qual in cv.qualifications %}
@@ -34,9 +33,8 @@ title: CV
       {% endeach %}
     </div>
   </section>
-</div>
 
-<section id="certificates" class="page-section fade-in delay-2">
+<section id="certificates" class="narrow-page page-section fade-in delay-2">
   <h2 id="certificates" class="section-title">Certificates</h2>
   <div class="grid-list-certs">
     {% for cert in cv.certificates %}
@@ -47,7 +45,7 @@ title: CV
   </div>
 </section>
 
-<section id="publications" class="page-section fade-in delay-5" x-data="{ expandedPubs: false }">
+<section id="publications" class="narrow-page page-section fade-in delay-5" x-data="{ expandedPubs: false }">
   <h2 class="section-title">Publications, Posters & Papers</h2>
   <p class="section-description">These are some of the publications, posters, white papers and editorials that I have written or contributed to.</p>
   <div class="grid-list">

@@ -1000,25 +1000,6 @@ picture:has(> .gallery-img) {
   animation-delay: 0.7s;
 }
 
-.icon-arrow-circle,
-.project-link-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--zen-charcoal);
-  color: var(--zen-cream);
-  border-radius: 50%;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.icon-arrow-rotated {
-  transform: rotate(-45deg);
-}
-
 .letter-spacing-wide {
   letter-spacing: 0.1em;
 }
@@ -1230,19 +1211,6 @@ picture:has(> .img-fluid)>img {
   line-height: 1.1;
 }
 
-
-#cv {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 768px) {
-  #cv {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-}
 
 .bento-img-wrapper--darken {
   mix-blend-mode: darken;
