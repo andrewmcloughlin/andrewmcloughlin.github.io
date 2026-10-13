@@ -2,7 +2,7 @@
 title: "Fulfillments Application"
 description: "A web application for managing the fulfillment of orders."
 layout: item.njk
-tags: ["blog", "Product","Software"]
+tags: ["blog", "Product", "Software"]
 pinned: true
 index: 11
 # featured_stack: ["Python", "Django", "PostgreSQL"]
@@ -10,9 +10,11 @@ index: 11
 # image: /images/hmbt.png
 ---
 
+<!--- cSpell:enable --->
+
 ## The Problem
 
-Fulfillments used to be recorded on huge spreadsheets (think tens of thousands of rows), which was time consuming, error prone, painfully slow to open and a nightmare to search. 
+Fulfillments used to be recorded on huge spreadsheets (think tens of thousands of rows), which was time consuming, error prone, painfully slow to open and a nightmare to search.
 
 ## My Solution
 
@@ -20,21 +22,17 @@ I shadowed the fulfillment team for 2 days to understand their workflow and iden
 
 The system worked like a self-checkout: operations users would import today's file and would be presented with a summary of the number of each type of kit to pack. They would then scan the barcode on each kit, which would confirm the kit type was correct and the system would print a Royal Mail shipping label. As users were shipping nearly 100 kits per day, the UI was gamified to make the process more engaging.
 
-This was a very quick greenfield project, built in django, htmx and postgres. To save time we embedded live Metabase dashboards to provide real-time insights into the fulfillment process.
-
+This was a very quick greenfield project, built in django,`htmx` and postgres. To save time we embedded live Metabase dashboards to provide real-time insights into the fulfillment process.
 
 ## Challenges
 
 ### Integration with third party order management system
 
-The main challenge was integration with the third party order management system, which had no APIs and only offered XLSX exports with lots of freetext fields being used for categorical data. I build an idempotent importer which rigorously checked the schema. We used fuzzy matching of freetext against categories to guess what the user intended and if a perfect match was not obtained we presented the original free-text alongside our best-guess to the opeartions user to either confirm or correct.
-
+The main challenge was integration with the third party order management system, which had no APIs and only offered XLSX exports with lots of free-text fields being used for categorical data. I build an idempotent importer which rigorously checked the schema. We used fuzzy matching of free-text against categories to guess what the user intended and if a perfect match was not obtained we presented the original free-text alongside our best-guess to the operations user to either confirm or correct.
 
 ### Data are guilty until proven innocent
 
-Never assume data match your schema. The historical spreadsheets had no validation and were often missing data. We imputed data where appropriate and logged all errors. I used Pydantic to validate the data and ensure that it matched the schema. I identified an average of 5% of rows had some form of data quality issue, after the app, we tracked the number of issues over a 2 year period and not a single data quality issue was identified.
-
-
+Never assume data match your schema. The historical spreadsheets had no validation and were often missing data. We imputed data where appropriate and logged all errors. I used `Pydantic` to validate the data and ensure that it matched the schema. I identified an average of 5% of rows had some form of data quality issue, after the app, we tracked the number of issues over a 2 year period and not a single data quality issue was identified.
 
 ## Results
 

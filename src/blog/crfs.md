@@ -8,6 +8,9 @@ index: 4
 # image: /images/article/crfs.png
 ---
 
+<!--- cSpell:enable --->
+
+
 Every clinical study (almost by definition) tries to answer a different question, so it seems like an impossible task to create a library of reusable Case Report Forms (CRFs are essentially electronic clinical questionairres). If one study asks "Has the participant ever had asthma?" and another asks "Has the participant had COPD in the last 12 months?" it seems impossible that they could use the same CRF and that the data could be stored in the same table. This was my initial reaction to trying to standardise clinical data, but then I learnt about CDISC and SNOMED-CT.
 
 CDISC is a set of international standards for clinical data collection and defines standard ways to break up questions into standards constituent parts, and it works beautifully with SNOMED-CT, a clinical terminology for standardising vocabulary.

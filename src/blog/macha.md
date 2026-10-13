@@ -24,7 +24,7 @@ I took over code ownership of this project, acting as the main developer. We wer
 
 ### Modularisation
 
-The same application was used by exterrnal and internal clinicians, internal fulfillments staff and support staff, each with different requirements and permissions. We separated each use case into its own Django app, with its own models, views and templates and exclusively used services to move objects between apps. This ensured that we could maintain a clean separation of concerns and that we could easily add new use cases in the future and turn on/off different apps for different locales.
+The same application was used by external and internal clinicians, internal fulfillments staff and support staff, each with different requirements and permissions. We separated each use case into its own Django app, with its own models, views and templates and exclusively used services to move objects between apps. This ensured that we could maintain a clean separation of concerns and that we could easily add new use cases in the future and turn on/off different apps for different locales.
 
 
 ### Internationalisation

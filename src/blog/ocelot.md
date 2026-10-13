@@ -10,6 +10,8 @@ index: 8
 # image: /images/ocelot.png
 ---
 
+<!--- cSpell:enable --->
+
 Improved compliance by making study configurations easily source controllable and sped up the time to study initiation from weeks to days.
 
 ## The Problem
@@ -50,5 +52,5 @@ A single command validates your CRF configuration, not only against the schema, 
 - Validating a single CRF went from 35s of navigating the interface and uploading a file and waiting for processing, to a single command (0.5s)
 - Validating an entire study's logic went from around 45 minutes of tiresome and error-prone manual dummy data entry to under two seconds.
 - Understanding what had changed between any 2 configurations
-- Improved 21 CFR Part 11 compliance
+- Improved 21 CFR Part-11 compliance
 - A huge reduction in this Data Manager's blood pressure when clicking 'publish', because I could say with certainty exactly what had changed between versions

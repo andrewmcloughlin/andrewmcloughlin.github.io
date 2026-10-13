@@ -6,7 +6,21 @@ tags: ["blog", "django"]
 pinned: true
 index: 6
 featured_stack: ["Python", "Django", "PostgreSQL"]
-other_stack: ["Kubernetes", "Docker", "HTMX", "htpy", "BootstrapPostgreSQL", "Elicit API", "CrossRef API", "Figma", "Google Analytics", "Umami", "SMILES.drawer", "RDKit"]
+other_stack:
+  [
+    "Kubernetes",
+    "Docker",
+    "HTMX",
+    "htpy",
+    "BootstrapPostgreSQL",
+    "Elicit API",
+    "CrossRef API",
+    "Figma",
+    "Google Analytics",
+    "Umami",
+    "SMILES.drawer",
+    "RDKit",
+  ]
 ---
 
 <div class="text-center mb-4">
@@ -15,12 +29,13 @@ other_stack: ["Kubernetes", "Docker", "HTMX", "htpy", "BootstrapPostgreSQL", "El
   </a>
 </div>
 
+<!--- cSpell:enable --->
+
 ## What is the VOC Atlas?
 
 A django-based web application for exploring the world of Volatile Organic Compounds (VOCs). It consists of a public-facing read only interface and an internal interface for Owlstone employees to upload and manage data.
 
 As both **Product Owner** and **Lead Developer**, I led the product lifecycle from initial conception and clinical stakeholder engagement through to data architecture, front-end development, and deployment.
-
 
 ## Design Philosophy
 
@@ -34,15 +49,13 @@ We were a small team of developers (3-4) building the full-stack on multiple int
 
 As Atlas was ingesting large GCMS datasets, we used S3 to store the raw data, and PostgreSQL to store the metadata and processed data, with async Celery workers to process the data.
 
-Initially Atlas was intended to be an internal tool, so it was built as a Django app of an existing project. This allowed us to get it into the hands of internal users within 1 month. However, as the product matured and gained buy-in we deicded to deploy the Atlas as a public platform, which became as issue as it was built ontop of an internal LIMS which could not be publicly exposed. We spent 3 months refactoring the application to be a standalone Django project.
+Initially Atlas was intended to be an internal tool, so it was built as a Django app of an existing project. This allowed us to get it into the hands of internal users within 1 month. However, as the product matured and gained buy-in we decided to deploy the Atlas as a public platform, which became as issue as it was built on top of an internal LIMS which could not be publicly exposed. We spent 3 months refactoring the application to be a standalone Django project.
 
 ### Frontend
 
-As Owlstone's first public application, we had to learn a lot about deploying and maintaining a public facing web application, including security, scalability and accessibility. We opted to use AllAuth for authentication and recognising that we needed to improve the UI/UX of the application for an external audience, we used AlpineJS to make more dynamic user-friendly components. We also recognised that we needed to start testing our templates as the risk of breaking the UI for external users was now a real concern, so we used htpy to generate components in python and test them in isolation.
-
+As Owlstone's first public application, we had to learn a lot about deploying and maintaining a public facing web application, including security, scalability and accessibility. We opted to use AllAuth for authentication and recognising that we needed to improve the UI/UX of the application for an external audience, we used AlpineJS to make more dynamic user-friendly components. We also recognised that we needed to start testing our templates as the risk of breaking the UI for external users was now a real concern, so we used `htpy` to generate components in python and test them in isolation.
 
 ## Key Challenges
-
 
 ### Modelling Biochemistry
 
@@ -52,22 +65,21 @@ Chemistry is complex and biology is messy. Trying to model the subtleties of che
 
 ## Automating Manual Data Entry
 
-We found scientists using the Atlas were spending a lot of time manually entering data about literature. This was a time consuming and error prone process. I decided to use the [CrossRef API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) to automate this process, such that literature details (title, authors, journal, abstract etc.) could be populated from just the DOI of the paper. However, as CrossRef occassionally returns malformed data, we presented the retrieved data in a form that the user could edit before saving, which allowed them to correct any errors. This process saved internal scientists hours of tedious work per week.
+We found scientists using the Atlas were spending a lot of time manually entering data about literature. This was a time consuming and error prone process. I decided to use the [CrossRef API](https://www.crossref.org/documentation/retrieve-metadata/rest-api/) to automate this process, such that literature details (title, authors, journal, abstract etc.) could be populated from just the DOI of the paper. However, as CrossRef occasionally returns malformed data, we presented the retrieved data in a form that the user could edit before saving, which allowed them to correct any errors. This process saved internal scientists hours of tedious work per week.
 
 Following internal restructuring, we had to find ways to fully automate this process. I used [Elicit's API](https://docs.elicit.com/) to extract the relevant information from the papers and populate the database. This was a significant improvement over the previous process.
 
 ### User Interface
 
-As Owlstone's first public facing product, I was keen to ensure that the application was accessible and easy to use. This led to the decision to use HTMX and Bootstrap to create a modern and responsive user interface. This was a significant departure from the internal tools I had built previously, which were primarily internal tools for data scientists and clinicians.
-
+As Owlstone's first public facing product, I was keen to ensure that the application was accessible and easy to use. This led to the decision to use `HTMX` and Bootstrap to create a modern and responsive user interface. This was a significant departure from the internal tools I had built previously, which were primarily internal tools for data scientists and clinicians.
 
 ### Legal
 
-Legal Team required that users accept the latest T&Cs and Privacy Policies before accessing the site. To do this I created a modular legal django app, which stored the legal docs as markdown  files in the database and used [markdownify](https://pypi.org/project/markdownify/) to render them to HTML. This allowed the legal team to update the T&Cs and Privacy Policies without requiring a code change.
+Legal Team required that users accept the latest T&Cs and Privacy Policies before accessing the site. To do this I created a modular legal django app, which stored the legal docs as markdown files in the database and used [markdownify](https://pypi.org/project/markdownify/) to render them to HTML. This allowed the legal team to update the T&Cs and Privacy Policies without requiring a code change.
 
 ### Chemistry
 
-All compounds are stores as InChI strings in the database. The cool thing about InChi strings is that they encode the entire chemical structure, so you can use a package like [rdkit](https://www.rdkit.org/) and [smiles-drawer](https://reymond-group.github.io/smilesDrawer/) to generate 2D and 3D representations of the molecules in JavaScript. Not only that but you can also interrogate the compound structure to determine properties of the molecule, such as molecular weight, logP, etc. I chose to  have `rdkit` generate these properties on compound creation and store them in the database, so we could easily query compounds based on these properties. This was a significant performance improvement over generating these properties on the fly.
+All compounds are stores as InChI strings in the database. The cool thing about InChi strings is that they encode the entire chemical structure, so you can use a package like [rdkit](https://www.rdkit.org/) and [smiles-drawer](https://reymond-group.github.io/smilesDrawer/) to generate 2D and 3D representations of the molecules in JavaScript. Not only that but you can also interrogate the compound structure to determine properties of the molecule, such as molecular weight, logP, etc. I chose to have `rdkit` generate these properties on compound creation and store them in the database, so we could easily query compounds based on these properties. This was a significant performance improvement over generating these properties on the fly.
 
 ### Biology
 
@@ -76,7 +88,6 @@ Biology is messy. Originally we planned for Atlas to compare compounds across di
 ## Privacy
 
 We were contractually obliged by the [Gates Foundation](https://www.gatesfoundation.org/) to share our findings publicly using FAIR data principles ([Findable, Accessible, Interoperable, and Reusable](https://www.go-fair.org/fair-principles/)), but we also had to ensure that the data was anonymised and GDPR compliant. This meant that we couldn't store any personal data in the database. We stored PII (Personally Identifiable Information) in a separate internal database and built an irreversible anonymisation step into the data ingestion pipeline. Thereby ensuring that the public facing database could never be linked to any individual.
-
 
 # Impact
 
