@@ -1102,6 +1102,12 @@ picture:has(> .img-fluid)>img {
   scrollbar-width: none;
 }
 
+@media (max-width: 768px) {
+  .item-sidebar {
+    display: None;
+  }
+}
+
 .item-sidebar::-webkit-scrollbar {
   display: none;
 }
