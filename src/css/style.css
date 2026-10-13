@@ -631,6 +631,13 @@ a {
   }
 }
 
+@media (min-width: 501px) {
+  .page-home .mobile-topnav,
+  .page-home #theme-toggle {
+    display: none;
+  }
+}
+
 .mobile-topnav .nav-link:hover {
   background: rgba(0, 0, 0, 0.05);
 }
