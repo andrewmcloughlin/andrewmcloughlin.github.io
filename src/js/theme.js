@@ -61,5 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }, flickDelay);
             setTimeout(() => syncGlow(next, true), flickDelay + 240);
         });
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
     });
 });

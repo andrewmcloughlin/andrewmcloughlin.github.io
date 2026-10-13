@@ -79,7 +79,7 @@
 <g id="desk-legs" filter="url(#filter1_g_3127_10319)">
     <path d="M200.535 434.295V368.963H643.681V434.295" class="stroke-charcoal" stroke-width="4.39395"></path>
 </g>
-<g id="lamp">
+<g id="lamp" class="hero-link lamp" role="button" aria-label="Toggle dark/light theme" tabindex="0">
     <g id="Group_212">
         <path id="Vector_280" d="M565.773 145.322L507.032 133.515C505.579 109.561 532.104 96.8692 547.044 99.7164C561.984 102.564 575.32 120.442 565.773 145.322Z" class="stroke-charcoal" stroke-width="4.39395"></path>
         <path id="Vector_281" d="M580.417 143.948C576.372 143.02 571.408 141.97 567.397 141.361L568.577 127.42L583.651 131.214C587.342 132.143 589.458 136.02 588.243 139.626C587.152 142.865 583.748 144.713 580.417 143.948Z" class="stroke-charcoal" stroke-width="4.39395"></path>
