@@ -79,7 +79,7 @@
 <g id="desk-legs" filter="url(#filter1_g_3127_10319)">
     <path d="M200.535 434.295V368.963H643.681V434.295" class="stroke-charcoal" stroke-width="4.39395"></path>
 </g>
-<g id="lamp" class="hero-link lamp" role="button" aria-label="Toggle dark/light theme" tabindex="0">
+<g id="lamp" class="hero-link lamp" role="button" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">
     <g id="Group_212">
         <path id="Vector_280" d="M565.773 145.322L507.032 133.515C505.579 109.561 532.104 96.8692 547.044 99.7164C561.984 102.564 575.32 120.442 565.773 145.322Z" class="stroke-charcoal" stroke-width="4.39395"></path>
         <path id="Vector_281" d="M580.417 143.948C576.372 143.02 571.408 141.97 567.397 141.361L568.577 127.42L583.651 131.214C587.342 132.143 589.458 136.02 588.243 139.626C587.152 142.865 583.748 144.713 580.417 143.948Z" class="stroke-charcoal" stroke-width="4.39395"></path>
@@ -116,7 +116,7 @@
                 <path d="M208.5 218.5V249.5L215 240L221.5 249.5V218.5" class="stroke-charcoal" stroke-width="4.39395"></path>
             </g>
         </g>
-        <text id="EDUCATION" class="fill-charcoal hero-link" style="white-space: pre" xml:space="preserve" font-family="xkcd" font-size="35.6616" letter-spacing="0.1em" text-decoration="underline"><tspan x="0.489182" y="28.5049">EDUCATION</tspan></text>
+        <text id="EDUCATION" class="fill-charcoal hero-link  fade-in delay-5" style="white-space: pre" xml:space="preserve" font-family="xkcd" font-size="35.6616" letter-spacing="0.1em" text-decoration="underline"><tspan x="0.489182" y="28.5049">EDUCATION</tspan></text>
         <path id="Vector_318" d="M79 180H76.803V182.197H79L79 180ZM172.283 180C172.283 186.471 177.529 191.717 184 191.717C190.471 191.717 195.717 186.471 195.717 180C195.717 173.529 190.471 168.283 184 168.283C177.529 168.283 172.283 173.529 172.283 180ZM79 180L79 182.197L184 182.197V180V177.803L79 177.803L79 180ZM79 180H81.197V57H79H76.803V180H79Z" class="fill-charcoal hero-link"></path>
     </g>
 </a>
@@ -126,12 +126,12 @@
         <g id="laptop" filter="url(#filter6_g_3127_10319)">
             <path d="M295.484 250.465V349.143H461.596V250.465H295.484Z" class="stroke-charcoal" stroke-width="4.39395"></path>
         </g>
-        <text id="My_Work" class="fill-charcoal hero-link" style="white-space: pre" xml:space="preserve" font-family="xkcd" font-size="35.6616" letter-spacing="0.1em" text-decoration="underline"><tspan x="305.734" y="565.505">MY WORK</tspan></text>
+        <text id="My_Work" class="fill-charcoal hero-link fade-in delay-5" style="white-space: pre" xml:space="preserve" font-family="xkcd" font-size="35.6616" letter-spacing="0.1em" text-decoration="underline"><tspan x="305.734" y="565.505">MY WORK</tspan></text>
         <path id="Vector_319 hero-link" d="M390.718 300C390.718 293.529 385.472 288.283 379 288.283C372.529 288.283 367.283 293.529 367.283 300C367.283 306.471 372.529 311.717 379 311.717C385.472 311.717 390.718 306.471 390.718 300ZM382 506.5L384.197 506.468L381.197 299.968L379 300L376.804 300.032L379.803 506.532L382 506.5Z" class="fill-charcoal"></path>
     </g>
 </a>
 
-<a href="/me#publications" aria-label="About me — Publications">
+<a href="/me#publications" aria-label="About me: Publications">
 <g id="books" class="hero-link">
     <g id="Group_2627">
         <g id="Vector_369" filter="url(#filter7_g_3127_10319)">
@@ -141,7 +141,7 @@
             <path d="M654.603 310.533L576.518 309.8C576.015 312.289 575.681 314 576.889 317.733L654.603 318.467H658V325H570.798C564.758 320.333 567.023 308.2 570.043 304H658L657.629 310.533H654.603ZM654.603 318.467V310.533" class="stroke-charcoal" stroke-width="4.39395"></path>
         </g>
     </g>
-    <text id="Publications" class="fill-charcoal" style="white-space: pre" xml:space="preserve" font-family="xkcd" font-size="35.6616" letter-spacing="0.1em" text-decoration="underline"><tspan x="577.292" y="28.5049">PUBLICATIONS</tspan></text>
+    <text id="Publications" class="fill-charcoal  fade-in delay-5" style="white-space: pre" xml:space="preserve" font-family="xkcd" font-size="35.6616" letter-spacing="0.1em" text-decoration="underline"><tspan x="577.292" y="28.5049">PUBLICATIONS</tspan></text>
     <path id="Vector_320" d="M632.717 325C632.717 318.529 627.471 313.283 621 313.283C614.529 313.283 609.283 318.529 609.283 325C609.283 331.471 614.529 336.717 621 336.717C627.471 336.717 632.717 331.471 632.717 325ZM747 325V327.197H749.197V325H747ZM747 57H744.803V325H747H749.197V57H747ZM747 325V322.803H621V325V327.197H747V325Z" class="fill-charcoal"></path>
 </g>
 </a>

@@ -7,7 +7,7 @@ bodyClass: page-home
 <section id="home" class="page-section hero-section">
   <div>
     <h1 class="fw-bold font-xkcd fade-in delay-1">
-      Hi, I<kerning>'</kerning>m Andrew,<br/>
+      <div class="andrew">Hi, I<kerning>'</kerning>m Andrew,</div>
       I make scientific software
     </h1>
     <div class="lead fade-in delay-3" style="max-width: 600px; margin: 0 auto; margin-block-start: var(--spacing-2);">
@@ -15,6 +15,8 @@ bodyClass: page-home
       specialising in scientific software & data products.<br>
       Based in <address>Cambridge, UK</address>.
     </div>
-    {% include "images/hero.svg" %}
+    <div class="fade-in delay-4">
+      {% include "images/hero.svg" %}
+    </div>
   </div>
 </section>
