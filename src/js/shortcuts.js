@@ -79,6 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (emailLink) {
                         emailLink.click();
                     }
+                } else if (targetPath === '#theme-toggle') {
+                    const themeToggle = document.getElementById('theme-toggle');
+                    if (themeToggle) {
+                        themeToggle.click();
+                    }
                 } else {
                     window.location.href = targetPath;
                 }

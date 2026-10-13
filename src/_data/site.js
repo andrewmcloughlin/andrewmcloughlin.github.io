@@ -39,6 +39,7 @@ module.exports = {
         { code: "a", title: "Academia", url: "https://cambridge.academia.edu/AndrewMcLoughlin" },
         { code: "f", title: "Figma", url: "https://figma.com/@maclin" },
         { code: "m", title: "Mastodon", url: "https://social.vivaldi.net/@mcloughlin" },
-        { code: "e", title: "Email", url: "#email" }
+        { code: "e", title: "Email", url: "#email" },
+        { code: "d", title: "Toggle dark/light theme", url: "#theme-toggle" }
     ]
 };
