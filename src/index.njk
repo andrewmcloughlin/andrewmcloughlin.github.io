@@ -43,10 +43,10 @@ description: Browse all projects by Andrew McLoughlin, filtered by technology st
   <h2 class="section-title" id="case-studies-heading">Case Studies</h2>
 
   <div class="filter-group">
-    {# <button class="btn btn-outline" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
+    <button class="btn btn-outline" :class="{ 'active': filter === 'all' }"      @click="filter = 'all'; stackFilter = ''">All</button>
     <button class="btn btn-outline" :class="{ 'active': filter === 'Product' }"  @click="filter = 'Product'; stackFilter = ''">Product</button>
     <button class="btn btn-outline" :class="{ 'active': filter === 'Software' }" @click="filter = 'Software'; stackFilter = ''">Software</button>
-    <button class="btn btn-outline" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button> #}
+    <button class="btn btn-outline" :class="{ 'active': filter === 'Data' }"     @click="filter = 'Data'; stackFilter = ''">Data</button>
     <template x-if="filter === 'Software'">
       <div class="filter-group">
         {% for stackItem in collections.stackItems %}

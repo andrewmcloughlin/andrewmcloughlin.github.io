@@ -1,7 +1,11 @@
 <div class="project-card position-relative card">
-  <span class="project-card__number" aria-hidden="true">{{ item.data.index }}</span>
   <div class="project-content -3 pe-md-3 text-start">
     <h3 class="fw-bold lh-sm text-dark"><a href="{{ item.url | url }}" class="stretched-link text-decoration-none text-body text-dark">{{ item.data.title }}</a></h3>
     <p class="text-secondary">{{ item.data.description }}</p>
+    <div class="product-stack">
+    {% for tag in item.data.tags %}
+        <div class="badge bg-secondary-subtle text-secondary me-1">{{ tag }}</div>
+    {% endfor %}
+    </div>
   </div>
 </div>
