@@ -1056,7 +1056,8 @@ picture:has(> .img-fluid)>img {
   cursor: pointer;
 }
 
-.hero-link:hover {
+.hero-link:hover,
+.hero-link:focus {
   fill: var(--highlight);
   stroke: var(--highlight);
   transition: stroke 0.2s ease;
