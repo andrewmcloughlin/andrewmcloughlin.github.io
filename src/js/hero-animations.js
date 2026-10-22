@@ -7,6 +7,10 @@
         'right-forearm',
         'right-bicep',
     ];
+    document.addEventListener('trigger-drink-animation', () => {
+        animationIds.forEach(triggerAnim);
+    });
+
     const averageInterval = 15_000;
     const intervalVariation = 5_000;
 

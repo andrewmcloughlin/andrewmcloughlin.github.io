@@ -84,6 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (themeToggle) {
                         themeToggle.click();
                     }
+                } else if (targetPath === '#drink-animation') {
+                    document.dispatchEvent(new CustomEvent('trigger-drink-animation'));
                 } else {
                     window.location.href = targetPath;
                 }

@@ -137,8 +137,8 @@
         <path id="handle" class="stroke-charcoal" d="M227 322C232 320 241 324 238 331C235 336 230 341 227 343" stroke="black" stroke-width="3.43393" stroke-linecap="round"></path>
         <path id="body" class="stroke-charcoal" d="M202 315.378V348.001H226.038V315.378H202Z" stroke="black" stroke-width="3.43393" stroke-linecap="round"></path>
     <g filter="url(#turbulence-filter)">
-        <path id="steam-left" class="stroke-charcoal" d="M210.591 304.471L207.157 301.038C205.26 299.141 205.26 296.066 207.157 294.17C209.053 292.273 209.053 289.198 207.157 287.302C205.26 285.405 205.26 282.33 207.157 280.434L210.591 277" stroke="black" stroke-width="3.43393" stroke-linecap="round"></path>
-        <path id="steam-right" class="stroke-charcoal" d="M220.891 280.434L217.457 283.868C215.56 285.764 215.56 288.839 217.457 290.736C219.353 292.632 219.353 295.707 217.457 297.604C215.56 299.5 215.56 302.575 217.457 304.471L219.174 306.188" stroke="black" stroke-width="3.43393" stroke-linecap="round"></path>
+        <path id="steam-left" class="stroke-charcoal" d="M210.591 304.471L207.157 301.038C205.26 299.141 205.26 296.066 207.157 294.17C209.053 292.273 209.053 289.198 207.157 287.302C205.26 285.405 205.26 282.33 207.157 280.434L210.591 277" stroke="black" stroke-width="3.43393" stroke-linecap="round" opacity=0.2></path>
+        <path id="steam-right" class="stroke-charcoal" d="M220.891 280.434L217.457 283.868C215.56 285.764 215.56 288.839 217.457 290.736C219.353 292.632 219.353 295.707 217.457 297.604C215.56 299.5 215.56 302.575 217.457 304.471L219.174 306.188" stroke="black" stroke-width="3.43393" stroke-linecap="round" opacity=0.2></path>
     </g>
     </g>
 </g>
