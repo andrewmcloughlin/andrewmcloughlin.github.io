@@ -20,6 +20,10 @@
         el.addEventListener('animationend', () => el.classList.remove('flick'), { once: true });
     };
 
+    document.getElementById('mug-with-steam')?.addEventListener('click', () => {
+        animationIds.forEach(triggerAnim);
+    });
+
     const scheduleNextAnimation = () => {
         const delay = averageInterval + (Math.random() * 2 - 1) * intervalVariation;
         window.setTimeout(() => {
