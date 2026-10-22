@@ -1,19 +1,70 @@
 <svg width="839" height="579" class="hero-img" viewBox="0 0 839 579" fill="none" xmlns="http://www.w3.org/2000/svg">
 
   <style>
-    .hero-img .stroke-charcoal { 
-      stroke: var(--zen-charcoal); 
+    .hero-img .stroke-charcoal {
+      stroke: var(--zen-charcoal);
       stroke-width: 3.14159px;
       stroke-linecap: round;
       stroke-linejoin: round;
       transition: stroke 0.2s ease;
-      }
+    }
     .hero-img .fill-charcoal   { fill: var(--zen-charcoal); transition: fill 0.2s ease; }
     .hero-img .lamp { cursor: pointer; }
     .hero-link { cursor: pointer; pointer-events: all; }
     .hero-link * { pointer-events: all; }
     .hero-link:hover .stroke-charcoal { stroke: var(--accent-color); }
     .hero-link:hover .fill-charcoal   { fill:   var(--accent-color); }
+
+    @keyframes forearm-flick {
+      0%   { d: path("M491 341L462 343"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      40%  { d: path("M540 307L580 293"); animation-timing-function: linear; }
+      60%  { d: path("M520 307L580 293"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      100% { d: path("M491 341L462 343"); }
+    }
+    @keyframes bicep-flick {
+      0%   { d: path("M490 341L463 323"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      40%  { d: path("M540 307L463 313"); animation-timing-function: linear; }
+      60%  { d: path("M520 307L463 313"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      100% { d: path("M490 341L463 323"); }
+    }
+    @keyframes mug-handle-anim {
+      20%   { transform: translate(0px, 0px) scaleX(1);    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      35%  { transform: translate(156px, -60px) scaleX(0); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      65%  { transform: translate(156px, -60px) scaleX(0); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      80% { transform: translate(0px, 0px) scaleX(1); }
+    }
+    @keyframes mug-body-anim {
+      20%   { transform: translate(0px, 0px);    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      35%  { transform: translate(166px, -60px); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      65%  { transform: translate(166px, -60px); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      80% { transform: translate(0px, 0px); }
+    }
+    @keyframes right-bicep-drink {
+      0%   { d: path("M270 341L294 325"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      20%  { d: path("M240 341L294 325"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      35%  { d: path("M271 321L294 325"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      65%  { d: path("M271 321L294 325"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      80%  { d: path("M240 341L294 325"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      100% { d: path("M270 341L294 325"); }
+    }
+    @keyframes right-forearm-drink {
+      0%   { d: path("M271 341L295 343"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      20%  { d: path("M240 341L205 333"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      35%  { d: path("M271 321L365 263"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      65%  { d: path("M271 321L365 263"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      80%  { d: path("M240 341L205 333"); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+      100% { d: path("M271 341L295 343"); }
+    }
+
+    #left-forearm.flick  { animation: forearm-flick  0.6s both; }
+    #left-bicep.flick    { animation: bicep-flick    0.6s both; }
+
+    #handle.flick        { animation: mug-handle-anim 5s both; transform-box: fill-box; transform-origin: center; }
+    #body.flick          { animation: mug-body-anim  5s both; }
+    #steam-left.flick    { animation: mug-body-anim  5s both; }
+    #steam-right.flick   { animation: mug-body-anim  5s both; }
+    #right-forearm.flick { animation: right-forearm-drink  5s both; }
+    #right-bicep.flick   { animation: right-bicep-drink  5s both; }
   </style>
   <defs>
     <filter id="turbulence-filter" x="-50%" y="-50%" width="200%" height="200%" filterUnits="userSpaceOnUse">
@@ -44,29 +95,17 @@
 <g id="hero">
 <g id="hero-img">
 <g id="guy">
-<path id="right-bicep yes-this-bicep-width-is-to-scale" d="M270 341L294 325" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
-<path id="left-forearm" d="M491 341L462 343" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round">
-  <animate id="forearm-flick" attributeName="d" dur="0.6s" begin="indefinite" fill="freeze"
-    values="M491 341L462 343;M540 307L580 293;M520 307L580 293;M491 341L462 343"
-    keyTimes="0;0.4;0.6;1"
-    calcMode="spline"
-    keySplines="0.4 0 0.2 1; 0 0 1 1; 0.4 0 0.2 1"/>
-</path>
-<path id="left-bicep" d="M490 341L463 323" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round">
-  <animate id="bicep-flick" attributeName="d" dur="0.6s" begin="indefinite" fill="freeze"
-    values="M490 341L463 323;M540 307L463 313;M520 307L463 313;M490 341L463 323"
-    keyTimes="0;0.4;0.6;1"
-    calcMode="spline"
-    keySplines="0.4 0 0.2 1; 0 0 1 1; 0.4 0 0.2 1"/>
-</path>
-<path id="right-forearm" d="M271.001 341.411L295 343" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
+<path id="right-bicep"   d="M270 341L294 325" class="stroke-charcoal yes-this-bicep-width-is-to-scale" stroke-width="4.39395" stroke-linecap="round"></path>
+<path id="left-forearm"  d="M491 341L462 343" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
+<path id="left-bicep"    d="M490 341L463 323" class="stroke-charcoal yes-this-bicep-width-is-to-scale" stroke-width="4.39395" stroke-linecap="round"></path>
+<path id="right-forearm" d="M271 341L295 343" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
 <g id="head">
     <path id="Vector_265" d="M324.26 250C319.502 243.489 316.034 236.242 313.603 229M426.5 250C434.052 240.48 438.403 230.3 441.73 217.5" class="stroke-charcoal" stroke-width="4.39395" stroke-linecap="round"></path>
     <path id="foo" d="M310.405 231.683C317.016 226.168 330.501 211.154 331.539 195.217C367.471 225.267 391.858 209.061 405.19 203.152C415.855 198.425 425.241 208.273 428.601 213.788C434.714 207.44 435.375 201.239 434.941 198.932C437.543 205.966 442.452 221.891 441.282 229.319C464.847 123.51 382.082 111.167 339.99 128.656C339.034 125.106 343.578 117.257 345.969 113.777C339.592 120.129 326.55 136.538 325.405 151.365C310.405 147.189 297.078 212.027 310.405 231.683Z" class="stroke-charcoal" stroke-width="4.39395" stroke-linejoin="round"></path>
     <g id="glasses">
         <path id="Vector_271" d="M364.802 243.725C361.582 247.936 339.539 251.651 330.145 247.688C320.75 243.725 321.721 224.159 322.96 221.683C324.198 219.206 365.326 218.462 368.531 224.159C371.736 229.856 368.021 239.514 364.802 243.725Z" class="stroke-charcoal" stroke-width="4.39395"></path>
         <path id="Vector_272" d="M386.027 243.725C389.246 247.936 411.289 251.651 420.683 247.688C430.078 243.725 429.107 224.159 427.869 221.683C426.63 219.206 385.503 218.462 382.297 224.159C379.092 229.856 382.807 239.514 386.027 243.725Z" class="stroke-charcoal" stroke-width="4.39395"></path>
-        <path id="Vector_273" d="M370.73 228.677H379.982" class="stroke-charcoal" stroke-width="4.39395"></path>
+        <path id="bridge" d="M370.73 228.677H379.982" class="stroke-charcoal" stroke-width="4.39395"></path>
     </g>
 </g>
 
@@ -93,12 +132,14 @@
 </g>
 </g>
 
-
-<g id="mug">
-    <path id="mug_2" d="M227.759 322.683C232.909 320.966 241.494 324.4 238.06 331.268C235.313 336.762 230.048 341.57 227.759 343.287M202 348V315.378H226.038V348H202Z" class="stroke-charcoal" stroke-width="3.43393" stroke-linecap="round"></path>
+<g id="mug-with-steam" class="hero-link">
+    <g id="mug">
+        <path id="handle" class="stroke-charcoal" d="M227 322C232 320 241 324 238 331C235 336 230 341 227 343" stroke="black" stroke-width="3.43393" stroke-linecap="round"></path>
+        <path id="body" class="stroke-charcoal" d="M202 315.378V348.001H226.038V315.378H202Z" stroke="black" stroke-width="3.43393" stroke-linecap="round"></path>
     <g filter="url(#turbulence-filter)">
-        <path id="steam-left" d="M210.591 304.471L207.157 301.038C205.26 299.141 205.26 296.066 207.157 294.17C209.053 292.273 209.053 289.198 207.157 287.302C205.26 285.405 205.26 282.33 207.157 280.434L210.591 277" class="stroke-charcoal" stroke-width="3.43393" stroke-linecap="round"></path>
-        <path id="steam-right" d="M220.891 280.434L217.457 283.868C215.56 285.765 215.56 288.839 217.457 290.736C219.353 292.632 219.353 295.707 217.457 297.604C215.56 299.5 215.56 302.575 217.457 304.472L219.174 306.189" class="stroke-charcoal" stroke-width="3.43393" stroke-linecap="round"></path>
+        <path id="steam-left" class="stroke-charcoal" d="M210.591 304.471L207.157 301.038C205.26 299.141 205.26 296.066 207.157 294.17C209.053 292.273 209.053 289.198 207.157 287.302C205.26 285.405 205.26 282.33 207.157 280.434L210.591 277" stroke="black" stroke-width="3.43393" stroke-linecap="round"></path>
+        <path id="steam-right" class="stroke-charcoal" d="M220.891 280.434L217.457 283.868C215.56 285.764 215.56 288.839 217.457 290.736C219.353 292.632 219.353 295.707 217.457 297.604C215.56 299.5 215.56 302.575 217.457 304.471L219.174 306.188" stroke="black" stroke-width="3.43393" stroke-linecap="round"></path>
+    </g>
     </g>
 </g>
 </g>
@@ -123,8 +164,8 @@
 
 <a href="/" aria-label="My Work" class="hero-link">
     <g id="work" class="hero-link">
-        <g id="laptop" filter="url(#filter6_g_3127_10319)">
-            <path d="M295.484 250.465V349.143H461.596V250.465H295.484Z" class="stroke-charcoal" stroke-width="4.39395"></path>
+        <g filter="url(#filter6_g_3127_10319)">
+            <path id="laptop" d="M295 2505V349H461V250.465H295Z" class="stroke-charcoal" stroke-width="4.39395"></path>
         </g>
         <text id="My_Work" class="fill-charcoal hero-link fade-in delay-5" style="white-space: pre" xml:space="preserve" font-family="xkcd" font-size="35.6616" letter-spacing="0.1em" text-decoration="underline"><tspan x="305.734" y="565.505">MY WORK</tspan></text>
         <path id="Vector_319 hero-link" d="M390.718 300C390.718 293.529 385.472 288.283 379 288.283C372.529 288.283 367.283 293.529 367.283 300C367.283 306.471 372.529 311.717 379 311.717C385.472 311.717 390.718 306.471 390.718 300ZM382 506.5L384.197 506.468L381.197 299.968L379 300L376.804 300.032L379.803 506.532L382 506.5Z" class="fill-charcoal"></path>
@@ -148,7 +189,7 @@
 
 
 
-<g id="lamp-glow" class="lamp-glow" opacity="0.2">
+<g id="lamp-glow" class="lamp-glow" opacity="0.2" style="mix-blend-mode:lighten">
     <path d="M603.002 289L565.502 147.5L506.002 135.5L387 248.5L463.502 248V346.5L553.002 348V341.5H555.002L553.002 332.763V325.5L569.502 324L566.502 314.5L569.502 302.5H578.002V289H603.002Z" fill="#ffc400ff"></path>
 </g>
 </g>

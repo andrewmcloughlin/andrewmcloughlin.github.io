@@ -72,6 +72,7 @@
 
   --accent-color: var(--zen-charcoal);
   --border-color: var(--zen-cream-darker);
+  --laptop-fill: var(--zen-cream);
 
   --border-radius: 12px;
   --border-radius-lg: 16px;
@@ -134,7 +135,12 @@ html[data-bs-theme="dark"] .logo-light {
 
 html:not([data-bs-theme="dark"]) .logo-dark {
   display: none !important;
+} 
+
+#laptop, #body {
+  fill: var(--laptop-fill);
 }
+
 
 ::selection {
   background: var(--zen-charcoal);

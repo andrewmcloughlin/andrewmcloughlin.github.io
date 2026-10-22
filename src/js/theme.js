@@ -53,11 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
             const next = current === 'light' ? 'dark' : 'light';
             setTheme(next);
             const flickDelay = 300;
+            const triggerAnim = (id) => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                el.classList.remove('flick');
+                void el.getBoundingClientRect();
+                el.classList.add('flick');
+                el.addEventListener('animationend', () => el.classList.remove('flick'), { once: true });
+            };
             setTimeout(() => {
-                const flick_1 = document.getElementById('forearm-flick');
-                if (flick_1) flick_1.beginElement();
-                const flick_2 = document.getElementById('bicep-flick');
-                if (flick_2) flick_2.beginElement();
+                triggerAnim('left-forearm');
+                triggerAnim('left-bicep');
             }, flickDelay);
             setTimeout(() => syncGlow(next, true), flickDelay + 240);
         });
