@@ -137,10 +137,13 @@ html:not([data-bs-theme="dark"]) .logo-dark {
   display: none !important;
 } 
 
-#laptop, #body {
+#hero, #laptop, #body {
   fill: var(--laptop-fill);
 }
 
+html[data-bs-theme="dark"] #lamp-glow {
+  opacity: 0.2;
+}
 
 ::selection {
   background: var(--zen-charcoal);

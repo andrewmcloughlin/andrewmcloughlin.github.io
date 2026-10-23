@@ -93,6 +93,7 @@
 
 
 <g id="hero">
+<rect id="background" width="839" height="579" x="0" y="0" />
 <g id="hero-img">
 <g id="guy">
 <path id="right-bicep"   d="M270 341L294 325" class="stroke-charcoal yes-this-bicep-width-is-to-scale" stroke-width="4.39395" stroke-linecap="round"></path>
@@ -189,8 +190,8 @@
 
 
 
-<g id="lamp-glow" class="lamp-glow" opacity="0.2" style="mix-blend-mode:lighten">
-    <path d="M603.002 289L565.502 147.5L506.002 135.5L387 248.5L463.502 248V346.5L553.002 348V341.5H555.002L553.002 332.763V325.5L569.502 324L566.502 314.5L569.502 302.5H578.002V289H603.002Z" fill="#ffc400ff"></path>
+<g id="lamp-glow" class="lamp-glow" style="mix-blend-mode:lighten">
+    <path d="M603.002 289L565.502 147.5L506.002 135.5L387 248.5L463.502 248V346.5L553.002 348V341.5H555.002L553.002 332.763V325.5L569.502 324L566.502 314.5L569.502 302.5H578.002V289H603.002Z" fill="#FDDC02"></path>
 </g>
 </g>
 <defs>
