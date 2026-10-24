@@ -12,7 +12,7 @@
           <h6 class="card-subtitle text-body-secondary fw-medium letter-spacing-wide">
             {% if job.link %}
             <a href="{{ job.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-body-secondary d-inline-flex">
-              {{ job.company }} <i class="fa-solid fa-arrow-up-right-from-square opacity-50 text-xs ms-2"></i>
+              {{ job.company }} <img src="/images/icons/line-md_external-link-rounded.svg" class="inline-icon opacity-50 text-xs ms-2" alt="" aria-hidden="true">
             </a>
             {% else %}
             {{ job.company }}

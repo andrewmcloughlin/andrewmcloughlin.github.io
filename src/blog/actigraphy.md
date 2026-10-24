@@ -42,5 +42,5 @@ I researched and developed algorithms (written in Matlab) for processing actigra
 If I were approaching this problem today, I would be using Monte Carlo simulations to categorise the signals or even proper ML methods, but I was blissfully ignorant of those back in the day.
 
 <a href="/files/actigraphy-poster.pdf" class="btn btn-primary" download>
-  <i class="fa-solid fa-file-arrow-down me-2"></i>Download poster
+  <img src="/images/icons/line-md_file-download.svg" class="inline-icon me-2" alt="" aria-hidden="true">Download poster
 </a>

@@ -304,7 +304,12 @@ nav:not(.item-sidebar__nav) .btn {
 /* Right arrow (default) */
 .btn::after,
 nav:not(.item-sidebar__nav) .btn::after {
-  content: '\2192';
+  content: '';
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: currentColor;
+  mask: url('/images/icons/line-md_arrow-small-right.svg') center / contain no-repeat;
+  -webkit-mask: url('/images/icons/line-md_arrow-small-right.svg') center / contain no-repeat;
   display: inline-block;
   max-width: 0;
   opacity: 0;
@@ -317,7 +322,12 @@ nav:not(.item-sidebar__nav) .btn::after {
 /* Left arrow */
 .btn-arrow-left::before,
 nav:not(.item-sidebar__nav) .btn-arrow-left::before {
-  content: '\2190';
+  content: '';
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: currentColor;
+  mask: url('/images/icons/line-md_arrow-small-left.svg') center / contain no-repeat;
+  -webkit-mask: url('/images/icons/line-md_arrow-small-left.svg') center / contain no-repeat;
   display: inline-block;
   max-width: 0;
   opacity: 0;
@@ -563,6 +573,19 @@ a {
   border: none;
   overflow: hidden;
   min-width: 0;
+}
+
+.theme-icon,
+.inline-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+
+[data-bs-theme="dark"] .theme-icon,
+[data-bs-theme="dark"] .inline-icon {
+  filter: invert(1);
 }
 
 .theme-toggle-pill {
@@ -1616,3 +1639,4 @@ picture:has(> .img-fluid)>img {
 .grid-item>* {
   flex: 1;
 }
+

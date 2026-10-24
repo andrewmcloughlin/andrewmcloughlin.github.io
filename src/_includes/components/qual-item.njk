@@ -11,7 +11,7 @@
           <h3 class="h4 font-heading">
             {% if qual.link %}
               <a href="{{ qual.link | url }}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-body-secondary d-inline-flex">
-                {{ qual.degree }} <i class="fa-solid fa-arrow-up-right-from-square opacity-50 text-xs ms-2"></i>
+                {{ qual.degree }} <img src="/images/icons/line-md_external-link-rounded.svg" class="inline-icon opacity-50 text-xs ms-2" alt="" aria-hidden="true">
               </a>
             {% else %}
               {{ qual.degree }}

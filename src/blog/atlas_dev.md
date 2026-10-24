@@ -25,7 +25,7 @@ other_stack:
 
 <div class="text-center mb-4">
   <a href="https://www.vocatlas.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-arrow-up-right-from-square me-2"></i>Live application: VOC Atlas
+    <img src="/images/icons/line-md_external-link-rounded.svg" class="inline-icon me-2" alt="" aria-hidden="true">Live application: VOC Atlas
   </a>
 </div>
 

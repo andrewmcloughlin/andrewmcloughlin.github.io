@@ -5,12 +5,11 @@ const getPreferredTheme = () => {
 };
 
 const setThemeIcon = (theme) => {
-    const icon = theme === 'light' ? 'fa-moon' : 'fa-sun';
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     const isPressed = theme === 'dark' ? 'true' : 'false';
 
     document.querySelectorAll('.theme-icon').forEach(el => {
-        el.className = `fa-solid ${icon} theme-icon`;
+        el.src = theme === 'light' ? el.dataset.lightSrc : el.dataset.darkSrc;
 
         const btn = el.closest('button');
         if (btn) {
